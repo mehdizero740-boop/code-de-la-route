@@ -129,7 +129,7 @@ function ProfileBar({ profile, mastery, onLocalProfile, onCloudDone, onOpenProgr
   );
 }
 
-function Home({ onStartExam, onStartTheme, profile, mastery, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
+function Home({ onStartExam, onOpenThemes, onStartTheme, profile, mastery, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
   return (
     <div className="home">
       <ProfileBar profile={profile} mastery={mastery} onLocalProfile={onLocalProfile} onCloudDone={onCloudDone} onOpenProgress={onOpenProgress} onLogout={onLogout} />
@@ -144,20 +144,48 @@ function Home({ onStartExam, onStartTheme, profile, mastery, onLocalProfile, onC
             <span className="hero-stat-label">Questions</span>
           </div>
         </div>
-        <div className="hero-dashes" />
         <p className="hero-sub">
           Vrais panneaux, corrections détaillées, conditions d'examen réelles.
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
         </p>
-        <button className="btn-primary btn-hero" onClick={onStartExam}>
-          Démarrer l'examen blanc -- 40 questions
-        </button>
+        <div className="hero-actions">
+          <button className="btn-primary btn-hero" onClick={onStartExam}>
+            Démarrer l'examen blanc -- 40 questions
+          </button>
+          <button className="btn-ghost-light btn-hero" onClick={onOpenThemes}>
+            Découvrir par thème
+          </button>
+        </div>
         <div className="hero-trust">
           <span className="hero-trust-item">🔁 Entraînement illimité</span>
           <span className="hero-trust-item">⚖️ Questions mises à jour selon le code en vigueur</span>
         </div>
       </header>
-      <h2 className="section-title">S'entraîner par thème</h2>
+
+      <h2 className="section-title">En situation réelle</h2>
+      <div className="situ-grid">
+        <button className="situ-card situ-priorites" onClick={() => onStartTheme("priorites")}>
+          <span className="situ-card-label">Priorités &amp; intersections</span>
+        </button>
+        <button className="situ-card situ-vitesse" onClick={() => onStartTheme("vitesse")}>
+          <span className="situ-card-label">Vitesse &amp; autoroute</span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Liste des thèmes (écran dédié) ---------- */
+function ThemeList({ onStartTheme, onHome }) {
+  return (
+    <div className="theme-list-screen">
+      <div className="quiz-topbar">
+        <button className="btn-ghost" onClick={onHome}>← Accueil</button>
+      </div>
+      <h1 className="progress-title">Choisis un thème</h1>
+      <p className="hero-sub" style={{ color: "var(--ink-soft)", marginBottom: 20 }}>
+        Séries de 20 questions, ciblées sur ce que tu maîtrises le moins.
+      </p>
       <div className="theme-grid">
         {THEMES.map((t) => {
           const n = getQuestionsByTheme(t.id).length;
@@ -451,7 +479,7 @@ export default function App() {
 
   const startTheme = useCallback((themeId) => {
     const pool = getQuestionsByTheme(themeId);
-    setQuestions(pickAdaptive(pool, pool.length, stats));
+    setQuestions(pickAdaptive(pool, Math.min(20, pool.length), stats));
     setScreen("quiz");
   }, [stats]);
 
@@ -486,6 +514,7 @@ export default function App() {
       {screen === "home" && (
         <Home
           onStartExam={startExam}
+          onOpenThemes={() => setScreen("themes")}
           onStartTheme={startTheme}
           profile={profile}
           mastery={mastery}
@@ -494,6 +523,9 @@ export default function App() {
           onOpenProgress={() => setScreen("progress")}
           onLogout={logout}
         />
+      )}
+      {screen === "themes" && (
+        <ThemeList onStartTheme={startTheme} onHome={() => setScreen("home")} />
       )}
       {screen === "progress" && profile && (
         <Progress profile={profile} stats={stats} onHome={() => setScreen("home")} onLogout={logout} />

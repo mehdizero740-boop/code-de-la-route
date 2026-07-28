@@ -63,7 +63,10 @@ h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(155deg, var(--violet) 0%, #3A1E5C 100%);
+  background:
+    linear-gradient(180deg, rgba(23,19,31,0.35) 0%, rgba(23,19,31,0.88) 75%),
+    url('https://images.unsplash.com/photo-1756664825114-03ea24c8d195?auto=format&fit=crop&w=1200&q=70') center/cover no-repeat,
+    var(--violet);
   color: #F1EBFA;
   border-radius: var(--radius);
   padding: 34px 24px 28px;
@@ -342,3 +345,35 @@ h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em
 @media (prefers-reduced-motion: reduce) {
   .confetti { display: none; }
 }
+
+/* ---------- Hero actions & bouton clair sur fond sombre ---------- */
+.hero-actions { display: flex; flex-direction: column; gap: 10px; position: relative; margin-bottom: 4px; }
+.btn-ghost-light {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #fff;
+  border-radius: 999px; padding: 13px 20px; font-weight: 700; cursor: pointer;
+  font-family: inherit; font-size: 14.5px; transition: background .15s ease;
+}
+.btn-ghost-light:hover { background: rgba(255,255,255,0.18); }
+
+/* ---------- Cartes "en situation réelle" (vraies photos) ---------- */
+.situ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.situ-card {
+  position: relative; border-radius: var(--radius-sm); overflow: hidden; height: 140px;
+  cursor: pointer; border: none; padding: 0; display: block; width: 100%;
+  background-size: cover; background-position: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s cubic-bezier(.22,1,.36,1);
+}
+.situ-card:hover { transform: translateY(-2px); }
+.situ-card::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(23,19,31,0) 40%, rgba(23,19,31,0.8) 100%);
+}
+.situ-card-label {
+  position: absolute; left: 12px; bottom: 10px; right: 12px; color: #fff;
+  font-weight: 800; font-size: 13px; z-index: 1; text-align: left; line-height: 1.25;
+}
+.situ-priorites { background-image: url('https://images.unsplash.com/photo-1717339701000-990a1682f200?auto=format&fit=crop&w=800&q=70'); }
+.situ-vitesse { background-image: url('https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=800&q=70'); } 
+/* ---------- Écran liste des thèmes ---------- */
+.theme-list-screen .theme-grid { margin-top: 4px; }
