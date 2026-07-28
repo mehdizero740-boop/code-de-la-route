@@ -278,7 +278,10 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
             if (revealed) { if (a.correct) cls += " correct"; else if (selected.includes(i)) cls += " wrong"; }
             return (
               <button key={i} className={cls} onClick={() => toggleAnswer(i)} disabled={revealed}>
-                <span className="answer-marker">{multi ? "☐" : "○"}</span>{a.text}
+                <span className="answer-marker">
+  {multi ? (selected.includes(i) ? "☑" : "☐") : (selected.includes(i) ? "●" : "○")}
+</span>{a.text}
+
               </button>
             );
           })}

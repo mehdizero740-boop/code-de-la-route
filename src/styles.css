@@ -170,7 +170,9 @@ h1, h2, h3 { font-family: 'Bebas Neue', 'Manrope', sans-serif; letter-spacing: 0
   width: 100%; transition: border-color .12s ease, background .12s ease;
 }
 .answer:hover:not(:disabled) { border-color: var(--line); }
-.answer-marker { flex-shrink: 0; opacity: .5; font-family: 'Space Mono', monospace; }
+.answer-marker { flex-shrink: 0; opacity: .5; font-family: 'Space Mono', monospace; transition: opacity .12s ease; }
+.answer.selected .answer-marker { opacity: 1; }
+
 .answer.selected { border-color: var(--ink); background: #EFEBDD; }
 .answer.correct { border-color: var(--route-green); background: #E4F2E9; }
 .answer.wrong { border-color: var(--stop-red); background: #FBE8E7; }
