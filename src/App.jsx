@@ -152,9 +152,14 @@ function Home({ onStartExam, onStartTheme, profile, mastery, onLocalProfile, onC
           Vrais panneaux, corrections détaillées, conditions d'examen réelles.
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
         </p>
-        <button className="btn-primary btn-hero" onClick={onStartExam}>
-          Démarrer l'examen blanc -- 40 questions
-        </button>
+       <button className="btn-primary btn-hero" onClick={onStartExam}>
+  Démarrer l'examen blanc -- 40 questions
+</button>
+<div className="hero-trust">
+  <span className="hero-trust-item">🔁 Entraînement illimité</span>
+  <span className="hero-trust-item">⚖️ Questions mises à jour selon le code en vigueur</span>
+</div>
+
       </header>
       <h2 className="section-title">S'entraîner par thème</h2>
       <div className="theme-grid">
