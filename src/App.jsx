@@ -172,6 +172,7 @@ function Home({ onStartExam, onOpenThemes, onStartTheme, profile, mastery, onLoc
         </div>
         <div className="hero-trust">
           <span className="hero-trust-item">🔁 Entraînement illimité</span>
+          <span className="hero-trust-item">🚫 0 pub</span>
           <span className="hero-trust-item">⚖️ Questions mises à jour selon le code en vigueur</span>
         </div>
       </header>
@@ -312,8 +313,10 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
         <RoadProgress current={index + 1} total={questions.length} />
       </div>
       <div className="quiz-card">
-        <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span><div className="quiz-photo" style={{ backgroundImage: `url(${THEME_PHOTOS[qc.theme] || THEME_PHOTOS.divers})` }} />
-
+              <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span>
+        {!qc.image && (
+          <div className="quiz-photo" style={{ backgroundImage: `url(${THEME_PHOTOS[qc.theme] || THEME_PHOTOS.divers})` }} />
+        )}
         <h2 className="quiz-question">{qc.question}</h2>
         {multi && <p className="quiz-hint">Plusieurs réponses possibles</p>}
         <QuestionImage src={qc.image} alt={qc.question} />

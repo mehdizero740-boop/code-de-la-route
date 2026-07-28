@@ -27,7 +27,8 @@ export const QUESTIONS = [
     { text: "Marquer un arrêt obligatoire, même si la voie est libre", correct: true },
     { text: "Ralentir seulement si un véhicule arrive", correct: false },
     { text: "Céder le passage sans vous arrêter", correct: false },
-  ], "Le panneau STOP impose un arrêt total, quelle que soit la visibilité ou la circulation.", { image: WM("AB4"), difficulty: "facile" }),
+    { text: "Vous arrêter uniquement de nuit", correct: false },
+  ], "Le panneau STOP impose un arrêt total, quelle que soit la visibilité, l'heure ou la circulation.", { image: WM("AB4"), difficulty: "facile" }),
 
   q("signalisation", "Ce panneau triangulaire signifie :", [
     { text: "Cédez le passage aux véhicules circulant sur la route abordée", correct: true },
@@ -39,6 +40,7 @@ export const QUESTIONS = [
     { text: "Un passage à niveau muni de barrières ou demi-barrières", correct: true },
     { text: "Un pont mobile", correct: false },
     { text: "Une zone de travaux", correct: false },
+    { text: "Une limitation de vitesse spécifique", correct: false },
   ], "Ce panonceau annonce un passage à niveau équipé de barrières ou demi-barrières automatiques.", { image: WM("AB1"), difficulty: "moyen" }),
 
   q("signalisation", "Que signifie ce panneau carré bleu ?", [
@@ -74,7 +76,8 @@ export const QUESTIONS = [
   q("signalisation", "Ce panneau annonce la fin d'une interdiction précédemment signalée :", [
     { text: "Vrai, les panneaux barrés en diagonale grise indiquent une fin de prescription", correct: true },
     { text: "Faux, il s'agit d'un nouveau danger", correct: false },
-  ], "Les panneaux avec bandes grises diagonales signalent la fin d'une interdiction ou obligation en cours.", { image: WM("B54"), difficulty: "difficile" }),
+    { text: "Vrai, mais seulement pour les poids lourds", correct: false },
+  ], "Les panneaux avec bandes grises diagonales signalent la fin d'une interdiction ou obligation en cours, pour tous les usagers concernés.", { image: WM("B54"), difficulty: "difficile" }),
 
   q("signalisation", "À l'approche de ce panneau, vous devez :", [
     { text: "Ralentir et être prêt à céder le passage selon la configuration du carrefour", correct: true },
@@ -85,6 +88,7 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau à fond bleu et forme carrée sert généralement à :", [
     { text: "Donner une indication utile (parking, autoroute, service) ou une obligation", correct: true },
     { text: "Signaler une interdiction de circuler", correct: false },
+    { text: "Annoncer un contrôle radar", correct: false },
   ], "Le bleu est la couleur des panneaux d'indication et de certaines obligations en France, jamais des interdictions.", { image: WM("A13a"), difficulty: "moyen" }),
 
   q("signalisation", "Un panneau triangulaire avec listel rouge et pictogramme d'enfants annonce :", [
@@ -96,6 +100,7 @@ export const QUESTIONS = [
   q("priorites", "Dans un rond-point sans signalisation particulière, qui est prioritaire ?", [
     { text: "Les véhicules déjà engagés dans le rond-point", correct: true },
     { text: "Les véhicules qui s'apprêtent à y entrer", correct: false },
+    { text: "Cela dépend du véhicule le plus rapide", correct: false },
   ], "En France, sauf indication contraire, les usagers déjà dans le giratoire ont la priorité sur ceux qui souhaitent y entrer."),
 
   q("priorites", "En l'absence de panneau ou de marquage, la priorité s'exerce :", [
@@ -107,31 +112,38 @@ export const QUESTIONS = [
   q("priorites", "Vous circulez sur une route prioritaire signalée par des panneaux losange jaune. À une intersection non protégée, vous devez :", [
     { text: "Continuer, vous êtes prioritaire sur les véhicules venant des voies latérales", correct: true },
     { text: "Céder systématiquement le passage", correct: false },
+    { text: "Vous arrêter avant de vous engager, par précaution", correct: false },
   ], "Le losange jaune (panneau de priorité) confirme que vous conservez la priorité sur toute la portion de route ainsi signalée."),
 
-  q("priorites", "À un carrefour, un véhicule prioritaire (pompiers, gyrophare et sirène activés) approche. Vous devez :", [
-    { text: "Faciliter son passage en vous écartant, même si cela implique de ne pas respecter temporairement une règle de circulation", correct: true },
-    { text: "Continuer normalement, ce n'est pas votre priorité de gérer", correct: false },
-  ], "Tout conducteur doit faciliter le passage des véhicules d'intérêt général prioritaires en action urgente."),
+  q("priorites", "Un véhicule prioritaire (pompiers, gyrophare et sirène activés) approche à un carrefour. Quelles sont les bonnes attitudes à adopter ?", [
+    { text: "Faciliter son passage en vous écartant, même si cela implique de déroger temporairement à une règle de circulation", correct: true },
+    { text: "Ralentir et rester attentif à sa trajectoire avant de reprendre votre route", correct: true },
+    { text: "Accélérer pour dégager la voie le plus vite possible", correct: false },
+    { text: "L'ignorer si vous êtes déjà engagé dans le carrefour", correct: false },
+  ], "Tout conducteur doit faciliter le passage des véhicules d'intérêt général prioritaires en mission urgente, en s'écartant prudemment et sans précipitation dangereuse."),
 
   q("priorites", "Vous tournez à gauche à une intersection. Vous devez céder le passage :", [
     { text: "Aux véhicules venant en face qui vont tout droit ou tourner à droite", correct: true },
     { text: "À personne, vous êtes prioritaire dans ce cas", correct: false },
+    { text: "Uniquement aux piétons qui traversent derrière vous", correct: false },
   ], "Le conducteur qui tourne à gauche doit toujours céder le passage aux véhicules venant en sens inverse."),
 
   q("priorites", "Sur une place à sens giratoire signalée « Vous n'avez pas la priorité », vous devez :", [
     { text: "Céder le passage à tous les véhicules déjà engagés sur l'anneau", correct: true },
     { text: "Vous engager sans ralentir", correct: false },
+    { text: "Klaxonner avant de vous engager pour signaler votre présence", correct: false },
   ], "C'est la configuration standard des giratoires modernes en France : priorité à l'anneau."),
 
   q("priorites", "Un tramway arrive à une intersection sans signalisation lumineuse. Vous devez :", [
     { text: "Toujours lui céder le passage, sauf signalisation contraire", correct: true },
     { text: "Passer si vous êtes arrivé en premier", correct: false },
+    { text: "Le devancer si votre véhicule est plus rapide", correct: false },
   ], "Le tramway, du fait de sa faible manœuvrabilité et de ses distances de freinage, est prioritaire par défaut."),
 
   q("priorites", "Vous croisez un convoi funéraire ou un cortège autorisé. Vous devez :", [
-    { text: "Ne pas s'y insérer et respecter la continuité du cortège", correct: true },
+    { text: "Ne pas vous y insérer et respecter la continuité du cortège", correct: true },
     { text: "Vous insérer si un espace se présente", correct: false },
+    { text: "Klaxonner pour signaler votre présence", correct: false },
   ], "Les cortèges organisés et autorisés ne doivent pas être coupés par un véhicule extérieur."),
 
   q("vitesse", "Quelle est la vitesse maximale autorisée en agglomération, sauf signalisation différente ?", [
@@ -140,36 +152,43 @@ export const QUESTIONS = [
     { text: "30 km/h", correct: false },
   ], "50 km/h est la limite par défaut en agglomération ; certaines zones (zones 30, zones de rencontre) abaissent cette limite localement.", { difficulty: "facile" }),
 
-  q("vitesse", "Sur autoroute, par temps de pluie, la vitesse maximale autorisée est :", [
-    { text: "110 km/h", correct: true },
-    { text: "130 km/h", correct: false },
-    { text: "90 km/h", correct: false },
-  ], "Par temps de pluie, la vitesse maximale sur autoroute est réduite de 130 à 110 km/h."),
+  q("vitesse", "Sur autoroute, quelles sont les vitesses maximales autorisées selon les conditions ?", [
+    { text: "130 km/h par temps sec", correct: true },
+    { text: "110 km/h par temps de pluie", correct: true },
+    { text: "150 km/h par temps sec si la circulation est fluide", correct: false },
+    { text: "130 km/h par temps de pluie", correct: false },
+  ], "Par temps sec, la limite est de 130 km/h sur autoroute ; elle est abaissée à 110 km/h dès que la chaussée est mouillée."),
 
   q("vitesse", "La règle des « deux secondes » permet de :", [
     { text: "Évaluer la distance de sécurité à respecter avec le véhicule qui précède", correct: true },
     { text: "Calculer le temps de freinage sur route mouillée uniquement", correct: false },
+    { text: "Mesurer le temps de dépassement autorisé", correct: false },
   ], "En comptant deux secondes entre le passage du véhicule qui précède et le vôtre au même point fixe, vous vérifiez une distance de sécurité suffisante."),
 
   q("vitesse", "Hors agglomération, sur route à double sens sans séparateur central, la vitesse est en général limitée à :", [
     { text: "80 km/h (90 km/h sur certains axes signalés par le département)", correct: true },
     { text: "100 km/h", correct: false },
     { text: "70 km/h", correct: false },
+    { text: "60 km/h", correct: false },
   ], "Depuis 2018, la limite par défaut est 80 km/h, certains départements ayant relevé cette limite à 90 km/h sur des sections spécifiques et signalées."),
 
-  q("vitesse", "Un jeune conducteur en période probatoire doit respecter :", [
-    { text: "Des vitesses maximales réduites par rapport aux conducteurs expérimentés", correct: true },
-    { text: "Les mêmes limitations que tout conducteur, sans restriction", correct: false },
-  ], "Durant les 2 à 3 premières années, certaines limitations sont réduites (ex: 110 km/h au lieu de 130 sur autoroute)."),
+  q("vitesse", "Quelles règles particulières s'appliquent à un conducteur en période probatoire ?", [
+    { text: "Des vitesses maximales réduites (ex. 110 km/h au lieu de 130 sur autoroute)", correct: true },
+    { text: "Un taux d'alcoolémie maximal abaissé à 0,2 g/L de sang", correct: true },
+    { text: "Une interdiction totale de circuler la nuit", correct: false },
+    { text: "Un contrôle technique du véhicule tous les 6 mois", correct: false },
+  ], "Durant les 2 à 3 premières années, le jeune conducteur doit respecter des vitesses réduites et un seuil d'alcoolémie plus strict que les conducteurs confirmés."),
 
   q("vitesse", "En cas de visibilité fortement réduite par le brouillard, vous devez :", [
     { text: "Réduire votre vitesse et allumer vos feux de brouillard si besoin", correct: true },
     { text: "Maintenir votre vitesse en activant vos feux de détresse en continu", correct: false },
-  ], "La réduction de vitesse est systématique dès que la visibilité diminue, feux de brouillard adaptés en complément."),
+    { text: "Rouler en feux de route (pleins phares) pour mieux voir", correct: false },
+  ], "La réduction de vitesse est systématique dès que la visibilité diminue ; les feux de route sont à éviter dans le brouillard car ils éblouissent en se reflétant sur les particules d'eau."),
 
   q("vitesse", "La distance de sécurité doit être augmentée :", [
     { text: "Sur chaussée mouillée, de nuit, ou en cas de visibilité réduite", correct: true },
     { text: "Uniquement sur autoroute", correct: false },
+    { text: "Uniquement par temps de pluie, jamais de nuit", correct: false },
   ], "Toute condition dégradant l'adhérence ou la visibilité impose d'augmenter la distance de sécurité."),
 
   q("conducteur", "Le taux d'alcoolémie maximal autorisé pour un conducteur titulaire du permis depuis plus de 3 ans est :", [
