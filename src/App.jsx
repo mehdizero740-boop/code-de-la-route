@@ -153,7 +153,7 @@ function Home({ onStartExam, onStartTheme, profile, mastery, onLocalProfile, onC
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
         </p>
         <button className="btn-primary btn-hero" onClick={onStartExam}>
-          Démarrer l'examen blanc — 40 questions
+          Démarrer l'examen blanc -- 40 questions
         </button>
       </header>
       <h2 className="section-title">S'entraîner par thème</h2>
@@ -279,9 +279,8 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
             return (
               <button key={i} className={cls} onClick={() => toggleAnswer(i)} disabled={revealed}>
                 <span className="answer-marker">
-  {multi ? (selected.includes(i) ? "☑" : "☐") : (selected.includes(i) ? "●" : "○")}
-</span>{a.text}
-
+                  {multi ? (selected.includes(i) ? "☑" : "☐") : (selected.includes(i) ? "●" : "○")}
+                </span>{a.text}
               </button>
             );
           })}
@@ -306,133 +305,46 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
   );
 }
 
-function Results({ result, onRestart, onHome }) {
+function useCountUp(target, duration = 900) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    let raf;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setValue(Math.round(eased * target));
+      if (t < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [target, duration]);
+  return value;
+}
+
+function Confetti() {
+  const pieces = Array.from({ length: 18 });
+  return (
+    <div className="confetti" aria-hidden="true">
+      {pieces.map((_, i) => (
+        <span key={i} className={"confetti-piece c" + (i % 4)} style={{ left: `${(i * 97) % 100}%`, animationDelay: `${(i % 6) * 0.12}s` }} />
+      ))}
+    </div>
+  );
+}
+
+function Results({ result, profile, onRestart, onHome, onOpenProgress }) {
   const { score, total, answers } = result;
   const pct = Math.round((score / total) * 100);
   const passed = total === 40 ? score >= 35 : pct >= 80;
-  return (
-    <div className="results">
-      <div className={"results-card " + (passed ? "pass" : "fail")}>
-        <div className="results-score-badge">
-          <span className="results-score-num">{score}</span>
-          <span className="results-score-total mono">/ {total}</span>
-        </div>
-        <p className="results-status">
-          {total === 40
-            ? (passed ? "Admis ! Tu passerais l'examen officiel (seuil : 35/40)." : `Pas encore. Il faut 35/40 pour valider — encore ${35 - score} bonnes réponses à trouver.`)
-            : (passed ? "Belle série, continue comme ça !" : "Continue de t'entraîner, tu progresses.")}
-        </p>
-      </div>
-      <h2 className="section-title">Revoir les erreurs</h2>
-      <div className="review-list">
-        {answers.filter((a) => !a.correct).map((a, i) => (
-          <div className="review-item" key={i}>
-            <p className="review-q">{a.question.question}</p>
-            <p className="review-explanation">{a.question.explanation}</p>
-          </div>
-        ))}
-        {answers.every((a) => a.correct) && <p className="review-perfect">Aucune erreur, sans faute ! 👏</p>}
-      </div>
-      <div className="quiz-actions results-actions">
-        <button className="btn-ghost" onClick={onHome}>Accueil</button>
-        <button className="btn-primary" onClick={onRestart}>Recommencer</button>
-      </div>
-    </div>
-  );
-}
+  const animatedScore = useCountUp(score);
 
-export default function App() {
-  const [booting, setBooting] = useState(true);
-  const [screen, setScreen] = useState("home");
-  const [questions, setQuestions] = useState([]);
-  const [result, setResult] = useState(null);
-  const [profile, setProfile] = useState(null);
-  const [stats, setStats] = useState({});
+  const byTheme = THEMES.map((t) => {
+    const inTheme = answers.filter((a) => a.question.theme === t.id);
+    if (inTheme.length === 0) return null;
+    const correct = inTheme.filter((a) => a.correct).length;
+    return { ...t, correct, total: inTheme.length, pct: correct / inTheme.length };
+  }).filter(Boolean);
 
-  // Charge la session au démarrage + écoute les changements de connexion.
-  useEffect(() => {
-    let active = true;
-    (async () => {
-      const p = await getSessionProfile();
-      if (active) setProfile(p);
-    })();
-    const unsubscribe = subscribeAuth((p) => { if (active) setProfile(p); });
-    const t = setTimeout(() => setBooting(false), 900);
-    return () => { active = false; unsubscribe(); clearTimeout(t); };
-  }, []);
-
-  // Recharge les stats à chaque changement de profil (connexion / déconnexion).
-  useEffect(() => {
-    let active = true;
-    (async () => {
-      const s = await getStats(profile);
-      if (active) setStats(s);
-    })();
-    return () => { active = false; };
-  }, [profile]);
-
-  const mastery = useMemo(() => computeMastery(stats, QUESTIONS), [stats]);
-
-  const startExam = useCallback(() => {
-    setQuestions(pickAdaptive(QUESTIONS, 40, stats));
-    setScreen("quiz");
-  }, [stats]);
-
-  const startTheme = useCallback((themeId) => {
-    const pool = getQuestionsByTheme(themeId);
-    setQuestions(pickAdaptive(pool, pool.length, stats));
-    setScreen("quiz");
-  }, [stats]);
-
-  const handleAnswer = useCallback((questionId, correct) => {
-    setStats((current) => {
-      recordAnswer(profile, questionId, correct, current).then(setStats);
-      return current;
-    });
-  }, [profile]);
-
-  const finish = useCallback((r) => { setResult(r); setScreen("results"); }, []);
-
-  const handleLocalProfile = useCallback((name) => {
-    setProfile(createLocalProfile(name));
-  }, []);
-
-  const handleCloudDone = useCallback((p) => {
-    setProfile(p);
-  }, []);
-
-  const logout = useCallback(() => {
-    signOutProfile(profile);
-    setProfile(null);
-    setStats({});
-    setScreen("home");
-  }, [profile]);
-
-  if (booting) return <Splash />;
-
-  return (
-    <div className="app app-in">
-      {screen === "home" && (
-        <Home
-          onStartExam={startExam}
-          onStartTheme={startTheme}
-          profile={profile}
-          mastery={mastery}
-          onLocalProfile={handleLocalProfile}
-          onCloudDone={handleCloudDone}
-          onOpenProgress={() => setScreen("progress")}
-          onLogout={logout}
-        />
-      )}
-      {screen === "progress" && profile && (
-        <Progress profile={profile} stats={stats} onHome={() => setScreen("home")} onLogout={logout} />
-      )}
-      {screen === "quiz" && (
-        <Quiz questions={questions} onFinish={finish} onExit={() => setScreen("home")} onAnswer={handleAnswer} />
-      )}
-      {screen === "results" && (
-        <Results result={result} onRestart={() => setScreen("home")} onHome={() => setScreen("home")} />
-      )}
-    </div>
-  );
-}
+  const weakest = byTheme.length
+    ? byTheme.reduce((worst, t) => (t.pct 
