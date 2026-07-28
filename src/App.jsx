@@ -33,7 +33,6 @@ function RoadProgress({ current, total }) {
     <div className="road-progress">
       <div className="road-track">
         <div className="road-fill" style={{ width: `${pct}%` }} />
-        <div className="road-car" style={{ left: `calc(${pct}% - 14px)` }}>🚗</div>
       </div>
       <span className="road-progress-label mono">{current}/{total}</span>
     </div>
@@ -140,11 +139,9 @@ function Home({ onStartExam, onStartTheme, profile, mastery, onLocalProfile, onC
             <span className="hero-eyebrow">Examen du permis B</span>
             <h1>Code de<br />la Route</h1>
           </div>
-          <div className="diamond-stat">
-            <div className="diamond-stat-inner">
-              <span className="diamond-stat-num">{QUESTIONS.length}</span>
-              <span className="diamond-stat-label">Questions</span>
-            </div>
+          <div className="hero-stat">
+            <span className="hero-stat-num">{QUESTIONS.length}</span>
+            <span className="hero-stat-label">Questions</span>
           </div>
         </div>
         <div className="hero-dashes" />
@@ -193,9 +190,11 @@ function Progress({ profile, stats, onHome, onLogout }) {
       <h1 className="progress-title">Progression de {profile.name}</h1>
       {profile.cloud && <p className="auth-hint" style={{ margin: "-10px 0 18px" }}>Synchronisée sur tous tes appareils via {profile.email}.</p>}
       <div className="progress-overview">
-        <div className="results-score-badge small">
-          <span className="results-score-num">{overall.mastered}</span>
-          <span className="results-score-total mono">/ {overall.total}</span>
+        <div className="score-ring small" style={{ "--pct": overall.total ? Math.round((overall.mastered / overall.total) * 100) : 0 }}>
+          <div className="score-ring-inner">
+            <span className="results-score-num">{overall.mastered}</span>
+            <span className="results-score-total mono">/ {overall.total}</span>
+          </div>
         </div>
         <p className="hero-sub" style={{ color: "var(--ink-soft)" }}>
           Questions maîtrisées (3 bonnes réponses d'affilée). {overall.attempted} questions déjà rencontrées, {overall.toReview} à revoir en priorité.
@@ -368,9 +367,11 @@ function Results({ result, profile, onRestart, onHome, onOpenProgress }) {
     <div className="results">
       <div className={"results-card " + (passed ? "pass" : "fail")}>
         {passed && <Confetti />}
-        <div className="results-score-badge">
-          <span className="results-score-num">{animatedScore}</span>
-          <span className="results-score-total mono">/ {total}</span>
+        <div className="score-ring" style={{ "--pct": Math.round((score / total) * 100) }}>
+          <div className="score-ring-inner">
+            <span className="results-score-num">{animatedScore}</span>
+            <span className="results-score-total mono">/ {total}</span>
+          </div>
         </div>
         <p className="results-status">{statusMsg}</p>
         {focusMsg && <p className="results-focus">{focusMsg}</p>}
@@ -384,7 +385,7 @@ function Results({ result, profile, onRestart, onHome, onOpenProgress }) {
             <div className="progress-theme-info">
               <span className="theme-label">{t.label}</span>
               <div className="progress-bar-track">
-                <div className="progress-bar-fill" style={{ width: `${t.pct * 100}%`, background: t.pct === 1 ? "var(--route-green)" : t.color }} />
+                <div className="progress-bar-fill" style={{ width: `${t.pct * 100}%`, background: t.pct === 1 ? "var(--green)" : t.color }} />
               </div>
             </div>
             <span className="progress-theme-count mono">{t.correct}/{t.total}</span>
