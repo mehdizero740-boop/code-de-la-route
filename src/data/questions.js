@@ -190,7 +190,6 @@ export const QUESTIONS = [
     { text: "Uniquement sur autoroute", correct: false },
     { text: "Uniquement par temps de pluie, jamais de nuit", correct: false },
   ], "Toute condition dégradant l'adhérence ou la visibilité impose d'augmenter la distance de sécurité."),
-
   q("conducteur", "Le taux d'alcoolémie maximal autorisé pour un conducteur titulaire du permis depuis plus de 3 ans est :", [
     { text: "0,5 g/L de sang (0,25 mg/L d'air expiré)", correct: true },
     { text: "0,8 g/L de sang", correct: false },
@@ -200,37 +199,45 @@ export const QUESTIONS = [
   q("conducteur", "Un conducteur en permis probatoire a un taux d'alcoolémie maximal autorisé de :", [
     { text: "0,2 g/L de sang", correct: true },
     { text: "0,5 g/L de sang, comme tout le monde", correct: false },
+    { text: "0,3 g/L de sang", correct: false },
   ], "La tolérance est quasi nulle (0,2 g/L) durant la période probatoire, soit 2 à 3 ans selon le mode d'obtention du permis."),
 
-  q("conducteur", "Le permis probatoire est attribué avec :", [
-    { text: "6 points (8 points si obtenu par la conduite accompagnée)", correct: true },
-    { text: "12 points dès l'obtention", correct: false },
-  ], "Le capital de points initial est réduit et augmente progressivement chaque année sans infraction."),
+  q("conducteur", "Quelles affirmations sur le permis probatoire sont exactes ?", [
+    { text: "Il est attribué avec 6 points (8 points si obtenu par la conduite accompagnée)", correct: true },
+    { text: "Sa durée est généralement de 3 ans (2 ans en conduite accompagnée)", correct: true },
+    { text: "Il donne directement 12 points comme un permis classique", correct: false },
+    { text: "Il ne concerne que les conducteurs de moins de 21 ans", correct: false },
+  ], "Le capital de points initial est réduit et augmente progressivement chaque année sans infraction, jusqu'au capital plein de 12 points."),
 
   q("conducteur", "Utiliser un téléphone tenu en main en conduisant est :", [
     { text: "Interdit, sanctionné d'une amende et d'un retrait de points", correct: true },
     { text: "Toléré à l'arrêt à un feu rouge", correct: false },
+    { text: "Autorisé uniquement pour consulter un itinéraire", correct: false },
   ], "L'usage tenu en main du téléphone est interdit en toutes circonstances au volant, y compris à l'arrêt dans la circulation."),
 
   q("conducteur", "La fatigue au volant se manifeste notamment par :", [
     { text: "Des micro-sommeils, une baisse de vigilance et des réflexes ralentis", correct: true },
     { text: "Une amélioration temporaire de la concentration", correct: false },
+    { text: "Un besoin accru de rouler plus vite pour rester éveillé", correct: false },
   ], "La fatigue est l'une des premières causes d'accidents mortels sur autoroute ; une pause toutes les deux heures est recommandée."),
 
   q("conducteur", "Après la prise de certains médicaments signalés par un pictogramme, vous devez :", [
     { text: "Vérifier la compatibilité avec la conduite avant de prendre le volant", correct: true },
     { text: "Conduire normalement, les pictogrammes sont indicatifs uniquement", correct: false },
+    { text: "Ne vous inquiéter que du pictogramme rouge, les autres sont sans danger", correct: false },
   ], "Trois niveaux de pictogrammes (jaune, orange, rouge) alertent sur les risques pour la conduite ; le niveau rouge impose de ne pas conduire."),
 
   q("conducteur", "La consommation de stupéfiants au volant est :", [
     { text: "Interdite avec tolérance zéro, quel que soit le taux détecté", correct: true },
     { text: "Tolérée en dessous d'un certain seuil, comme l'alcool", correct: false },
+    { text: "Tolérée si la consommation date de la veille au soir", correct: false },
   ], "Contrairement à l'alcool, la loi française fixe une tolérance zéro pour les stupéfiants au volant."),
 
   q("conducteur", "Un conducteur qui perd tous ses points doit :", [
     { text: "Repasser le permis après une période d'interdiction de conduire", correct: true },
     { text: "Continuer à conduire normalement", correct: false },
-  ], "La perte totale des points entraîne l'invalidation du permis et l'obligation de le repasser."),
+    { text: "Attendre simplement sa convocation avant de cesser de conduire", correct: false },
+  ], "La perte totale des points entraîne l'invalidation du permis et l'obligation de le repasser ; conduire dans l'intervalle constitue un délit."),
 
   q("usagers", "En ville, face à un piéton engagé sur un passage piéton, vous devez :", [
     { text: "Vous arrêter et le laisser traverser", correct: true },
