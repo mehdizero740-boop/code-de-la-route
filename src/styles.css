@@ -377,3 +377,9 @@ h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em
 .situ-vitesse { background-image: url('https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=800&q=70'); } 
 /* ---------- Écran liste des thèmes ---------- */
 .theme-list-screen .theme-grid { margin-top: 4px; }
+/* ---------- Photo réelle dans le quiz ---------- */
+.quiz-photo {
+  width: 100%; height: 150px; border-radius: var(--radius-sm);
+  background-size: cover; background-position: center;
+  margin-bottom: 14px; box-shadow: var(--shadow-sm);
+}

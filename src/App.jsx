@@ -5,6 +5,20 @@ import {
   createLocalProfile, signOutProfile, getStats, recordAnswer, pickAdaptive, computeMastery,
 } from "./storage.js";
 
+/* ---------- Photos réelles par thème (illustration "en situation") ---------- */
+const THEME_PHOTOS = {
+  signalisation: "https://images.unsplash.com/photo-1717339701000-990a1682f200?auto=format&fit=crop&w=800&q=70",
+  priorites: "https://images.unsplash.com/photo-1717339701000-990a1682f200?auto=format&fit=crop&w=800&q=70",
+  vitesse: "https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=800&q=70",
+  conducteur: "https://images.unsplash.com/photo-1756664825114-03ea24c8d195?auto=format&fit=crop&w=800&q=70",
+  usagers: "https://images.unsplash.com/photo-1754608263952-54fdff74637b?auto=format&fit=crop&w=800&q=70",
+  secours: "https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=800&q=70",
+  mecanique: "https://images.unsplash.com/photo-1756664825114-03ea24c8d195?auto=format&fit=crop&w=800&q=70",
+  environnement: "https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=800&q=70",
+  securite: "https://images.unsplash.com/photo-1756664825114-03ea24c8d195?auto=format&fit=crop&w=800&q=70",
+  divers: "https://images.unsplash.com/photo-1721775776140-021982db0f88?auto=format&fit=crop&w=800&q=70",
+};
+
 /* ---------- Splash ---------- */
 function Splash() {
   return (
@@ -298,7 +312,8 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
         <RoadProgress current={index + 1} total={questions.length} />
       </div>
       <div className="quiz-card">
-        <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span>
+        <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span><div className="quiz-photo" style={{ backgroundImage: `url(${THEME_PHOTOS[qc.theme] || THEME_PHOTOS.divers})` }} />
+
         <h2 className="quiz-question">{qc.question}</h2>
         {multi && <p className="quiz-hint">Plusieurs réponses possibles</p>}
         <QuestionImage src={qc.image} alt={qc.question} />
