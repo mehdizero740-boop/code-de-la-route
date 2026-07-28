@@ -242,245 +242,304 @@ export const QUESTIONS = [
   q("usagers", "En ville, face à un piéton engagé sur un passage piéton, vous devez :", [
     { text: "Vous arrêter et le laisser traverser", correct: true },
     { text: "Ralentir seulement s'il est déjà à mi-chemin", correct: false },
+    { text: "Klaxonner pour qu'il accélère le pas", correct: false },
   ], "Le code impose l'arrêt dès qu'un piéton s'engage ou manifeste clairement son intention de traverser sur un passage protégé.", { difficulty: "facile" }),
 
-  q("usagers", "Pour dépasser un cycliste, vous devez laisser un espace latéral d'au moins :", [
-    { text: "1 mètre en agglomération, 1,50 m hors agglomération", correct: true },
+  q("usagers", "Quelles sont les distances latérales minimales à respecter pour dépasser un cycliste ?", [
+    { text: "1 mètre minimum en agglomération", correct: true },
+    { text: "1,50 mètre minimum hors agglomération", correct: true },
     { text: "50 cm dans tous les cas", correct: false },
+    { text: "Aucune distance minimale n'est fixée par la loi", correct: false },
   ], "Ces distances minimales de dépassement des cyclistes et piétons sont fixées par le code de la route depuis 2017."),
 
   q("usagers", "Face à un motard, vous devez être particulièrement vigilant car :", [
     { text: "Il est plus difficile à repérer et plus vulnérable en cas de choc", correct: true },
     { text: "Il est toujours prioritaire sur les autres véhicules", correct: false },
+    { text: "Il roule nécessairement plus vite que les voitures", correct: false },
   ], "Les deux-roues motorisés sont surreprésentés dans les accidents graves du fait de leur faible visibilité et de l'absence de protection."),
 
   q("usagers", "Un enfant à vélo circulant sur le trottoir jusqu'à 8 ans est :", [
-    { text: "Toléré par la loi", correct: true },
+    { text: "Toléré par la loi, sans gêner les piétons", correct: true },
     { text: "Strictement interdit", correct: false },
+    { text: "Autorisé uniquement s'il est accompagné d'un adulte", correct: false },
   ], "Les enfants de moins de 8 ans sont autorisés à circuler à vélo sur les trottoirs, à condition de ne pas gêner les piétons."),
 
   q("usagers", "En présence d'un autobus à l'arrêt qui signale son intention de repartir, vous devez :", [
     { text: "Faciliter sa réinsertion dans la circulation", correct: true },
     { text: "Accélérer pour le devancer", correct: false },
+    { text: "Le doubler avant qu'il ne reparte", correct: false },
   ], "Le code impose de faciliter le redémarrage des autobus et autocars signalant leur intention de quitter un arrêt en agglomération."),
 
   q("usagers", "Face à une personne aveugle ou malvoyante porteuse d'une canne blanche qui souhaite traverser :", [
     { text: "Vous devez vous arrêter et lui céder le passage", correct: true },
     { text: "Vous n'avez pas d'obligation particulière", correct: false },
-  ], "Le code de la route impose une priorité systématique aux personnes en situation de handicap visuel ou moteur signalées à un point de traversée."),
+    { text: "L'obligation ne s'applique que sur un passage piéton marqué au sol", correct: false },
+  ], "Le code de la route impose une priorité systématique aux personnes en situation de handicap visuel ou moteur signalées à un point de traversée, marqué ou non."),
 
   q("secours", "Sur les lieux d'un accident, la première action à mener est :", [
     { text: "Protéger la zone pour éviter un sur-accident", correct: true },
     { text: "Déplacer immédiatement les victimes", correct: false },
+    { text: "Appeler les secours avant toute autre chose, même en cas de danger immédiat", correct: false },
   ], "La méthode PAS (Protéger, Alerter, Secourir) impose de sécuriser les lieux avant toute autre action.", { difficulty: "facile" }),
 
   q("secours", "Le numéro d'urgence européen, valable dans toute l'Union européenne, est :", [
     { text: "Le 112", correct: true },
     { text: "Le 17", correct: false },
     { text: "Le 01", correct: false },
-  ], "Le 112 est le numéro d'urgence unique européen, accessible gratuitement même sans crédit ni carte SIM."),
+    { text: "Le 18", correct: false },
+  ], "Le 112 est le numéro d'urgence unique européen, accessible gratuitement même sans crédit ni carte SIM (le 17 et le 18 restent les numéros nationaux police et pompiers)."),
 
   q("secours", "Une victime consciente qui se plaint de douleurs doit être :", [
     { text: "Laissée dans la position où elle se trouve, sauf danger immédiat", correct: true },
     { text: "Systématiquement mise debout pour vérifier ses capacités", correct: false },
+    { text: "Assise immédiatement pour la rassurer", correct: false },
   ], "Sauf danger immédiat (incendie, sur-accident), il ne faut jamais déplacer une victime consciente qui se plaint de douleurs."),
 
-  q("secours", "Face à une victime inconsciente qui respire, vous devez :", [
+  q("secours", "Quels gestes sont appropriés face à une victime inconsciente qui respire ?", [
     { text: "La placer en position latérale de sécurité (PLS)", correct: true },
+    { text: "Surveiller sa respiration en attendant les secours", correct: true },
     { text: "Pratiquer un massage cardiaque immédiatement", correct: false },
-  ], "La PLS permet de dégager les voies aériennes et d'éviter l'inhalation de vomissements chez une victime inconsciente qui respire."),
+    { text: "Lui donner à boire pour la réhydrater", correct: false },
+  ], "La PLS permet de dégager les voies aériennes et d'éviter l'inhalation de vomissements chez une victime inconsciente qui respire ; la surveillance de sa respiration reste essentielle jusqu'à l'arrivée des secours."),
 
   q("secours", "En arrivant sur les lieux d'un accident, vous devez d'abord :", [
     { text: "Allumer vos feux de détresse et vous garer en sécurité avant de sortir", correct: true },
     { text: "Vous arrêter n'importe où pour porter secours au plus vite", correct: false },
+    { text: "Vous arrêter sur la voie de circulation la plus proche des victimes", correct: false },
   ], "S'arrêter sans sécuriser sa position peut provoquer un sur-accident ; feux de détresse et stationnement sécurisé sont la première étape."),
 
   q("secours", "Le triangle de signalisation doit être placé à une distance minimale de :", [
     { text: "30 mètres du véhicule accidenté ou en panne", correct: true },
     { text: "5 mètres", correct: false },
+    { text: "100 mètres", correct: false },
   ], "Une distance de 30 mètres minimum laisse le temps aux autres usagers de réagir et de ralentir."),
-
   q("mecanique", "La profondeur minimale légale des sculptures de pneus est de :", [
     { text: "1,6 mm", correct: true },
     { text: "5 mm", correct: false },
+    { text: "1 mm", correct: false },
   ], "En dessous de 1,6 mm, le pneu est hors normes légales et l'adhérence, notamment sur sol mouillé, est fortement dégradée."),
 
   q("mecanique", "Le contrôle technique est obligatoire pour un véhicule particulier :", [
     { text: "4 ans après la première mise en circulation, puis tous les 2 ans", correct: true },
     { text: "Tous les ans dès l'achat du véhicule", correct: false },
+    { text: "2 ans après la mise en circulation, puis tous les ans", correct: false },
   ], "Cette périodicité s'applique aux véhicules particuliers et utilitaires légers thermiques."),
 
   q("mecanique", "Un témoin lumineux rouge au tableau de bord signifie généralement :", [
     { text: "Un défaut grave nécessitant un arrêt ou une vérification immédiate", correct: true },
     { text: "Une information sans gravité", correct: false },
+    { text: "Un simple rappel du niveau de carburant", correct: false },
   ], "Le rouge signale une anomalie grave (pression d'huile, frein, température) à traiter sans délai, contrairement à l'orange qui alerte sans urgence absolue."),
 
-  q("mecanique", "Avant un trajet, il est recommandé de vérifier :", [
-    { text: "La pression des pneus, les niveaux (huile, liquide de refroidissement) et l'éclairage", correct: true },
+  q("mecanique", "Que faut-il vérifier avant de prendre la route ?", [
+    { text: "La pression des pneus", correct: true },
+    { text: "Les niveaux (huile, liquide de refroidissement) et l'éclairage", correct: true },
     { text: "Uniquement le niveau de carburant", correct: false },
+    { text: "Rien, un véhicule récent n'en a pas besoin", correct: false },
   ], "Un contrôle rapide avant chaque trajet limite fortement le risque de panne ou d'accident lié à un défaut mécanique."),
 
   q("mecanique", "Des essuie-glaces usés ou fissurés doivent être :", [
     { text: "Remplacés rapidement, ils réduisent la visibilité par temps de pluie", correct: true },
     { text: "Conservés jusqu'à ce qu'ils cassent complètement", correct: false },
+    { text: "Remplacés uniquement en hiver", correct: false },
   ], "Des balais d'essuie-glace en mauvais état laissent des traces qui réduisent dangereusement la visibilité."),
 
   q("environnement", "L'éco-conduite permet notamment de :", [
     { text: "Réduire la consommation de carburant et les émissions polluantes", correct: true },
     { text: "Augmenter la vitesse maximale autorisée", correct: false },
+    { text: "Rouler à haut régime pour optimiser le moteur", correct: false },
   ], "Anticipation, régularité et gestion des freinages sont les piliers de l'éco-conduite."),
 
   q("environnement", "Une zone à faibles émissions (ZFE) restreint la circulation :", [
     { text: "Des véhicules les plus polluants selon leur vignette Crit'Air", correct: true },
     { text: "De tous les véhicules sans exception", correct: false },
+    { text: "Uniquement des poids lourds", correct: false },
   ], "Les ZFE limitent l'accès selon la classification Crit'Air du véhicule pour réduire la pollution en zone urbaine dense."),
 
   q("environnement", "Couper le moteur à l'arrêt prolongé (plus d'une minute) permet de :", [
     { text: "Réduire la consommation de carburant et les émissions", correct: true },
     { text: "Endommager systématiquement le moteur", correct: false },
+    { text: "Est interdit par le code de la route", correct: false },
   ], "La coupure du moteur lors d'un arrêt prolongé, hors circulation, limite consommation et pollution inutiles."),
 
   q("environnement", "Un frein moteur bien utilisé permet de :", [
     { text: "Économiser l'usure des plaquettes de frein tout en ralentissant progressivement", correct: true },
     { text: "Remplacer totalement le freinage d'urgence", correct: false },
+    { text: "Remplacer systématiquement le frein à pied en ville", correct: false },
   ], "Le frein moteur complète le freinage classique mais ne doit jamais s'y substituer en situation d'urgence."),
 
-  q("environnement", "La vignette Crit'Air classe les véhicules selon :", [
-    { text: "Leur niveau d'émissions polluantes", correct: true },
-    { text: "Leur puissance fiscale", correct: false },
-  ], "Six catégories, de 0 (électrique) à 5, déterminent l'accès aux zones à circulation restreinte."),
+  q("environnement", "Que détermine la vignette Crit'Air d'un véhicule ?", [
+    { text: "Son niveau d'émissions polluantes", correct: true },
+    { text: "Son accès aux zones à circulation restreinte (ZFE)", correct: true },
+    { text: "Sa puissance fiscale", correct: false },
+    { text: "Le montant de sa carte grise", correct: false },
+  ], "Six catégories, de 0 (électrique) à 5, déterminent l'accès aux zones à circulation restreinte selon le niveau de pollution du véhicule."),
 
   q("securite", "Le port de la ceinture de sécurité est obligatoire :", [
     { text: "À l'avant et à l'arrière du véhicule, pour tous les passagers", correct: true },
     { text: "Uniquement pour le conducteur", correct: false },
+    { text: "Uniquement hors agglomération", correct: false },
   ], "Depuis 1990, la ceinture est obligatoire à toutes les places équipées, avant comme arrière.", { difficulty: "facile" }),
 
   q("securite", "Un enfant de moins de 10 ans doit voyager :", [
     { text: "Dans un dispositif de retenue homologué adapté à sa taille", correct: true },
     { text: "Sur les genoux d'un adulte à l'arrière si la ceinture n'est pas adaptée", correct: false },
+    { text: "Sans dispositif particulier dès l'âge de 5 ans", correct: false },
   ], "Le siège ou rehausseur homologué est obligatoire jusqu'à 10 ans, sauf exceptions très encadrées."),
 
   q("securite", "Un chargement qui dépasse à l'arrière du véhicule doit être :", [
     { text: "Signalé par un dispositif visible (panneau, tissu) le rendant repérable", correct: true },
     { text: "Laissé sans signalisation s'il dépasse de moins d'un mètre", correct: false },
+    { text: "Signalé uniquement s'il dépasse de plus de 3 mètres", correct: false },
   ], "Tout dépassement significatif du gabarit doit être signalé pour la sécurité des autres usagers."),
 
-  q("securite", "Le gilet de haute visibilité doit être revêtu :", [
+  q("securite", "Quand devez-vous porter le gilet de haute visibilité ?", [
     { text: "Avant de sortir du véhicule en cas d'arrêt d'urgence sur la chaussée ou l'accotement", correct: true },
+    { text: "De jour comme de nuit, dès que vous êtes exposé à la circulation", correct: true },
     { text: "Uniquement de nuit", correct: false },
+    { text: "Seulement si un agent vous le demande", correct: false },
   ], "Le gilet doit être enfilé avant de sortir du véhicule, de jour comme de nuit, dès qu'on est exposé à la circulation."),
 
   q("securite", "Un chargement mal arrimé dans le coffre présente un risque :", [
     { text: "De projection dangereuse en cas de freinage brusque ou de choc", correct: true },
     { text: "Uniquement esthétique", correct: false },
+    { text: "Simplement un inconfort pour les passagers", correct: false },
   ], "Un objet mal arrimé peut devenir un projectile dangereux pour les occupants en cas de décélération brutale."),
 
   q("divers", "Sur autoroute, en cas de panne, vous devez vous arrêter :", [
     { text: "Sur la bande d'arrêt d'urgence si possible, feux de détresse allumés", correct: true },
     { text: "Sur la voie de droite en activant simplement vos clignotants", correct: false },
+    { text: "Sur la voie de gauche, feux de détresse allumés", correct: false },
   ], "La bande d'arrêt d'urgence est réservée aux arrêts d'urgence ; il faut ensuite évacuer le véhicule par la droite si possible."),
 
   q("divers", "Le stationnement est considéré comme gênant lorsqu'il :", [
     { text: "Empêche ou complique la circulation ou l'usage normal de la voie", correct: true },
     { text: "Dure plus de 24 heures uniquement", correct: false },
+    { text: "Dure plus de 7 jours uniquement", correct: false },
   ], "Un stationnement gênant, même bref, peut être verbalisé s'il perturbe la circulation, l'accès ou la visibilité."),
 
-  q("divers", "Un stationnement est dit « très gênant » notamment lorsqu'il est effectué :", [
-    { text: "Sur un passage piéton, une piste cyclable ou un emplacement handicapé sans droit", correct: true },
+  q("divers", "Dans quels cas un stationnement est-il considéré comme « très gênant » ?", [
+    { text: "Sur un passage piéton", correct: true },
+    { text: "Sur une piste cyclable ou un emplacement handicapé sans droit", correct: true },
     { text: "Le dimanche en zone bleue", correct: false },
+    { text: "Devant son propre domicile, sans gêne réelle", correct: false },
   ], "Ces stationnements très gênants sont sanctionnés plus lourdement car ils créent un danger direct pour des usagers vulnérables."),
 
   q("divers", "Pour circuler sur autoroute, la vitesse minimale sur la voie de gauche par temps normal est :", [
     { text: "80 km/h", correct: true },
     { text: "Il n'existe pas de vitesse minimale sur autoroute", correct: false },
+    { text: "60 km/h", correct: false },
   ], "Une vitesse minimale de 80 km/h est imposée sur la voie la plus à gauche en conditions de circulation normales et de bonne visibilité."),
 
   q("divers", "Le document attestant qu'un véhicule est assuré doit être :", [
     { text: "Présenté aux autorités en cas de contrôle (attestation ou carte verte)", correct: true },
     { text: "Affiché en permanence sur le pare-brise obligatoirement", correct: false },
+    { text: "Inutile depuis la suppression totale du contrôle d'assurance", correct: false },
   ], "Depuis 2019, le contrôle de l'assurance se fait essentiellement par fichier informatisé (FVA), mais l'attestation reste utile en cas de contrôle."),
 
   q("divers", "En cas de doute sur la validité de votre permis lors d'un séjour à l'étranger dans l'UE, celui-ci est :", [
     { text: "Valable et reconnu dans tous les pays de l'Union européenne", correct: true },
     { text: "Invalide au-delà des frontières nationales", correct: false },
+    { text: "Valable seulement 90 jours à l'étranger", correct: false },
   ], "Le permis français, harmonisé au format européen, est directement valable dans tous les pays de l'UE."),
 
   /* ===== VAGUE 2 ===== */
 
   // Signalisation
-  q("signalisation", "Ce panneau STOP est-il valable si vous jugez la voie parfaitement dégagée ?", [
+    q("signalisation", "Ce panneau STOP est-il valable si vous jugez la voie parfaitement dégagée ?", [
     { text: "Non, l'arrêt reste obligatoire dans tous les cas", correct: true },
     { text: "Oui, vous pouvez ralentir seulement", correct: false },
+    { text: "Oui, si vous ralentissez suffisamment avant de passer", correct: false },
   ], "L'arrêt au panneau STOP n'est jamais soumis à une appréciation personnelle de la visibilité.", { image: WM("AB4"), difficulty: "facile" }),
   q("signalisation", "Que risquez-vous en ne marquant pas l'arrêt à ce panneau ?", [
     { text: "Une amende et un retrait de points, en plus du danger créé", correct: true },
     { text: "Rien si aucun accident n'a lieu", correct: false },
+    { text: "Seulement une amende, jamais de retrait de points", correct: false },
   ], "Le non-respect d'un STOP est une infraction sanctionnée indépendamment de ses conséquences immédiates.", { image: WM("AB4") }),
   q("signalisation", "Ce panneau cédez-le-passage vous autorise-t-il à vous arrêter si vous le jugez plus prudent ?", [
     { text: "Oui, rien ne l'interdit, mais l'arrêt n'est pas obligatoire si la voie est libre", correct: true },
     { text: "Non, s'arrêter à ce panneau est une infraction", correct: false },
+    { text: "Non, l'arrêt est toujours obligatoire à ce panneau", correct: false },
   ], "S'arrêter par prudence à un cédez-le-passage n'est jamais fautif, contrairement à l'omission de céder réellement le passage.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de type B (rond, listel rouge) comme celui-ci impose :", [
     { text: "Une interdiction ferme, sauf dérogation locale signalée", correct: true },
     { text: "Une simple recommandation", correct: false },
+    { text: "Une interdiction valable uniquement le week-end", correct: false },
   ], "Les panneaux d'interdiction ont une valeur réglementaire contraignante, pas seulement indicative.", { image: WM("B9i") }),
   q("signalisation", "Un passage à niveau annoncé par ce type de panonceau nécessite :", [
     { text: "De ralentir et de ne jamais s'engager si les barrières se ferment", correct: true },
     { text: "D'accélérer pour passer avant la fermeture", correct: false },
+    { text: "De s'arrêter uniquement si un train est visible", correct: false },
   ], "S'engager sur un passage à niveau en cours de fermeture est extrêmement dangereux et interdit.", { image: WM("AB1") }),
-  q("signalisation", "Les panneaux carrés à fond bleu se distinguent des panneaux ronds à listel rouge car ils :", [
-    { text: "N'expriment jamais une interdiction, contrairement aux panneaux ronds", correct: true },
-    { text: "Sont réservés aux autoroutes uniquement", correct: false },
+  q("signalisation", "Quelles affirmations sur les panneaux carrés à fond bleu sont exactes ?", [
+    { text: "Ils n'expriment jamais une interdiction, contrairement aux panneaux ronds à listel rouge", correct: true },
+    { text: "Ils peuvent indiquer une obligation ou une information utile", correct: true },
+    { text: "Ils sont réservés aux autoroutes uniquement", correct: false },
+    { text: "Ils ont la même valeur qu'un panneau rond à listel rouge", correct: false },
   ], "La couleur et la forme encodent la nature juridique du panneau : le bleu carré n'interdit jamais.", { image: WM("B4") }),
   q("signalisation", "En zone rurale, ce panneau annonçant un carrefour vous rappelle surtout :", [
     { text: "De réduire votre vitesse par anticipation", correct: true },
     { text: "Que vous êtes automatiquement prioritaire", correct: false },
+    { text: "Qu'aucune règle de priorité ne s'applique à ce carrefour", correct: false },
   ], "L'anticipation et la réduction de vitesse restent la meilleure réponse à tout carrefour annoncé, prioritaire ou non.", { image: WM("A14") }),
   q("signalisation", "Un panneau barré de bandes grises en diagonale, comme celui-ci, signale que :", [
     { text: "Une prescription antérieure prend fin à cet endroit", correct: true },
     { text: "Une nouvelle interdiction commence", correct: false },
+    { text: "Une limitation de vitesse plus stricte commence", correct: false },
   ], "Le barré diagonal gris est le code visuel générique de fin de prescription en signalisation française.", { image: WM("B54") }),
   q("signalisation", "Un panneau à fond jaune losange indique :", [
     { text: "Une route à caractère prioritaire", correct: true },
     { text: "Une route interdite aux poids lourds", correct: false },
+    { text: "Une aire de service prochaine", correct: false },
   ], "Le losange jaune signale et rappelle le caractère prioritaire d'une route sur les voies qui la croisent."),
 
   // Priorités
+  
   q("priorites", "À un carrefour en croix sans aucune signalisation, deux véhicules arrivent en même temps sur des voies perpendiculaires. Qui passe en premier ?", [
     { text: "Celui venant de la droite", correct: true },
     { text: "Celui déjà engagé dans le carrefour", correct: false },
+    { text: "Celui qui klaxonne en premier", correct: false },
   ], "La priorité à droite s'applique strictement en l'absence de toute signalisation contraire."),
   q("priorites", "Vous êtes sur une route prioritaire et un véhicule surgit d'un chemin privé sans signalisation. Vous devez :", [
     { text: "Rester attentif, mais vous restez prioritaire : c'est à lui de céder le passage", correct: true },
     { text: "Céder systématiquement le passage", correct: false },
+    { text: "Céder le passage seulement si le véhicule est plus gros", correct: false },
   ], "Les sorties de propriétés privées ou chemins non classés doivent toujours céder le passage à la circulation de la route."),
   q("priorites", "Sur une bretelle d'insertion d'autoroute, vous devez :", [
     { text: "Vous insérer sans forcer le passage, en cédant si nécessaire aux véhicules déjà sur l'autoroute", correct: true },
     { text: "Vous imposer, les véhicules sur l'autoroute doivent vous laisser passer", correct: false },
+    { text: "Vous arrêter sur la bretelle jusqu'à ce qu'un espace se libère", correct: false },
   ], "L'insertion sur autoroute impose de s'adapter au trafic existant, qui reste prioritaire."),
   q("priorites", "Deux véhicules souhaitent se croiser sur une route étroite en montagne. La priorité va :", [
     { text: "Au véhicule qui monte", correct: true },
     { text: "Au véhicule qui descend", correct: false },
+    { text: "Au véhicule le plus léger", correct: false },
   ], "En montagne, le véhicule montant a la priorité car il lui est plus difficile de reculer ou de repartir en côte."),
   q("priorites", "Un cycliste roulant tout droit et une voiture tournant à droite arrivent en même temps sur la même voie. La priorité va :", [
     { text: "Au cycliste qui continue tout droit", correct: true },
     { text: "À la voiture qui tourne", correct: false },
+    { text: "À la voiture, car elle est toujours prioritaire sur les cyclistes", correct: false },
   ], "Un véhicule qui change de direction doit céder le passage à celui qui poursuit sa trajectoire, cycliste inclus."),
   q("priorites", "À une intersection avec feux clignotants orange sur les deux axes, la règle qui s'applique est :", [
     { text: "La priorité à droite", correct: true },
     { text: "Le premier arrivé passe en premier", correct: false },
+    { text: "L'arrêt obligatoire comme à un STOP", correct: false },
   ], "Le feu orange clignotant sur tous les axes équivaut à une absence de signalisation lumineuse : la priorité à droite reprend."),
   q("priorites", "Sur une place où plusieurs routes convergent sans priorité claire, la règle de base à appliquer est :", [
     { text: "La priorité à droite, systématiquement", correct: true },
     { text: "La priorité au véhicule le plus gros", correct: false },
+    { text: "La priorité au véhicule arrivé en premier", correct: false },
   ], "En l'absence de marquage ou de panneau, la priorité à droite reste la règle universelle par défaut."),
-  q("priorites", "Face à un agent qui règle la circulation avec des gestes, ses indications :", [
-    { text: "Priment sur la signalisation par panneaux et par feux", correct: true },
-    { text: "Ne s'appliquent qu'en cas de panne des feux", correct: false },
-  ], "Les indications d'un agent régulateur ont toujours priorité sur tout autre type de signalisation."),
+  q("priorites", "Que priment les indications d'un agent qui règle la circulation à la main ?", [
+    { text: "Elles priment sur la signalisation par panneaux", correct: true },
+    { text: "Elles priment sur les feux tricolores", correct: true },
+    { text: "Elles ne s'appliquent qu'en cas de panne des feux", correct: false },
+    { text: "Elles sont facultatives si vous êtes normalement prioritaire", correct: false },
+  ], "Les indications d'un agent régulateur ont toujours priorité sur tout autre type de signalisation, panneaux comme feux."),
   q("priorites", "Vous approchez d'un carrefour à sens giratoire où un panneau STOP est positionné à l'entrée. Vous devez :", [
     { text: "Marquer l'arrêt avant de vous insérer, même si l'anneau est dégagé", correct: true },
     { text: "Ralentir sans vous arrêter complètement", correct: false },
+    { text: "Ralentir fortement, ce qui suffit à remplacer l'arrêt", correct: false },
   ], "Un STOP reste un STOP, même à l'entrée d'un giratoire : l'arrêt total est obligatoire."),
 
   // Vitesse & distances
