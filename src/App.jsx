@@ -152,14 +152,13 @@ function Home({ onStartExam, onStartTheme, profile, mastery, onLocalProfile, onC
           Vrais panneaux, corrections détaillées, conditions d'examen réelles.
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
         </p>
-       <button className="btn-primary btn-hero" onClick={onStartExam}>
-  Démarrer l'examen blanc -- 40 questions
-</button>
-<div className="hero-trust">
-  <span className="hero-trust-item">🔁 Entraînement illimité</span>
-  <span className="hero-trust-item">⚖️ Questions mises à jour selon le code en vigueur</span>
-</div>
-
+        <button className="btn-primary btn-hero" onClick={onStartExam}>
+          Démarrer l'examen blanc -- 40 questions
+        </button>
+        <div className="hero-trust">
+          <span className="hero-trust-item">🔁 Entraînement illimité</span>
+          <span className="hero-trust-item">⚖️ Questions mises à jour selon le code en vigueur</span>
+        </div>
       </header>
       <h2 className="section-title">S'entraîner par thème</h2>
       <div className="theme-grid">
@@ -352,4 +351,158 @@ function Results({ result, profile, onRestart, onHome, onOpenProgress }) {
   }).filter(Boolean);
 
   const weakest = byTheme.length
-    ? byTheme.reduce((worst, t) => (t.pct 
+    ? byTheme.reduce((worst, t) => (t.pct < worst.pct ? t : worst), byTheme[0])
+    : null;
+
+  const statusMsg = total === 40
+    ? (passed
+        ? "Admis ! Tu passerais l'examen officiel (seuil : 35/40)."
+        : `Pas encore. Il faut 35/40 pour valider -- encore ${35 - score} bonnes réponses à trouver.`)
+    : (passed ? "Belle série, continue comme ça !" : "Continue de t'entraîner, tu progresses.");
+
+  const focusMsg = weakest && weakest.pct < 1
+    ? `Ton point faible sur cette série : ${weakest.label.toLowerCase()} (${weakest.correct}/${weakest.total}).`
+    : null;
+
+  return (
+    <div className="results">
+      <div className={"results-card " + (passed ? "pass" : "fail")}>
+        {passed && <Confetti />}
+        <div className="results-score-badge">
+          <span className="results-score-num">{animatedScore}</span>
+          <span className="results-score-total mono">/ {total}</span>
+        </div>
+        <p className="results-status">{statusMsg}</p>
+        {focusMsg && <p className="results-focus">{focusMsg}</p>}
+      </div>
+
+      <h2 className="section-title">Détail par thème</h2>
+      <div className="results-theme-list">
+        {byTheme.map((t) => (
+          <div className="results-theme-row" key={t.id}>
+            <SignBadge tone="blue" icon accent={t.color} size={30}>{t.icon}</SignBadge>
+            <div className="progress-theme-info">
+              <span className="theme-label">{t.label}</span>
+              <div className="progress-bar-track">
+                <div className="progress-bar-fill" style={{ width: `${t.pct * 100}%`, background: t.pct === 1 ? "var(--route-green)" : t.color }} />
+              </div>
+            </div>
+            <span className="progress-theme-count mono">{t.correct}/{t.total}</span>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="section-title">Revoir les erreurs</h2>
+      <div className="review-list">
+        {answers.filter((a) => !a.correct).map((a, i) => (
+          <div className="review-item" key={i}>
+            <p className="review-q">{a.question.question}</p>
+            <p className="review-explanation">{a.question.explanation}</p>
+          </div>
+        ))}
+        {answers.every((a) => a.correct) && <p className="review-perfect">Aucune erreur, sans faute ! 👏</p>}
+      </div>
+      <div className="quiz-actions results-actions">
+        <button className="btn-ghost" onClick={onHome}>Accueil</button>
+        {profile && <button className="btn-ghost" onClick={onOpenProgress}>Ma progression</button>}
+        <button className="btn-primary" onClick={onRestart}>Recommencer</button>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  const [booting, setBooting] = useState(true);
+  const [screen, setScreen] = useState("home");
+  const [questions, setQuestions] = useState([]);
+  const [result, setResult] = useState(null);
+  const [profile, setProfile] = useState(null);
+  const [stats, setStats] = useState({});
+
+  // Charge la session au démarrage + écoute les changements de connexion.
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      const p = await getSessionProfile();
+      if (active) setProfile(p);
+    })();
+    const unsubscribe = subscribeAuth((p) => { if (active) setProfile(p); });
+    const t = setTimeout(() => setBooting(false), 900);
+    return () => { active = false; unsubscribe(); clearTimeout(t); };
+  }, []);
+
+  // Recharge les stats à chaque changement de profil (connexion / déconnexion).
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      const s = await getStats(profile);
+      if (active) setStats(s);
+    })();
+    return () => { active = false; };
+  }, [profile]);
+
+  const mastery = useMemo(() => computeMastery(stats, QUESTIONS), [stats]);
+
+  const startExam = useCallback(() => {
+    setQuestions(pickAdaptive(QUESTIONS, 40, stats));
+    setScreen("quiz");
+  }, [stats]);
+
+  const startTheme = useCallback((themeId) => {
+    const pool = getQuestionsByTheme(themeId);
+    setQuestions(pickAdaptive(pool, pool.length, stats));
+    setScreen("quiz");
+  }, [stats]);
+
+  const handleAnswer = useCallback((questionId, correct) => {
+    setStats((current) => {
+      recordAnswer(profile, questionId, correct, current).then(setStats);
+      return current;
+    });
+  }, [profile]);
+
+  const finish = useCallback((r) => { setResult(r); setScreen("results"); }, []);
+
+  const handleLocalProfile = useCallback((name) => {
+    setProfile(createLocalProfile(name));
+  }, []);
+
+  const handleCloudDone = useCallback((p) => {
+    setProfile(p);
+  }, []);
+
+  const logout = useCallback(() => {
+    signOutProfile(profile);
+    setProfile(null);
+    setStats({});
+    setScreen("home");
+  }, [profile]);
+
+  if (booting) return <Splash />;
+
+  return (
+    <div className="app app-in">
+      {screen === "home" && (
+        <Home
+          onStartExam={startExam}
+          onStartTheme={startTheme}
+          profile={profile}
+          mastery={mastery}
+          onLocalProfile={handleLocalProfile}
+          onCloudDone={handleCloudDone}
+          onOpenProgress={() => setScreen("progress")}
+          onLogout={logout}
+        />
+      )}
+      {screen === "progress" && profile && (
+        <Progress profile={profile} stats={stats} onHome={() => setScreen("home")} onLogout={logout} />
+      )}
+      {screen === "quiz" && (
+        <Quiz questions={questions} onFinish={finish} onExit={() => setScreen("home")} onAnswer={handleAnswer} />
+      )}
+      {screen === "results" && (
+        <Results result={result} profile={profile} onRestart={() => setScreen("home")} onHome={() => setScreen("home")} onOpenProgress={() => setScreen("progress")} />
+      )}
+    </div>
+  );
+}
