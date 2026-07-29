@@ -975,28 +975,34 @@ export const QUESTIONS = [
   q("securite", "Un siège auto pour bébé doit être installé :", [
     { text: "Dos à la route le plus longtemps possible selon les recommandations", correct: true },
     { text: "Toujours face à la route dès la naissance", correct: false },
+    { text: "Attaché uniquement avec la ceinture adulte, sans siège spécifique", correct: false },
   ], "L'installation dos à la route protège mieux la nuque encore fragile du nourrisson en cas de choc frontal."),
   q("securite", "Le port du casque à vélo, pour un adulte, est :", [
     { text: "Non obligatoire mais fortement recommandé", correct: true },
     { text: "Obligatoire dans tous les cas", correct: false },
+    { text: "Interdit pour les adultes", correct: false },
   ], "Le casque n'est obligatoire en France que pour les enfants de moins de 12 ans à vélo ; il reste vivement conseillé pour tous."),
 
   // Divers
   q("divers", "Un panneau « sens interdit sauf riverains » autorise à circuler :", [
     { text: "Uniquement les résidents ou ayants droit de la zone concernée", correct: true },
     { text: "Tout véhicule à condition de rouler lentement", correct: false },
+    { text: "Tout véhicule pendant la journée uniquement", correct: false },
   ], "Cette signalisation restreint l'accès aux seuls riverains ou usagers ayant une raison légitime de s'y trouver."),
   q("divers", "L'arrêt d'un véhicule, contrairement au stationnement, se caractérise par :", [
     { text: "La présence du conducteur au volant ou à proximité immédiate, prêt à repartir", correct: true },
     { text: "Une durée strictement inférieure à 5 minutes", correct: false },
+    { text: "Le fait d'être autorisé n'importe où sur la chaussée", correct: false },
   ], "La distinction entre arrêt et stationnement repose sur la présence du conducteur, pas uniquement sur la durée."),
   q("divers", "Un péage d'autoroute impose de :", [
     { text: "Adapter sa vitesse et respecter les distances de sécurité à l'approche des barrières", correct: true },
     { text: "Accélérer pour passer rapidement les barrières", correct: false },
+    { text: "Ignorer les distances de sécurité, la zone étant sécurisée", correct: false },
   ], "Les zones de péage concentrent ralentissements et changements de voie fréquents, nécessitant une vigilance accrue."),
   q("divers", "En cas de forte pluie réduisant fortement la visibilité, le comportement recommandé est de :", [
     { text: "Réduire sa vitesse et augmenter les distances de sécurité, voire s'arrêter en lieu sûr si nécessaire", correct: true },
     { text: "Activer ses feux de détresse tout en continuant à rouler normalement", correct: false },
+    { text: "Rouler au centre de la chaussée pour mieux voir", correct: false },
   ], "Les feux de détresse en roulant ne sont pas recommandés sauf cas très spécifiques ; mieux vaut ralentir ou s'arrêter en sécurité."),
 
   /* ===== VAGUE 4 ===== */
@@ -1005,160 +1011,198 @@ export const QUESTIONS = [
   q("signalisation", "Deux panneaux STOP se succèdent à quelques mètres d'intervalle sur un même axe. Vous devez :", [
     { text: "Marquer l'arrêt à chacun d'eux, sans exception", correct: true },
     { text: "Ne vous arrêter qu'une seule fois", correct: false },
+    { text: "S'arrêter seulement au premier, le second étant redondant", correct: false },
   ], "Chaque panneau STOP rencontré impose un arrêt indépendant, même rapproché d'un autre.", { image: WM("AB4") }),
   q("signalisation", "Ce panneau de cédez-le-passage est associé à un panneau annonçant la distance jusqu'au carrefour. Cela sert à :", [
     { text: "Vous permettre d'anticiper votre ralentissement", correct: true },
     { text: "Indiquer une zone de stationnement", correct: false },
+    { text: "Signaler un radar automatique", correct: false },
   ], "Le panonceau de distance permet une meilleure anticipation de la manœuvre à effectuer.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de danger représentant une chaussée glissante impose :", [
     { text: "De réduire sa vitesse et d'éviter les manœuvres brusques", correct: true },
     { text: "De rouler plus vite pour traverser rapidement la zone", correct: false },
+    { text: "De klaxonner pour prévenir les autres usagers", correct: false },
   ], "Face à un risque de perte d'adhérence, la prudence et la douceur de conduite sont essentielles.", { image: WM("A4") }),
   q("signalisation", "Ce panneau annonçant un carrefour à sens giratoire proche impose de :", [
     { text: "Anticiper une réduction de vitesse et une cession de priorité à l'anneau", correct: true },
     { text: "Vous arrêter immédiatement à la vue du panneau", correct: false },
+    { text: "Accélérer pour vous y engager avant les autres", correct: false },
   ], "Le panneau annonce, il n'impose pas d'arrêt immédiat, mais une préparation à la manœuvre à venir.", { image: WM("A14") }),
   q("signalisation", "Un panneau carré bleu représentant un parking indique :", [
     { text: "La présence d'une zone de stationnement autorisée", correct: true },
     { text: "Une interdiction de s'arrêter", correct: false },
+    { text: "Une zone réservée aux taxis uniquement", correct: false },
   ], "Les panneaux d'indication bleus signalent des services ou aménagements utiles aux usagers, comme les parkings.", { image: WM("B4") }),
   q("signalisation", "La combinaison d'un panneau rond à listel rouge et d'un panonceau « sauf riverains » signifie que l'interdiction :", [
     { text: "Ne s'applique pas aux résidents de la zone concernée", correct: true },
     { text: "S'applique à tous sans exception", correct: false },
+    { text: "Ne concerne que les poids lourds", correct: false },
   ], "Le panonceau restreint le champ d'application de l'interdiction principale à certaines catégories d'usagers.", { image: WM("B9i") }),
   q("signalisation", "Sur autoroute, un panneau annonçant un passage à niveau serait :", [
     { text: "Incohérent, les passages à niveau n'existent pas sur autoroute", correct: true },
     { text: "Fréquent aux abords des gares", correct: false },
+    { text: "Un simple ralentisseur signalé différemment", correct: false },
   ], "La conception des autoroutes exclut par nature tout croisement à niveau avec une voie ferrée.", { image: WM("AB1") }),
 
   // Priorités
   q("priorites", "Vous circulez sur une voie qui se rétrécit et fusionne avec une autre voie (principe de la fermeture éclair). Vous devez :", [
     { text: "Laisser s'insérer alternativement un véhicule de chaque file", correct: true },
     { text: "Empêcher les véhicules de l'autre file de s'insérer", correct: false },
+    { text: "Accélérer pour passer avant la fusion des voies", correct: false },
   ], "Le principe de la fermeture éclair, désormais inscrit dans le code, impose une insertion alternée fluide et courtoise."),
   q("priorites", "Un véhicule arrivant sur une place où le marquage au sol indique des flèches de direction obligatoires doit :", [
     { text: "Suivre la direction imposée par le marquage", correct: true },
     { text: "Peut ignorer le marquage s'il connaît une meilleure route", correct: false },
+    { text: "Suivre le marquage uniquement si la circulation est dense", correct: false },
   ], "Le marquage au sol directionnel a une valeur réglementaire équivalente aux panneaux."),
   q("priorites", "Face à un train routier (camion avec remorque) qui négocie un rond-point, vous devez :", [
     { text: "Lui laisser l'espace nécessaire, il peut empiéter sur plusieurs voies", correct: true },
     { text: "Vous positionner à côté de lui sans vous soucier de son gabarit", correct: false },
+    { text: "Le doubler par l'intérieur du rond-point", correct: false },
   ], "Les véhicules longs ont besoin d'un espace de giration important, qu'il faut anticiper et respecter."),
   q("priorites", "Une signalisation temporaire de chantier contredit la signalisation permanente existante. Vous devez respecter :", [
     { text: "La signalisation temporaire, qui prévaut tant que le chantier est en place", correct: true },
     { text: "Toujours la signalisation permanente", correct: false },
+    { text: "Aucune des deux, la signalisation de chantier n'ayant aucune valeur légale", correct: false },
   ], "La signalisation de chantier, temporaire, prime sur la signalisation permanente le temps des travaux."),
-  q("priorites", "Vous êtes à l'arrêt à un feu rouge et un véhicule de police vous fait signe de passer malgré le rouge. Vous devez :", [
+  q("priorites", "Vous êtes à l'arrêt à un feu rouge et un agent de police vous fait signe de passer malgré le rouge. Que devez-vous faire ?", [
     { text: "Suivre les indications de l'agent, qui priment sur le feu", correct: true },
+    { text: "Rester attentif à la circulation malgré l'autorisation de passer", correct: true },
     { text: "Rester à l'arrêt tant que le feu est rouge", correct: false },
-  ], "Les indications d'un agent régulateur de la circulation ont toujours priorité sur la signalisation lumineuse."),
+    { text: "Klaxonner pour signaler votre désaccord avant d'avancer", correct: false },
+  ], "Les indications d'un agent régulateur de la circulation ont toujours priorité sur la signalisation lumineuse, sans dispenser de prudence."),
 
   // Vitesse & distances
   q("vitesse", "La vitesse est réduite de 20 km/h par rapport à la limite habituelle dans certaines conditions. Cela concerne notamment :", [
     { text: "Les jeunes conducteurs en période probatoire, sur certains axes", correct: true },
     { text: "Tous les conducteurs sans exception, en permanence", correct: false },
+    { text: "Uniquement les conducteurs de plus de 65 ans", correct: false },
   ], "Les conducteurs novices ont des vitesses maximales réduites sur autoroute et voie rapide durant leur période probatoire."),
   q("vitesse", "Doubler la distance de sécurité avec le véhicule qui précède est recommandé lorsque :", [
     { text: "Vous suivez un poids lourd ou un véhicule qui masque votre visibilité", correct: true },
     { text: "Vous êtes seul sur la route", correct: false },
+    { text: "Uniquement de nuit, jamais de jour", correct: false },
   ], "Un véhicule imposant réduit la visibilité vers l'avant, justifiant une distance de sécurité accrue pour anticiper les dangers."),
   q("vitesse", "Sur une route sinueuse de montagne, l'adaptation de la vitesse doit tenir compte principalement de :", [
     { text: "La visibilité limitée dans les virages et le risque de croisement", correct: true },
     { text: "Uniquement de la limite affichée", correct: false },
+    { text: "Uniquement de la largeur de la chaussée", correct: false },
   ], "En montagne, la configuration de la route (virages, visibilité réduite) prime souvent sur la simple limite légale affichée."),
   q("vitesse", "Une distance de sécurité insuffisante en cas d'accident responsable entraîne généralement :", [
-    { text: "Une present responsabilité automobile pour non-respect des distances de sécurité", correct: true },
+    { text: "Une présomption de responsabilité pour non-respect des distances de sécurité", correct: true },
     { text: "Aucune conséquence si le véhicule de devant a freiné trop fort", correct: false },
+    { text: "Une simple remarque sans suite si c'est une première infraction", correct: false },
   ], "Le non-respect des distances de sécurité est une cause fréquente de mise en cause en cas de collision par l'arrière."),
 
   // Le conducteur
   q("conducteur", "Le contrôle du CBD (cannabidiol) légal au volant peut néanmoins entraîner :", [
     { text: "Un test positif aux stupéfiants selon la teneur en THC résiduel", correct: true },
     { text: "Aucun risque, le CBD étant totalement légal", correct: false },
+    { text: "Une exclusion automatique et systématique de tout contrôle", correct: false },
   ], "Certains produits CBD contiennent des traces de THC pouvant fausser un contrôle, malgré leur légalité de vente."),
   q("conducteur", "Le certificat médical d'aptitude à la conduite est notamment requis pour :", [
     { text: "Le renouvellement du permis poids lourd ou transport en commun", correct: true },
     { text: "Tout renouvellement de permis B classique", correct: false },
+    { text: "Uniquement les conducteurs ayant eu un accident", correct: false },
   ], "Seules certaines catégories professionnelles de permis exigent un suivi médical périodique en France."),
   q("conducteur", "Un conducteur peut-il consulter son solde de points ?", [
     { text: "Oui, via le site officiel de l'ANTS ou Télépoints", correct: true },
     { text: "Non, cette information reste confidentielle", correct: false },
+    { text: "Uniquement en se déplaçant en préfecture sur rendez-vous", correct: false },
   ], "Tout titulaire de permis peut consulter son solde de points via les services numériques officiels dédiés."),
   q("conducteur", "Le fait de conduire avec des chaussures inadaptées (talons hauts, tongs) est :", [
     { text: "Non explicitement interdit, mais peut être sanctionné en cas de défaut de maîtrise du véhicule", correct: true },
     { text: "Formellement interdit par un article précis du code", correct: false },
+    { text: "Toujours toléré sans aucune conséquence possible", correct: false },
   ], "Il n'existe pas d'interdiction nommée, mais toute gêne avérée à la conduite peut être retenue comme un défaut de maîtrise."),
 
   // Autres usagers
   q("usagers", "Une remorque de vélo transportant un enfant doit être :", [
     { text: "Équipée d'un dispositif réfléchissant et adaptée à un usage sécurisé", correct: true },
     { text: "Interdite en toutes circonstances", correct: false },
+    { text: "Autorisée uniquement sur piste cyclable", correct: false },
   ], "Les remorques pour enfants sont autorisées à condition de respecter certains équipements de sécurité et de visibilité."),
   q("usagers", "Face à des enfants jouant près de la chaussée sans supervision apparente, vous devez :", [
     { text: "Réduire fortement votre vitesse par anticipation d'un risque", correct: true },
     { text: "Poursuivre votre trajet normalement, ce n'est pas votre responsabilité", correct: false },
+    { text: "Klaxonner pour les avertir de s'écarter", correct: false },
   ], "L'imprévisibilité des enfants impose une vigilance et une réduction de vitesse dès leur présence détectée près de la route."),
   q("usagers", "Les véhicules de transport scolaire à l'arrêt, feux spéciaux allumés, imposent aux véhicules venant en sens inverse de :", [
     { text: "Ralentir fortement, voire s'arrêter selon la configuration de la route", correct: true },
+    { text: "Redoubler de vigilance à l'approche d'enfants potentiellement imprévisibles", correct: true },
     { text: "Continuer sans ralentir si vous n'êtes pas du même sens de circulation", correct: false },
+    { text: "Doubler le bus si la voie semble libre", correct: false },
   ], "La sécurité des enfants montant ou descendant du bus impose une prudence renforcée de tous les usagers environnants."),
 
   // Premiers secours
   q("secours", "Une entorse ou une fracture suspectée chez une victime consciente doit être :", [
     { text: "Immobilisée sans être manipulée inutilement, en attendant les secours", correct: true },
     { text: "Remise en place immédiatement par le témoin", correct: false },
+    { text: "Massée fermement pour soulager la douleur", correct: false },
   ], "Toute manipulation intempestive d'un membre potentiellement fracturé peut aggraver la blessure."),
   q("secours", "Face à une victime en état de choc (pâleur, sueurs, agitation), il convient de :", [
     { text: "La rassurer, la couvrir et surveiller son état en attendant les secours", correct: true },
     { text: "La faire marcher pour la faire réagir", correct: false },
+    { text: "Lui donner à boire rapidement pour la réhydrater", correct: false },
   ], "Le réconfort, la chaleur et la surveillance sont les gestes appropriés face à un état de choc, sans effort physique imposé à la victime."),
 
   // Mécanique
   q("mecanique", "Le remplacement du filtre à air doit être effectué régulièrement car un filtre encrassé :", [
     { text: "Réduit les performances du moteur et augmente la consommation", correct: true },
     { text: "N'a aucune influence sur la performance du moteur", correct: false },
+    { text: "Améliore le refroidissement du moteur", correct: false },
   ], "Un filtre à air encrassé limite l'admission d'air nécessaire à une combustion efficace."),
   q("mecanique", "L'usure asymétrique d'un pneu peut indiquer :", [
     { text: "Un défaut de parallélisme ou de pression du véhicule", correct: true },
     { text: "Une simple particularité sans conséquence", correct: false },
+    { text: "Toujours un pneu de mauvaise qualité, quel que soit son réglage", correct: false },
   ], "Une usure irrégulière est souvent le signe d'un réglage de géométrie ou d'une pression incorrecte à corriger."),
 
   // Environnement
   q("environnement", "L'utilisation du régulateur de vitesse sur route plane et dégagée contribue à :", [
     { text: "Stabiliser la consommation de carburant en évitant les variations inutiles de régime", correct: true },
     { text: "Augmenter systématiquement la consommation", correct: false },
+    { text: "N'avoir aucun effet notable sur la consommation", correct: false },
   ], "Une vitesse stabilisée réduit les à-coups d'accélération qui augmentent la consommation de carburant."),
   q("environnement", "Le principe d'éco-conduite « anticiper plutôt que freiner » consiste à :", [
     { text: "Lever le pied tôt pour laisser le véhicule ralentir naturellement", correct: true },
     { text: "Freiner le plus tard possible pour gagner du temps", correct: false },
+    { text: "Freiner fort puis réaccélérer immédiatement", correct: false },
   ], "Anticiper les ralentissements permet d'éviter les freinages brusques, plus coûteux en carburant et en usure."),
 
   // Sécurité & chargement
   q("securite", "Une remorque attelée à un véhicule doit être équipée :", [
     { text: "De feux, de plaques d'immatriculation et parfois de freins selon son poids", correct: true },
     { text: "D'aucun équipement particulier si elle est légère", correct: false },
+    { text: "D'aucun marquage, quel que soit son poids total", correct: false },
   ], "Les obligations d'équipement d'une remorque dépendent notamment de son poids total autorisé en charge (PTAC)."),
-  q("securite", "Le port d'équipements de protection (casque, gants) pour un motard est :", [
-    { text: "Obligatoire pour le casque, fortement recommandé pour le reste de l'équipement", correct: true },
-    { text: "Purement facultatif dans tous les cas", correct: false },
+  q("securite", "Concernant les équipements de protection d'un motard (casque, gants) :", [
+    { text: "Le casque homologué est légalement obligatoire", correct: true },
+    { text: "Les gants et autres protections restent vivement recommandés", correct: true },
+    { text: "Tout l'équipement de protection est légalement obligatoire", correct: false },
+    { text: "Aucun équipement n'est obligatoire pour un motard", correct: false },
   ], "Seul le casque homologué est légalement obligatoire pour les deux-roues motorisés, le reste de l'équipement étant vivement recommandé."),
 
   // Divers
   q("divers", "Le stationnement de nuit sans éclairage public suffisant impose de :", [
     { text: "Laisser les feux de position allumés si le véhicule n'est pas visible autrement", correct: true },
     { text: "Aucune précaution particulière n'est nécessaire", correct: false },
+    { text: "Ce type de stationnement est interdit dans tous les cas", correct: false },
   ], "Dans certaines conditions de faible visibilité, un véhicule stationné doit rester repérable par les autres usagers."),
   q("divers", "Un rond-point signalé par un panneau spécifique impose, en sortie, de :", [
     { text: "Signaler son intention de sortie par le clignotant droit", correct: true },
     { text: "Ne jamais utiliser de clignotant en giratoire", correct: false },
+    { text: "Utiliser le clignotant gauche pour signaler la sortie", correct: false },
   ], "L'usage du clignotant en sortie de giratoire est une règle de courtoisie et de sécurité essentielle pour informer les autres usagers."),
   q("divers", "La conduite sans permis valide (jamais obtenu, suspendu ou invalidé) est :", [
     { text: "Un délit passible d'amende, de peine de prison et de confiscation possible du véhicule", correct: true },
     { text: "Une simple contravention mineure", correct: false },
+    { text: "Sanctionnée uniquement par une amende forfaitaire", correct: false },
   ], "La conduite sans droit à conduire est un délit pénal sévèrement sanctionné en droit français."),
   q("divers", "Un panneau de fin d'agglomération marque également :", [
     { text: "Le retour aux limitations de vitesse hors agglomération", correct: true },
     { text: "Une zone de danger accru", correct: false },
+    { text: "Aucun changement pour la vitesse autorisée", correct: false },
   ], "Le panneau de fin d'agglomération (barré) rétablit les règles de circulation applicables hors zone urbaine, notamment la vitesse."),
 
   /* ===== VAGUE 5 ===== */
@@ -1167,132 +1211,162 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau STOP implanté à la sortie d'un parking ou d'une station-service :", [
     { text: "A la même valeur réglementaire qu'un STOP sur une route publique", correct: true },
     { text: "N'a qu'une valeur indicative sur terrain privé", correct: false },
+    { text: "N'a de valeur qu'entre 8h et 20h", correct: false },
   ], "Dès lors qu'il est implanté conformément à la réglementation, un panneau STOP s'impose quel que soit le contexte de son emplacement.", { image: WM("AB4") }),
   q("signalisation", "Vous voyez un cédez-le-passage suivi d'un panonceau indiquant la distance visuelle disponible. Cela vous aide à :", [
     { text: "Évaluer si vous avez le temps de vous engager en sécurité", correct: true },
     { text: "Connaître la vitesse maximale autorisée", correct: false },
+    { text: "Repérer la présence d'un radar automatique", correct: false },
   ], "Ce panonceau informe sur la distance de visibilité réelle disponible pour s'engager en sécurité au carrefour.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de danger « chaussée rétrécie » impose de :", [
     { text: "Ralentir et laisser la priorité selon le marquage ou la configuration", correct: true },
     { text: "Accélérer pour passer avant les autres véhicules", correct: false },
+    { text: "Accélérer pour anticiper le rétrécissement", correct: false },
   ], "Un rétrécissement de chaussée impose prudence et parfois une priorité de passage à déterminer selon la signalisation locale.", { image: WM("A4") }),
   q("signalisation", "Ce panneau annonçant un carrefour où vous êtes prioritaire reste valable jusqu'à :", [
     { text: "Le prochain panneau qui modifie ou annule cette priorité", correct: true },
     { text: "300 mètres fixes dans tous les cas", correct: false },
+    { text: "100 mètres, quelle que soit la route", correct: false },
   ], "La validité d'une signalisation de priorité s'étend jusqu'au prochain élément de signalisation qui la modifie explicitement.", { image: WM("A14") }),
   q("signalisation", "Un panneau bleu carré avec un « P » indique :", [
     { text: "Un emplacement de stationnement autorisé", correct: true },
     { text: "Un poste de police", correct: false },
+    { text: "Un parking réservé aux professionnels uniquement", correct: false },
   ], "Le pictogramme « P » sur fond bleu est le symbole normalisé du stationnement.", { image: WM("B4") }),
   q("signalisation", "Face à un panneau d'interdiction accompagné d'un panonceau horaire, l'interdiction :", [
     { text: "Ne s'applique que pendant les horaires précisés sur le panonceau", correct: true },
     { text: "S'applique en permanence quel que soit le panonceau", correct: false },
+    { text: "Ne s'applique que le week-end, quel que soit l'horaire indiqué", correct: false },
   ], "Le panonceau horaire restreint la portée temporelle de l'interdiction principale.", { image: WM("B9i") }),
 
   // Priorités
   q("priorites", "Sur une chaussée à sens unique élargie ponctuellement pour permettre un croisement, la priorité va généralement :", [
     { text: "Au véhicule qui a la meilleure visibilité ou selon la signalisation locale", correct: true },
     { text: "Toujours au véhicule le plus rapide", correct: false },
+    { text: "Toujours au véhicule arrivé en dernier", correct: false },
   ], "Ces configurations particulières sont souvent réglées par une signalisation dédiée ; à défaut, prudence et courtoisie priment."),
-  q("priorites", "Vous circulez sur une route à quatre voies séparées par un terre-plein central. Un véhicule vient en sens inverse sur votre voie. Vous devez :", [
-    { text: "Ralentir, vous écarter si possible et signaler le danger sans vous mettre en péril", correct: true },
+  q("priorites", "Vous circulez sur une route à quatre voies séparées par un terre-plein central. Un véhicule vient en sens inverse sur votre voie. Que devez-vous faire ?", [
+    { text: "Ralentir et vous écarter si possible", correct: true },
+    { text: "Signaler le danger sans vous mettre en péril (appel de phares, klaxon bref)", correct: true },
     { text: "Continuer normalement, ce n'est pas votre problème", correct: false },
-  ], "Face à un véhicule à contresens, la priorité absolue est d'éviter la collision, quitte à s'écarter sur le bas-côté."),
+    { text: "Accélérer pour vous écarter le plus vite possible au centre de la route", correct: false },
+  ], "Face à un véhicule à contresens, la priorité absolue est d'éviter la collision, quitte à s'écarter sur le bas-côté, tout en alertant les autres usagers si possible sans danger."),
   q("priorites", "Dans une zone de travaux avec circulation alternée gérée par des feux tricolores temporaires, vous devez :", [
     { text: "Respecter strictement le cycle des feux, même s'il semble long", correct: true },
     { text: "Passer si vous ne voyez aucun véhicule en face", correct: false },
+    { text: "Suivre le véhicule devant vous sans regarder les feux", correct: false },
   ], "Les feux de chantier régulent une circulation à sens unique temporaire ; leur non-respect peut provoquer une collision frontale."),
   q("priorites", "Un véhicule prioritaire à l'arrêt, gyrophare allumé mais sirène coupée, sur les lieux d'une intervention impose de :", [
     { text: "Ralentir et redoubler de prudence en le contournant", correct: true },
     { text: "L'ignorer puisque la sirène est coupée", correct: false },
+    { text: "L'ignorer, seul le gyrophare compte s'il clignote vite", correct: false },
   ], "Le gyrophare allumé signale une intervention en cours nécessitant prudence, indépendamment de l'utilisation de la sirène."),
 
   // Vitesse & distances
   q("vitesse", "La verbalisation d'un excès de vitesse via un radar automatique tient compte d'une marge technique de :", [
     { text: "Quelques km/h en faveur du conducteur, selon le type de radar", correct: true },
     { text: "Aucune marge, le moindre dépassement est sanctionné à l'identique", correct: false },
+    { text: "Une marge de 50% systématique", correct: false },
   ], "Les radars appliquent une marge d'erreur technique réglementaire déduite de la vitesse mesurée avant sanction."),
   q("vitesse", "Sur une route mouillée après une longue période de sécheresse, le risque de glissance est :", [
     { text: "Accru dans les premières minutes de pluie, du fait des résidus d'huile remontés à la surface", correct: true },
     { text: "Inexistant, la pluie ne fait que nettoyer la route", correct: false },
+    { text: "Uniquement présent après une chute de neige", correct: false },
   ], "Les premières minutes de pluie après une sécheresse rendent la chaussée particulièrement glissante à cause des dépôts d'hydrocarbures."),
   q("vitesse", "Une distance de sécurité correctement respectée permet notamment de :", [
     { text: "Voir plus loin devant le véhicule qui précède et anticiper les dangers", correct: true },
     { text: "Uniquement d'éviter une amende", correct: false },
+    { text: "N'avoir aucun effet sur l'anticipation visuelle", correct: false },
   ], "Une distance suffisante améliore aussi l'anticipation visuelle des dangers situés au-delà du véhicule précédent."),
 
   // Le conducteur
   q("conducteur", "Un conducteur malvoyant non corrigé par des lunettes alors que celles-ci sont mentionnées sur son permis :", [
     { text: "Est en infraction s'il conduit sans ses correcteurs de vue", correct: true },
     { text: "N'est pas concerné par cette mention", correct: false },
+    { text: "N'est en infraction que si un contrôle médical récent l'exige explicitement", correct: false },
   ], "La mention de correction visuelle sur le permis est une obligation légale de conduire avec les équipements prescrits."),
   q("conducteur", "La conduite d'un véhicule de location à l'étranger nécessite en général :", [
     { text: "Un permis valide, parfois accompagné d'un permis international selon le pays", correct: true },
     { text: "Aucun document, le permis français suffit partout dans le monde", correct: false },
+    { text: "Une interdiction totale de louer un véhicule hors de France", correct: false },
   ], "Selon les accords internationaux, certains pays exigent un permis de conduire international en complément du permis national."),
   q("conducteur", "Le fait d'être fatigué après une longue journée de travail avant de prendre la route impose de :", [
     { text: "Évaluer objectivement son état et renoncer à conduire si nécessaire", correct: true },
     { text: "Conduire normalement, la fatigue professionnelle ne concerne pas la route", correct: false },
+    { text: "N'est jamais un motif valable pour annuler un trajet prévu", correct: false },
   ], "La fatigue, quelle que soit son origine, altère les capacités de conduite et doit être prise au sérieux avant de prendre le volant."),
 
   // Autres usagers
   q("usagers", "Un skateur ou un utilisateur de roller sur la chaussée est considéré comme :", [
     { text: "Un piéton au sens du code de la route", correct: true },
     { text: "Un véhicule à part entière", correct: false },
+    { text: "Un cycliste au sens du code de la route", correct: false },
   ], "Les utilisateurs d'engins non motorisés sans roues alignées comme les rollers sont assimilés aux piétons par le code."),
-  q("usagers", "En présence d'un autocar scolaire dont le panneau « élèves » est déployé, vous devez :", [
+  q("usagers", "En présence d'un autocar scolaire dont le panneau « élèves » est déployé, que devez-vous faire ?", [
     { text: "Ralentir fortement à son approche et à son dépassement", correct: true },
+    { text: "Redoubler d'attention à la présence possible d'enfants aux abords", correct: true },
     { text: "N'avoir aucune précaution particulière", correct: false },
-  ], "Le déploiement de ce panonceau signale une zone à risque accru lié à la présence d'enfants autour du véhicule."),
+    { text: "Doubler rapidement pour vous éloigner du danger", correct: false },
+  ], "Le déploiement de ce panonceau signale une zone à risque accru lié à la présence d'enfants autour du véhicule, imposant ralentissement et vigilance renforcée."),
 
   // Premiers secours
   q("secours", "Une victime piégée dans un véhicule accidenté et en danger immédiat (incendie) doit être :", [
     { text: "Désincarcérée avec les moyens disponibles si le danger est vital et imminent", correct: true },
     { text: "Laissée en place en attendant impérativement les pompiers", correct: false },
+    { text: "Jamais déplacée, sans exception, avant l'arrivée des secours", correct: false },
   ], "En cas de danger vital immédiat, une extraction d'urgence peut être justifiée avant l'arrivée des secours spécialisés."),
   q("secours", "Après avoir alerté les secours, il est important de :", [
     { text: "Rester à proximité du téléphone pour guider ou renseigner les secours si besoin", correct: true },
     { text: "Raccrocher immédiatement et quitter les lieux", correct: false },
+    { text: "Éteindre son téléphone pour économiser la batterie", correct: false },
   ], "Rester joignable permet aux services de secours d'obtenir des précisions complémentaires si nécessaire."),
 
   // Mécanique
   q("mecanique", "Un pneu neige (hiver) se différencie d'un pneu été notamment par :", [
     { text: "Une gomme plus souple à basse température et des lamelles plus nombreuses", correct: true },
     { text: "Une taille différente obligatoire", correct: false },
+    { text: "Une couleur différente réglementaire", correct: false },
   ], "La composition de la gomme et le motif de la sculpture des pneus hiver optimisent l'adhérence par temps froid."),
   q("mecanique", "Le remplacement des amortisseurs usés améliore principalement :", [
     { text: "La tenue de route et l'efficacité du freinage", correct: true },
     { text: "Uniquement le confort de conduite", correct: false },
+    { text: "Uniquement l'aspect esthétique du véhicule", correct: false },
   ], "Des amortisseurs usés dégradent le contact pneu-route, ce qui affecte directement freinage et stabilité."),
 
   // Environnement
   q("environnement", "L'entretien régulier du véhicule (filtres, huile, pneus) contribue à :", [
     { text: "Réduire sa consommation et ses émissions polluantes", correct: true },
     { text: "N'a aucun effet sur l'impact environnemental", correct: false },
+    { text: "N'améliorer que le confort, sans effet sur la pollution", correct: false },
   ], "Un véhicule bien entretenu consomme moins et pollue moins qu'un véhicule négligé."),
 
   // Sécurité & chargement
   q("securite", "Un porte-vélos installé à l'arrière du véhicule doit être signalé par :", [
     { text: "Une plaque réfléchissante réglementaire si les feux arrière sont masqués", correct: true },
     { text: "Aucune signalisation particulière n'est nécessaire", correct: false },
+    { text: "Une simple recommandation facultative, jamais une obligation", correct: false },
   ], "Si le chargement masque les feux ou la plaque, une signalisation complémentaire homologuée est obligatoire."),
   q("securite", "Le port de la ceinture pendant la grossesse est :", [
     { text: "Obligatoire, en positionnant correctement la sangle sous le ventre", correct: true },
     { text: "Déconseillé, il vaut mieux ne pas l'attacher", correct: false },
+    { text: "Facultatif, sur simple avis médical", correct: false },
   ], "La ceinture reste obligatoire et protectrice pendant la grossesse, à condition d'être positionnée correctement."),
 
   // Divers
   q("divers", "Un rond-point avec anneau franchissable (bande surélevée) autour du terre-plein central est destiné :", [
     { text: "Aux véhicules longs qui ont besoin d'un espace de giration supplémentaire", correct: true },
     { text: "Au stationnement temporaire", correct: false },
+    { text: "Exclusivement aux vélos", correct: false },
   ], "Cette bande facilite le passage des poids lourds ou véhicules longs sans les contraindre à mordre sur le terre-plein central."),
   q("divers", "La carte grise barrée et annotée de la mention « vendu le » sert à :", [
     { text: "Attester provisoirement de la cession du véhicule lors d'une vente entre particuliers", correct: true },
     { text: "Prouver le contrôle technique", correct: false },
+    { text: "Remplacer définitivement la nouvelle carte grise", correct: false },
   ], "Cette mention manuscrite constitue une preuve provisoire de la vente en attendant le nouveau certificat d'immatriculation."),
   q("divers", "Le non-port de la ceinture de sécurité est sanctionné par :", [
     { text: "Une amende et un retrait de points", correct: true },
     { text: "Un simple avertissement oral", correct: false },
+    { text: "Un simple avertissement pour la première infraction seulement", correct: false },
   ], "Le défaut de port de la ceinture constitue une infraction sanctionnée financièrement et par un retrait de points."),
 
   /* ===== VAGUE 6 ===== */
@@ -1301,116 +1375,142 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau STOP est temporairement recouvert d'un cache lors de travaux. Vous devez :", [
     { text: "Respecter la signalisation temporaire mise en place, qui remplace le panneau masqué", correct: true },
     { text: "Vous arrêter quand même car le panneau existe toujours dessous", correct: false },
+    { text: "Vous arrêter par réflexe, au cas où, même sans certitude", correct: false },
   ], "Un panneau masqué ou recouvert n'est plus applicable ; c'est la signalisation temporaire visible qui prévaut.", { image: WM("AB4") }),
   q("signalisation", "Le panneau cédez-le-passage impose une obligation de :", [
     { text: "Réduire l'allure suffisamment pour pouvoir s'arrêter si nécessaire", correct: true },
     { text: "Maintenir sa vitesse tout en restant attentif", correct: false },
+    { text: "Accélérer légèrement pour dégager le carrefour plus vite", correct: false },
   ], "L'allure doit être réduite pour permettre un arrêt si un véhicule prioritaire se présente.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de danger doublé d'un panonceau « sur 3 km » signifie que :", [
     { text: "Le danger signalé persiste sur cette distance", correct: true },
     { text: "Le danger n'existe qu'à 3 km de là", correct: false },
+    { text: "Le danger se double uniquement au bout de 3 km", correct: false },
   ], "Ce panonceau précise l'étendue de la zone concernée par le danger annoncé.", { image: WM("A4") }),
   q("signalisation", "Face à ce panneau annonçant un carrefour, un conducteur distrait par son téléphone risque particulièrement :", [
     { text: "De ne pas anticiper une cession de priorité nécessaire", correct: true },
     { text: "De payer une amende automatiquement", correct: false },
+    { text: "Uniquement un risque d'amende, rien d'autre", correct: false },
   ], "La distraction réduit la capacité d'anticipation nécessaire à l'approche de tout carrefour, qu'il soit prioritaire ou non.", { image: WM("A14") }),
   q("signalisation", "Un panneau carré bleu représentant une flèche est généralement :", [
     { text: "Une obligation de direction à suivre", correct: true },
     { text: "Une simple suggestion d'itinéraire", correct: false },
+    { text: "Une simple décoration sans valeur légale", correct: false },
   ], "Les flèches directionnelles sur fond bleu ont valeur d'obligation de direction, contrairement à une indication touristique.", { image: WM("B4") }),
 
   // Priorités
   q("priorites", "Un cycliste tourne à gauche en ayant préalablement levé le bras pour signaler son intention. Vous devez :", [
     { text: "Respecter cette indication et adapter votre conduite en conséquence", correct: true },
     { text: "L'ignorer, seuls les clignotants ont une valeur légale", correct: false },
+    { text: "Le respecter uniquement s'il est accompagné d'un clignotant", correct: false },
   ], "Les gestes des cyclistes pour indiquer un changement de direction ont la même valeur que les clignotants d'un véhicule motorisé."),
   q("priorites", "Sur une aire de service d'autoroute, la circulation suit :", [
     { text: "Les règles de priorité à droite en l'absence de signalisation spécifique, comme un parking classique", correct: true },
     { text: "Les mêmes règles strictes que sur la voie principale de l'autoroute", correct: false },
+    { text: "Aucune règle, chacun circule comme il le souhaite", correct: false },
   ], "Les aires de service, assimilées à des espaces privés ouverts à la circulation, suivent généralement la priorité à droite par défaut."),
   q("priorites", "Un véhicule d'intervention (ambulance) roulant à contresens sur une portion en travaux, gyrophares allumés, doit être :", [
-    { text: "Laissé passer en priorité absolue, quitte à s'arrêter sur le bas-côté", correct: true },
+    { text: "Laissé passer en priorité absolue", correct: true },
+    { text: "Cédé le passage en s'arrêtant sur le bas-côté si nécessaire", correct: true },
     { text: "Ignoré si vous êtes prioritaire sur cette portion", correct: false },
+    { text: "Doublé rapidement pour ne pas le gêner", correct: false },
   ], "La priorité des véhicules d'intervention prime sur toute autre règle de circulation, y compris en configuration inhabituelle."),
 
   // Vitesse & distances
   q("vitesse", "La vitesse maximale autorisée pour un ensemble routier tractant une caravane ou remorque légère est en général :", [
     { text: "Réduite par rapport à celle du véhicule seul", correct: true },
     { text: "Identique à celle du véhicule sans remorque", correct: false },
+    { text: "Augmentée pour compenser le poids supplémentaire", correct: false },
   ], "La traction d'une remorque impose des limitations de vitesse spécifiques, notamment sur autoroute et voie rapide."),
   q("vitesse", "Une accélération brutale après un feu vert entraîne :", [
     { text: "Une surconsommation et une usure prématurée sans gain de temps significatif", correct: true },
     { text: "Un gain de temps important sur un trajet urbain", correct: false },
+    { text: "Un gain de temps notable sur autoroute", correct: false },
   ], "En ville, les accélérations brusques n'apportent qu'un gain de temps marginal tout en augmentant consommation et usure."),
   q("vitesse", "Face à un animal sauvage traversant soudainement la route, la meilleure réaction est de :", [
     { text: "Freiner fermement en ligne droite sans donner de coup de volant brusque", correct: true },
     { text: "Faire une embardée pour l'éviter à tout prix", correct: false },
+    { text: "Klaxonner fort en maintenant la même vitesse", correct: false },
   ], "Une embardée pour éviter un animal peut provoquer une sortie de route ou une collision plus grave qu'un freinage contrôlé."),
 
   // Le conducteur
   q("conducteur", "L'usage d'écouteurs dans les deux oreilles en conduisant est :", [
     { text: "Interdit, car cela réduit la perception des sons environnants (sirènes, klaxons)", correct: true },
     { text: "Autorisé sans restriction", correct: false },
+    { text: "Autorisé si le volume est réglé faible", correct: false },
   ], "Le port d'écouteurs dans les deux oreilles est spécifiquement interdit au volant, contrairement au kit mains libres classique."),
   q("conducteur", "Un jeune conducteur doit apposer un disque « A » à l'arrière de son véhicule pendant :", [
     { text: "Toute la période probatoire suivant l'obtention du permis", correct: true },
     { text: "Uniquement le premier mois", correct: false },
+    { text: "Uniquement lors du passage de l'examen du permis", correct: false },
   ], "Le disque A doit rester visible pendant toute la durée de la période probatoire, sous peine de sanction."),
 
   // Autres usagers
   q("usagers", "Face à un cortège cycliste organisé et encadré (course, randonnée officielle), vous devez :", [
     { text: "Respecter les indications des signaleurs et ne pas couper le groupe", correct: true },
     { text: "Vous insérer normalement dans le groupe si un espace se présente", correct: false },
+    { text: "Vous insérer si le groupe roule lentement", correct: false },
   ], "Les cortèges cyclistes encadrés bénéficient d'une organisation spécifique qu'il ne faut pas perturber."),
   q("usagers", "Les conducteurs de quads ou de véhicules tout-terrain sur route ouverte doivent :", [
     { text: "Respecter les mêmes règles de circulation que les autres usagers motorisés", correct: true },
     { text: "N'ont aucune règle spécifique à respecter sur route ouverte", correct: false },
+    { text: "Sont dispensés du code de la route hors agglomération", correct: false },
   ], "Dès lors qu'ils circulent sur une voie ouverte à la circulation publique, ces véhicules sont soumis au code de la route."),
 
   // Premiers secours
   q("secours", "Un témoin d'accident non formé aux premiers secours doit avant tout :", [
     { text: "Sécuriser les lieux et alerter les secours, même sans compétence médicale", correct: true },
     { text: "S'abstenir totalement d'intervenir par peur de mal faire", correct: false },
+    { text: "Pratiquer un massage cardiaque même sans aucune formation", correct: false },
   ], "Protéger et alerter ne nécessitent aucune compétence médicale particulière et restent à la portée de tout témoin."),
   q("secours", "La trousse de premiers secours dans un véhicule, bien que non obligatoire en France, permet de :", [
     { text: "Disposer de matériel de base en cas de petit incident avant l'arrivée des secours", correct: true },
     { text: "Remplacer entièrement l'intervention des services de secours", correct: false },
+    { text: "Est en réalité obligatoire dans tout véhicule en France", correct: false },
   ], "Une trousse de secours reste un complément utile, jamais un substitut aux services de secours professionnels."),
 
   // Mécanique
   q("mecanique", "La date de fabrication d'un pneu, indiquée par un code à 4 chiffres sur le flanc, permet de connaître :", [
     { text: "Son ancienneté, un pneu trop vieux perdant en performance même peu usé", correct: true },
     { text: "Uniquement le pays de fabrication", correct: false },
+    { text: "Le nombre de kilomètres déjà parcourus", correct: false },
   ], "Un pneu vieillit chimiquement même sans usure visible ; ce code permet de vérifier son âge réel."),
   q("mecanique", "Le voyant de température moteur allumé en rouge impose de :", [
     { text: "S'arrêter dès que possible en sécurité pour éviter une casse moteur", correct: true },
     { text: "Continuer à rouler jusqu'à destination", correct: false },
+    { text: "Ouvrir le capot en roulant pour refroidir le moteur", correct: false },
   ], "Poursuivre la route avec une surchauffe moteur avérée risque d'endommager gravement et durablement le moteur."),
 
   // Environnement
   q("environnement", "Le vieillissement des pneus mal entretenus augmente :", [
     { text: "La résistance au roulement et donc la consommation de carburant", correct: true },
     { text: "N'a aucun effet sur la consommation", correct: false },
+    { text: "Réduit la consommation en diminuant le poids du pneu", correct: false },
   ], "Des pneus en mauvais état augmentent les frottements, ce qui accroît la consommation de carburant."),
 
   // Sécurité & chargement
   q("securite", "Un chargement dépassant sur les côtés du véhicule doit respecter :", [
-    { text: "Une largeur maximale réglementée et une signalisation adaptée si nécessaire", correct: true },
+    { text: "Une largeur maximale réglementée", correct: true },
+    { text: "Une signalisation adaptée si le dépassement est important", correct: true },
     { text: "Aucune limite particulière tant que cela tient", correct: false },
-  ], "La largeur d'un chargement est encadrée réglementairement pour ne pas mettre en danger les autres usagers."),
+    { text: "Une autorisation préalable systématique de la mairie", correct: false },
+  ], "La largeur d'un chargement est encadrée réglementairement, avec une signalisation à prévoir au-delà d'un certain dépassement, pour ne pas mettre en danger les autres usagers."),
 
   // Divers
   q("divers", "Un contrôle technique non valide (expiré) expose le conducteur à :", [
     { text: "Une amende et une obligation de régularisation sous délai", correct: true },
     { text: "Aucune conséquence tant que le véhicule roule normalement", correct: false },
+    { text: "Aucune sanction si le véhicule parcourt moins de 500 km par an", correct: false },
   ], "Circuler avec un contrôle technique expiré constitue une infraction sanctionnée, même en l'absence d'incident."),
   q("divers", "Le franchissement d'une ligne blanche continue pour dépasser est :", [
     { text: "Interdit, cette ligne signale l'absence de visibilité suffisante pour dépasser en sécurité", correct: true },
     { text: "Autorisé si aucun véhicule n'arrive en face", correct: false },
+    { text: "Autorisé la nuit uniquement", correct: false },
   ], "La ligne continue matérialise une zone où le dépassement est jugé dangereux, indépendamment du trafic observé au moment du dépassement."),
   q("divers", "Une aire de covoiturage signalée en bord de route permet de :", [
     { text: "Stationner gratuitement pour organiser un trajet partagé", correct: true },
     { text: "Faire le plein de carburant", correct: false },
+    { text: "Stationner uniquement les véhicules électriques", correct: false },
   ], "Ces aires sont aménagées spécifiquement pour faciliter les rendez-vous de covoiturage en toute sécurité."),
 
   /* ===== VAGUE 7 ===== */
@@ -1419,112 +1519,135 @@ export const QUESTIONS = [
   q("signalisation", "Vous apercevez un panneau STOP fortement dégradé mais encore identifiable. Vous devez :", [
     { text: "Vous arrêter malgré la dégradation, le panneau reste réglementaire", correct: true },
     { text: "L'ignorer car il n'est plus dans un état correct", correct: false },
+    { text: "Ralentir seulement, l'arrêt n'étant plus obligatoire", correct: false },
   ], "L'état visuel d'un panneau n'annule pas son caractère obligatoire tant qu'il reste identifiable.", { image: WM("AB4") }),
   q("signalisation", "Le panneau cédez-le-passage est parfois complété d'un marquage au sol triangulaire. Ce marquage :", [
     { text: "Renforce et rappelle la même obligation que le panneau", correct: true },
     { text: "Remplace une signalisation différente", correct: false },
+    { text: "Indique une zone de stationnement autorisé", correct: false },
   ], "Le triangle peint au sol est le pendant du panneau cédez-le-passage, renforçant sa visibilité pour l'automobiliste.", { image: WM("AB3a") }),
   q("signalisation", "Face à un panneau de danger annonçant des travaux, la prudence recommandée inclut :", [
     { text: "De réduire sa vitesse et d'être attentif à la présence éventuelle d'ouvriers", correct: true },
     { text: "De klaxonner pour signaler son passage", correct: false },
+    { text: "D'accélérer pour traverser rapidement la zone", correct: false },
   ], "Les zones de travaux exigent une vigilance accrue pour la sécurité du personnel et des autres usagers.", { image: WM("A4") }),
   q("signalisation", "Un panneau annonçant un carrefour peut être positionné à une distance variable selon :", [
     { text: "La vitesse habituelle pratiquée sur la portion de route concernée", correct: true },
     { text: "Une distance fixe unique en toute circonstance", correct: false },
+    { text: "La taille de la commune traversée", correct: false },
   ], "La distance d'implantation d'un panneau tient compte de la vitesse pratiquée pour garantir un temps d'anticipation suffisant.", { image: WM("A14") }),
 
   // Priorités
   q("priorites", "Un véhicule effectuant un demi-tour au milieu d'une route doit céder le passage :", [
     { text: "À l'ensemble de la circulation, dans les deux sens", correct: true },
     { text: "Uniquement au sens de circulation qu'il vient de quitter", correct: false },
+    { text: "À personne s'il a mis son clignotant à temps", correct: false },
   ], "Le demi-tour est une manœuvre non prioritaire imposant de céder le passage à tous les usagers concernés."),
   q("priorites", "Vous circulez sur une route et un panneau « voie prioritaire » cesse brusquement sans panneau de fin explicite mais avec un carrefour classique qui suit. Vous devez :", [
     { text: "Redoubler de prudence, la priorité peut ne plus s'appliquer selon la configuration réelle du carrefour suivant", correct: true },
     { text: "Continuer à vous croire prioritaire indéfiniment", correct: false },
+    { text: "Vous arrêter systématiquement par précaution", correct: false },
   ], "Face à une ambiguïté de signalisation, la prudence impose de vérifier la configuration réelle plutôt que de présumer une priorité."),
   q("priorites", "Sur une place partagée entre piétons, cyclistes et véhicules (voie mixte), la priorité générale va :", [
     { text: "Aux usagers les plus vulnérables, notamment les piétons", correct: true },
     { text: "Toujours aux véhicules motorisés", correct: false },
+    { text: "Toujours au véhicule le plus rapide", correct: false },
   ], "Dans les espaces partagés à faible vitesse, la hiérarchie de prudence favorise systématiquement les usagers les plus vulnérables."),
 
   // Vitesse & distances
   q("vitesse", "Le respect de la vitesse limite en agglomération réduit particulièrement le risque pour :", [
     { text: "Les piétons et cyclistes, plus vulnérables lors d'un choc à vitesse élevée", correct: true },
     { text: "Uniquement les autres automobilistes", correct: false },
+    { text: "Uniquement les conducteurs eux-mêmes", correct: false },
   ], "À 50 km/h, les conséquences d'un choc avec un piéton sont nettement plus graves qu'à 30 km/h, d'où l'importance du respect des limites en ville."),
   q("vitesse", "Aborder un virage à vitesse excessive augmente le risque de :", [
     { text: "Sortie de route par force centrifuge dépassant l'adhérence disponible", correct: true },
     { text: "Aucun risque particulier si le véhicule est récent", correct: false },
+    { text: "Simple inconfort pour les passagers, sans autre danger", correct: false },
   ], "Une vitesse excessive en virage peut dépasser la capacité d'adhérence des pneus, provoquant une perte de contrôle."),
   q("vitesse", "La distance de sécurité recommandée sur autoroute à 130 km/h est d'environ :", [
     { text: "70 mètres minimum (règle des 2 secondes)", correct: true },
     { text: "10 mètres", correct: false },
+    { text: "150 mètres, jamais moins", correct: false },
   ], "À 130 km/h, respecter deux secondes d'intervalle correspond à environ 70 mètres de distance avec le véhicule qui précède."),
 
   // Le conducteur
   q("conducteur", "Un conducteur ayant consommé de l'alcool la veille au soir peut encore être positif au contrôle le lendemain matin car :", [
     { text: "L'élimination de l'alcool dans le sang prend plusieurs heures selon la quantité consommée", correct: true },
     { text: "L'alcool est toujours totalement éliminé après une nuit de sommeil", correct: false },
+    { text: "Le contrôle du matin ne mesure jamais l'alcool de la veille", correct: false },
   ], "Le temps d'élimination de l'alcool dépend de la quantité ingérée et peut dépasser une nuit complète de sommeil."),
   q("conducteur", "La verbalisation pour usage du téléphone au volant entraîne :", [
     { text: "Une amende forfaitaire et un retrait de 3 points", correct: true },
     { text: "Un simple rappel à l'ordre sans sanction", correct: false },
+    { text: "Une amende uniquement, sans retrait de points", correct: false },
   ], "L'usage tenu en main du téléphone est sanctionné par une amende forfaitaire et un retrait de points significatif."),
 
   // Autres usagers
   q("usagers", "Un piéton portant un brassard ou un gilet orange peut être :", [
     { text: "Une personne déficiente auditive ou visuelle nécessitant une vigilance accrue", correct: true },
     { text: "Un signe sans signification particulière", correct: false },
+    { text: "Un agent de la circulation en tenue non officielle", correct: false },
   ], "Certains équipements distinctifs signalent des usagers en situation de handicap nécessitant une attention particulière."),
   q("usagers", "Face à un troupeau conduit sur la route par un berger, vous devez :", [
     { text: "Ralentir fortement et attendre les indications du conducteur du troupeau", correct: true },
     { text: "Klaxonner pour disperser les animaux et passer rapidement", correct: false },
+    { text: "Doubler le troupeau dès qu'un espace se présente", correct: false },
   ], "Le passage d'un troupeau impose patience et prudence, en suivant les indications de son conducteur."),
 
   // Premiers secours
   q("secours", "Face à une crise convulsive (épilepsie) d'une victime, il faut avant tout :", [
     { text: "Écarter les objets dangereux autour d'elle sans la contenir de force", correct: true },
     { text: "La maintenir fermement immobile pour arrêter les convulsions", correct: false },
-  ], "Il ne faut jamais contenir de force une personne en crise convulsive ; il suffit d'écarter les dangers environnants."),
+    { text: "Lui mettre un objet dans la bouche pour éviter qu'elle ne se morde", correct: false },
+  ], "Il ne faut jamais contenir de force une personne en crise convulsive ni rien introduire dans sa bouche ; il suffit d'écarter les dangers environnants."),
   q("secours", "La position d'attente recommandée pour une victime consciente en difficulté respiratoire est :", [
     { text: "Semi-assise, si son état le permet", correct: true },
     { text: "Allongée à plat ventre", correct: false },
+    { text: "Debout, pour faciliter la respiration", correct: false },
   ], "La position semi-assise facilite la respiration d'une victime consciente présentant une gêne respiratoire."),
 
   // Mécanique
   q("mecanique", "Le niveau de liquide de refroidissement doit être vérifié :", [
     { text: "Moteur froid, pour une lecture fiable du niveau", correct: true },
     { text: "Toujours moteur chaud et sous pression", correct: false },
+    { text: "Indifféremment, cela n'a pas d'importance", correct: false },
   ], "Vérifier le niveau moteur froid évite les risques de brûlure et donne une mesure fiable, le liquide se dilatant à chaud."),
   q("mecanique", "Un embrayage qui patine (glisse) sans transmettre correctement la puissance est le signe :", [
     { text: "D'une usure du disque d'embrayage à faire contrôler", correct: true },
     { text: "D'un simple réglage esthétique sans urgence", correct: false },
+    { text: "D'un problème exclusivement lié aux pneus", correct: false },
   ], "Le patinage de l'embrayage traduit une usure mécanique qui, non traitée, peut immobiliser le véhicule."),
 
   // Environnement
   q("environnement", "Le covoiturage régulier domicile-travail permet également de :", [
     { text: "Réduire la congestion routière en heure de pointe", correct: true },
     { text: "N'a aucun effet sur le trafic", correct: false },
+    { text: "Augmenter le nombre de véhicules en circulation", correct: false },
   ], "Moins de véhicules en circulation aux heures de pointe réduit mécaniquement les phénomènes de congestion."),
 
   // Sécurité & chargement
   q("securite", "La visibilité arrière peut être réduite par un chargement volumineux. Dans ce cas, il faut :", [
     { text: "S'assurer d'une visibilité suffisante via les rétroviseurs latéraux ou une caméra de recul", correct: true },
     { text: "Considérer que cela n'a pas d'incidence sur la conduite", correct: false },
+    { text: "Rouler uniquement de jour pour compenser", correct: false },
   ], "Un chargement masquant la vue arrière impose de renforcer la vigilance via d'autres moyens de contrôle visuel."),
 
   // Divers
   q("divers", "Le stationnement sur un trottoir, même partiellement, est :", [
     { text: "Interdit et considéré comme gênant pour les piétons", correct: true },
     { text: "Toléré si une partie du trottoir reste libre", correct: false },
+    { text: "Autorisé la nuit uniquement", correct: false },
   ], "Le stationnement sur trottoir est une infraction, car il entrave la circulation normale des piétons, y compris partiellement."),
   q("divers", "L'usage abusif de l'avertisseur sonore (klaxon) en ville, hors danger immédiat, est :", [
     { text: "Interdit et sanctionnable", correct: true },
     { text: "Toléré pour exprimer son impatience", correct: false },
+    { text: "Autorisé si cela dure moins de 2 secondes", correct: false },
   ], "Le klaxon est réservé à la prévention d'un danger, pas à l'expression d'une impatience ou d'une frustration."),
   q("divers", "Une carte grise au nom de plusieurs cotitulaires implique que :", [
     { text: "Chacun d'eux est responsable solidairement du véhicule", correct: true },
     { text: "Seul le premier nom mentionné est responsable", correct: false },
+    { text: "Aucun d'eux n'est individuellement responsable", correct: false },
   ], "La cotitularité engage la responsabilité de chaque titulaire mentionné sur le certificat d'immatriculation."),
 
   /* ===== VAGUE 8 ===== */
@@ -1533,104 +1656,125 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau STOP placé juste avant une voie ferrée sans barrière impose un arrêt :", [
     { text: "Obligatoire avant de traverser la voie, en vérifiant qu'aucun train n'approche", correct: true },
     { text: "Facultatif si aucun train n'est visible", correct: false },
+    { text: "Uniquement si un feu clignotant est également allumé", correct: false },
   ], "L'arrêt au STOP reste obligatoire et permet de vérifier l'absence de danger avant de traverser une voie non protégée.", { image: WM("AB4") }),
   q("signalisation", "Le panneau cédez-le-passage, contrairement au STOP, permet de :", [
     { text: "Franchir le carrefour sans arrêt total si la voie est manifestement libre", correct: true },
     { text: "Ne jamais s'arrêter, même si un véhicule arrive", correct: false },
+    { text: "S'arrêter uniquement de nuit", correct: false },
   ], "La différence fondamentale entre les deux panneaux réside dans l'obligation ou non d'un arrêt total, indépendamment du trafic observé.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de danger représentant une silhouette d'animal sauvage signale un risque de :", [
     { text: "Traversée d'animaux sur la chaussée", correct: true },
     { text: "Présence d'un refuge animalier à proximité", correct: false },
+    { text: "Zone de chasse autorisée", correct: false },
   ], "Ce panneau prévient d'un risque de collision avec la faune sauvage, fréquent en zone boisée ou rurale.", { image: WM("A4") }),
 
   // Priorités
   q("priorites", "Vous arrivez à un carrefour où la signalisation semble contradictoire (panneau prioritaire mais marquage effacé suggérant une priorité à droite). Vous devez :", [
     { text: "Redoubler de prudence et vous comporter comme si vous n'étiez pas prioritaire", correct: true },
     { text: "Vous fier uniquement au panneau sans ralentir", correct: false },
+    { text: "Vous arrêter complètement par principe", correct: false },
   ], "En cas de doute sur la signalisation réelle, la prudence impose de ralentir et de vérifier avant de s'engager."),
   q("priorites", "Sur une route à sens unique élargie temporairement pour des travaux, la priorité de circulation est déterminée par :", [
     { text: "La signalisation temporaire mise en place par le gestionnaire de voirie", correct: true },
     { text: "L'ordre d'arrivée des véhicules uniquement", correct: false },
+    { text: "La taille respective des véhicules concernés", correct: false },
   ], "Toute configuration temporaire de circulation est encadrée par une signalisation dédiée qui prime sur les règles habituelles."),
   q("priorites", "Face à deux véhicules arrivant simultanément à un carrefour où l'un vient de face et tourne à droite, l'autre venant de la droite continuant tout droit :", [
     { text: "C'est le véhicule venant de la droite qui est prioritaire, sauf signalisation contraire", correct: true },
     { text: "C'est toujours celui qui tourne qui passe en premier", correct: false },
+    { text: "C'est celui qui roule le plus vite qui passe en premier", correct: false },
   ], "En l'absence de signalisation, la priorité à droite prévaut sur les autres configurations de mouvement."),
 
   // Vitesse & distances
   q("vitesse", "Un dépassement sur route à double sens nécessite une distance de visibilité suffisante pour :", [
     { text: "Terminer la manœuvre avant qu'un véhicule en face n'arrive à votre hauteur", correct: true },
     { text: "Seulement dépasser la moitié du véhicule visé", correct: false },
+    { text: "Doubler en quelques secondes, sans autre condition", correct: false },
   ], "Le dépassement doit être anticipé avec une marge de sécurité suffisante pour se rabattre bien avant tout véhicule venant en face."),
   q("vitesse", "La conduite en peloton (groupe rapproché de véhicules à vitesse élevée) présente un risque accru car :", [
     { text: "Elle réduit la marge de manœuvre en cas de freinage d'urgence du premier véhicule", correct: true },
     { text: "Elle améliore l'aérodynamisme du groupe sans risque", correct: false },
+    { text: "Elle est interdite en toutes circonstances sur route ouverte", correct: false },
   ], "Rouler en groupe rapproché amplifie le risque de carambolage en cas de freinage brusque du véhicule de tête."),
   q("vitesse", "Une vitesse excessive en sortie d'autoroute (bretelle de sortie) augmente le risque de :", [
     { text: "Sortie de route dans le virage souvent plus serré que la voie principale", correct: true },
     { text: "Aucun risque particulier, les bretelles étant conçues pour la vitesse autoroutière", correct: false },
+    { text: "Uniquement une usure accélérée des pneus", correct: false },
   ], "Les bretelles de sortie ont des rayons de courbure plus serrés nécessitant une réduction de vitesse anticipée."),
 
   // Le conducteur
   q("conducteur", "Un employeur peut-il être tenu responsable si un salarié provoque un accident en téléphonant au volant pour le travail ?", [
     { text: "Oui, sa responsabilité peut être engagée en plus de celle du salarié", correct: true },
     { text: "Non, seul le salarié est responsable dans tous les cas", correct: false },
+    { text: "Non, sauf si l'employeur conduisait lui-même le véhicule", correct: false },
   ], "L'employeur qui impose ou tolère l'usage du téléphone au volant dans un cadre professionnel peut voir sa responsabilité engagée."),
   q("conducteur", "Une consommation excessive de caféine avant un long trajet pour lutter contre la fatigue :", [
     { text: "Peut retarder les signes de fatigue mais ne remplace jamais une vraie pause ou du sommeil", correct: true },
     { text: "Élimine totalement le risque de somnolence au volant", correct: false },
+    { text: "N'a strictement aucun effet sur la vigilance", correct: false },
   ], "Aucune substance stimulante ne remplace le repos réel ; l'effet est temporaire et limité."),
 
   // Autres usagers
   q("usagers", "Un livreur à vélo-cargo circulant en ville doit respecter :", [
     { text: "Les mêmes règles de circulation que tout cycliste, malgré le gabarit plus large de son véhicule", correct: true },
     { text: "Aucune règle particulière liée à son activité professionnelle", correct: false },
+    { text: "Les règles applicables aux véhicules utilitaires motorisés", correct: false },
   ], "Le statut professionnel n'exempte pas un cycliste, même équipé d'un vélo-cargo, du respect du code de la route."),
   q("usagers", "Face à des piétons traversant en dehors des clous mais sur une route calme et peu fréquentée, vous devez :", [
     { text: "Rester prudent et prêt à céder le passage malgré l'absence d'obligation stricte", correct: true },
     { text: "Ne montrer aucune prudence particulière puisqu'ils sont en tort", correct: false },
+    { text: "Accélérer pour les inciter à se dépêcher", correct: false },
   ], "Même en cas d'infraction du piéton, la prudence du conducteur reste de mise pour éviter tout accident."),
 
   // Premiers secours
   q("secours", "La position latérale de sécurité (PLS) vise principalement à :", [
     { text: "Éviter que la victime ne s'étouffe avec sa langue ou des vomissements", correct: true },
     { text: "Réchauffer la victime", correct: false },
+    { text: "Faciliter la prise de sa tension artérielle", correct: false },
   ], "La PLS dégage les voies respiratoires en position latérale, prévenant les risques d'obstruction chez une victime inconsciente qui respire."),
   q("secours", "Face à une victime consciente présentant une douleur thoracique intense, il faut :", [
     { text: "Alerter immédiatement les secours et la laisser en position confortable", correct: true },
     { text: "La faire marcher pour évaluer la gravité", correct: false },
+    { text: "Attendre de voir si la douleur passe avant d'alerter", correct: false },
   ], "Une douleur thoracique peut signaler une urgence cardiaque nécessitant une alerte rapide sans effort physique imposé à la victime."),
 
   // Mécanique
   q("mecanique", "Une fuite d'huile visible sous un véhicule stationné impose de :", [
     { text: "Faire vérifier le véhicule avant de reprendre la route sur un long trajet", correct: true },
     { text: "Ignorer ce signe s'il est minime", correct: false },
+    { text: "Rajouter simplement de l'huile sans chercher la cause", correct: false },
   ], "Une fuite, même minime, peut révéler un problème mécanique s'aggravant progressivement et affectant la sécurité."),
   q("mecanique", "L'éclairage arrière (feux stop) défaillant expose le conducteur à :", [
     { text: "Une sanction et un risque accru de collision par l'arrière", correct: true },
     { text: "Aucun risque particulier de jour", correct: false },
+    { text: "Un simple avertissement sans amende", correct: false },
   ], "Les feux stop informent les véhicules suiveurs d'un freinage ; leur absence augmente fortement le risque de collision arrière."),
 
   // Environnement
   q("environnement", "Le remplacement d'un vieux véhicule très polluant par un modèle récent peut ouvrir droit à :", [
     { text: "Des aides financières incitatives selon les dispositifs en vigueur", correct: true },
     { text: "Aucune aide n'existe en France pour ce type de démarche", correct: false },
+    { text: "Une aide réservée uniquement aux professionnels", correct: false },
   ], "Diverses aides (prime à la conversion notamment) existent pour encourager le renouvellement de véhicules polluants."),
 
   // Sécurité & chargement
   q("securite", "Un enfant assis à l'avant du véhicule avec un airbag actif nécessite :", [
     { text: "Une désactivation de l'airbag passager si un siège dos à la route est utilisé", correct: true },
     { text: "Aucune précaution particulière", correct: false },
+    { text: "Uniquement une ceinture supplémentaire", correct: false },
   ], "Un airbag qui se déclenche sur un siège dos à la route peut gravement blesser un enfant ; sa désactivation est alors indispensable."),
 
   // Divers
   q("divers", "Le défaut d'assurance d'un véhicule impliqué dans un accident expose son conducteur à :", [
     { text: "Des sanctions pénales et la prise en charge personnelle des dommages causés", correct: true },
     { text: "Aucune conséquence si l'accident est mineur", correct: false },
+    { text: "Une simple mise en demeure sans autre suite", correct: false },
   ], "Rouler sans assurance est un délit et prive le responsable de toute couverture pour les dommages qu'il cause à autrui."),
   q("divers", "Sur une route à caractère prioritaire traversant plusieurs petites intersections, la priorité :", [
     { text: "Reste acquise à chaque intersection tant que la signalisation le confirme", correct: true },
     { text: "Doit être renégociée à chaque carrefour selon le trafic", correct: false },
+    { text: "N'est valable qu'à la première intersection rencontrée", correct: false },
   ], "Une route classée prioritaire conserve ce statut sur toute sa longueur signalée, sans qu'il soit besoin de le revérifier à chaque croisement."),
 
   /* ===== VAGUE 9 ===== */
@@ -1639,390 +1783,437 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau STOP situé en sortie d'une aire de repos d'autoroute impose de :", [
     { text: "S'arrêter avant de se réinsérer sur la bretelle ou la voie principale", correct: true },
     { text: "Accélérer directement sans marquer d'arrêt", correct: false },
+    { text: "S'arrêter uniquement si un véhicule est visible sur l'autoroute", correct: false },
   ], "Cet arrêt permet de vérifier la circulation avant une réinsertion souvent à fort trafic et vitesse élevée.", { image: WM("AB4") }),
   q("signalisation", "Le panneau cédez-le-passage impose de céder la priorité même si :", [
     { text: "Le véhicule prioritaire roule à une vitesse excessive", correct: true },
     { text: "Il s'agit d'un panneau récemment installé", correct: false },
+    { text: "Le véhicule prioritaire est un deux-roues", correct: false },
   ], "L'obligation de céder le passage s'applique indépendamment du comportement du véhicule prioritaire.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de danger annonçant un fort dénivelé impose de :", [
     { text: "Adapter sa vitesse et anticiper l'usage du frein moteur en descente", correct: true },
     { text: "Accélérer pour prendre de l'élan avant la pente", correct: false },
+    { text: "Utiliser uniquement le frein à main en descente", correct: false },
   ], "Les fortes déclivités nécessitent une gestion anticipée de la vitesse pour éviter une surchauffe des freins.", { image: WM("A4") }),
 
   // Priorités
   q("priorites", "Un véhicule sortant d'un parking souterrain avec un signal sonore d'avertissement doit :", [
     { text: "Rester prudent, ce signal ne lui donne aucune priorité automatique sur la voie publique", correct: true },
     { text: "Considérer qu'il est prioritaire sur tous les usagers de la voie publique", correct: false },
+    { text: "S'arrêter définitivement en bordure de la sortie", correct: false },
   ], "Un signal sonore de sortie de parking avertit mais ne confère aucune priorité sur la circulation de la voie publique."),
   q("priorites", "Sur une chaussée à sens unique où un couloir de bus est temporairement ouvert aux vélos, un cycliste y circulant est :", [
     { text: "Dans son droit s'il respecte la signalisation autorisant cet usage", correct: true },
     { text: "Toujours en infraction sur un couloir de bus", correct: false },
+    { text: "Autorisé seulement en dehors des heures de service des bus", correct: false },
   ], "De nombreux couloirs de bus sont ouverts aux cyclistes selon une signalisation spécifique à respecter et vérifier."),
 
   // Vitesse & distances
   q("vitesse", "Une vitesse adaptée à la circulation dense en ville consiste à :", [
     { text: "Rouler au rythme du flux tout en respectant les distances de sécurité", correct: true },
     { text: "Toujours rouler à la vitesse maximale autorisée quel que soit le trafic", correct: false },
+    { text: "S'arrêter dès que le trafic ralentit un peu", correct: false },
   ], "En circulation dense, la vitesse doit s'adapter au flux réel, indépendamment de la limite maximale affichée."),
   q("vitesse", "Le non-respect des distances de sécurité en peloton de motards augmente le risque de :", [
     { text: "Collision en chaîne en cas de freinage soudain du premier motard", correct: true },
     { text: "Aucun risque particulier grâce à la maniabilité des motos", correct: false },
+    { text: "Uniquement un risque de bruit excessif", correct: false },
   ], "Même les deux-roues, malgré leur maniabilité, restent exposés à un risque de collision en chaîne sans distance suffisante."),
 
   // Le conducteur
   q("conducteur", "Le fait de conduire en étant sous traitement médical de longue durée impose de :", [
     { text: "Vérifier auprès de son médecin la compatibilité du traitement avec la conduite", correct: true },
     { text: "Continuer normalement sans vérification particulière", correct: false },
+    { text: "Arrêter systématiquement de conduire pendant toute la durée du traitement", correct: false },
   ], "Certains traitements chroniques peuvent affecter la vigilance ; un avis médical permet d'anticiper les précautions nécessaires."),
   q("conducteur", "Un conducteur peut-il perdre des points sans en être informé immédiatement ?", [
     { text: "Non, un retrait de points est notifié systématiquement par courrier officiel", correct: true },
     { text: "Oui, l'information peut rester confidentielle indéfiniment", correct: false },
+    { text: "Oui, mais seulement pour les infractions mineures", correct: false },
   ], "Tout retrait de points fait l'objet d'une notification officielle au titulaire du permis concerné."),
 
   // Autres usagers
   q("usagers", "Un piéton muni d'une poussette doit, pour traverser en sécurité, privilégier :", [
     { text: "Les passages protégés avec une bonne visibilité dans les deux sens", correct: true },
     { text: "N'importe quel point de la chaussée s'il est pressé", correct: false },
+    { text: "Le milieu de la chaussée pour être vu de loin", correct: false },
   ], "La présence d'une poussette réduit la mobilité du piéton, rendant essentiel le choix d'un point de traversée sécurisé."),
   q("usagers", "Face à un cycliste circulant sur la chaussée alors qu'une piste cyclable existe à proximité, vous devez :", [
     { text: "Le traiter comme n'importe quel usager de la route et le dépasser avec les distances réglementaires", correct: true },
     { text: "Le klaxonner pour l'inciter à rejoindre la piste cyclable", correct: false },
+    { text: "Le doubler sans respecter de distance particulière", correct: false },
   ], "L'usage de la piste cyclable n'est pas toujours obligatoire ; le cycliste reste un usager légitime de la chaussée à respecter."),
 
   // Premiers secours
   q("secours", "Un enfant victime d'un étouffement par corps étranger nécessite, chez le témoin formé, la pratique :", [
     { text: "De tapes dans le dos puis, si nécessaire, la méthode de Heimlich adaptée", correct: true },
     { text: "D'une réanimation cardio-pulmonaire immédiate sans autre geste", correct: false },
+    { text: "D'une tentative pour extraire le corps étranger avec les doigts, à l'aveugle", correct: false },
   ], "La désobstruction des voies aériennes suit un protocole spécifique avant d'envisager d'autres gestes de secours."),
   q("secours", "Après un choc à la tête, même léger, une victime doit être :", [
     { text: "Surveillée attentivement, certains symptômes pouvant apparaître différés", correct: true },
     { text: "Laissée sans surveillance si elle semble aller bien immédiatement", correct: false },
+    { text: "Incitée à faire du sport pour vérifier qu'elle va bien", correct: false },
   ], "Les traumatismes crâniens peuvent avoir des conséquences différées, justifiant une surveillance prolongée."),
 
   // Mécanique
   q("mecanique", "La courroie de distribution doit être remplacée selon un intervalle précis car :", [
     { text: "Sa rupture peut causer une casse moteur grave et coûteuse", correct: true },
     { text: "Elle n'a aucun impact sur le fonctionnement du moteur", correct: false },
+    { text: "Elle ne s'use jamais avec le temps", correct: false },
   ], "Le respect strict des intervalles de remplacement de la courroie de distribution évite une avarie moteur majeure."),
   q("mecanique", "Un rétroviseur cassé ou manquant sur un véhicule est :", [
     { text: "Un motif de contre-visite au contrôle technique et une source de danger", correct: true },
     { text: "Sans conséquence tant qu'il en reste au moins un", correct: false },
+    { text: "Uniquement un problème esthétique", correct: false },
   ], "Chaque rétroviseur réglementaire contribue à la visibilité globale du conducteur et doit être en bon état."),
 
   // Environnement
   q("environnement", "L'utilisation de la climatisation en permanence, même sans besoin réel, entraîne :", [
     { text: "Une surconsommation de carburant évitable", correct: true },
     { text: "Aucun impact sur la consommation", correct: false },
+    { text: "Une réduction de la consommation en refroidissant le moteur", correct: false },
   ], "La climatisation sollicite le moteur ; un usage raisonné limite son impact sur la consommation."),
 
   // Sécurité & chargement
   q("securite", "Le port de la ceinture par les passagers arrière protège également :", [
     { text: "Les occupants situés à l'avant, en cas de projection lors d'un choc", correct: true },
     { text: "Uniquement les passagers arrière eux-mêmes", correct: false },
+    { text: "Uniquement le conducteur, jamais les passagers avant", correct: false },
   ], "Un passager arrière non attaché peut être projeté vers l'avant lors d'un choc, blessant également les occupants avant."),
 
   // Divers
   q("divers", "Le défaut de signalisation d'un véhicule en panne sur la chaussée expose son conducteur à :", [
     { text: "Une sanction et un risque accru de suraccident", correct: true },
     { text: "Aucune conséquence si le véhicule est visible de loin", correct: false },
+    { text: "Une simple recommandation sans sanction", correct: false },
   ], "La signalisation d'un véhicule immobilisé (triangle, gilet, feux de détresse) est une obligation de sécurité essentielle."),
   q("divers", "Une place de stationnement réservée aux véhicules électriques avec borne de recharge est :", [
     { text: "Réservée à leur usage exclusif pendant la charge", correct: true },
     { text: "Ouverte à tout véhicule sans restriction", correct: false },
+    { text: "Réservée uniquement aux véhicules hybrides", correct: false },
   ], "Ces emplacements sont dédiés aux véhicules en cours de recharge, leur usage abusif pouvant être sanctionné."),
-
   /* ===== VAGUE 10 ===== */
 
   // Signalisation
   q("signalisation", "Face à un panneau STOP à l'intersection de deux routes de campagne peu fréquentées, l'arrêt :", [
     { text: "Reste obligatoire, la faible fréquentation ne change rien à la règle", correct: true },
     { text: "Peut être omis si aucune voiture n'est visible à des kilomètres", correct: false },
+    { text: "N'est requis qu'aux heures de pointe", correct: false },
   ], "La fréquentation d'une route n'a aucune incidence sur le caractère obligatoire de l'arrêt au STOP.", { image: WM("AB4") }),
   q("signalisation", "Un panneau cédez-le-passage à la sortie d'un giratoire signale que vous devez céder aux :", [
     { text: "Piétons et cyclistes engagés sur la traversée que vous coupez en sortant", correct: true },
     { text: "Véhicules restant sur l'anneau uniquement", correct: false },
+    { text: "Véhicules garés à proximité du giratoire", correct: false },
   ], "En sortie de giratoire, la priorité doit souvent être laissée aux piétons et cyclistes traversant la voie de sortie.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de danger « projection de gravillons » invite à :", [
     { text: "Réduire sa vitesse pour limiter les risques d'impact et de perte d'adhérence", correct: true },
     { text: "Accélérer pour quitter rapidement la zone à risque", correct: false },
+    { text: "Rouler au centre de la chaussée uniquement", correct: false },
   ], "Les zones récemment traitées en gravillons présentent un risque de projection et une adhérence réduite, nécessitant prudence.", { image: WM("A4") }),
 
   // Priorités
   q("priorites", "Un véhicule quittant une aire de stationnement en marche arrière pour rejoindre la chaussée doit :", [
     { text: "S'assurer qu'aucun usager n'est engagé avant de manœuvrer", correct: true },
     { text: "Klaxonner puis s'engager sans vérification supplémentaire", correct: false },
+    { text: "Manœuvrer rapidement pour limiter le temps d'exposition", correct: false },
   ], "Toute sortie de stationnement, notamment en marche arrière, impose une vérification complète de l'environnement avant de manœuvrer."),
   q("priorites", "Sur une portion de route où alternent successivement plusieurs cédez-le-passage rapprochés, il convient de :", [
     { text: "Traiter chaque panneau indépendamment, sans présumer de la situation suivante", correct: true },
     { text: "Ne respecter que le premier panneau rencontré", correct: false },
+    { text: "Ne respecter que le dernier panneau rencontré", correct: false },
   ], "Chaque signalisation rencontrée doit être respectée pour elle-même, indépendamment des panneaux précédents."),
 
   // Vitesse & distances
   q("vitesse", "La vitesse recommandée pour aborder un rond-point, même sans panneau de limitation spécifique, est :", [
     { text: "Réduite, afin de pouvoir céder le passage ou s'arrêter si nécessaire", correct: true },
     { text: "Identique à celle de la route qui y mène", correct: false },
+    { text: "Augmentée pour dégager rapidement le giratoire", correct: false },
   ], "La configuration d'un giratoire impose naturellement une réduction de vitesse pour la sécurité de tous les usagers."),
   q("vitesse", "Une distance de sécurité trop courte lors d'un freinage d'urgence du véhicule précédent peut entraîner :", [
     { text: "Une collision par l'arrière dont vous seriez responsable", correct: true },
     { text: "Aucune conséquence si votre véhicule est équipé de l'ABS", correct: false },
+    { text: "Une conséquence uniquement matérielle, jamais de responsabilité", correct: false },
   ], "L'ABS améliore le contrôle du freinage mais ne remplace jamais une distance de sécurité suffisante."),
 
   // Le conducteur
   q("conducteur", "Le fait de laisser un jeune conducteur en période probatoire consommer même une faible quantité d'alcool avant de conduire :", [
     { text: "L'expose à un risque de dépassement du seuil très bas autorisé (0,2 g/L)", correct: true },
     { text: "Ne présente aucun risque tant qu'il se sent en forme", correct: false },
+    { text: "N'est un problème qu'à partir d'un verre complet", correct: false },
   ], "Le seuil très bas imposé aux conducteurs novices peut être atteint avec une quantité d'alcool minime."),
   q("conducteur", "Consulter des notifications sur son téléphone posé sur le tableau de bord, même sans le tenir, en conduisant est :", [
     { text: "Risqué et potentiellement sanctionnable en cas de défaut de maîtrise du véhicule", correct: true },
     { text: "Totalement sans danger puisque le téléphone n'est pas tenu en main", correct: false },
+    { text: "Autorisé uniquement à l'arrêt à un feu rouge", correct: false },
   ], "La distraction visuelle et cognitive existe même sans manipulation physique du téléphone, et peut être retenue en cas d'incident."),
 
   // Autres usagers
   q("usagers", "Face à un utilisateur de fauteuil roulant électrique circulant sur la chaussée en l'absence de trottoir, vous devez :", [
     { text: "Le traiter avec la même prudence qu'un piéton vulnérable", correct: true },
     { text: "Le considérer comme un véhicule motorisé classique", correct: false },
+    { text: "Le dépasser sans distance particulière", correct: false },
   ], "Les fauteuils roulants, même motorisés, sont assimilés à des piétons nécessitant une attention particulière."),
   q("usagers", "Les livreurs à deux-roues motorisés pressés par le temps restent soumis :", [
     { text: "Aux mêmes règles de circulation que tout autre usager motorisé", correct: true },
     { text: "À des règles assouplies compte tenu de leur activité", correct: false },
+    { text: "À aucune règle en agglomération dense", correct: false },
   ], "Aucune activité professionnelle ne dispense du respect intégral du code de la route."),
 
   // Premiers secours
   q("secours", "Un témoin qui ne sait pas pratiquer un massage cardiaque peut néanmoins être guidé par :", [
     { text: "Le régulateur du SAMU au téléphone, qui peut donner des instructions en direct", correct: true },
     { text: "Personne, il doit s'abstenir totalement", correct: false },
+    { text: "Uniquement une application mobile spécialisée", correct: false },
   ], "Les services d'urgence peuvent guider un témoin non formé par téléphone pour effectuer les gestes essentiels."),
   q("secours", "Face à une victime consciente qui a très froid après un accident, il convient de :", [
     { text: "La couvrir pour limiter l'hypothermie en attendant les secours", correct: true },
     { text: "Ne rien faire, la température n'est pas une priorité", correct: false },
+    { text: "La faire bouger pour la réchauffer rapidement", correct: false },
   ], "Prévenir l'hypothermie fait partie des gestes de premiers secours de base, particulièrement après un choc."),
 
   // Mécanique
   q("mecanique", "Un jeu excessif détecté dans la direction d'un véhicule doit être :", [
     { text: "Signalé à un professionnel, il peut affecter la précision de conduite", correct: true },
     { text: "Ignoré s'il ne gêne pas au quotidien", correct: false },
+    { text: "Corrigé soi-même en serrant le volant plus fort", correct: false },
   ], "Un jeu anormal dans la direction peut compromettre la réactivité du véhicule, notamment en situation d'urgence."),
   q("mecanique", "L'entretien du système de climatisation (recharge de gaz, filtre) contribue à :", [
     { text: "Maintenir un habitacle sain et une visibilité optimale (désembuage efficace)", correct: true },
     { text: "N'a aucun lien avec la sécurité de conduite", correct: false },
+    { text: "Uniquement au confort thermique, jamais à la visibilité", correct: false },
   ], "Un système de climatisation défaillant peut nuire au désembuage rapide des vitres, affectant la visibilité."),
 
   // Environnement
   q("environnement", "Le choix d'un itinéraire évitant les zones très embouteillées permet de :", [
     { text: "Réduire le temps de trajet passé au ralenti, source de surconsommation", correct: true },
     { text: "N'a aucun effet sur la consommation globale", correct: false },
+    { text: "Augmenter la consommation en roulant plus longtemps", correct: false },
   ], "Les phases de ralenti et d'arrêt répété en embouteillage sont particulièrement consommatrices de carburant."),
 
   // Sécurité & chargement
   q("securite", "Un chien transporté en liberté dans l'habitacle, sans harnais ni cage, constitue un risque car :", [
     { text: "Il peut gêner les mouvements du conducteur ou devenir un projectile en cas de choc", correct: true },
     { text: "Il n'existe aucun risque tant que l'animal est calme", correct: false },
+    { text: "Le risque ne concerne que les gros chiens", correct: false },
   ], "Un animal libre dans l'habitacle peut se déplacer de façon imprévisible et représente un danger réel en cas de freinage ou choc."),
 
   // Divers
   q("divers", "Le stationnement prolongé sur une place de livraison, hors horaires de livraison, est :", [
     { text: "Considéré comme gênant et peut être sanctionné", correct: true },
     { text: "Toléré si aucun camion de livraison n'est présent", correct: false },
+    { text: "Autorisé le week-end uniquement", correct: false },
   ], "Les places de livraison sont réservées à leur usage spécifique, indépendamment de la présence effective d'un véhicule de livraison."),
   q("divers", "Un véhicule immatriculé à l'étranger circulant en France doit respecter :", [
     { text: "Le code de la route français comme tout autre usager", correct: true },
     { text: "Uniquement les règles de son pays d'origine", correct: false },
+    { text: "Un mélange des règles françaises et de son pays", correct: false },
   ], "Tout véhicule circulant sur le territoire français est soumis à la réglementation française, quelle que soit son immatriculation."),
-
   /* ===== VAGUE 11 ===== */
 
   // Signalisation
   q("signalisation", "Un panneau STOP à l'entrée d'un carrefour giratoire ancien, non conforme aux normes actuelles, reste :", [
     { text: "Applicable tant qu'il n'a pas été retiré ou remplacé officiellement", correct: true },
     { text: "Sans valeur s'il ne correspond plus aux normes récentes", correct: false },
+    { text: "Applicable seulement aux poids lourds", correct: false },
   ], "Un panneau reste juridiquement contraignant tant qu'il est en place, indépendamment de son ancienneté.", { image: WM("AB4") }),
   q("signalisation", "Face à un cédez-le-passage à la sortie d'une zone industrielle, la prudence s'impose particulièrement à cause :", [
     { text: "De la présence possible de poids lourds à la visibilité réduite", correct: true },
     { text: "De l'absence totale de trafic dans ce type de zone", correct: false },
+    { text: "De la présence exclusive de piétons", correct: false },
   ], "Les zones industrielles concentrent souvent un trafic de poids lourds nécessitant une vigilance accrue aux intersections.", { image: WM("AB3a") }),
   q("signalisation", "Un panneau de danger « feux tricolores » à l'approche d'un carrefour signifie que :", [
     { text: "Des feux de signalisation lumineuse réglementent prochainement la circulation", correct: true },
     { text: "Les feux sont en panne à cet endroit", correct: false },
+    { text: "Les feux ne fonctionnent que la nuit", correct: false },
   ], "Ce panneau prévient simplement de la présence prochaine d'une signalisation lumineuse, permettant l'anticipation.", { image: WM("A4") }),
 
   // Priorités
   q("priorites", "Sur une voie où un marquage au sol « cédez le passage » (triangle blanc) est peint sans panneau associé visible, vous devez :", [
     { text: "Respecter cette obligation malgré l'absence du panneau, le marquage ayant valeur réglementaire", correct: true },
     { text: "Ignorer le marquage en l'absence de panneau", correct: false },
+    { text: "Vous arrêter complètement par précaution", correct: false },
   ], "Le marquage au sol a la même valeur contraignante qu'un panneau, qu'il soit ou non doublé d'une signalisation verticale."),
   q("priorites", "Un cycliste effectuant un « tourne-à-droite » autorisé au feu rouge (panneau spécifique) doit néanmoins :", [
     { text: "Céder le passage aux piétons et aux véhicules prioritaires avant de s'engager", correct: true },
     { text: "S'engager sans vérification, l'autorisation suffisant", correct: false },
+    { text: "Attendre le feu vert malgré l'autorisation", correct: false },
   ], "L'autorisation de tourner au feu rouge pour les cyclistes reste conditionnée au respect de la priorité des autres usagers engagés."),
 
   // Vitesse & distances
   q("vitesse", "Une conduite à vitesse constante et modérée sur autoroute favorise :", [
     { text: "Une meilleure anticipation et une réduction de la fatigue au volant", correct: true },
     { text: "Une augmentation du risque d'endormissement", correct: false },
+    { text: "Une usure accélérée des pneus uniquement", correct: false },
   ], "Une vitesse stable et modérée permet une conduite plus sereine et moins fatigante sur de longs trajets."),
   q("vitesse", "Face à un ralentissement soudain en amont sur autoroute, la meilleure pratique est de :", [
     { text: "Activer ses feux de détresse brièvement pour avertir les véhicules suiveurs, puis freiner progressivement", correct: true },
     { text: "Freiner brutalement sans avertir les véhicules suiveurs", correct: false },
+    { text: "Changer de voie brusquement sans ralentir", correct: false },
   ], "Avertir les véhicules suiveurs d'un ralentissement soudain contribue à éviter les collisions en chaîne."),
 
   // Le conducteur
   q("conducteur", "Le fait de rouler avec des vitres teintées non conformes à la réglementation peut entraîner :", [
     { text: "Une contravention et l'obligation de mise en conformité du véhicule", correct: true },
     { text: "Aucune conséquence si les vitres ont été teintées en usine", correct: false },
+    { text: "Une simple recommandation sans sanction", correct: false },
   ], "La réglementation impose un seuil minimal de transparence pour les vitres avant, indépendamment de leur origine."),
   q("conducteur", "Un conducteur souffrant d'apnée du sommeil non traitée présente un risque accru de :", [
     { text: "Somnolence et d'endormissement au volant", correct: true },
     { text: "Aucun risque particulier tant qu'il se sent reposé", correct: false },
+    { text: "Excès de vitesse uniquement", correct: false },
   ], "L'apnée du sommeil non traitée altère fortement la qualité du repos, augmentant le risque de somnolence diurne au volant."),
 
   // Autres usagers
   q("usagers", "Face à un utilisateur de vélo cargo transportant des enfants, la prudence de dépassement doit être :", [
     { text: "Renforcée du fait du gabarit et de la charge transportée", correct: true },
     { text: "Identique à celle appliquée pour un vélo classique", correct: false },
+    { text: "Réduite car ce type de vélo roule plus lentement en sécurité", correct: false },
   ], "Un vélo cargo chargé a un comportement routier différent, nécessitant une marge de sécurité accrue lors du dépassement."),
   q("usagers", "Un motard filant entre les files de véhicules à l'arrêt (interfiles), là où c'est autorisé, doit :", [
     { text: "Rouler à vitesse modérée et rester vigilant aux changements de voie des autres véhicules", correct: true },
     { text: "Rouler aussi vite que possible pour limiter le temps d'exposition", correct: false },
+    { text: "Klaxonner en continu pour signaler sa présence", correct: false },
   ], "La circulation interfiles, même autorisée dans certains départements à titre expérimental, impose une vitesse mesurée et une grande vigilance."),
 
   // Premiers secours
   q("secours", "Une victime présentant une plaie avec un corps étranger planté (couteau, débris) doit être traitée en :", [
     { text: "Ne retirant jamais l'objet, pour éviter d'aggraver l'hémorragie", correct: true },
     { text: "Retirant immédiatement l'objet pour nettoyer la plaie", correct: false },
+    { text: "Retirant l'objet uniquement s'il est petit", correct: false },
   ], "Retirer un corps étranger planté peut déclencher ou aggraver une hémorragie ; il doit être laissé en place jusqu'à l'arrivée des secours."),
   q("secours", "Le message d'alerte au 15, 18 ou 112 doit préciser en priorité :", [
     { text: "La nature de l'événement et la localisation précise", correct: true },
     { text: "Uniquement le numéro de téléphone de l'appelant", correct: false },
+    { text: "Uniquement le nombre de véhicules impliqués", correct: false },
   ], "Nature et localisation sont les informations essentielles permettant un déclenchement rapide et adapté des secours."),
 
   // Mécanique
   q("mecanique", "Le contrôle de l'usure des plaquettes de frein doit être réalisé :", [
     { text: "Régulièrement, selon la périodicité recommandée par le constructeur", correct: true },
     { text: "Uniquement lorsqu'un bruit anormal apparaît", correct: false },
+    { text: "Seulement au moment du contrôle technique", correct: false },
   ], "Un contrôle préventif régulier permet d'anticiper l'usure avant qu'elle ne devienne dangereuse ou audible."),
   q("mecanique", "Une pédale de frein anormalement molle ou spongieuse peut indiquer :", [
     { text: "La présence d'air dans le circuit de freinage à faire purger", correct: true },
     { text: "Un simple réglage de confort du véhicule", correct: false },
-  ], "Une pédale spongieuse est un signal d'alerte fréquent lié à un défaut du circuit hydraulique de freinage."),
-
-  // Environnement
-  q("environnement", "Le remplacement des trajets courts en voiture par la marche ou le vélo contribue à :", [
-    { text: "Réduire les émissions polluantes sur les trajets où le moteur est le moins efficace (à froid)", correct: true },
-    { text: "N'a aucun impact particulier", correct: false },
-  ], "Les trajets courts sont souvent les plus polluants par kilomètre car le moteur n'atteint pas sa température optimale."),
-
-  // Sécurité & chargement
-  q("securite", "Le port du gilet réfléchissant est également recommandé pour :", [
-    { text: "Les cyclistes et piétons circulant de nuit hors agglomération", correct: true },
-    { text: "Uniquement les automobilistes en cas de panne", correct: false },
-  ], "La visibilité de nuit est un enjeu pour tous les usagers vulnérables, pas uniquement pour les automobilistes en panne."),
-
-  // Divers
-  q("divers", "Le non-respect d'une place de stationnement réservée aux personnes à mobilité réduite est sanctionné par :", [
-    { text: "Une amende majorée du fait de son caractère très gênant", correct: true },
-    { text: "Une amende identique à un stationnement gênant classique", correct: false },
-  ], "Ce type de stationnement abusif est classé parmi les infractions les plus lourdement sanctionnées en matière de gêne à la circulation."),
-  q("divers", "Un véhicule dont le certificat d'immatriculation mentionne un changement de motorisation non déclaré est en infraction car :", [
-    { text: "Toute modification substantielle du véhicule doit être déclarée et validée", correct: true },
-    { text: "Seules les modifications esthétiques doivent être déclarées", correct: false },
-  ], "Les modifications techniques majeures doivent être homologuées et mentionnées sur le certificat d'immatriculation."),
-
+    { text: "Un problème exclusivement lié aux pneus", correct: false },
+  ], "Une pédale spongieuse est un signal d'alerte fréquent lié à
   /* ===== VAGUE 12 ===== */
 
   // Signalisation
   q("signalisation", "Un panneau STOP implanté à une sortie d'usine sur une route départementale a la même valeur qu'un STOP :", [
     { text: "Sur n'importe quelle autre route publique, sans distinction", correct: true },
     { text: "Uniquement pendant les horaires d'ouverture de l'usine", correct: false },
+    { text: "Uniquement pour les véhicules de l'usine", correct: false },
   ], "La nature de la voie desservie n'affecte pas la portée réglementaire d'un panneau STOP correctement implanté.", { image: WM("AB4") }),
   q("signalisation", "Le panneau cédez-le-passage à une intersection avec une piste cyclable oblige le conducteur à :", [
     { text: "Céder le passage aux cyclistes engagés sur la piste qu'il traverse", correct: true },
     { text: "Ne céder qu'aux véhicules motorisés", correct: false },
+    { text: "Céder uniquement aux cyclistes portant un casque", correct: false },
   ], "Les cyclistes sur une piste protégée bénéficient de la même priorité que tout autre usager visé par le panneau.", { image: WM("AB3a") }),
   q("signalisation", "Face à un panneau de danger annonçant un « vent latéral », les véhicules les plus concernés sont :", [
     { text: "Les véhicules hauts (camping-cars, poids lourds, véhicules avec remorque)", correct: true },
     { text: "Uniquement les motos", correct: false },
+    { text: "Uniquement les voitures de sport", correct: false },
   ], "La prise au vent est plus importante pour les véhicules à grande surface latérale, nécessitant une vigilance accrue.", { image: WM("A4") }),
 
   // Priorités
   q("priorites", "Un véhicule circulant sur une route prioritaire qui bifurque légèrement à un carrefour reste prioritaire :", [
     { text: "Uniquement si la signalisation de priorité continue clairement dans la direction empruntée", correct: true },
     { text: "Quelle que soit la direction prise, automatiquement", correct: false },
+    { text: "Seulement s'il roule en ligne droite", correct: false },
   ], "Le statut prioritaire suit le tracé signalé de la route ; il ne s'applique pas automatiquement à toute direction prise au carrefour."),
   q("priorites", "Deux véhicules circulant en sens inverse veulent tous deux tourner à gauche au même carrefour. La prudence recommande de :", [
     { text: "Se croiser par l'arrière (petit rayon) sauf configuration locale contraire", correct: true },
     { text: "Se croiser systématiquement par l'avant", correct: false },
+    { text: "Klaxonner pour décider qui passe en premier", correct: false },
   ], "La règle habituelle du croisement par l'arrière limite les angles morts et facilite la visibilité mutuelle, sauf signalisation locale différente."),
 
   // Vitesse & distances
   q("vitesse", "La vitesse excessive est identifiée par les études comme un facteur impliqué dans environ :", [
     { text: "Un accident mortel sur trois en France", correct: true },
     { text: "Moins de 5% des accidents mortels", correct: false },
+    { text: "La quasi-totalité des accidents matériels uniquement", correct: false },
   ], "La vitesse reste l'une des toutes premières causes de mortalité routière en France selon les études officielles de sécurité routière."),
   q("vitesse", "Une distance de sécurité respectée permet également de réduire :", [
     { text: "Le stress et la fatigue liés à une conduite trop rapprochée", correct: true },
     { text: "Uniquement le risque d'amende", correct: false },
+    { text: "Uniquement la consommation de carburant", correct: false },
   ], "Rouler trop près du véhicule précédent génère une tension inutile, accentuant la fatigue sur les longs trajets."),
 
   // Le conducteur
   q("conducteur", "Le permis moto A2 est limité en puissance et s'obtient généralement :", [
     { text: "Dès 18 ans, avec un accès progressif au permis A sans limitation après 2 ans", correct: true },
     { text: "Uniquement après 25 ans", correct: false },
+    { text: "Dès 16 ans sans aucune limitation", correct: false },
   ], "Le permis A2, accessible dès 18 ans, permet un accès progressif à la pleine puissance après deux ans d'expérience sans infraction grave."),
   q("conducteur", "La consommation d'énergisants en grande quantité avant un trajet peut entraîner :", [
     { text: "Une excitation suivie d'un contrecoup de fatigue dangereux au volant", correct: true },
     { text: "Une vigilance stable et durable sur tout le trajet", correct: false },
+    { text: "Une amélioration permanente des réflexes", correct: false },
   ], "Les effets stimulants de ces boissons sont temporaires et peuvent être suivis d'une baisse brutale de vigilance."),
 
   // Autres usagers
   q("usagers", "Face à un piéton hésitant au bord d'un passage protégé sans s'engager clairement, vous devez :", [
     { text: "Ralentir par précaution, son intention pouvant se confirmer brusquement", correct: true },
     { text: "Continuer sans ralentir tant qu'il n'a pas posé le pied sur la chaussée", correct: false },
+    { text: "Klaxonner pour connaître son intention", correct: false },
   ], "L'anticipation prudente reste de mise face à toute incertitude sur l'intention d'un piéton proche d'un passage protégé."),
   q("usagers", "Un motard positionné en feu de croisement dans votre rétroviseur peut être plus difficile à évaluer en distance car :", [
     { text: "Un seul phare rend l'estimation de la distance et de la vitesse plus complexe qu'avec deux feux", correct: true },
     { text: "Les motos n'ont qu'un seul feu réglementaire, sans incidence sur la perception", correct: false },
+    { text: "Les motards roulent toujours plus près que les voitures", correct: false },
   ], "La perception visuelle de distance est facilitée par deux points lumineux espacés ; un seul phare complique cette estimation."),
 
   // Premiers secours
   q("secours", "Face à un accident impliquant une matière dangereuse identifiée par un panneau orange sur le véhicule, vous devez :", [
     { text: "Vous tenir à distance et informer précisément les secours de cette information", correct: true },
     { text: "Vous approcher normalement comme pour tout accident", correct: false },
+    { text: "Ouvrir les fenêtres du véhicule concerné pour aérer", correct: false },
   ], "La présence de matières dangereuses impose une distance de sécurité accrue et une information immédiate des secours spécialisés."),
   q("secours", "Un témoin d'accident doit-il déplacer les véhicules accidentés avant l'arrivée des secours ?", [
     { text: "Seulement si leur position constitue un danger immédiat pour la circulation", correct: true },
     { text: "Systématiquement, pour dégager la voie au plus vite", correct: false },
+    { text: "Jamais, quelle que soit la situation", correct: false },
   ], "Le déplacement des véhicules ne se justifie qu'en cas de danger avéré, pour ne pas compromettre les constatations ultérieures."),
 
   // Mécanique
   q("mecanique", "Le remplacement périodique du filtre d'habitacle contribue à :", [
     { text: "Une meilleure qualité de l'air respiré et un désembuage plus efficace", correct: true },
     { text: "N'a aucun effet sur le confort de conduite", correct: false },
+    { text: "Une réduction de la consommation de carburant uniquement", correct: false },
   ], "Un filtre d'habitacle encrassé réduit la qualité de l'air filtré et peut ralentir le désembuage des vitres."),
   q("mecanique", "Un pneu présentant une hernie (déformation visible) sur le flanc doit être :", [
     { text: "Remplacé immédiatement, le risque d'éclatement étant élevé", correct: true },
     { text: "Simplement surveillé sans urgence particulière", correct: false },
+    { text: "Regonflé pour corriger la déformation", correct: false },
   ], "Une hernie traduit une rupture interne de la carcasse du pneu, avec un risque élevé d'éclatement soudain."),
 
   // Environnement
   q("environnement", "Un moteur qui tourne au ralenti pendant un arrêt prolongé en ville contribue à :", [
     { text: "Une pollution locale inutile, notamment pour les riverains proches", correct: true },
     { text: "Aucun impact notable sur la qualité de l'air locale", correct: false },
+    { text: "Une amélioration de la qualité de l'air alentour", correct: false },
   ], "Les émissions au ralenti, bien que faibles individuellement, s'accumulent et affectent la qualité de l'air en zone dense."),
 
   // Sécurité & chargement
   q("securite", "Une galerie de toit vide (sans chargement) mais installée en permanence sur le véhicule entraîne :", [
     { text: "Une légère surconsommation liée à la résistance aérodynamique supplémentaire", correct: true },
     { text: "Aucun effet notable sur la conduite ou la consommation", correct: false },
+    { text: "Une réduction de la consommation grâce à l'aérodynamisme", correct: false },
   ], "Toute augmentation de la prise au vent, même sans chargement, affecte légèrement la consommation de carburant."),
 
   // Divers
   q("divers", "Le stationnement payant non réglé (absence de ticket ou paiement) est sanctionné par :", [
     { text: "Un forfait post-stationnement (FPS) propre à chaque commune", correct: true },
     { text: "Un retrait de points automatique", correct: false },
+    { text: "Une convocation systématique au tribunal", correct: false },
   ], "Depuis la dépénalisation du stationnement payant, l'absence de paiement est sanctionnée par un forfait post-stationnement local, sans retrait de points."),
   q("divers", "Un conducteur non-résident verbalisé à l'étranger dans l'Union européenne peut voir la sanction :", [
     { text: "Transmise et exécutée dans son pays d'origine grâce à la coopération européenne", correct: true },
     { text: "Systématiquement annulée dès le retour dans son pays", correct: false },
+    { text: "Appliquée uniquement s'il revient dans le même pays", correct: false },
   ], "Des accords européens permettent l'échange d'informations et l'exécution transfrontalière de certaines sanctions routières."),
 
   /* ===== VAGUE 13 ===== */
@@ -2031,182 +2222,216 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau STOP couplé à un panonceau « toutes directions » impose l'arrêt :", [
     { text: "Quelle que soit la direction que vous comptez prendre ensuite", correct: true },
     { text: "Uniquement si vous continuez tout droit", correct: false },
+    { text: "Uniquement si vous tournez à gauche", correct: false },
   ], "Ce panonceau précise que l'obligation d'arrêt s'applique sans exception, peu importe la manœuvre prévue ensuite.", { image: WM("AB4") }),
   q("signalisation", "Le panneau cédez-le-passage reste valable même en cas de :", [
     { text: "Conditions météo dégradées réduisant la visibilité du carrefour", correct: true },
     { text: "Beau temps uniquement", correct: false },
+    { text: "Trafic très faible uniquement", correct: false },
   ], "L'obligation de céder le passage ne dépend d'aucune condition météorologique particulière.", { image: WM("AB3a") }),
 
   // Priorités
   q("priorites", "Sur une portion de route en travaux avec une seule voie de circulation gérée par un panneau B15 (cédez le passage au sens inverse), vous devez :", [
     { text: "Céder le passage aux véhicules venant en face lorsque le panneau l'indique", correct: true },
     { text: "Passer en premier systématiquement", correct: false },
+    { text: "Attendre l'accord d'un agent avant de vous engager", correct: false },
   ], "La signalisation de circulation alternée par panneaux B15/C18 détermine clairement qui doit céder le passage."),
   q("priorites", "Un motard doublant une file de voitures à l'arrêt (circulation interfiles) dans une zone où c'est autorisé doit céder le passage :", [
     { text: "À tout véhicule qui changerait subitement de voie", correct: true },
     { text: "À personne, il est prioritaire dans le couloir qu'il emprunte", correct: false },
+    { text: "Uniquement aux autres motards", correct: false },
   ], "La circulation interfiles impose une vigilance renforcée car les autres véhicules peuvent changer de voie sans anticiper sa présence."),
 
   // Vitesse & distances
   q("vitesse", "Un panneau de rappel de vitesse après une sortie d'autoroute confirme que :", [
     { text: "La limitation affichée doit être immédiatement respectée dès l'entrée sur cette voie", correct: true },
     { text: "Une tolérance de 500 mètres est accordée avant application", correct: false },
+    { text: "La limitation ne concerne que les poids lourds", correct: false },
   ], "Une limitation de vitesse s'applique dès le panneau, sans tolérance de distance pour s'y conformer."),
   q("vitesse", "La conduite à vitesse élevée par mauvaise visibilité (nuit, brouillard, pluie) augmente principalement le risque de :", [
     { text: "Ne pas pouvoir réagir à temps face à un obstacle détecté tardivement", correct: true },
     { text: "Aucun risque supplémentaire par rapport au jour", correct: false },
+    { text: "Uniquement une usure accélérée des essuie-glaces", correct: false },
   ], "La combinaison vitesse élevée et faible visibilité réduit fortement la marge de réaction disponible face à un danger soudain."),
 
   // Le conducteur
   q("conducteur", "Un conducteur ayant subi une suspension de permis pour excès de vitesse doit, à l'issue de la suspension :", [
     { text: "Récupérer son permis sans repasser l'examen si la suspension est simple (non liée à une invalidation)", correct: true },
     { text: "Toujours repasser l'intégralité de l'examen du permis", correct: false },
+    { text: "Attendre une décision judiciaire supplémentaire dans tous les cas", correct: false },
   ], "Une simple suspension, contrairement à une invalidation pour solde de points nul, ne nécessite pas de repasser l'examen."),
   q("conducteur", "Le stress chronique lié à la conduite (bouchons, retards) peut être atténué par :", [
     { text: "Une meilleure anticipation des trajets et une gestion du temps plus large", correct: true },
     { text: "Une conduite plus rapide pour compenser le retard", correct: false },
+    { text: "L'utilisation systématique du téléphone pour se distraire", correct: false },
   ], "Anticiper son trajet et prévoir une marge de temps réduit le stress, contrairement à une prise de risque par excès de vitesse."),
 
   // Autres usagers
   q("usagers", "Face à un cycliste hésitant à une intersection sans marquage clair, la meilleure attitude est de :", [
     { text: "Ralentir et lui laisser le temps de se positionner clairement", correct: true },
     { text: "Le doubler rapidement pour ne pas perdre de temps", correct: false },
+    { text: "Klaxonner pour accélérer sa décision", correct: false },
   ], "La prudence face à un usager vulnérable hésitant limite le risque de collision imprévue."),
   q("usagers", "Un piéton portant des écouteurs et absorbé par son téléphone en traversant présente un risque accru car :", [
     { text: "Sa vigilance à l'environnement sonore et visuel est réduite", correct: true },
     { text: "Cela n'a aucune incidence sur son comportement", correct: false },
+    { text: "Il devient automatiquement prioritaire", correct: false },
   ], "La distraction du piéton, comme celle du conducteur, augmente le risque d'accident et impose une prudence renforcée du conducteur."),
 
   // Premiers secours
   q("secours", "Face à une victime présentant une hémorragie de nez importante après un choc, il faut :", [
     { text: "La pencher légèrement en avant et comprimer la narine concernée", correct: true },
     { text: "La pencher en arrière pour éviter que le sang ne coule", correct: false },
+    { text: "L'allonger complètement à plat", correct: false },
   ], "Pencher la tête en arrière peut faire avaler le sang et masquer la gravité réelle du saignement ; la position penchée en avant est recommandée."),
   q("secours", "Un défibrillateur ne doit jamais être utilisé si la victime :", [
     { text: "Est consciente et respire normalement", correct: true },
     { text: "Est allongée sur une surface métallique", correct: false },
+    { text: "Porte des vêtements mouillés", correct: false },
   ], "Le défibrillateur est réservé aux arrêts cardiaques confirmés chez une victime inconsciente ne respirant pas normalement."),
 
   // Mécanique
   q("mecanique", "Le témoin de pression des pneus (TPMS) allumé au tableau de bord signale :", [
     { text: "Une pression anormale détectée sur au moins un pneu", correct: true },
     { text: "Un problème de freinage", correct: false },
+    { text: "Un problème de niveau d'huile", correct: false },
   ], "Ce témoin spécifique alerte sur un écart de pression détecté par le système de surveillance des pneumatiques."),
   q("mecanique", "L'entretien de la batterie (bornes propres, fixation correcte) prévient principalement :", [
     { text: "Les pannes de démarrage et les risques de court-circuit", correct: true },
     { text: "L'usure des pneus", correct: false },
+    { text: "La surconsommation de carburant", correct: false },
   ], "Une batterie mal entretenue est une cause fréquente de panne, avec un risque de court-circuit en cas de mauvaise fixation."),
 
   // Environnement
   q("environnement", "Le suivi de son éco-score ou de ses statistiques de consommation via un boîtier connecté permet de :", [
     { text: "Identifier ses habitudes de conduite à améliorer pour réduire son impact", correct: true },
     { text: "N'a aucune utilité pratique", correct: false },
+    { text: "Augmenter automatiquement les performances du moteur", correct: false },
   ], "Ces outils offrent un retour concret sur le style de conduite, facilitant les ajustements vers une conduite plus économique."),
 
   // Sécurité & chargement
   q("securite", "Le port de vêtements sombres sans élément réfléchissant pour un cycliste nocturne :", [
     { text: "Réduit fortement sa visibilité par les autres usagers", correct: true },
     { text: "N'a aucune incidence si l'éclairage du vélo est correct", correct: false },
+    { text: "Est compensé automatiquement par l'éclairage public", correct: false },
   ], "Même avec un éclairage réglementaire, des vêtements sombres réduisent la détection précoce du cycliste par les automobilistes."),
 
   // Divers
   q("divers", "Une amende forfaitaire non contestée et non payée dans les délais peut voir son montant :", [
     { text: "Majoré automatiquement après le délai de paiement initial", correct: true },
     { text: "Rester identique indéfiniment sans majoration", correct: false },
+    { text: "Réduit de moitié après un an", correct: false },
   ], "Le non-paiement dans les délais entraîne une majoration automatique du montant de l'amende forfaitaire."),
   q("divers", "Un jeune conducteur titulaire du permis depuis 2 ans souhaitant conduire un véhicule de location doit généralement :", [
     { text: "S'acquitter parfois d'une surprime ou de conditions spécifiques imposées par le loueur", correct: true },
     { text: "N'a jamais de condition différente d'un conducteur expérimenté", correct: false },
+    { text: "Se voir systématiquement refuser la location", correct: false },
   ], "De nombreux loueurs appliquent des conditions particulières (surprime, franchise) aux conducteurs les moins expérimentés."),
-
   /* ===== VAGUE 14 ===== */
 
   // Signalisation
   q("signalisation", "Un panneau STOP à la sortie d'un chantier temporaire mobile (camion de travaux) a la même valeur qu'un panneau fixe :", [
     { text: "Oui, la signalisation temporaire de chantier a pleine valeur réglementaire", correct: true },
     { text: "Non, elle n'a qu'une valeur indicative", correct: false },
+    { text: "Seulement si un agent est présent à proximité", correct: false },
   ], "Toute signalisation temporaire correctement mise en place par un gestionnaire habilité a la même force obligatoire qu'une signalisation permanente.", { image: WM("AB4") }),
   q("signalisation", "Un cédez-le-passage positionné à la jonction d'une voie verte (piste multi-usages) et d'une route impose de céder :", [
     { text: "Aux piétons, cyclistes et autres usagers non motorisés engagés sur la voie verte", correct: true },
     { text: "Uniquement aux véhicules motorisés éventuels", correct: false },
+    { text: "Uniquement aux enfants", correct: false },
   ], "Les voies vertes accueillent une diversité d'usagers non motorisés à qui la priorité doit être cédée selon la signalisation en place.", { image: WM("AB3a") }),
 
   // Priorités
   q("priorites", "À un carrefour où un panneau de priorité ponctuelle (triangle inversé jaune isolé) est visible sans continuité de signalisation, celui-ci s'applique :", [
     { text: "Uniquement à ce carrefour précis, sans effet sur les suivants", correct: true },
     { text: "À tous les carrefours suivants sur plusieurs kilomètres", correct: false },
+    { text: "À tout le département", correct: false },
   ], "Un panneau de priorité ponctuel ne concerne que le carrefour où il est implanté, sauf signalisation de continuité explicite."),
   q("priorites", "Sur une route où la priorité à droite s'applique, un vélo arrivant de la droite est traité :", [
     { text: "Exactement comme un véhicule motorisé pour l'application de cette règle", correct: true },
     { text: "Sans droit de priorité, réservé aux seuls véhicules motorisés", correct: false },
+    { text: "Avec une priorité systématiquement supérieure", correct: false },
   ], "Le code de la route ne fait pas de distinction de mode de transport pour l'application de la priorité à droite."),
 
   // Vitesse & distances
   q("vitesse", "Sur une portion de route où la limite passe de 90 à 70 km/h sans transition progressive signalée, vous devez :", [
     { text: "Ralentir avant le panneau pour être en conformité dès son franchissement", correct: true },
     { text: "Ralentir progressivement sur les 200 mètres suivant le panneau", correct: false },
+    { text: "Continuer à 90 km/h jusqu'au prochain panneau", correct: false },
   ], "La nouvelle limitation s'applique dès le panneau ; il faut donc avoir réduit sa vitesse avant de le franchir."),
   q("vitesse", "Un excès de vitesse constaté par un contrôle mobile embarqué (voiture radar) est traité :", [
     { text: "De la même façon qu'un radar fixe classique", correct: true },
     { text: "Avec une tolérance supplémentaire du fait du contrôle mobile", correct: false },
+    { text: "Uniquement par un simple avertissement", correct: false },
   ], "Le type de dispositif de contrôle (fixe ou mobile) n'affecte pas la nature de la sanction appliquée à l'excès constaté."),
 
   // Le conducteur
   q("conducteur", "Un conducteur qui a fait l'objet d'un retrait de 6 points ou plus en une seule fois reçoit :", [
     { text: "Une lettre l'informant du solde de points restant et l'invitant à la vigilance", correct: true },
     { text: "Aucune notification particulière", correct: false },
+    { text: "Une convocation immédiate au tribunal", correct: false },
   ], "Un retrait important de points fait systématiquement l'objet d'une notification officielle informant le conducteur de sa situation."),
   q("conducteur", "Les stages de récupération de points volontaires permettent de récupérer :", [
     { text: "Jusqu'à 4 points, dans la limite du plafond légal du permis", correct: true },
     { text: "La totalité des points perdus, sans limite", correct: false },
+    { text: "2 points maximum, une seule fois dans sa vie", correct: false },
   ], "Ces stages permettent une récupération plafonnée à 4 points, une fois par période de 12 mois généralement."),
 
   // Autres usagers
   q("usagers", "Un piéton en situation de handicap moteur utilisant un déambulateur pour traverser doit bénéficier de :", [
     { text: "Suffisamment de temps pour traverser en toute sécurité, sans précipitation imposée", correct: true },
     { text: "D'aucune attention particulière différente des autres piétons", correct: false },
+    { text: "D'un accompagnement obligatoire par un agent", correct: false },
   ], "La vulnérabilité et la lenteur de traversée de certains piétons imposent patience et anticipation de la part des conducteurs."),
   q("usagers", "Un cycliste circulant de nuit sans éclairage réglementaire est :", [
     { text: "En infraction et particulièrement difficile à détecter pour les autres usagers", correct: true },
     { text: "Toujours suffisamment visible grâce à l'éclairage public", correct: false },
+    { text: "Uniquement en tort si un accident survient", correct: false },
   ], "L'éclairage public seul ne garantit pas une visibilité suffisante ; l'éclairage propre au vélo reste une obligation réglementaire."),
 
   // Premiers secours
   q("secours", "Une victime en hypoglycémie sévère (perte de connaissance) chez un témoin non médical nécessite avant tout :", [
     { text: "Une alerte immédiate aux secours, sans tenter d'administrer quoi que ce soit par la bouche", correct: true },
     { text: "De lui donner immédiatement du sucre à avaler", correct: false },
+    { text: "De la faire marcher pour la réveiller", correct: false },
   ], "Chez une personne inconsciente, donner quelque chose à avaler comporte un risque d'étouffement ; l'alerte aux secours prime."),
   q("secours", "Après avoir sécurisé les lieux d'un accident, le geste suivant recommandé par la méthode PAS est :", [
     { text: "Alerter les secours avant tout autre geste envers les victimes", correct: true },
     { text: "Photographier la scène pour l'assurance", correct: false },
+    { text: "Déplacer les véhicules accidentés", correct: false },
   ], "La méthode PAS (Protéger, Alerter, Secourir) place l'alerte comme étape intermédiaire essentielle avant les gestes de secours eux-mêmes."),
 
   // Mécanique
   q("mecanique", "Un voyant orange « moteur » (check engine) allumé en continu, sans clignoter, invite à :", [
     { text: "Faire contrôler le véhicule prochainement sans urgence absolue", correct: true },
     { text: "Vous arrêter immédiatement sur la chaussée", correct: false },
+    { text: "Ignorer le voyant s'il disparaît après redémarrage", correct: false },
   ], "Un voyant moteur fixe signale une anomalie à vérifier rapidement, sans nécessiter un arrêt d'urgence contrairement à un voyant clignotant."),
   q("mecanique", "La vérification du niveau de liquide lave-glace avant un trajet contribue à :", [
     { text: "Maintenir une bonne visibilité en cas de projections sur le pare-brise", correct: true },
     { text: "N'a aucun rapport avec la sécurité de conduite", correct: false },
+    { text: "Réduire la consommation de carburant", correct: false },
   ], "Un pare-brise sale sans possibilité de le nettoyer en roulant peut fortement réduire la visibilité, notamment sur autoroute."),
 
   // Environnement
   q("environnement", "Le stationnement moteur coupé lors d'un chargement ou déchargement prolongé permet de :", [
     { text: "Limiter les émissions inutiles et le bruit en zone urbaine", correct: true },
     { text: "N'a aucun intérêt particulier", correct: false },
+    { text: "Endommager le moteur à chaque coupure", correct: false },
   ], "Couper le moteur lors des arrêts prolongés hors circulation réduit à la fois pollution et nuisance sonore pour les riverains."),
 
   // Sécurité & chargement
   q("securite", "Le port de la ceinture par le passager avant est particulièrement important car ce siège :", [
     { text: "Est statistiquement l'un des plus exposés en cas de choc frontal", correct: true },
     { text: "Est le siège le plus sûr du véhicule", correct: false },
+    { text: "N'est concerné que par les chocs latéraux", correct: false },
   ], "La place avant passager est très exposée lors d'un choc frontal, rendant le port de la ceinture essentiel à cet endroit."),
 
   // Divers
   q("divers", "Le défaut de vignette Crit'Air dans une zone qui l'exige peut entraîner :", [
     { text: "Une amende, même si le véhicule serait éligible à la vignette", correct: true },
     { text: "Aucune sanction tant que le véhicule n'est pas trop ancien", correct: false },
+    { text: "Une simple mise en fourrière immédiate", correct: false },
   ], "L'absence de vignette apposée est sanctionnable indépendamment de l'éligibilité réelle du véhicule à une catégorie favorable."),
 
   /* ===== VAGUE 15 ===== */
@@ -2215,88 +2440,105 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau STOP à l'intersection d'une voie privée ouverte à la circulation publique (centre commercial) :", [
     { text: "Doit être respecté comme sur toute voie publique dès lors qu'il est correctement implanté", correct: true },
     { text: "N'a aucune valeur réglementaire sur terrain privé ouvert au public", correct: false },
+    { text: "Ne s'applique qu'aux clients du centre commercial", correct: false },
   ], "Dès qu'une voie privée est ouverte à la circulation publique, la signalisation qui y est apposée doit être respectée.", { image: WM("AB4") }),
   q("signalisation", "Le cédez-le-passage à la sortie d'une station-service impose de céder aux :", [
     { text: "Usagers circulant sur la voie publique que vous rejoignez", correct: true },
     { text: "Autres véhicules également en sortie de station", correct: false },
+    { text: "Véhicules faisant le plein à cet instant", correct: false },
   ], "La priorité doit être cédée aux usagers déjà engagés sur la voie publique rejointe, indépendamment de leur provenance.", { image: WM("AB3a") }),
 
   // Priorités
   q("priorites", "Sur une place où un flux de circulation principal croise perpendiculairement une allée secondaire sans signalisation, le principe à appliquer reste :", [
     { text: "La priorité à droite, sauf configuration locale contraire clairement signalée", correct: true },
     { text: "La priorité systématique au flux principal", correct: false },
+    { text: "La priorité au véhicule le plus lourd", correct: false },
   ], "En l'absence de signalisation contraire explicite, la règle de la priorité à droite continue de s'appliquer par défaut."),
   q("priorites", "Un scooter et une voiture arrivent en même temps à un carrefour sans signalisation, le scooter venant de la gauche. La priorité va :", [
     { text: "À la voiture, venant de la droite du scooter", correct: true },
     { text: "Toujours au deux-roues quel que soit son sens d'arrivée", correct: false },
+    { text: "Au véhicule le plus rapide au moment du croisement", correct: false },
   ], "La priorité à droite s'applique sans distinction de catégorie de véhicule ; seule la position géographique compte."),
 
   // Vitesse & distances
   q("vitesse", "Une route classée à 3 voies avec voie centrale bidirectionnelle de dépassement impose une vitesse :", [
     { text: "Adaptée avec une vigilance renforcée, ce type de configuration étant accidentogène", correct: true },
     { text: "Identique aux autoroutes classiques sans précaution particulière", correct: false },
+    { text: "Réduite uniquement pour les poids lourds", correct: false },
   ], "Ces configurations à trois voies, où le sens de circulation de la voie centrale change, exigent une prudence particulière."),
   q("vitesse", "Rouler à vitesse excessive dans une zone commerçante dense multiplie le risque pour :", [
     { text: "Les piétons traversant de manière parfois imprévisible entre les véhicules stationnés", correct: true },
     { text: "Uniquement pour la carrosserie du véhicule", correct: false },
+    { text: "Uniquement pour la consommation de carburant", correct: false },
   ], "Les zones commerçantes concentrent de nombreux piétons dont les traversées peuvent être moins prévisibles, imposant une vitesse réduite."),
 
   // Le conducteur
   q("conducteur", "Le permis B96 permet de :", [
     { text: "Tracter une remorque plus lourde que la limite standard du permis B, après une formation courte", correct: true },
     { text: "Conduire des véhicules de transport en commun", correct: false },
+    { text: "Conduire des poids lourds sans autre condition", correct: false },
   ], "Le B96 est une extension du permis B obtenue après une formation pratique, sans passer un nouvel examen complet."),
   q("conducteur", "Le fait de conduire en tongs, bien que non explicitement interdit, peut être retenu en cas d'accident si :", [
     { text: "Cela a contribué à un défaut de maîtrise avéré du véhicule", correct: true },
     { text: "L'accident n'a aucun lien avec les chaussures portées", correct: false },
+    { text: "Le conducteur roulait pieds nus", correct: false },
   ], "Ce n'est pas la chaussure en elle-même qui est sanctionnée, mais son rôle éventuel dans un défaut de maîtrise constaté."),
 
   // Autres usagers
   q("usagers", "Face à un cycliste circulant en ligne (peloton organisé) sur une route ouverte, le dépassement doit :", [
     { text: "Respecter la distance latérale réglementaire pour chaque cycliste dépassé", correct: true },
     { text: "Peut se faire au plus près pour limiter le temps sur la voie opposée", correct: false },
+    { text: "Se faire uniquement en klaxonnant au préalable", correct: false },
   ], "Chaque cycliste dépassé, même en groupe, doit bénéficier de la distance latérale de sécurité réglementaire."),
   q("usagers", "Un piéton qui traverse alors que le petit bonhomme est rouge, sur un passage à feux, est :", [
     { text: "En infraction, même si le conducteur doit rester prudent", correct: true },
     { text: "Toujours dans son droit, le passage protégé primant sur les feux", correct: false },
+    { text: "Prioritaire s'il traverse en courant", correct: false },
   ], "Le respect de la signalisation lumineuse s'impose aussi aux piétons ; leur infraction ne dispense toutefois pas le conducteur de prudence."),
 
   // Premiers secours
   q("secours", "La surveillance des fonctions vitales (conscience, respiration) d'une victime en attendant les secours doit être :", [
     { text: "Continue, avec réévaluation régulière de son état", correct: true },
     { text: "Ponctuelle, une seule vérification suffisant", correct: false },
+    { text: "Inutile si la victime semble stable au premier examen", correct: false },
   ], "L'état d'une victime peut évoluer rapidement ; une surveillance continue permet de détecter toute dégradation."),
   q("secours", "Un témoin peut-il refuser de porter assistance à une personne en danger ?", [
     { text: "Non, la non-assistance à personne en danger est un délit pénalement sanctionné", correct: true },
     { text: "Oui, l'assistance reste entièrement facultative", correct: false },
+    { text: "Oui, sauf si la personne est un proche", correct: false },
   ], "Le code pénal impose une obligation d'assistance dans la limite de ses moyens, sous peine de sanctions pénales en cas de non-assistance."),
 
   // Mécanique
   q("mecanique", "Le contrôle visuel rapide des feux (position, croisement, stop) avant un trajet permet de :", [
     { text: "S'assurer d'être vu correctement par les autres usagers", correct: true },
     { text: "N'a aucune importance en cas de trajet diurne", correct: false },
+    { text: "Vérifier uniquement l'état de la batterie", correct: false },
   ], "Certains feux (stop notamment) sont utiles même de jour pour signaler un freinage aux véhicules suiveurs."),
   q("mecanique", "Une odeur inhabituelle de brûlé pendant la conduite doit inciter à :", [
     { text: "S'arrêter en sécurité pour identifier l'origine avant de poursuivre", correct: true },
     { text: "Poursuivre normalement si le véhicule roule sans problème apparent", correct: false },
+    { text: "Ouvrir toutes les fenêtres et continuer à rouler", correct: false },
   ], "Une odeur de brûlé peut signaler un défaut mécanique ou électrique sérieux nécessitant une vérification immédiate."),
 
   // Environnement
   q("environnement", "Le choix de pneus adaptés à la saison (été/hiver) plutôt que des pneus toutes saisons peut :", [
     { text: "Optimiser à la fois la sécurité et parfois la consommation selon les conditions rencontrées", correct: true },
     { text: "N'a aucun impact sur la performance du véhicule", correct: false },
+    { text: "Uniquement affecter l'esthétique du véhicule", correct: false },
   ], "Des pneus spécifiques à la saison offrent généralement de meilleures performances d'adhérence et parfois de consommation que des pneus universels."),
 
   // Sécurité & chargement
   q("securite", "Un chargement de type vélo sur porte-vélo arrière doit être vérifié :", [
     { text: "Régulièrement pendant le trajet pour s'assurer de sa bonne fixation", correct: true },
     { text: "Uniquement au moment de l'installation, sans contrôle ultérieur", correct: false },
+    { text: "Seulement en cas de bruit suspect", correct: false },
   ], "Les vibrations de la route peuvent desserrer une fixation initialement correcte, justifiant des vérifications en cours de trajet."),
 
   // Divers
   q("divers", "Le stationnement en double file, même brièvement, est considéré comme :", [
     { text: "Gênant voire très gênant selon la configuration, et sanctionné en conséquence", correct: true },
     { text: "Toléré s'il dure moins de deux minutes", correct: false },
+    { text: "Autorisé si les feux de détresse sont allumés", correct: false },
   ], "Le stationnement en double file entrave systématiquement la circulation, indépendamment de sa durée."),
 
   /* ===== VAGUE 16 ===== */
@@ -2305,606 +2547,664 @@ export const QUESTIONS = [
   q("signalisation", "Un panneau STOP masqué partiellement par la végétation reste :", [
     { text: "Obligatoire, mais sa dissimulation peut être signalée pour entretien", correct: true },
     { text: "Sans effet tant qu'il n'est pas parfaitement visible", correct: false },
+    { text: "Valable uniquement de jour", correct: false },
   ], "Un panneau existant reste juridiquement en vigueur même si son entretien laisse à désirer ; il convient toutefois de signaler ce défaut.", { image: WM("AB4") }),
   q("signalisation", "Le cédez-le-passage combiné à une ligne pointillée au sol vous permet de :", [
     { text: "Vous engager sans arrêt complet si la voie est manifestement libre", correct: true },
     { text: "Ne jamais vous engager sans un arrêt total", correct: false },
+    { text: "Vous engager uniquement de nuit", correct: false },
   ], "La ligne pointillée associée au cédez-le-passage confirme la possibilité de franchir sans arrêt total si aucun danger n'est détecté.", { image: WM("AB3a") }),
 
   // Priorités
   q("priorites", "Un véhicule prioritaire à l'arrêt sur la chaussée pour une intervention doit voir la circulation :", [
     { text: "S'écarter prudemment tout en respectant les distances de sécurité avec le personnel présent", correct: true },
     { text: "Continuer sans changement de comportement", correct: false },
+    { text: "S'arrêter complètement et attendre la fin de l'intervention", correct: false },
   ], "La sécurité du personnel d'intervention impose un écartement prudent des véhicules qui les croisent."),
   q("priorites", "Dans un giratoire à deux voies, un véhicule sur la voie intérieure souhaitant sortir doit :", [
     { text: "Céder le passage aux véhicules circulant sur la voie extérieure avant de sortir", correct: true },
     { text: "Sortir directement sans vérification, ayant la priorité", correct: false },
+    { text: "Klaxonner avant de changer de voie", correct: false },
   ], "Le changement de voie à l'intérieur d'un giratoire impose de céder le passage à la voie que l'on rejoint, comme tout changement de file."),
 
   // Vitesse & distances
   q("vitesse", "La vitesse excessive combinée à une route détrempée par la pluie multiplie le risque de :", [
     { text: "Aquaplaning, où les pneus perdent tout contact avec la chaussée", correct: true },
     { text: "Aucun risque supplémentaire par rapport à une route sèche", correct: false },
+    { text: "Simple éclaboussure sans conséquence", correct: false },
   ], "L'aquaplaning survient lorsque le film d'eau ne peut plus être évacué par les rainures des pneus à vitesse trop élevée."),
   q("vitesse", "Sur une portion droite et dégagée, maintenir une distance de sécurité généreuse permet notamment de :", [
     { text: "Anticiper un freinage du véhicule précédent sans stress ni réaction brusque", correct: true },
     { text: "N'apporte aucun avantage particulier sur ligne droite", correct: false },
+    { text: "Ralentir artificiellement la circulation générale", correct: false },
   ], "Même sur une portion simple, une distance confortable réduit la tension et améliore l'anticipation."),
 
   // Le conducteur
   q("conducteur", "Un conducteur ayant un handicap reconnu peut bénéficier d'un aménagement de son permis, comme :", [
     { text: "Des restrictions ou adaptations mentionnées sur le titre selon son aptitude évaluée médicalement", correct: true },
     { text: "Aucun aménagement n'existe en droit français", correct: false },
+    { text: "Une dispense totale de toute règle de circulation", correct: false },
   ], "Le permis peut être délivré avec des restrictions ou obligations d'aménagement du véhicule selon l'avis de la commission médicale."),
   q("conducteur", "La formation continue à la sécurité routière (stages volontaires, e-learning) permet de :", [
     { text: "Actualiser ses connaissances face à l'évolution de la réglementation", correct: true },
     { text: "N'a aucun intérêt une fois le permis obtenu", correct: false },
+    { text: "Récupérer automatiquement des points sans stage agréé", correct: false },
   ], "La réglementation évolue régulièrement ; une actualisation périodique des connaissances reste utile pour tout conducteur."),
 
   // Autres usagers
   q("usagers", "Un piéton qui traverse en marchant rapidement sur un passage protégé, feu vert pour les véhicules, doit voir sa priorité :", [
     { text: "Respectée, le conducteur devant s'assurer qu'il a terminé sa traversée avant de s'engager", correct: true },
     { text: "Ignorée puisque le feu est vert pour les véhicules", correct: false },
+    { text: "Respectée uniquement s'il porte un gilet réfléchissant", correct: false },
   ], "Un piéton déjà engagé légitimement conserve sa priorité de traversée, même si le feu passe favorablement aux véhicules ensuite."),
   q("usagers", "Un cycliste transportant un chargement volumineux (sacoches, panier) doit veiller à :", [
     { text: "Ne pas compromettre sa stabilité ni gêner sa visibilité ou celle des autres", correct: true },
     { text: "N'a aucune limite de charge à respecter", correct: false },
+    { text: "Rouler exclusivement sur le trottoir avec ce type de chargement", correct: false },
   ], "Un chargement mal réparti peut déséquilibrer le vélo et représenter un danger pour le cycliste comme pour les autres usagers."),
 
   // Premiers secours
   q("secours", "Un témoin isolé face à un accident grave avec une seule victime doit prioriser :", [
     { text: "Protéger, alerter puis secourir selon ses compétences, dans cet ordre", correct: true },
     { text: "Prendre des photos avant toute autre action", correct: false },
+    { text: "Chercher immédiatement un autre témoin avant d'agir", correct: false },
   ], "L'ordre PAS reste la référence méthodologique, indépendamment du nombre de témoins présents sur les lieux."),
   q("secours", "Une victime qui reprend conscience après un malaise doit être :", [
     { text: "Maintenue au calme, allongée, en attendant l'avis des secours avant de la relever", correct: true },
     { text: "Immédiatement remise debout pour vérifier qu'elle va bien", correct: false },
+    { text: "Incitée à boire immédiatement de l'eau sucrée", correct: false },
   ], "Se relever trop rapidement après un malaise peut provoquer une nouvelle perte de connaissance ; la prudence s'impose."),
 
   // Mécanique
   q("mecanique", "Le contrôle de la tension de la courroie d'accessoires (alternateur, climatisation) prévient :", [
     { text: "Les pannes électriques et les dysfonctionnements associés", correct: true },
     { text: "N'a aucun lien avec le système électrique du véhicule", correct: false },
+    { text: "Uniquement l'usure des pneus", correct: false },
   ], "Une courroie détendue ou usée peut affecter le bon fonctionnement de l'alternateur et donc l'alimentation électrique du véhicule."),
 
   // Environnement
   q("environnement", "L'utilisation d'un plan de trajet optimisé (GPS avec info trafic) permet de :", [
     { text: "Éviter les zones congestionnées et donc réduire consommation et stress", correct: true },
     { text: "N'a aucun effet sur la consommation réelle", correct: false },
+    { text: "Augmenter systématiquement la durée du trajet", correct: false },
   ], "Éviter les embouteillages via une application connectée limite les phases de conduite les plus consommatrices."),
 
   // Sécurité & chargement
   q("securite", "Le port de vêtements amples ou d'une écharpe non attachée à moto ou en cabriolet présente un risque de :", [
     { text: "Happement dans une pièce mobile ou gêne de la visibilité/conduite", correct: true },
     { text: "Aucun risque particulier", correct: false },
+    { text: "Simple inconfort esthétique uniquement", correct: false },
   ], "Certains vêtements amples peuvent se prendre dans des éléments mécaniques ou gêner les mouvements, un risque à ne pas négliger."),
 
   // Divers
   q("divers", "Un contrôle routier de nuit avec signalisation lumineuse (gyrophares, panneaux lumineux) impose de :", [
     { text: "Ralentir et se conformer aux indications données par les forces de l'ordre", correct: true },
     { text: "Accélérer pour dégager rapidement la zone", correct: false },
+    { text: "Éteindre ses phares en approchant", correct: false },
   ], "Toute zone de contrôle signalée impose un ralentissement et le respect strict des instructions des agents présents."),
   q("divers", "La revente d'un véhicule sans effectuer le changement de titulaire de la carte grise expose l'ancien propriétaire à :", [
     { text: "Être potentiellement tenu responsable d'infractions commises par le nouveau conducteur", correct: true },
     { text: "Aucune conséquence une fois la vente réalisée", correct: false },
+    { text: "Une simple amende forfaitaire unique", correct: false },
   ], "Tant que le changement de titulaire n'est pas effectif, le vendeur reste juridiquement lié au véhicule pour certaines infractions."),
-
   /* ===== VAGUE 17 ===== */
 
   // Signalisation
   q("signalisation", "Un panneau STOP à l'approche d'une voie ferrée sans barrière, avec présence d'un feu clignotant rouge activé, impose :", [
     { text: "Un arrêt impératif, la double signalisation renforçant le danger", correct: true },
     { text: "Le libre choix entre les deux signalisations", correct: false },
+    { text: "Un simple ralentissement suffisant", correct: false },
   ], "Feu rouge clignotant et panneau STOP se cumulent pour renforcer l'obligation d'arrêt face à un danger ferroviaire.", { image: WM("AB4") }),
   q("signalisation", "Un cédez-le-passage à une intersection en T (route secondaire rejoignant une route principale) impose de céder :", [
     { text: "À la totalité de la circulation de la route principale, dans les deux sens", correct: true },
     { text: "Uniquement au sens de circulation le plus proche", correct: false },
+    { text: "Uniquement aux véhicules prioritaires", correct: false },
   ], "La cession de priorité s'applique à l'ensemble du trafic de la voie principale rejointe, quel que soit son sens.", { image: WM("AB3a") }),
 
   // Priorités
   q("priorites", "Sur une place où la priorité est donnée par un panneau à l'anneau du giratoire, un véhicule entrant doit vérifier :", [
     { text: "Qu'aucun véhicule n'est engagé sur l'anneau à proximité de son point d'insertion", correct: true },
     { text: "Uniquement les véhicules venant de sa droite immédiate", correct: false },
+    { text: "Uniquement les véhicules déjà signalés au clignotant", correct: false },
   ], "L'insertion en giratoire nécessite une vérification large de l'anneau, pas seulement du point d'entrée immédiat."),
   q("priorites", "Un véhicule quittant une route pour emprunter un chemin rural non classé doit céder le passage :", [
     { text: "À tous les usagers de la route qu'il quitte", correct: true },
     { text: "Uniquement s'il tourne à gauche", correct: false },
+    { text: "Uniquement aux véhicules agricoles", correct: false },
   ], "Toute sortie vers une voie non classée impose de céder le passage à la circulation de la route principale, quel que soit le sens de la manœuvre."),
 
   // Vitesse & distances
   q("vitesse", "Une réduction de vitesse préventive à l'approche d'une zone accidentogène signalée par un panonceau statistique est :", [
     { text: "Une bonne pratique même si aucune limitation n'est formellement abaissée", correct: true },
     { text: "Inutile si la limite affichée reste identique", correct: false },
+    { text: "Obligatoire uniquement les jours de pluie", correct: false },
   ], "Ces panonceaux informatifs incitent à une prudence accrue sans nécessairement modifier la limitation réglementaire affichée."),
   q("vitesse", "La distance de freinage sur pavés mouillés est généralement :", [
     { text: "Plus longue que sur asphalte mouillé, ce revêtement étant plus glissant", correct: true },
     { text: "Identique à celle sur asphalte sec", correct: false },
+    { text: "Plus courte que sur asphalte, quelle que soit la météo", correct: false },
   ], "Les pavés offrent une adhérence réduite par rapport à l'asphalte, particulièrement lorsqu'ils sont mouillés."),
 
   // Le conducteur
   q("conducteur", "Le fait d'avoir consommé de l'alcool la veille et de se sentir parfaitement lucide ne garantit pas :", [
     { text: "Un taux d'alcoolémie nul, celui-ci dépendant de facteurs physiologiques variables", correct: true },
     { text: "Rien, la sensation subjective correspond toujours au taux réel", correct: false },
+    { text: "Une élimination totale garantie après 6 heures de sommeil", correct: false },
   ], "La perception personnelle de sobriété n'est pas un indicateur fiable du taux réel d'alcoolémie mesuré."),
   q("conducteur", "Un conducteur senior peut voir son aptitude à la conduite réévaluée notamment en cas de :", [
     { text: "Signalement médical ou administratif justifiant un doute sur ses capacités", correct: true },
     { text: "Simple atteinte d'un âge déterminé, automatiquement", correct: false },
+    { text: "Renouvellement systématique tous les 5 ans après 60 ans", correct: false },
   ], "En France, il n'existe pas de limite d'âge automatique pour conduire ; une réévaluation intervient sur signalement spécifique."),
 
   // Autres usagers
   q("usagers", "Face à un utilisateur d'engin de déplacement personnel (gyroroue, skateboard électrique) sur la chaussée, vous devez :", [
     { text: "Le traiter avec la même prudence qu'un cycliste, notamment côté distance de dépassement", correct: true },
     { text: "L'ignorer, ces engins n'étant pas reconnus par le code de la route", correct: false },
+    { text: "Le considérer comme un piéton en toutes circonstances", correct: false },
   ], "Ces engins de déplacement personnel motorisés sont désormais encadrés par le code de la route et méritent la même prudence qu'un cycliste."),
   q("usagers", "Un piéton qui s'engage brusquement entre deux véhicules stationnés doit inciter le conducteur à :", [
     { text: "Ralentir systématiquement à l'approche de zones de stationnement dense en agglomération", correct: true },
     { text: "N'a aucune incidence sur la conduite à adopter", correct: false },
+    { text: "Klaxonner immédiatement et systématiquement", correct: false },
   ], "Les zones de stationnement dense masquent souvent la visibilité sur d'éventuels piétons surgissant entre les véhicules."),
 
   // Premiers secours
   q("secours", "Une victime présentant des signes de détresse respiratoire (respiration sifflante, panique) doit être :", [
     { text: "Rassurée et installée en position semi-assise en attendant les secours", correct: true },
     { text: "Allongée à plat dos systématiquement", correct: false },
+    { text: "Incitée à respirer dans un sac en papier", correct: false },
   ], "La position semi-assise facilite généralement la respiration d'une personne en détresse respiratoire consciente."),
 
   // Mécanique
   q("mecanique", "Le remplacement des bougies d'allumage usées, sur un moteur essence, permet de :", [
     { text: "Maintenir une combustion efficace et éviter les ratés moteur", correct: true },
     { text: "N'a aucun effet sur le fonctionnement du moteur", correct: false },
+    { text: "Réduire uniquement le bruit du moteur", correct: false },
   ], "Des bougies usées perturbent la combustion, entraînant une perte de puissance et une surconsommation."),
 
   // Environnement
   q("environnement", "Le choix d'un mode de transport alternatif (vélo, transports en commun) pour les trajets courts en ville permet de :", [
     { text: "Réduire la congestion et la pollution locale liées à l'usage systématique de la voiture", correct: true },
     { text: "N'a aucun impact à l'échelle collective", correct: false },
+    { text: "Augmenter le trafic automobile ailleurs", correct: false },
   ], "La multiplication des trajets courts en voiture contribue significativement à la congestion et à la pollution urbaine."),
 
   // Sécurité & chargement
   q("securite", "Un enfant de plus de 10 ans mais de petite taille doit continuer d'utiliser :", [
     { text: "Un rehausseur adapté tant que la ceinture ne lui est pas correctement ajustée", correct: true },
     { text: "La ceinture standard sans aucun dispositif, l'âge suffisant", correct: false },
+    { text: "Aucun dispositif à partir de 1,35 m peu importe l'âge", correct: false },
   ], "Le critère déterminant reste l'ajustement correct de la ceinture, la taille primant parfois sur l'âge légal minimal."),
 
   // Divers
   q("divers", "Un panneau de limitation de vitesse à validité saisonnière (été/hiver) doit être respecté :", [
     { text: "Selon la période effectivement indiquée par le panonceau associé", correct: true },
     { text: "En toute saison, sans distinction", correct: false },
+    { text: "Uniquement les jours fériés", correct: false },
   ], "Le panonceau de validité temporelle précise les conditions d'application de la limitation à respecter scrupuleusement."),
-
   /* ===== VAGUE 18 ===== */
 
   // Signalisation
   q("signalisation", "Un panneau STOP à l'intersection avec une voie de bus protégée impose de vérifier également :", [
     { text: "L'absence de bus engagé, qui bénéficie souvent d'une priorité renforcée", correct: true },
     { text: "Uniquement les véhicules particuliers", correct: false },
+    { text: "Uniquement les taxis", correct: false },
   ], "Les voies de bus protégées accueillent des véhicules prioritaires dont il faut impérativement tenir compte avant de s'engager.", { image: WM("AB4") }),
   q("signalisation", "Le cédez-le-passage à la sortie d'un rond-point mini (à faible diamètre, souvent franchissable) reste :", [
     { text: "Pleinement applicable malgré la petite taille de l'aménagement", correct: true },
     { text: "Facultatif compte tenu de la faible dimension du giratoire", correct: false },
+    { text: "Applicable uniquement aux poids lourds", correct: false },
   ], "La taille d'un giratoire n'a aucune influence sur le caractère obligatoire de la signalisation qui y est associée.", { image: WM("AB3a") }),
 
   // Priorités
   q("priorites", "Sur une portion de route à trois voies où le marquage central indique un usage alterné, la priorité d'usage de la voie centrale revient :", [
     { text: "Au sens de circulation autorisé par le marquage lumineux ou la signalisation en vigueur à ce moment", correct: true },
     { text: "Toujours au sens montant", correct: false },
+    { text: "Toujours au sens le plus emprunté", correct: false },
   ], "Ces aménagements réversibles sont régis par une signalisation dynamique qu'il faut impérativement suivre."),
   q("priorites", "Un véhicule circulant sur une bretelle de sortie d'autoroute déjà engagée doit céder le passage à un véhicule qui souhaiterait y entrer en sens inverse :", [
     { text: "Cette situation ne devrait jamais se produire, les bretelles étant à sens unique", correct: true },
     { text: "Selon la règle de la priorité à droite", correct: false },
+    { text: "Selon l'ordre d'arrivée des deux véhicules", correct: false },
   ], "Les bretelles d'autoroute sont conçues en sens unique strict ; une telle situation résulterait d'une erreur de conduite grave à éviter absolument."),
 
   // Vitesse & distances
   q("vitesse", "Une vitesse excessive combinée à un chargement mal réparti augmente le risque de :", [
     { text: "Perte de contrôle dans les virages du fait d'un centre de gravité déstabilisé", correct: true },
     { text: "Aucun risque supplémentaire par rapport à un véhicule bien chargé", correct: false },
+    { text: "Simple gêne sonore uniquement", correct: false },
   ], "La combinaison vitesse et chargement mal réparti amplifie les effets déstabilisants en virage."),
   q("vitesse", "Circuler à vitesse excessive à proximité d'un chantier signalé, même sans ouvrier visible, est :", [
     { text: "Dangereux et sanctionnable, la zone restant à risque", correct: true },
     { text: "Sans risque si aucun ouvrier n'est visible sur le moment", correct: false },
+    { text: "Toléré en dehors des horaires de travail", correct: false },
   ], "La signalisation de chantier impose le respect des limitations qui y sont associées, indépendamment de la présence visible de personnel."),
 
   // Le conducteur
   q("conducteur", "Le fait d'avoir un solde de points élevé n'exempte pas un conducteur de :", [
     { text: "Respecter scrupuleusement le code de la route à chaque trajet", correct: true },
     { text: "D'aucune règle, un solde élevé donnant plus de latitude", correct: false },
+    { text: "Se soumettre uniquement aux contrôles d'identité", correct: false },
   ], "Le capital de points ne modifie en rien les obligations réglementaires de conduite qui s'appliquent à tous de façon identique."),
 
   // Autres usagers
   q("usagers", "Un cycliste roulant à contresens dans une rue à sens unique équipée du panonceau « sauf vélos » est :", [
     { text: "Dans son droit si cette configuration est explicitement signalée", correct: true },
     { text: "Toujours en infraction quelle que soit la signalisation", correct: false },
+    { text: "Autorisé uniquement de nuit", correct: false },
   ], "De nombreuses rues à sens unique autorisent explicitement les cyclistes à circuler à contresens via une signalisation dédiée."),
 
   // Premiers secours
   q("secours", "Le suivi des instructions données par le régulateur du SAMU au téléphone doit être :", [
     { text: "Rigoureux, ces instructions étant adaptées en temps réel à la situation décrite", correct: true },
     { text: "Facultatif si le témoin pense savoir mieux faire", correct: false },
+    { text: "Limité aux seules instructions écrites reçues par SMS", correct: false },
   ], "Les régulateurs médicaux adaptent leurs instructions à la situation précise décrite par le témoin ; leur suivi rigoureux optimise les chances de la victime."),
 
   // Mécanique
   q("mecanique", "L'état des balais d'essuie-glace doit être vérifié particulièrement avant :", [
     { text: "La saison des pluies ou un long trajet sous conditions météo incertaines", correct: true },
     { text: "Uniquement avant un contrôle technique", correct: false },
+    { text: "Uniquement au moment de l'achat du véhicule", correct: false },
   ], "Anticiper l'entretien des essuie-glaces avant les périodes pluvieuses évite une perte de visibilité au moment critique."),
 
   // Environnement
   q("environnement", "Le nettoyage régulier des capteurs et caméras d'aide à la conduite contribue à :", [
     { text: "Garantir leur bon fonctionnement, notamment pour les systèmes de sécurité actifs", correct: true },
     { text: "N'a aucune influence sur ces systèmes", correct: false },
+    { text: "Réduire la consommation de carburant", correct: false },
   ], "Des capteurs encrassés peuvent fausser ou désactiver certaines aides à la conduite essentielles à la sécurité."),
 
   // Sécurité & chargement
   q("securite", "La vérification du serrage des roues après un changement de pneu doit être :", [
     { text: "Recontrôlée après quelques dizaines de kilomètres de roulage", correct: true },
     { text: "Inutile si le serrage initial semblait correct", correct: false },
+    { text: "Effectuée uniquement au contrôle technique suivant", correct: false },
   ], "Un nouveau serrage peut se tasser légèrement avec les premiers kilomètres, justifiant une vérification complémentaire."),
 
   // Divers
   q("divers", "Un radar de chantier temporaire installé sur une zone de travaux a la même valeur qu'un radar fixe permanent :", [
     { text: "Oui, sa nature temporaire n'affecte pas la validité des sanctions appliquées", correct: true },
     { text: "Non, ses relevés ne peuvent jamais être utilisés à des fins de sanction", correct: false },
+    { text: "Uniquement s'il est annoncé par un panneau spécifique 48h à l'avance", correct: false },
   ], "Un dispositif de contrôle homologué, temporaire ou permanent, produit des relevés ayant la même valeur légale."),
 
-  /* ===== VAGUE 19 — barèmes précis 2026 ===== */
+  /* ===== VAGUE 19 -- barèmes précis 2026 ===== */
 
   q("vitesse", "Depuis le 1er janvier 2024, un excès de vitesse inférieur à 5 km/h entraîne :", [
     { text: "Une amende forfaitaire mais aucun retrait de point", correct: true },
     { text: "Toujours un retrait d'un point comme avant", correct: false },
+    { text: "Ni amende ni retrait de point", correct: false },
   ], "Cette évolution récente supprime le retrait de point pour les tout petits excès, tout en maintenant l'amende forfaitaire."),
   q("vitesse", "Un excès de vitesse de 20 à 30 km/h au-dessus de la limite autorisée entraîne une amende forfaitaire de :", [
     { text: "135 € et un retrait de 2 points", correct: true },
     { text: "35 € et un retrait de 1 point", correct: false },
+    { text: "68 € et un retrait de 3 points", correct: false },
   ], "Cette infraction est une contravention de 4e classe sanctionnée par 135 € d'amende et 2 points retirés."),
   q("vitesse", "Depuis le 29 décembre 2025, un excès de vitesse de 50 km/h ou plus au-dessus de la limite autorisée est désormais :", [
     { text: "Un délit, et non plus une simple contravention", correct: true },
     { text: "Toujours une contravention de 5e classe", correct: false },
-  ], "Cette requalification récente en délit entraîne des sanctions bien plus lourdes : amende jusqu'à 3 750 €, suspension, voire confiscation du véhicule."),
-  q("vitesse", "Pour un conducteur en période probatoire, un grand excès de vitesse (50 km/h ou plus) entraîne :", [
-    { text: "L'annulation automatique du permis, le retrait de 6 points dépassant son capital initial", correct: true },
-    { text: "Un simple avertissement du fait de son statut de novice", correct: false },
-  ], "Le capital réduit du permis probatoire (6 ou 8 points) est immédiatement épuisé par le retrait de 6 points lié à un grand excès."),
-  q("conducteur", "Le nombre maximal de points pouvant être retirés pour une seule infraction est de :", [
-    { text: "6 points", correct: true },
-    { text: "12 points", correct: false },
-  ], "Une seule infraction ne peut entraîner le retrait de plus de 6 points, même pour les infractions les plus graves comme l'alcoolémie délictuelle."),
-  q("conducteur", "En cas de plusieurs infractions constatées simultanément, le retrait de points cumulé est plafonné à :", [
-    { text: "8 points au maximum", correct: true },
-    { text: "Il n'existe aucun plafond en cas de cumul", correct: false },
-  ], "Même en cumulant plusieurs infractions relevées au même moment, la loi plafonne le retrait total à 8 points."),
-  q("conducteur", "La conduite sous emprise avérée de l'alcool (délit, ≥ 0,8 g/L) entraîne un retrait de :", [
-    { text: "6 points", correct: true },
-    { text: "3 points", correct: false },
-  ], "La conduite en état d'ivresse constitue une infraction grave entraînant le retrait maximal possible pour une infraction unique."),
-  q("conducteur", "La conduite après usage de stupéfiants entraîne un retrait de points pouvant aller de :", [
-    { text: "6 à 9 points, selon les infractions associées constatées par les forces de l'ordre", correct: true },
-    { text: "1 à 2 points seulement", correct: false },
-  ], "Ce retrait élevé illustre la sévérité de la sanction appliquée à la conduite sous stupéfiants en droit français."),
-  q("conducteur", "Après une infraction ayant entraîné un retrait de points, le délai de récupération automatique est de :", [
-    { text: "2 ans pour une contravention, 3 ans pour un délit, sans nouvelle infraction entre-temps", correct: true },
-    { text: "Toujours 1 an, quelle que soit la gravité", correct: false },
-  ], "La durée de récupération dépend de la gravité de l'infraction initiale : plus longue pour un délit que pour une simple contravention."),
-  q("conducteur", "Si une nouvelle infraction avec retrait de points survient pendant le délai de récupération automatique, ce délai :", [
-    { text: "Repart intégralement à zéro à partir de cette nouvelle infraction", correct: true },
-    { text: "Continue de s'écouler normalement sans être affecté", correct: false },
-  ], "Toute nouvelle infraction pendant la période de récupération réinitialise entièrement le compteur du délai."),
-  q("conducteur", "En cas de permis invalidé pour solde de points nul, sans repasser le permis, la récupération automatique des 12 points intervient après :", [
-    { text: "10 ans sans permis de conduire", correct: true },
-    { text: "1 an automatiquement", correct: false },
-  ], "Ce délai très long rend cette voie peu praticable ; repasser le permis reste la solution généralement retenue."),
-  q("conducteur", "Faire une fausse déclaration en désignant une autre personne comme responsable d'une infraction qu'on a commise est :", [
-    { text: "Un délit passible d'amende et de suspension de permis", correct: true },
-    { text: "Une simple irrégularité administrative sans conséquence pénale", correct: false },
-  ], "La fausse dénonciation d'un tiers non responsable constitue un délit sévèrement sanctionné en droit français."),
-  q("securite", "Le port de gants certifiés CE est obligatoire, depuis novembre 2016, pour :", [
-    { text: "Les conducteurs et passagers de deux-roues motorisés", correct: true },
-    { text: "Uniquement les conducteurs de véhicules décapotables", correct: false },
-  ], "Cette obligation vise à réduire les blessures aux mains, très fréquentes lors des chutes de deux-roues motorisés."),
-  q("divers", "Circuler dans une voie de bus sans y être autorisé est sanctionné par une amende forfaitaire de :", [
-    { text: "135 €", correct: true },
-    { text: "35 €", correct: false },
-  ], "L'usage indu d'une voie de bus constitue une infraction sanctionnée au même niveau que de nombreuses infractions de 4e classe."),
-  q("conducteur", "Un jeune conducteur circulant sans le disque « A » réglementaire pendant sa période probatoire risque une amende forfaitaire de :", [
-    { text: "35 €", correct: true },
-    { text: "135 €", correct: false },
-  ], "Cette infraction, bien que moins sévèrement sanctionnée qu'un excès de vitesse, reste verbalisable."),
-  q("vitesse", "La marge de tolérance technique déduite par un radar fixe pour une vitesse mesurée à 90 km/h ou moins est de :", [
-    { text: "5 km/h en faveur du conducteur", correct: true },
-    { text: "Aucune marge n'est appliquée", correct: false },
-  ], "Les radars appliquent une marge technique réglementaire avant validation de l'infraction, variable selon le type d'appareil et la vitesse mesurée."),
-
-  /* ===== VAGUE 20 — catégories de permis (données vérifiées) ===== */
+    { text: "Une infraction sans changement depuis 2024", correct: false },
+  ], "Cette requalification récente en délit entraîne des sanctions bien plus lourdes : amende jusqu'à 3 750 €
+  /* ===== VAGUE 20 -- catégories de permis (données vérifiées) ===== */
 
   q("conducteur", "Depuis 2024, le permis B (voiture) est accessible dès l'âge de :", [
     { text: "17 ans, en filière classique comme en conduite accompagnée", correct: true },
     { text: "18 ans uniquement, sans exception", correct: false },
+    { text: "16 ans, en conduite accompagnée uniquement", correct: false },
   ], "Cette évolution récente a abaissé l'âge d'accès au permis B, aligné entre la filière classique et la conduite accompagnée."),
   q("conducteur", "Le permis AM, anciennement appelé BSR, est accessible dès l'âge de :", [
     { text: "14 ans, pour conduire un cyclomoteur ou une voiturette", correct: true },
     { text: "16 ans uniquement", correct: false },
+    { text: "12 ans, sous condition parentale", correct: false },
   ], "Le permis AM permet une première autonomie de déplacement dès 14 ans, sous conditions de formation."),
   q("conducteur", "Le permis moto A1, limitant la conduite à des motos de 125 cm³ maximum, est accessible dès :", [
     { text: "16 ans", correct: true },
     { text: "18 ans", correct: false },
+    { text: "17 ans", correct: false },
   ], "Le permis A1 constitue la première étape d'accès aux deux-roues motorisés de cylindrée moyenne, dès 16 ans."),
   q("conducteur", "Le permis moto A2, limitant la puissance à 35 kW, est accessible dès :", [
     { text: "18 ans", correct: true },
     { text: "20 ans", correct: false },
+    { text: "21 ans", correct: false },
   ], "Le permis A2 s'obtient dès la majorité et constitue une étape intermédiaire avant l'accès à la pleine puissance."),
   q("conducteur", "L'accès au permis A (motos sans limitation de puissance) nécessite d'être titulaire du permis A2 depuis :", [
     { text: "Au moins 2 ans, avec une formation complémentaire de 7 heures", correct: true },
     { text: "Au moins 5 ans, sans formation complémentaire", correct: false },
+    { text: "Au moins 1 an, avec un nouvel examen théorique complet", correct: false },
   ], "Cette progression encadrée permet d'accéder à la pleine puissance après une expérience minimale confirmée sur une moto bridée."),
   q("conducteur", "Un titulaire du permis B peut conduire une moto de 125 cm³ après :", [
     { text: "2 ans de permis B et une formation de 7 heures", correct: true },
     { text: "Automatiquement, sans aucune formation complémentaire", correct: false },
+    { text: "5 ans de permis B, sans formation complémentaire", correct: false },
   ], "Cette équivalence limitée nécessite malgré tout une formation pratique spécifique de 7 heures, bien qu'aucun nouvel examen ne soit requis."),
   q("securite", "Avec le seul permis B, un conducteur peut tracter une remorque dont le poids ne dépasse pas :", [
     { text: "750 kg sans formation supplémentaire", correct: true },
     { text: "3,5 tonnes sans aucune restriction", correct: false },
+    { text: "1 500 kg sans formation supplémentaire", correct: false },
   ], "Au-delà de 750 kg, une formation complémentaire (B96) ou un permis BE devient nécessaire selon le poids total de l'ensemble."),
   q("securite", "Pour un ensemble routier (véhicule + remorque) dont le poids total dépasse 4,25 tonnes, le permis nécessaire est :", [
     { text: "Le permis BE", correct: true },
     { text: "Le permis B96 suffit dans tous les cas", correct: false },
+    { text: "Le permis B classique suffit toujours", correct: false },
   ], "Au-delà de 4,25 tonnes de poids total, seul le permis BE, avec son propre examen, permet de tracter légalement l'ensemble."),
   q("conducteur", "L'épreuve théorique moto (ETM), obligatoire pour les permis A1 et A2 depuis mars 2020, comporte :", [
     { text: "40 questions, avec un seuil de réussite fixé à 35 bonnes réponses", correct: true },
     { text: "20 questions, avec un seuil de réussite fixé à 15 bonnes réponses", correct: false },
+    { text: "30 questions, avec un seuil de réussite fixé à 25 bonnes réponses", correct: false },
   ], "L'ETM reprend un format proche de l'examen du code de la route classique, avec des thématiques spécifiques aux deux-roues."),
   q("conducteur", "L'épreuve théorique moto (ETM) porte notamment sur des thématiques spécifiques comme :", [
     { text: "L'angle mort, le freinage, la mécanique moto et l'équipement de protection", correct: true },
     { text: "Exactement les mêmes questions que le code de la route voiture, sans aucune spécificité", correct: false },
+    { text: "Uniquement la mécanique moto, sans autre thématique", correct: false },
   ], "Le code moto adapte le contenu aux risques propres aux deux-roues motorisés, absents du code de la route classique."),
 
-  /* ===== VAGUE 21 — trottinettes électriques / EDPM (données 2026) ===== */
+  /* ===== VAGUE 21 -- trottinettes électriques / EDPM (données 2026) ===== */
 
   q("usagers", "Depuis septembre 2023, l'âge minimum pour conduire une trottinette électrique (EDPM) sur la voie publique est de :", [
     { text: "14 ans, contre 12 ans auparavant", correct: true },
     { text: "16 ans, comme pour un cyclomoteur", correct: false },
+    { text: "12 ans, inchangé depuis toujours", correct: false },
   ], "Ce relèvement de l'âge minimum vise à réduire l'accidentalité chez les plus jeunes utilisateurs de ces engins."),
   q("usagers", "Une trottinette électrique circulant sur la voie publique doit obligatoirement être couverte par :", [
     { text: "Une assurance responsabilité civile spécifique aux EDPM", correct: true },
     { text: "Aucune assurance n'est nécessaire pour ce type d'engin", correct: false },
+    { text: "L'assurance habitation du foyer suffit automatiquement", correct: false },
   ], "L'assurance auto classique du foyer ne couvre pas les EDPM ; une garantie responsabilité civile dédiée est obligatoire."),
   q("usagers", "Le transport d'un passager sur une trottinette électrique est :", [
     { text: "Interdit, ces engins étant conçus pour un usage strictement individuel", correct: true },
     { text: "Autorisé si le passager est un enfant", correct: false },
+    { text: "Autorisé sur les pistes cyclables uniquement", correct: false },
   ], "Les EDPM sont homologués pour une seule personne ; transporter un passager constitue une infraction sanctionnée."),
   q("usagers", "En agglomération, en l'absence de piste cyclable, une trottinette électrique doit circuler :", [
     { text: "Sur la chaussée, limitée aux voies dont la vitesse maximale autorisée ne dépasse pas 50 km/h", correct: true },
     { text: "Toujours sur le trottoir pour la sécurité de l'utilisateur", correct: false },
+    { text: "Sur n'importe quelle voie, quelle que soit sa limitation", correct: false },
   ], "La circulation sur trottoir reste strictement interdite ; à défaut de piste cyclable, la chaussée à faible vitesse devient la voie par défaut."),
   q("usagers", "Hors agglomération, une trottinette électrique est en principe autorisée à circuler :", [
     { text: "Uniquement sur les pistes cyclables et voies vertes", correct: true },
     { text: "Sur toutes les routes sans restriction", correct: false },
+    { text: "Uniquement sur les routes départementales secondaires", correct: false },
   ], "En dehors des agglomérations, l'usage de la chaussée classique reste interdit aux EDPM, sauf dérogation préfectorale spécifique."),
   q("usagers", "Le débridage d'une trottinette électrique pour dépasser sa vitesse de construction est :", [
     { text: "Strictement interdit et lourdement sanctionné", correct: true },
     { text: "Toléré tant que la vitesse reste raisonnable", correct: false },
+    { text: "Autorisé hors agglomération uniquement", correct: false },
   ], "Le débridage expose à une amende substantielle, l'engin devenant alors non conforme à son homologation EDPM."),
   q("usagers", "Circuler en trottinette électrique sur un trottoir, sauf autorisation municipale expresse, est sanctionné par une amende de :", [
     { text: "135 €", correct: true },
     { text: "15 €", correct: false },
+    { text: "35 €", correct: false },
   ], "Cette infraction, fréquente en ville, est sanctionnée comme une contravention de 4e classe."),
   q("usagers", "Le port d'écouteurs en conduisant une trottinette électrique est :", [
     { text: "Interdit, comme pour tout conducteur, pour préserver la perception de l'environnement sonore", correct: true },
     { text: "Autorisé sans restriction particulière", correct: false },
+    { text: "Autorisé si un seul écouteur est utilisé", correct: false },
   ], "La réglementation applicable aux EDPM interdit le port d'écouteurs pour les mêmes raisons de sécurité que pour les automobilistes."),
   q("usagers", "Un conducteur de trottinette électrique contrôlé avec une alcoolémie de 0,6 g/L de sang est :", [
     { text: "En infraction, les mêmes seuils d'alcoolémie que pour les automobilistes s'appliquant aux EDPM", correct: true },
     { text: "Non concerné par la réglementation sur l'alcool au volant", correct: false },
+    { text: "En infraction seulement au-delà de 1 g/L", correct: false },
   ], "Les conducteurs d'EDPM sont soumis aux mêmes limitations d'alcoolémie que les conducteurs de véhicules à moteur classiques."),
   q("usagers", "Dans une zone piétonne, un EDPM autorisé à y circuler doit respecter une vitesse maximale de :", [
     { text: "6 km/h, soit l'allure du pas", correct: true },
     { text: "25 km/h comme sur la chaussée", correct: false },
+    { text: "15 km/h", correct: false },
   ], "La vitesse est fortement réduite dans les zones à forte présence piétonne pour garantir la sécurité de tous."),
   q("usagers", "Aucun permis de conduire n'est nécessaire pour utiliser une trottinette électrique conforme, mais son usage requiert néanmoins :", [
     { text: "Une assurance et le respect du code de la route, sans formation obligatoire", correct: true },
     { text: "Le permis AM obligatoire dans tous les cas", correct: false },
+    { text: "Une simple déclaration en mairie", correct: false },
   ], "Contrairement à un cyclomoteur, l'EDPM conforme ne nécessite aucun permis, mais reste soumis à des obligations d'assurance et de respect du code."),
 
-  /* ===== VAGUE 22 — gilet, triangle, équipements (données vérifiées) ===== */
+  /* ===== VAGUE 22 -- gilet, triangle, équipements (données vérifiées) ===== */
 
   q("securite", "Le gilet de haute visibilité et le triangle de présignalisation sont obligatoires dans tout véhicule depuis :", [
     { text: "2008", correct: true },
     { text: "1995", correct: false },
+    { text: "2016", correct: false },
   ], "Cette obligation résulte d'une décision du Comité interministériel de la sécurité routière de février 2008, appliquée dans les mois suivants."),
   q("securite", "Le triangle de présignalisation doit être placé à une distance du véhicule immobilisé d'au moins :", [
     { text: "30 mètres", correct: true },
     { text: "5 mètres", correct: false },
+    { text: "10 mètres", correct: false },
   ], "Cette distance minimale laisse le temps aux autres usagers de percevoir le danger et de ralentir en conséquence."),
   q("securite", "L'obligation de disposer d'un gilet de haute visibilité concerne, depuis janvier 2016, également :", [
     { text: "Les conducteurs de deux-roues et trois-roues motorisés", correct: true },
     { text: "Uniquement les conducteurs de voitures particulières", correct: false },
+    { text: "Uniquement les conducteurs de poids lourds", correct: false },
   ], "Cette extension récente vise à améliorer la visibilité des motards et scootéristes lors d'un arrêt d'urgence."),
   q("securite", "L'éthylotest, longtemps obligatoire à bord des véhicules, ne l'est en réalité plus depuis :", [
     { text: "Le 22 mai 2020", correct: true },
     { text: "Il reste obligatoire aujourd'hui", correct: false },
+    { text: "Le 1er janvier 2015", correct: false },
   ], "L'obligation de disposer d'un éthylotest dans son véhicule a été supprimée en 2020, bien que son usage reste recommandé."),
   q("securite", "Ne pas être en mesure de présenter le gilet et le triangle lors d'un contrôle expose à une amende pouvant atteindre :", [
     { text: "135 € (amende forfaitaire de 4e classe)", correct: true },
     { text: "1 500 €", correct: false },
+    { text: "35 €", correct: false },
   ], "Le défaut de ces équipements obligatoires constitue une contravention de 4e classe sanctionnée par une amende forfaitaire."),
   q("securite", "Le gilet de haute visibilité doit être rangé dans le véhicule :", [
     { text: "À portée de main du conducteur, plutôt que dans le coffre", correct: true },
     { text: "Obligatoirement dans le coffre pour éviter qu'il ne traîne dans l'habitacle", correct: false },
+    { text: "Peu importe l'endroit, aucune règle ne s'applique", correct: false },
   ], "L'objectif est de pouvoir l'enfiler avant même de sortir du véhicule, ce qui suppose un rangement facilement accessible depuis le siège conducteur."),
   q("securite", "Sur autoroute, après avoir revêtu le gilet, le conducteur doit sortir de son véhicule immobilisé sur la bande d'arrêt d'urgence :", [
     { text: "Du côté passager, pour se mettre en sécurité derrière la glissière", correct: true },
     { text: "Du côté conducteur, directement vers la chaussée", correct: false },
+    { text: "Par le côté le plus rapide, sans consigne particulière", correct: false },
   ], "Sortir côté passager permet d'éviter de s'exposer directement à la circulation et de rejoindre rapidement un espace sécurisé derrière les glissières."),
   q("securite", "La mise en place du triangle de présignalisation n'est pas obligatoire si :", [
     { text: "Cette action représente un danger manifeste pour la vie du conducteur", correct: true },
     { text: "Il pleut légèrement", correct: false },
+    { text: "La panne survient de nuit", correct: false },
   ], "La réglementation prévoit explicitement une dérogation lorsque poser le triangle exposerait le conducteur à un risque vital."),
-
-  /* ===== VAGUE 23 — contrôle technique (données précises 2026) ===== */
+  /* ===== VAGUE 23 -- contrôle technique (données précises 2026) ===== */
 
   q("mecanique", "Le premier contrôle technique d'une voiture particulière doit être réalisé :", [
     { text: "Dans les 6 mois précédant son 4e anniversaire de mise en circulation", correct: true },
     { text: "Dès la première année suivant l'achat", correct: false },
+    { text: "Dans les 6 mois précédant son 2e anniversaire", correct: false },
   ], "Cette règle dite du « 4-2 » encadre précisément le calendrier du premier contrôle technique obligatoire."),
   q("mecanique", "Une fois le premier contrôle technique favorable obtenu, le renouvellement doit intervenir :", [
     { text: "Tous les 2 ans", correct: true },
     { text: "Tous les 5 ans", correct: false },
+    { text: "Tous les 3 ans", correct: false },
   ], "La périodicité standard du contrôle technique automobile reste fixée à deux ans après le premier passage."),
   q("mecanique", "Le contrôle technique d'une voiture particulière porte sur un total de :", [
     { text: "133 points de vérification", correct: true },
     { text: "Environ 20 points seulement", correct: false },
+    { text: "Environ 50 points seulement", correct: false },
   ], "Le contrôle technique français est structuré autour de 133 points répartis en plusieurs grandes familles (freinage, pollution, structure, sécurité...)."),
   q("mecanique", "Un contrôle technique classé « défavorable critique » entraîne :", [
     { text: "L'interdiction de circuler dès le lendemain, jusqu'à réparation et contre-visite favorable", correct: true },
     { text: "Aucune conséquence immédiate sur la possibilité de circuler", correct: false },
+    { text: "Un simple avertissement écrit sans autre conséquence", correct: false },
   ], "Cette classification signale un danger direct et immédiat, imposant l'arrêt de la circulation du véhicule sans délai."),
   q("mecanique", "Un contrôle technique classé « défavorable majeur » (sans danger immédiat) permet au véhicule de circuler encore :", [
     { text: "Jusqu'à 2 mois maximum, le temps d'effectuer les réparations et la contre-visite", correct: true },
     { text: "Indéfiniment, sans limite de temps", correct: false },
+    { text: "Jusqu'à 6 mois maximum", correct: false },
   ], "Le délai de 2 mois pour la contre-visite laisse le temps au propriétaire d'effectuer les réparations sans imposer un arrêt immédiat de circulation."),
   q("mecanique", "Lors de la vente d'un véhicule de plus de 4 ans entre particuliers, le vendeur doit fournir :", [
     { text: "Un procès-verbal de contrôle technique de moins de 6 mois", correct: true },
     { text: "Aucun document technique n'est requis", correct: false },
+    { text: "Un procès-verbal de moins de 2 ans", correct: false },
   ], "Ce document est indispensable pour permettre à l'acheteur d'immatriculer le véhicule à son nom."),
   q("mecanique", "Le contrôle technique pour les motos et deux-roues de plus de 125 cm³ est devenu obligatoire en France :", [
     { text: "Depuis avril 2024", correct: true },
     { text: "Depuis toujours, comme pour les voitures", correct: false },
+    { text: "Depuis 2010", correct: false },
   ], "Cette obligation, plus récente que pour les véhicules légers, s'est progressivement généralisée sur le territoire."),
   q("mecanique", "Circuler avec un contrôle technique expiré, en dehors de tout autre problème constaté, expose à une amende pouvant atteindre :", [
     { text: "750 €", correct: true },
     { text: "15 €", correct: false },
+    { text: "135 €", correct: false },
   ], "Cette amende maximale illustre le caractère sérieux de cette obligation, même en l'absence de défaut mécanique avéré."),
 
-  /* ===== VAGUE 24 — sièges auto enfant, norme i-Size (données 2026) ===== */
+  /* ===== VAGUE 24 -- sièges auto enfant, norme i-Size (données 2026) ===== */
 
   q("securite", "Un enfant doit voyager dans un dispositif de retenue homologué jusqu'à :", [
     { text: "10 ans ou 135 cm, selon le critère atteint en premier", correct: true },
     { text: "6 ans uniquement, sans considération de taille", correct: false },
+    { text: "12 ans, sans considération de taille", correct: false },
   ], "La loi française fixe un double critère d'âge et de taille pour déterminer la fin de l'obligation du siège ou rehausseur homologué."),
   q("securite", "La norme R129, dite « i-Size », classe les sièges auto selon :", [
     { text: "La taille de l'enfant plutôt que son poids", correct: true },
     { text: "Exclusivement le poids de l'enfant, comme l'ancienne norme", correct: false },
+    { text: "L'âge de l'enfant uniquement", correct: false },
   ], "Cette approche par la taille, plus précise que le poids seul, mieux corrélée à la morphologie réelle de l'enfant, a progressivement remplacé l'ancienne norme R44."),
   q("securite", "Selon la norme i-Size, la position dos à la route est obligatoire pour un enfant jusqu'à au moins :", [
     { text: "15 mois", correct: true },
     { text: "6 mois", correct: false },
+    { text: "9 mois", correct: false },
   ], "Cette durée minimale, plus longue que sous l'ancienne norme, réduit significativement les contraintes exercées sur la nuque en cas de choc frontal."),
   q("securite", "Un rehausseur sans dossier n'est autorisé, selon la norme i-Size, qu'à partir d'une taille de :", [
     { text: "125 cm", correct: true },
     { text: "80 cm", correct: false },
+    { text: "100 cm", correct: false },
   ], "En dessous de cette taille, le dossier reste indispensable pour assurer une protection latérale de la tête et du tronc."),
   q("securite", "Le non-respect de l'obligation de dispositif de retenue homologué pour un enfant est sanctionné par une amende de :", [
     { text: "135 € et un retrait de 3 points sur le permis du conducteur", correct: true },
     { text: "15 € sans retrait de points", correct: false },
+    { text: "35 € et un retrait de 1 point", correct: false },
   ], "Cette sanction, relativement lourde, souligne l'importance accordée à la sécurité des jeunes passagers en France."),
   q("securite", "La vente de nouveaux sièges auto homologués selon l'ancienne norme R44 est interdite dans l'Union européenne depuis :", [
     { text: "Septembre 2024", correct: true },
     { text: "Cette norme reste en vente librement aujourd'hui", correct: false },
+    { text: "Janvier 2020", correct: false },
   ], "Seuls les sièges conformes à la norme i-Size (R129) peuvent désormais être commercialisés neufs, bien que les sièges R44 déjà en usage restent légaux."),
   q("securite", "Le système de fixation Isofix, généralisé sur les sièges auto récents, est obligatoire sur les voitures neuves depuis :", [
     { text: "2011", correct: true },
     { text: "1990", correct: false },
+    { text: "2000", correct: false },
   ], "Cette généralisation a permis de réduire fortement les erreurs d'installation, très fréquentes avec une fixation par ceinture classique."),
   q("securite", "Un siège auto ayant subi un accident, même léger, doit être :", [
     { text: "Remplacé, ses capacités de protection pouvant être compromises même sans dommage visible", correct: true },
     { text: "Conservé s'il ne présente aucune fissure apparente", correct: false },
+    { text: "Réutilisé après un simple nettoyage", correct: false },
   ], "Un choc peut créer des micro-fissures invisibles qui réduisent fortement l'efficacité du siège lors d'un accident ultérieur."),
-
-  /* ===== VAGUE 25 — assurance automobile (données vérifiées) ===== */
+  /* ===== VAGUE 25 -- assurance automobile (données vérifiées) ===== */
 
   q("divers", "L'obligation légale d'assurer tout véhicule terrestre à moteur en France résulte d'une loi datant de :", [
     { text: "1958", correct: true },
     { text: "1990", correct: false },
+    { text: "1972", correct: false },
   ], "Cette obligation historique, codifiée à l'article L211-1 du code des assurances, reste la base légale de l'assurance automobile aujourd'hui."),
   q("divers", "L'assurance dite « au tiers » correspond à la garantie minimale légale, qui est :", [
     { text: "La responsabilité civile", correct: true },
     { text: "La garantie tous risques", correct: false },
+    { text: "La garantie vol et incendie", correct: false },
   ], "Cette garantie couvre les dommages causés à autrui, mais jamais les propres dommages du conducteur responsable ni ceux de son véhicule."),
   q("divers", "L'assurance au tiers ne prend pas en charge :", [
     { text: "Les réparations de votre propre véhicule en cas d'accident dont vous êtes responsable", correct: true },
     { text: "Les dommages corporels ou matériels causés à un tiers", correct: false },
+    { text: "Les frais médicaux du tiers blessé", correct: false },
   ], "Seule une garantie complémentaire (dommages tous accidents, propre à l'assurance tous risques) permet de couvrir son propre véhicule en cas de responsabilité."),
   q("divers", "Mettre en circulation un véhicule sans assurance constitue :", [
     { text: "Un délit puni d'une amende pouvant atteindre 3 750 €", correct: true },
     { text: "Une simple contravention mineure", correct: false },
+    { text: "Une simple irrégularité administrative", correct: false },
   ], "Le défaut d'assurance est sévèrement sanctionné en droit français, avec des peines complémentaires possibles (confiscation, suspension de permis)."),
   q("divers", "L'obligation d'assurance d'un véhicule s'applique :", [
     { text: "Même si le véhicule reste stationné sans circuler, y compris dans un garage privé", correct: true },
     { text: "Uniquement lorsque le véhicule circule effectivement sur la voie publique", correct: false },
+    { text: "Uniquement sur la voie publique, jamais sur terrain privé", correct: false },
   ], "Un véhicule immobile représente toujours un risque potentiel (incendie, déplacement accidentel), justifiant le maintien de l'obligation d'assurance."),
   q("divers", "Si aucune compagnie n'accepte d'assurer un véhicule, le propriétaire peut saisir :", [
     { text: "Le Bureau central de tarification (BCT)", correct: true },
     { text: "Directement le tribunal administratif", correct: false },
+    { text: "La préfecture de son département", correct: false },
   ], "Le BCT peut contraindre un assureur à fournir au minimum la garantie responsabilité civile obligatoire."),
   q("divers", "Les forces de l'ordre vérifient aujourd'hui l'assurance d'un véhicule principalement via :", [
     { text: "Le Fichier des véhicules assurés (FVA), consulté électroniquement", correct: true },
     { text: "La vignette verte apposée sur le pare-brise, toujours obligatoire", correct: false },
+    { text: "Un appel téléphonique systématique à l'assureur", correct: false },
   ], "La vignette verte et l'attestation papier ont été remplacées par une vérification informatisée via le FVA."),
   q("conducteur", "Un accident responsable causé sous l'emprise de l'alcool ou de stupéfiants peut entraîner une majoration de la prime d'assurance jusqu'à :", [
     { text: "400 % en cas de sanctions multiples", correct: true },
     { text: "10 % maximum, quelle que soit la gravité", correct: false },
+    { text: "50 % maximum, quelle que soit la gravité", correct: false },
   ], "Les majorations de prime peuvent être très importantes en cas de comportement gravement fautif, notamment en cumul d'infractions."),
 
-  /* ===== VAGUE 26 — numéros d'urgence (données vérifiées) ===== */
+  /* ===== VAGUE 26 -- numéros d'urgence (données vérifiées) ===== */
 
   q("secours", "Le numéro national réservé aux personnes sourdes et malentendantes pour alerter les secours est le :", [
     { text: "114, accessible par SMS, tchat ou visiophonie", correct: true },
     { text: "115, réservé aux personnes sans domicile fixe", correct: false },
+    { text: "119, réservé à l'enfance en danger", correct: false },
   ], "Ce numéro unique et gratuit permet une communication écrite ou visuelle avec les services d'urgence, sans appel vocal."),
   q("secours", "En France, un appel au 112 depuis un téléphone mobile est automatiquement redirigé vers :", [
     { text: "Le SAMU (15) ou les pompiers (18) selon la situation décrite", correct: true },
     { text: "Un standard unique européen basé à Bruxelles", correct: false },
+    { text: "La police municipale la plus proche", correct: false },
   ], "Le 112 sert de point d'entrée unique qui oriente ensuite l'appel vers le service national compétent le plus adapté."),
   q("secours", "Le 112 peut être composé même :", [
     { text: "Sans carte SIM ou depuis un téléphone verrouillé", correct: true },
     { text: "Uniquement depuis un téléphone fixe", correct: false },
+    { text: "Uniquement avec un forfait actif", correct: false },
   ], "Cette particularité technique du 112 en fait un numéro accessible en toutes circonstances, y compris en cas de perte de la carte SIM."),
   q("secours", "Pour signaler une situation dangereuse ou une agression dans les transports en commun, le numéro dédié est le :", [
     { text: "3117, ou par SMS au 31 177", correct: true },
     { text: "18, comme pour tout accident", correct: false },
+    { text: "17, comme pour la police", correct: false },
   ], "Ce numéro spécifique aux transports permet une intervention rapide et ciblée des agents compétents sur le réseau concerné."),
   q("secours", "En cas d'appel accidentel à un numéro d'urgence (15, 17, 18 ou 112), il est recommandé de :", [
     { text: "Ne pas raccrocher immédiatement et expliquer l'erreur à l'opérateur", correct: true },
     { text: "Raccrocher aussitôt pour libérer la ligne au plus vite", correct: false },
+    { text: "Rappeler immédiatement un autre numéro d'urgence pour prévenir", correct: false },
   ], "Raccrocher brusquement peut laisser penser à l'opérateur que l'appelant est en danger, mobilisant des ressources inutilement pour le localiser."),
   q("secours", "Le numéro des sapeurs-pompiers, sollicité pour un accident de la route ou un départ de feu, est le :", [
     { text: "18", correct: true },
     { text: "17", correct: false },
+    { text: "15", correct: false },
   ], "Les pompiers interviennent sur de nombreuses situations d'urgence : accidents, incendies, fuites de gaz, noyades, entre autres."),
-
-  /* ===== VAGUE 27 — conduite en tunnel (données vérifiées) ===== */
+  /* ===== VAGUE 27 -- conduite en tunnel (données vérifiées) ===== */
 
   q("signalisation", "Le panneau C111, placé à l'entrée d'un tunnel, impose notamment :", [
     { text: "L'allumage obligatoire des feux de croisement et l'interdiction de faire demi-tour", correct: true },
     { text: "Une obligation de klaxonner à l'entrée", correct: false },
+    { text: "Une obligation de s'arrêter avant d'entrer", correct: false },
   ], "Ce panneau réglementaire, défini par arrêté, encadre strictement le comportement à adopter dès l'entrée dans un tunnel.", { image: WM("C111") }),
   q("divers", "S'arrêter ou stationner dans un tunnel est :", [
     { text: "Interdit, sauf en cas d'absolue nécessité comme une panne ou un malaise", correct: true },
     { text: "Autorisé quelques minutes sans restriction", correct: false },
+    { text: "Autorisé uniquement sur la voie de droite", correct: false },
   ], "L'espace confiné d'un tunnel rend tout arrêt non justifié particulièrement dangereux pour l'ensemble des usagers."),
   q("divers", "Dans les grands tunnels, la distance de sécurité pour une voiture se mesure grâce à :", [
     { text: "Des points bleus lumineux au sol, espacés d'environ 150 mètres, dont deux doivent rester visibles", correct: true },
     { text: "Un simple marquage au sol identique à celui des routes classiques", correct: false },
+    { text: "Des panneaux numérotés tous les 500 mètres", correct: false },
   ], "Ce repère visuel spécifique aux tunnels aide les conducteurs à évaluer concrètement la distance à respecter avec le véhicule précédent."),
   q("divers", "Pour un poids lourd circulant en tunnel, la distance de sécurité recommandée correspond à :", [
     { text: "Trois points bleus visibles, soit environ 300 mètres", correct: true },
     { text: "Un seul point bleu visible, comme pour une voiture", correct: false },
+    { text: "Deux points bleus visibles", correct: false },
   ], "Le poids et la distance de freinage plus longue des poids lourds justifient une distance de sécurité doublée en tunnel."),
   q("divers", "Le non-respect des distances de sécurité en tunnel est sanctionné par :", [
     { text: "Une amende de 135 €, un retrait de 3 points et une possible suspension de permis jusqu'à 3 ans", correct: true },
     { text: "Un simple avertissement sans conséquence", correct: false },
+    { text: "Une amende de 35 € sans retrait de points", correct: false },
   ], "Cette infraction est particulièrement sévèrement sanctionnée du fait du risque accru d'accident en chaîne dans un espace confiné."),
   q("divers", "En cas de ralentissement important dans un tunnel, vous devez :", [
     { text: "Allumer vos feux de détresse tout en conservant la distance de sécurité, même à l'arrêt", correct: true },
     { text: "Vous rapprocher du véhicule qui précède pour ne pas gêner la circulation", correct: false },
+    { text: "Faire demi-tour pour ressortir du tunnel", correct: false },
   ], "Maintenir une distance de sécurité même à l'arrêt permet de laisser un passage possible aux secours en cas de besoin."),
   q("divers", "En tunnel, une flèche verte lumineuse au-dessus d'une voie signifie que :", [
     { text: "Cette voie est ouverte à la circulation", correct: true },
     { text: "Il faut immédiatement s'y arrêter", correct: false },
+    { text: "Cette voie est réservée aux secours", correct: false },
   ], "Ce signal lumineux indique aux conducteurs les voies effectivement disponibles, notamment en cas d'incident sur une autre voie."),
   q("divers", "En cas de panne dans un tunnel, la procédure recommandée est de :", [
     { text: "Serrer à droite, allumer les feux de détresse, revêtir le gilet et rejoindre à pied la niche de sécurité la plus proche", correct: true },
     { text: "Rester dans le véhicule en attendant les secours sans sortir", correct: false },
+    { text: "Sortir et attendre à côté de son véhicule sans gilet", correct: false },
   ], "Sortir du véhicule en sécurité et s'éloigner vers une niche équipée d'un téléphone d'urgence limite les risques en cas d'incident grave."),
 
-  /* ===== VAGUE 28 — loi Badinter, indemnisation des victimes ===== */
+
+/* ===== VAGUE 28 — loi Badinter, indemnisation des victimes ===== */
 
   q("divers", "La loi dite « loi Badinter », qui facilite l'indemnisation des victimes d'accidents de la circulation, date de :", [
     { text: "1985", correct: true },
@@ -2927,708 +3227,882 @@ export const QUESTIONS = [
     { text: "Uniquement aux personnes possédant un véhicule assuré tous risques", correct: false },
   ], "Ces catégories bénéficient d'un régime encore plus protecteur, quasiment sans possibilité pour l'assureur d'opposer une faute de leur part."),
 
-  /* ===== VAGUE 29 — délit de fuite (sanctions précises) ===== */
+  /* ===== VAGUE 28 -- loi Badinter, indemnisation des victimes ===== */
+
+  q("divers", "La loi dite « loi Badinter », qui facilite l'indemnisation des victimes d'accidents de la circulation, date de :", [
+    { text: "1985", correct: true },
+    { text: "2005", correct: false },
+    { text: "1972", correct: false },
+  ], "Cette loi du 5 juillet 1985 a profondément transformé le régime d'indemnisation des victimes de la route en France."),
+  q("divers", "Avant la loi Badinter, une victime d'accident de la route devait, pour être indemnisée :", [
+    { text: "Prouver la faute du conducteur responsable", correct: true },
+    { text: "Simplement démontrer l'existence de son dommage", correct: false },
+    { text: "Obtenir l'accord amiable de l'assureur adverse", correct: false },
+  ], "Ce principe classique de la responsabilité civile rendait les procédures longues et incertaines avant la réforme de 1985."),
+  q("divers", "Grâce à la loi Badinter, un piéton ou un cycliste victime d'un accident impliquant un véhicule à moteur est en principe indemnisé :", [
+    { text: "Même si une faute simple de sa part a contribué à l'accident", correct: true },
+    { text: "Uniquement s'il n'a commis absolument aucune erreur", correct: false },
+    { text: "Uniquement si le conducteur reconnaît sa responsabilité", correct: false },
+  ], "Seule une faute dite « inexcusable », cause exclusive de l'accident, peut priver ces usagers vulnérables de leur droit à indemnisation, un cas rarement retenu en pratique."),
+  q("divers", "Concernant le conducteur victime d'un accident, la loi Badinter prévoit un régime :", [
+    { text: "Différent, où sa propre faute peut réduire ou exclure son droit à indemnisation", correct: true },
+    { text: "Strictement identique à celui des piétons et cyclistes", correct: false },
+    { text: "Plus favorable que celui des piétons", correct: false },
+  ], "Le conducteur, considéré comme acteur potentiel du risque, bénéficie d'une protection moins automatique que les usagers non motorisés."),
+  q("divers", "La loi Badinter accorde une protection encore renforcée à certaines victimes, notamment :", [
+    { text: "Les moins de 16 ans, les plus de 70 ans, et les personnes ayant un taux d'invalidité d'au moins 80 %", correct: true },
+    { text: "Uniquement aux personnes possédant un véhicule assuré tous risques", correct: false },
+    { text: "Uniquement aux résidents de la commune où survient l'accident", correct: false },
+  ], "Ces catégories bénéficient d'un régime encore plus protecteur, quasiment sans possibilité pour l'assureur d'opposer une faute de leur part."),
+
+  /* ===== VAGUE 29 -- délit de fuite (sanctions précises) ===== */
 
   q("divers", "Le délit de fuite consiste à :", [
     { text: "Ne pas s'arrêter après avoir causé ou occasionné un accident, pour échapper à sa responsabilité", correct: true },
     { text: "Ne pas s'arrêter à une sommation de la police", correct: false },
+    { text: "Ne pas s'arrêter à un péage sans payer", correct: false },
   ], "Cette seconde situation constitue en réalité une infraction distincte, appelée refus d'obtempérer, et non un délit de fuite."),
   q("divers", "Le délit de fuite, sans circonstance aggravante, est puni au maximum de :", [
     { text: "3 ans d'emprisonnement et 75 000 € d'amende", correct: true },
     { text: "1 mois d'emprisonnement et 1 500 € d'amende", correct: false },
+    { text: "6 mois d'emprisonnement et 15 000 € d'amende", correct: false },
   ], "Ces peines maximales, prévues par l'article 434-10 du code pénal, reflètent la gravité de ce comportement, même en l'absence de blessé."),
   q("divers", "Le délit de fuite entraîne, dès que la condamnation est définitive, un retrait de :", [
     { text: "6 points sur le permis de conduire", correct: true },
     { text: "1 point sur le permis de conduire", correct: false },
+    { text: "3 points sur le permis de conduire", correct: false },
   ], "Ce retrait représente la moitié du capital de points d'un conducteur expérimenté, illustrant la gravité de cette infraction."),
   q("divers", "Un délit de fuite constitue une circonstance qui, en cas d'accident mortel, peut :", [
     { text: "Aggraver significativement les peines encourues par le conducteur responsable", correct: true },
     { text: "N'a aucune incidence sur les peines liées à l'accident lui-même", correct: false },
+    { text: "Remplacer les poursuites pour homicide routier", correct: false },
   ], "Le cumul du délit de fuite avec des blessures ou un homicide involontaire alourdit considérablement les peines encourues."),
   q("divers", "Le délit de fuite peut être commis :", [
     { text: "Par tout conducteur, y compris un cycliste, pas uniquement un automobiliste", correct: true },
     { text: "Uniquement par le conducteur d'un véhicule à moteur", correct: false },
+    { text: "Uniquement par le conducteur d'un poids lourd", correct: false },
   ], "L'article 434-10 du code pénal vise tout conducteur d'un véhicule ou engin terrestre, ce qui inclut notamment les cyclistes."),
   q("divers", "Refuser de signer un constat amiable après un accrochage constitue-t-il un délit de fuite ?", [
     { text: "Non, à condition de s'être arrêté et d'avoir échangé les informations nécessaires sur les lieux", correct: true },
     { text: "Oui, systématiquement", correct: false },
+    { text: "Oui, mais seulement en cas de désaccord sur les circonstances", correct: false },
   ], "Le délit de fuite est caractérisé par le fait de ne pas s'arrêter, non par un simple désaccord sur le contenu ou la signature du constat."),
-
-  /* ===== VAGUE 30 — usage des feux (données vérifiées) ===== */
+  /* ===== VAGUE 30 -- usage des feux (données vérifiées) ===== */
 
   q("mecanique", "Les feux de route doivent être remplacés par les feux de croisement dès qu'un véhicule arrive à environ :", [
     { text: "150 mètres", correct: true },
     { text: "10 mètres", correct: false },
+    { text: "50 mètres", correct: false },
   ], "Cette anticipation permet d'éviter d'éblouir le conducteur venant en sens inverse au moment du croisement."),
   q("mecanique", "Les feux de brouillard arrière ne doivent être utilisés que :", [
     { text: "En cas de brouillard ou de chute de neige, jamais par simple pluie", correct: true },
     { text: "Chaque fois que la chaussée est mouillée", correct: false },
+    { text: "De nuit, quelles que soient les conditions météo", correct: false },
   ], "Ces feux très puissants éblouiraient dangereusement les véhicules suiveurs s'ils étaient utilisés hors des conditions de très faible visibilité."),
   q("vitesse", "Lorsque la visibilité descend en dessous de 50 mètres (brouillard dense, forte chute de neige), la vitesse est limitée à :", [
     { text: "50 km/h, sur toutes les routes y compris l'autoroute", correct: true },
     { text: "90 km/h, sans changement particulier", correct: false },
+    { text: "30 km/h, uniquement en agglomération", correct: false },
   ], "Cette limitation uniforme s'applique à tout type de route dès que la visibilité est fortement réduite, pour compenser la perte de perception du danger."),
   q("mecanique", "Maintenir ses feux de route allumés au moment de croiser un autre véhicule, provoquant son éblouissement, est :", [
     { text: "Une infraction sanctionnée, pouvant aller jusqu'à la mise en danger d'autrui dans les cas les plus graves", correct: true },
     { text: "Sans conséquence tant qu'aucun accident ne survient", correct: false },
+    { text: "Sanctionné uniquement en cas d'accident avéré", correct: false },
   ], "L'éblouissement volontaire ou par négligence constitue une infraction, avec des sanctions pouvant être aggravées en cas de comportement délibéré et répété."),
   q("mecanique", "Les feux de croisement ont une portée d'éclairage d'environ :", [
     { text: "30 mètres", correct: true },
     { text: "150 mètres", correct: false },
+    { text: "80 mètres", correct: false },
   ], "Cette portée plus limitée que les feux de route permet d'éclairer suffisamment sans éblouir les autres usagers."),
   q("mecanique", "En agglomération, de nuit, sur une route suffisamment éclairée par l'éclairage public, un conducteur doit circuler avec :", [
     { text: "Au moins ses feux de position, sans obligation d'utiliser les feux de croisement", correct: true },
     { text: "Obligatoirement ses feux de route allumés en permanence", correct: false },
+    { text: "Aucun feu allumé si l'éclairage public est suffisant", correct: false },
   ], "Un éclairage public suffisant permet de circuler avec un éclairage réduit, à condition que la visibilité reste bonne pour tous les usagers."),
   q("mecanique", "Les feux de brouillard avant peuvent, hors agglomération, compléter les feux de route :", [
     { text: "Sur une route étroite et sinueuse, sous certaines conditions précises", correct: true },
     { text: "Dans absolument toutes les situations de conduite nocturne", correct: false },
+    { text: "Uniquement en cas de pluie forte", correct: false },
   ], "Cet usage complémentaire reste encadré et limité à des configurations de route spécifiques, non généralisable à toute circonstance."),
 
-  /* ===== VAGUE 31 — conduite accompagnée AAC (données vérifiées) ===== */
+  /* ===== VAGUE 31 -- conduite accompagnée AAC (données vérifiées) ===== */
 
   q("conducteur", "L'apprentissage anticipé de la conduite (AAC), ou conduite accompagnée, est accessible dès l'âge de :", [
     { text: "15 ans", correct: true },
     { text: "17 ans", correct: false },
+    { text: "16 ans", correct: false },
   ], "Ce dispositif permet de commencer à se former très tôt, avec une formation initiale suivie d'une longue période de conduite accompagnée."),
   q("conducteur", "Pendant la phase de conduite accompagnée, l'élève doit parcourir un minimum de :", [
     { text: "3 000 km sur une durée d'au moins un an", correct: true },
     { text: "500 km sur un mois", correct: false },
+    { text: "1 000 km sur six mois", correct: false },
   ], "Ce seuil garantit une expérience suffisamment variée (routes, météo, horaires) avant de se présenter à l'examen pratique."),
   q("conducteur", "Pour être accompagnateur dans le cadre de l'AAC, il faut être titulaire du permis B depuis au moins :", [
     { text: "5 ans sans interruption", correct: true },
     { text: "1 an seulement", correct: false },
+    { text: "3 ans sans interruption", correct: false },
   ], "Cette ancienneté minimale garantit une expérience suffisante de l'accompagnateur pour transmettre de bonnes pratiques."),
   q("conducteur", "Pendant la conduite accompagnée, conduire à l'étranger est :", [
     { text: "Interdit, les trajets devant se dérouler exclusivement en France", correct: true },
     { text: "Autorisé sans restriction particulière", correct: false },
+    { text: "Autorisé uniquement dans l'Union européenne", correct: false },
   ], "Cette limitation est notamment liée aux conditions de l'extension de garantie d'assurance spécifique à l'AAC."),
   q("conducteur", "Un jeune conducteur issu de la filière AAC bénéficie d'une période probatoire réduite à :", [
     { text: "2 ans, au lieu de 3 ans pour la filière classique", correct: true },
     { text: "5 ans, plus longue que la filière classique", correct: false },
+    { text: "1 an, au lieu de 3 ans pour la filière classique", correct: false },
   ], "Cette réduction récompense l'expérience de conduite accumulée durant la phase d'accompagnement, jugée bénéfique pour la sécurité routière."),
   q("conducteur", "Durant la conduite accompagnée, le véhicule doit être équipé, entre autres, de :", [
     { text: "Deux rétroviseurs latéraux et d'un disque « conduite accompagnée » apposé à l'arrière", correct: true },
     { text: "Aucun équipement particulier n'est requis", correct: false },
+    { text: "D'un simple autocollant « débutant » sans autre exigence", correct: false },
   ], "Ces équipements sont obligatoires pour signaler la situation d'apprentissage et permettre à l'accompagnateur d'avoir une vue complète."),
   q("conducteur", "Le taux de réussite à l'examen pratique du permis B est généralement plus élevé pour les candidats issus de :", [
     { text: "La filière AAC (conduite accompagnée) que pour la filière classique", correct: true },
     { text: "La filière classique, sans conduite accompagnée", correct: false },
+    { text: "Aucune différence n'est observée entre les deux filières", correct: false },
   ], "L'expérience accumulée pendant la longue phase de conduite accompagnée se traduit statistiquement par un meilleur taux de réussite à l'examen."),
-
-  /* ===== VAGUE 32 — loi homicide routier, juillet 2025 (très récent) ===== */
+  /* ===== VAGUE 32 -- loi homicide routier, juillet 2025 (très récent) ===== */
 
   q("conducteur", "Depuis juillet 2025, un conducteur qui cause la mort d'autrui dans certaines circonstances aggravantes (alcool, stupéfiants, grand excès de vitesse...) peut être poursuivi pour :", [
     { text: "Homicide routier, un délit désormais autonome et distinct de l'homicide involontaire classique", correct: true },
     { text: "Une simple contravention de 5e classe", correct: false },
+    { text: "Un simple délit de blessures involontaires", correct: false },
   ], "Cette nouvelle qualification pénale, créée par la loi du 9 juillet 2025, reconnaît la spécificité de la violence routière."),
   q("conducteur", "L'homicide routier, en présence d'une seule circonstance aggravante, est puni au maximum de :", [
     { text: "7 ans d'emprisonnement et 100 000 € d'amende", correct: true },
     { text: "6 mois d'emprisonnement et 1 500 € d'amende", correct: false },
+    { text: "3 ans d'emprisonnement et 45 000 € d'amende", correct: false },
   ], "Ces peines maximales illustrent la gravité reconnue à un décès causé au volant dans des circonstances aggravantes précises."),
   q("conducteur", "En cas de cumul d'au moins deux circonstances aggravantes, l'homicide routier peut être puni jusqu'à :", [
     { text: "10 ans d'emprisonnement et 150 000 € d'amende", correct: true },
     { text: "1 an d'emprisonnement et 3 750 € d'amende", correct: false },
+    { text: "7 ans d'emprisonnement et 100 000 € d'amende", correct: false },
   ], "Le cumul de plusieurs comportements à risque (alcool et vitesse excessive, par exemple) alourdit considérablement la peine encourue."),
   q("conducteur", "Depuis la réforme de juillet 2025, un excès de vitesse d'au moins 30 km/h au-dessus de la limite autorisée constitue :", [
     { text: "L'une des circonstances aggravantes pouvant caractériser un homicide routier en cas d'accident mortel", correct: true },
     { text: "Un critère sans lien avec cette nouvelle infraction", correct: false },
+    { text: "Une circonstance atténuante si le conducteur est novice", correct: false },
   ], "Le grand excès de vitesse figure explicitement parmi les circonstances aggravantes listées par la nouvelle loi."),
   q("conducteur", "L'usage d'un téléphone tenu en main au moment d'un accident mortel est désormais reconnu comme :", [
     { text: "Une circonstance aggravante pouvant caractériser un homicide routier", correct: true },
     { text: "Un facteur totalement neutre dans la qualification pénale", correct: false },
+    { text: "Une circonstance atténuante en cas de premier accident", correct: false },
   ], "Cette inclusion souligne la reconnaissance légale du danger que représente la distraction au volant, notamment via le téléphone."),
   q("conducteur", "Depuis la loi de juillet 2025, en cas de conduite sous l'emprise de l'alcool ou de stupéfiants, la suspension administrative du permis par le préfet est devenue :", [
     { text: "Automatique, sans marge d'appréciation laissée au préfet", correct: true },
     { text: "Facultative, selon le contexte apprécié au cas par cas", correct: false },
+    { text: "Réservée aux seuls cas de récidive", correct: false },
   ], "Cette automatisation renforce l'effectivité immédiate de la sanction dès la constatation de l'infraction, indépendamment de la procédure judiciaire ultérieure."),
 
-  /* ===== VAGUE 33 — catégories de stationnement (données vérifiées) ===== */
+  /* ===== VAGUE 33 -- catégories de stationnement (données vérifiées) ===== */
 
   q("divers", "Le stationnement dit « gênant » (article R417-10 du code de la route) est sanctionné par une amende forfaitaire de :", [
     { text: "35 €", correct: true },
     { text: "135 €", correct: false },
+    { text: "68 €", correct: false },
   ], "Cette contravention de 2e classe couvre les stationnements qui perturbent la circulation sans présenter de danger direct."),
   q("divers", "Le stationnement dit « très gênant » (article R417-11), notamment sur un passage piéton ou une place handicapée, est sanctionné par une amende forfaitaire de :", [
     { text: "135 €", correct: true },
     { text: "35 €", correct: false },
+    { text: "68 €", correct: false },
   ], "Cette contravention de 4e classe vise des situations plus graves compromettant la sécurité ou l'accès de certains usagers vulnérables."),
   q("divers", "Le stationnement est qualifié de « dangereux » notamment lorsqu'il a lieu :", [
     { text: "À proximité d'un virage, d'un sommet de côte ou d'une intersection où la visibilité est insuffisante", correct: true },
     { text: "Devant n'importe quel commerce fermé", correct: false },
+    { text: "Sur un emplacement payant non réglé", correct: false },
   ], "Cette catégorie distincte vise les emplacements où la visibilité réduite crée un risque de collision direct."),
   q("divers", "Un stationnement qualifié de « dangereux » entraîne généralement, en plus de l'amende, :", [
     { text: "Un retrait de points sur le permis de conduire", correct: true },
     { text: "Aucune conséquence sur le permis, contrairement au stationnement gênant", correct: false },
+    { text: "Une suspension automatique du permis", correct: false },
   ], "Contrairement au simple stationnement gênant ou très gênant, le stationnement dangereux entraîne un retrait de points du fait du risque direct qu'il crée."),
   q("divers", "Un véhicule laissé immobile plus de 7 jours consécutifs au même endroit sur la voie publique est qualifié de stationnement :", [
     { text: "Abusif", correct: true },
     { text: "Dangereux, automatiquement", correct: false },
+    { text: "Gênant, automatiquement", correct: false },
   ], "Cette durée maximale, pouvant être réduite par arrêté municipal, vise à limiter l'occupation prolongée de l'espace public par un même véhicule."),
   q("divers", "Stationner devant l'entrée carrossable d'un immeuble riverain, empêchant l'accès, est considéré comme un stationnement :", [
     { text: "Gênant", correct: true },
     { text: "Toujours autorisé si le véhicule ne reste pas plus de 5 minutes", correct: false },
+    { text: "Simplement déconseillé, sans sanction prévue", correct: false },
   ], "Ce type de stationnement, même bref, entrave l'usage normal d'un accès et constitue une infraction sanctionnable."),
 
-  /* ===== VAGUE 34 — téléphone/GPS au volant (données précises 2026) ===== */
+  /* ===== VAGUE 34 -- téléphone/GPS au volant (données précises 2026) ===== */
 
   q("conducteur", "Utiliser son smartphone comme GPS au volant est :", [
     { text: "Autorisé, à condition qu'il soit fixé sur un support et non manipulé en conduisant", correct: true },
     { text: "Strictement interdit dans tous les cas, au même titre qu'un appel téléphonique", correct: false },
+    { text: "Autorisé uniquement sur autoroute", correct: false },
   ], "L'interdiction vise le fait de tenir ou de manipuler le téléphone, pas son usage comme aide à la navigation lorsqu'il est correctement fixé."),
   q("conducteur", "L'itinéraire d'un GPS sur smartphone doit être programmé :", [
     { text: "Avant de démarrer, véhicule à l'arrêt", correct: true },
     { text: "À tout moment, y compris en roulant, tant que le geste est rapide", correct: false },
+    { text: "Uniquement par le passager, jamais par le conducteur", correct: false },
   ], "Toute manipulation de l'écran en circulation constitue une infraction, y compris pour modifier un simple itinéraire GPS."),
   q("conducteur", "Un téléphone fixé sur un support mais affichant une application autre que la navigation (réseau social, notifications) dans le champ de vision du conducteur :", [
     { text: "Constitue une infraction spécifique, distincte de l'usage tenu en main", correct: true },
     { text: "Est parfaitement toléré tant que l'appareil est fixé", correct: false },
+    { text: "N'est sanctionné que si le conducteur touche l'écran", correct: false },
   ], "Seul un écran dédié à une aide à la conduite ou à la navigation est autorisé dans le champ de vision ; tout autre affichage est sanctionné."),
   q("conducteur", "Les avertisseurs et détecteurs de radars (boîtiers ou applications) sont :", [
     { text: "Interdits et sanctionnés par une amende pouvant atteindre 1 500 € avec retrait de 6 points", correct: true },
     { text: "Autorisés s'ils se limitent à afficher les zones de danger", correct: false },
+    { text: "Autorisés uniquement hors agglomération", correct: false },
   ], "Ces dispositifs, qu'ils prennent la forme d'un boîtier dédié ou d'une application, sont strictement interdits en France."),
   q("conducteur", "Un véhicule arrêté à un feu rouge est-il juridiquement considéré comme « en circulation » pour l'application de l'interdiction du téléphone tenu en main ?", [
     { text: "Oui, tant qu'il n'est pas garé sur un emplacement de stationnement autorisé", correct: true },
     { text: "Non, l'arrêt à un feu suspend cette interdiction", correct: false },
+    { text: "Non, uniquement si le moteur est coupé", correct: false },
   ], "La jurisprudence considère qu'un véhicule reste en circulation dès lors qu'il n'est pas stationné sur un emplacement dédié, même à l'arrêt temporaire."),
   q("conducteur", "Depuis 2025-2026, certains départements expérimentent, en plus de l'amende classique, une mesure de :", [
     { text: "Suspension administrative immédiate du permis pour usage du téléphone tenu en main, décidée par arrêté préfectoral local", correct: true },
     { text: "Suppression définitive et nationale du droit d'utiliser un GPS", correct: false },
+    { text: "Confiscation systématique du téléphone", correct: false },
   ], "Cette expérimentation locale, non généralisée à tout le territoire, vient s'ajouter aux sanctions nationales déjà existantes (amende et retrait de points)."),
 
-  /* ===== VAGUE 35 — rodéos urbains (données vérifiées, loi 2018) ===== */
+  /* ===== VAGUE 35 -- rodéos urbains (données vérifiées, loi 2018) ===== */
 
   q("divers", "Le rodéo urbain (ou rodéo motorisé) est une infraction autonome créée par une loi de :", [
     { text: "2018", correct: true },
     { text: "2005", correct: false },
+    { text: "2022", correct: false },
   ], "Cette loi du 3 août 2018 a inséré dans le code de la route une incrimination spécifique pour ces comportements dangereux et répétés."),
   q("divers", "Le rodéo urbain, dans sa version simple, est puni au maximum de :", [
     { text: "1 an d'emprisonnement et 15 000 € d'amende", correct: true },
     { text: "1 mois d'emprisonnement et 500 € d'amende", correct: false },
+    { text: "6 mois d'emprisonnement et 7 500 € d'amende", correct: false },
   ], "Ces peines s'appliquent même en l'absence d'accident ou de dommage matériel, la seule mise en danger suffisant à caractériser l'infraction."),
   q("divers", "Pour être qualifié de rodéo urbain, un comportement dangereux au volant doit être :", [
     { text: "Répété de façon intentionnelle, et non un acte isolé", correct: true },
     { text: "Commis obligatoirement à plusieurs véhicules", correct: false },
+    { text: "Commis exclusivement de nuit", correct: false },
   ], "Un seul conducteur agissant seul peut être poursuivi pour rodéo urbain, à condition que ses manœuvres dangereuses soient répétées intentionnellement."),
   q("divers", "En cas de rodéo urbain commis sous l'emprise de l'alcool ou de stupéfiants, la peine encourue peut atteindre :", [
     { text: "3 ans d'emprisonnement et 45 000 € d'amende", correct: true },
     { text: "1 semaine d'emprisonnement et 150 € d'amende", correct: false },
+    { text: "1 an d'emprisonnement et 15 000 € d'amende", correct: false },
   ], "La présence de circonstances aggravantes comme l'alcool ou les stupéfiants alourdit significativement les peines prévues pour cette infraction."),
   q("divers", "La confiscation du véhicule ayant servi à commettre un rodéo urbain est, en principe :", [
     { text: "Obligatoire si le conducteur en est propriétaire, sauf décision spécialement motivée du tribunal", correct: true },
     { text: "Impossible, seule une amende pouvant être prononcée", correct: false },
+    { text: "Facultative et rarement appliquée en pratique", correct: false },
   ], "Le caractère obligatoire de cette peine complémentaire vise à dissuader fortement la pratique des rodéos motorisés."),
   q("divers", "Inciter autrui à participer à un rodéo urbain ou en faire la promotion sur les réseaux sociaux est :", [
     { text: "Également un délit, puni de 2 ans d'emprisonnement et 30 000 € d'amende", correct: true },
     { text: "Sans conséquence juridique, seule la participation physique étant punissable", correct: false },
+    { text: "Une simple contravention de 5e classe", correct: false },
   ], "La loi vise aussi les personnes qui encouragent ou organisent ces comportements, sans nécessairement y participer directement."),
-
-  /* ===== VAGUE 36 — pictogrammes médicaments et conduite (données précises) ===== */
+  /* ===== VAGUE 36 -- pictogrammes médicaments et conduite (données précises) ===== */
 
   q("conducteur", "Le pictogramme de niveau 1 (fond jaune) sur une boîte de médicament signifie :", [
     { text: "Un risque faible, dépendant surtout de la tolérance individuelle, sans interdiction de conduire", correct: true },
     { text: "Une interdiction totale et systématique de prendre le volant", correct: false },
+    { text: "Un risque identique au niveau 3", correct: false },
   ], "Ce niveau invite simplement à la prudence et à la lecture de la notice, sans remettre en cause la conduite pour la plupart des personnes."),
   q("conducteur", "Le pictogramme de niveau 2 (fond orange) recommande :", [
     { text: "De ne pas conduire sans l'avis d'un professionnel de santé", correct: true },
     { text: "De conduire normalement sans précaution particulière", correct: false },
+    { text: "D'arrêter totalement de conduire pendant toute la durée du traitement", correct: false },
   ], "Ce niveau intermédiaire signale un risque réel pour la conduite, nécessitant l'avis d'un médecin ou pharmacien avant de prendre le volant."),
   q("conducteur", "Le pictogramme de niveau 3 (fond rouge) signifie que la conduite est :", [
     { text: "Formellement déconseillée, l'effet pouvant se prolonger après l'arrêt du traitement", correct: true },
     { text: "Possible sans restriction particulière", correct: false },
+    { text: "Autorisée uniquement de jour", correct: false },
   ], "Ce niveau maximal de risque concerne des médicaments dont les effets sur la vigilance rendent la conduite dangereuse pour tous les patients."),
   q("conducteur", "La prise combinée de plusieurs médicaments classés en niveau 1 ou 2 peut :", [
     { text: "Produire un effet cumulé équivalent à un niveau 3", correct: true },
     { text: "N'a jamais d'effet cumulatif, chaque médicament restant indépendant", correct: false },
+    { text: "Annuler les effets de chaque médicament pris isolément", correct: false },
   ], "L'association de plusieurs traitements, même de niveau modéré, peut renforcer les effets sur la vigilance et justifier une prudence accrue."),
   q("conducteur", "Les médicaments les plus fréquemment associés aux accidents liés à un défaut de vigilance sont notamment :", [
     { text: "Les somnifères et les anxiolytiques", correct: true },
     { text: "Les vitamines et compléments alimentaires", correct: false },
+    { text: "Les antibiotiques classiques", correct: false },
   ], "Ces traitements agissant sur le système nerveux central sont particulièrement concernés par les niveaux de risque 2 et 3."),
 
-  /* ===== VAGUE 37 — loi Montagne, équipements hiver (données 2025-2026) ===== */
+  /* ===== VAGUE 37 -- loi Montagne, équipements hiver (données 2025-2026) ===== */
 
   q("mecanique", "La loi Montagne impose des équipements hivernaux obligatoires, chaque année, sur la période :", [
     { text: "Du 1er novembre au 31 mars, dans les communes concernées", correct: true },
     { text: "Toute l'année, sans limitation de dates", correct: false },
+    { text: "Du 1er décembre au 28 février uniquement", correct: false },
   ], "Cette période hivernale, fixée chaque année par décret, correspond aux mois où les conditions de neige et de verglas sont les plus fréquentes en zone de montagne."),
   q("mecanique", "Pour être conformes à la loi Montagne, les pneus hiver ou 4 saisons doivent porter le marquage :", [
     { text: "3PMSF (montagne à trois pics avec flocon de neige)", correct: true },
     { text: "M+S (Mud and Snow) uniquement, qui reste pleinement suffisant", correct: false },
+    { text: "E-mark (marquage européen général des pneus)", correct: false },
   ], "Depuis novembre 2024, le seul marquage M+S ne suffit plus ; seul le marquage 3PMSF, plus exigeant, atteste d'une réelle performance hivernale certifiée."),
   q("signalisation", "L'entrée dans une zone où s'applique la loi Montagne est signalée par le panneau :", [
     { text: "B58", correct: true },
     { text: "AB4", correct: false },
+    { text: "A4", correct: false },
   ], "Ce panneau spécifique, complété par un panonceau de dates, indique le début d'une zone où l'équipement hivernal devient obligatoire."),
   q("mecanique", "En zone soumise à la loi Montagne, à défaut de pneus hiver homologués, un conducteur doit disposer de :", [
     { text: "Chaînes ou chaussettes à neige pour équiper au moins les roues motrices", correct: true },
     { text: "Aucune alternative n'existe en dehors des pneus hiver", correct: false },
+    { text: "D'un simple triangle de signalisation supplémentaire", correct: false },
   ], "Les dispositifs antidérapants amovibles constituent une alternative acceptée, à condition d'équiper au minimum les roues motrices du véhicule."),
   q("mecanique", "La loi Montagne s'applique dans un total de :", [
     { text: "34 départements français situés en zone de massifs montagneux", correct: true },
     { text: "Tous les départements de France sans exception", correct: false },
+    { text: "5 départements uniquement, situés dans les Alpes", correct: false },
   ], "Seuls les départements concernés par des massifs montagneux (Alpes, Pyrénées, Massif central, Jura, Vosges, Corse) sont soumis à cette obligation spécifique."),
   q("mecanique", "Le non-respect de la loi Montagne dans une commune concernée expose le conducteur à :", [
     { text: "Une amende de 4e classe (135 €) et une possible immobilisation du véhicule", correct: true },
     { text: "Un simple avertissement écrit sans aucune amende", correct: false },
+    { text: "Une amende de 1re classe (11 €) sans autre conséquence", correct: false },
   ], "Au-delà de l'amende, l'absence d'équipement conforme peut aussi compliquer l'indemnisation par l'assurance en cas d'accident lié aux conditions hivernales."),
 
-  /* ===== VAGUE 38 — bonus-malus assurance (données précises) ===== */
+  /* ===== VAGUE 38 -- bonus-malus assurance (données précises) ===== */
 
   q("divers", "Le coefficient de bonus-malus (CRM) d'un nouvel assuré souscrivant son premier contrat automobile est fixé à :", [
     { text: "1, un niveau neutre sans bonus ni malus", correct: true },
     { text: "0,50, le bonus maximal accordé d'emblée", correct: false },
+    { text: "1,25, un léger malus de départ", correct: false },
   ], "Ce coefficient de référence évolue ensuite chaque année selon la survenue ou non d'accidents responsables."),
   q("divers", "Chaque année sans accident responsable, le coefficient de bonus-malus est réduit de :", [
     { text: "5 %", correct: true },
     { text: "25 %", correct: false },
+    { text: "10 %", correct: false },
   ], "Cette réduction progressive de 5 % par an permet d'atteindre le bonus maximal après plusieurs années consécutives sans sinistre responsable."),
   q("divers", "Un accident entièrement responsable entraîne une majoration du coefficient de bonus-malus de :", [
     { text: "25 %", correct: true },
     { text: "5 %", correct: false },
+    { text: "50 %", correct: false },
   ], "Cette majoration, bien plus importante que le bonus annuel, illustre l'effet dissuasif recherché par ce système envers les comportements responsables d'accidents."),
   q("divers", "En cas d'accident partiellement responsable (50/50), la majoration du coefficient est réduite à :", [
     { text: "12,5 %", correct: true },
     { text: "25 %, comme pour une responsabilité totale", correct: false },
+    { text: "0 %, aucune majoration n'étant appliquée", correct: false },
   ], "Le partage de responsabilité entre les conducteurs impliqués se traduit par une majoration proportionnellement réduite de moitié."),
   q("divers", "Le bonus maximal, correspondant à un coefficient de 0,50, est atteint après combien d'années consécutives sans accident responsable ?", [
     { text: "13 ans", correct: true },
     { text: "3 ans", correct: false },
+    { text: "5 ans", correct: false },
   ], "Cette longue durée récompense une conduite prudente et régulière sur une période étendue."),
   q("divers", "Le coefficient de bonus-malus ne peut en aucun cas dépasser :", [
     { text: "3,50, quel que soit le nombre d'accidents responsables cumulés", correct: true },
     { text: "Il n'existe aucun plafond légal au malus", correct: false },
+    { text: "2,00, au-delà duquel l'assurance devient automatiquement résiliée", correct: false },
   ], "Ce plafond réglementaire évite une majoration illimitée de la prime, même pour les conducteurs cumulant plusieurs sinistres responsables."),
   q("divers", "La règle dite de « descente rapide » permet à un conducteur malussé de revenir à un coefficient de 1 après :", [
     { text: "2 années consécutives sans accident responsable", correct: true },
     { text: "10 années consécutives sans accident responsable", correct: false },
+    { text: "5 années consécutives sans accident responsable", correct: false },
   ], "Ce mécanisme favorable évite qu'un malus important ne pénalise indéfiniment un conducteur qui a ensuite adopté une conduite prudente."),
   q("divers", "Un conducteur bénéficiant du bonus maximal (0,50) depuis au moins 3 ans voit son premier accident responsable :", [
     { text: "Ne pas entraîner de majoration de son coefficient", correct: true },
     { text: "Immédiatement sanctionné par la majoration standard de 25 %", correct: false },
+    { text: "Sanctionné par une majoration réduite de 10 % seulement", correct: false },
   ], "Cet avantage légal protège les conducteurs les plus expérimentés et prudents lors d'un premier incident après une longue période sans sinistre."),
 
-  /* ===== VAGUE 39 — passages à niveau (données précises, article R422-3) ===== */
+  /* ===== VAGUE 39 -- passages à niveau (données précises, article R422-3) ===== */
 
   q("signalisation", "Le franchissement d'un passage à niveau alors que les barrières sont en cours de fermeture est sanctionné par :", [
     { text: "Une amende de 135 € et un retrait de 4 points", correct: true },
     { text: "Un simple avertissement sans amende ni retrait", correct: false },
+    { text: "Une amende de 35 € sans retrait de points", correct: false },
   ], "Cette contravention de 4e classe, prévue à l'article R422-3 du code de la route, peut également entraîner une suspension du permis jusqu'à 3 ans.", { image: WM("AB1") }),
   q("divers", "Sur un passage à niveau sans barrière, signalé par une croix de Saint-André, le conducteur doit :", [
     { text: "S'arrêter et s'assurer qu'aucun train n'approche avant de s'engager", correct: true },
     { text: "Ralentir simplement sans obligation de s'arrêter", correct: false },
+    { text: "Klaxonner avant de s'engager, sans autre précaution", correct: false },
   ], "L'article R422-3 impose un arrêt et une vérification systématique avant de s'engager sur un passage non protégé par des barrières."),
   q("divers", "Un train lancé à 90 km/h nécessite, pour s'arrêter complètement, une distance d'environ :", [
     { text: "800 mètres", correct: true },
     { text: "80 mètres", correct: false },
+    { text: "200 mètres", correct: false },
   ], "Cette distance de freinage considérable explique pourquoi les trains bénéficient d'une priorité absolue sur tout passage à niveau."),
   q("divers", "Le dépassement d'un autre véhicule est interdit sur les passages à niveau non munis de barrières ou demi-barrières :", [
     { text: "Systématiquement, en vertu de l'article R414-12 du code de la route", correct: true },
     { text: "Uniquement si un train est visible au moment du dépassement", correct: false },
+    { text: "Uniquement de nuit", correct: false },
   ], "Cette interdiction s'applique indépendamment de la présence visible d'un train, pour éviter tout risque d'immobilisation sur les voies."),
   q("divers", "Si votre véhicule reste bloqué sur un passage à niveau au moment où les barrières commencent à descendre, vous devez :", [
     { text: "Évacuer immédiatement le véhicule et enfoncer la barrière si nécessaire, celle-ci étant conçue pour céder", correct: true },
     { text: "Rester dans le véhicule en attendant les secours", correct: false },
+    { text: "Klaxonner pour alerter le conducteur du train", correct: false },
   ], "La priorité absolue est de dégager la voie et de mettre les occupants en sécurité, la barrière étant volontairement conçue pour ne pas résister à un tel choc."),
   q("divers", "Hors agglomération, les balises annonçant l'approche d'un passage à niveau sont généralement positionnées à :", [
     { text: "150, 100 et 50 mètres du passage, selon le nombre de bandes rouges", correct: true },
     { text: "Une seule balise unique, à 500 mètres", correct: false },
+    { text: "300, 200 et 100 mètres du passage", correct: false },
   ], "Ce système de trois balises successives permet une anticipation progressive de l'approche du passage à niveau."),
 
-  /* ===== VAGUE 40 — refus de priorité piéton, article R415-11 (données précises) ===== */
+  /* ===== VAGUE 40 -- refus de priorité piéton, article R415-11 (données précises) ===== */
 
   q("usagers", "Depuis un décret de septembre 2018, le refus de priorité à un piéton engagé sur un passage protégé entraîne un retrait de :", [
     { text: "6 points, contre 4 points auparavant", correct: true },
     { text: "1 point seulement", correct: false },
+    { text: "3 points, contre 4 points auparavant", correct: false },
   ], "Ce durcissement de 2018 illustre la volonté de mieux protéger les piétons, usagers particulièrement vulnérables en cas de choc."),
   q("usagers", "L'article R415-11 du code de la route impose de céder le passage à un piéton dès qu'il :", [
     { text: "S'engage régulièrement dans la traversée ou manifeste clairement son intention de le faire", correct: true },
     { text: "A terminé plus de la moitié de sa traversée", correct: false },
+    { text: "Lève la main pour demander le passage", correct: false },
   ], "La simple manifestation claire de l'intention de traverser suffit à déclencher l'obligation de céder le passage, sans attendre un engagement effectif."),
   q("usagers", "Un piéton qui traverse en dehors des clous alors qu'un passage protégé existe à moins de 50 mètres risque une amende de :", [
     { text: "4 €", correct: true },
     { text: "135 €, comme un automobiliste en infraction", correct: false },
+    { text: "35 €", correct: false },
   ], "Cette amende symbolique, bien plus faible que celle du conducteur, reflète le risque très inégal encouru par chacun des deux usagers en cas de collision."),
   q("usagers", "Le refus de priorité à un piéton peut désormais être constaté :", [
     { text: "Par vidéo-verbalisation, sans interception physique du conducteur", correct: true },
     { text: "Uniquement lors d'un contrôle routier avec interpellation directe", correct: false },
+    { text: "Uniquement sur plainte du piéton concerné", correct: false },
   ], "Cette évolution technique permet de sanctionner l'infraction même en l'absence de tout contact direct entre l'agent et le conducteur au moment des faits."),
   q("usagers", "L'obligation de céder le passage à un piéton s'applique également dans :", [
     { text: "Les aires piétonnes et les zones de rencontre, même en l'absence de passage clouté", correct: true },
     { text: "Uniquement sur les passages cloutés matérialisés au sol", correct: false },
+    { text: "Uniquement dans le centre des grandes villes", correct: false },
   ], "L'article R415-11 étend explicitement cette priorité aux espaces où les piétons circulent librement, au-delà des seuls passages protégés traditionnels."),
-
-  /* ===== VAGUE 41 — panneau M12, cédez-le-passage cycliste au feu (données précises) ===== */
+  /* ===== VAGUE 41 -- panneau M12, cédez-le-passage cycliste au feu (données précises) ===== */
 
   q("signalisation", "Le panonceau M12, placé sous un feu tricolore, autorise :", [
     { text: "Les cyclistes à franchir le feu rouge dans la direction indiquée, en cédant le passage", correct: true },
     { text: "Tous les véhicules à franchir le feu rouge sans restriction", correct: false },
+    { text: "Uniquement les piétons à traverser en dehors du passage clouté", correct: false },
   ], "Ce dispositif, propre aux cyclistes (et depuis 2024 aux utilisateurs d'EDPM), transforme localement le feu rouge en simple cédez-le-passage.", { image: WM("M12") }),
   q("usagers", "En présence d'un panneau M12, un cycliste franchissant le feu rouge doit malgré tout :", [
     { text: "Céder le passage aux piétons engagés sur le passage et aux véhicules bénéficiant du feu vert", correct: true },
     { text: "Avoir une priorité absolue sur tous les autres usagers du carrefour", correct: false },
+    { text: "Attendre l'autorisation expresse d'un agent", correct: false },
   ], "Le M12 ne confère jamais de priorité automatique : il s'agit d'un cédez-le-passage, imposant une vérification active avant de s'engager."),
   q("usagers", "Le panonceau M12a, le plus répandu en France, autorise le cycliste à :", [
     { text: "Tourner à droite uniquement", correct: true },
     { text: "Continuer tout droit uniquement", correct: false },
+    { text: "Tourner à gauche uniquement", correct: false },
   ], "Cette variante, la plus fréquente, correspond au mouvement le moins risqué à autoriser au feu rouge pour un cycliste."),
   q("usagers", "Un cycliste qui franchit un feu rouge équipé d'un panneau M12 autorisant uniquement le tourne-à-droite, mais qui va tout droit, s'expose à :", [
     { text: "Une amende de 135 € pour non-respect du feu rouge", correct: true },
     { text: "Aucune sanction, le panneau M12 couvrant toutes les directions", correct: false },
+    { text: "Un simple avertissement, sans amende", correct: false },
   ], "L'autorisation du M12 est strictement limitée à la ou les directions indiquées par ses flèches ; toute autre direction reste une infraction classique."),
   q("usagers", "Depuis mars 2024, le bénéfice du panneau M12 a été étendu :", [
     { text: "Aux utilisateurs de trottinettes électriques et autres engins de déplacement personnel motorisés", correct: true },
     { text: "Aux automobilistes circulant seuls dans leur véhicule", correct: false },
+    { text: "Aux conducteurs de deux-roues motorisés de plus de 125 cm³", correct: false },
   ], "Cette extension reconnaît que les EDPM sont désormais assimilés aux cyclistes pour l'essentiel de la réglementation routière."),
   q("usagers", "L'installation d'un panneau M12 à un carrefour donné relève de la décision :", [
     { text: "De la collectivité territoriale compétente, après étude de la configuration du carrefour", correct: true },
     { text: "D'une obligation nationale identique partout en France", correct: false },
+    { text: "Du préfet de région uniquement", correct: false },
   ], "Contrairement à de nombreux panneaux standardisés, la pose d'un M12 dépend d'une analyse locale au cas par cas menée par les gestionnaires de voirie."),
 
-  /* ===== VAGUE 42 — confiscation du véhicule, grand excès de vitesse (données 2025-2026) ===== */
+  /* ===== VAGUE 42 -- confiscation du véhicule, grand excès de vitesse (données 2025-2026) ===== */
 
   q("vitesse", "Depuis 2016, un grand excès de vitesse (50 km/h ou plus) permet aux forces de l'ordre de procéder, dès le contrôle, à :", [
     { text: "Une immobilisation immédiate du véhicule et sa mise en fourrière à titre provisoire", correct: true },
     { text: "Uniquement un simple avertissement oral", correct: false },
+    { text: "Une confiscation définitive immédiate, sans jugement", correct: false },
   ], "Cette possibilité d'immobilisation immédiate, autrefois réservée à la récidive, s'applique désormais dès la première infraction constatée."),
   q("vitesse", "La confiscation définitive du véhicule pour grand excès de vitesse est prononcée par :", [
     { text: "Un juge, à l'issue d'un jugement", correct: true },
     { text: "L'agent verbalisateur, directement sur place", correct: false },
+    { text: "Le préfet, par simple arrêté administratif", correct: false },
   ], "Seule une décision de justice peut prononcer la confiscation définitive ; les forces de l'ordre ne peuvent qu'immobiliser provisoirement le véhicule."),
   q("vitesse", "En cas de récidive de grand excès de vitesse dans les 5 ans, la confiscation du véhicule devient :", [
     { text: "Obligatoire si le conducteur en est propriétaire, sauf décision spécialement motivée du tribunal", correct: true },
     { text: "Impossible, seule une amende pouvant être prononcée en récidive", correct: false },
+    { text: "Facultative, laissée à la libre appréciation de l'agent verbalisateur", correct: false },
   ], "La récidive aggrave significativement les conséquences, rendant la confiscation quasi systématique en cas de propriété du véhicule par le contrevenant."),
   q("vitesse", "Un conducteur ayant commis un grand excès de vitesse au volant d'un véhicule de location ou de fonction :", [
     { text: "Ne peut pas voir ce véhicule confisqué, n'en étant pas propriétaire", correct: true },
     { text: "Risque la confiscation au même titre qu'un propriétaire", correct: false },
+    { text: "Engage la responsabilité de l'entreprise de location pour la confiscation", correct: false },
   ], "La confiscation ne peut porter que sur un bien appartenant au condamné ; un véhicule loué ou prêté échappe donc à cette sanction."),
   q("vitesse", "Après une immobilisation pour grand excès de vitesse, si le procureur n'autorise pas la mise en fourrière dans un délai de :", [
     { text: "7 jours, le véhicule est restitué à son propriétaire", correct: true },
     { text: "24 heures, le véhicule est définitivement confisqué", correct: false },
+    { text: "30 jours, le véhicule reste immobilisé sans limite", correct: false },
   ], "Ce délai encadre strictement la durée pendant laquelle un véhicule peut rester immobilisé sans décision judiciaire confirmant la mesure."),
-
-  /* ===== VAGUE 43 — stationnement en pente (données vérifiées) ===== */
+  /* ===== VAGUE 43 -- stationnement en pente (données vérifiées) ===== */
 
   q("securite", "Lors d'un stationnement en pente, il est recommandé de braquer les roues avant :", [
     { text: "Vers le trottoir en descente, vers la chaussée en montée", correct: true },
     { text: "Toujours tout droit, quel que soit le sens de la pente", correct: false },
+    { text: "Vers la chaussée en descente, vers le trottoir en montée", correct: false },
   ], "Cette orientation permet, en cas de défaillance du frein à main, que le véhicule soit stoppé par le trottoir plutôt que de dévaler la pente."),
   q("securite", "Sur un véhicule à boîte manuelle stationné en montée, il est conseillé d'enclencher :", [
     { text: "La marche arrière", correct: true },
     { text: "La première vitesse", correct: false },
+    { text: "Le point mort", correct: false },
   ], "En montée, la marche arrière bloque efficacement le véhicule contre un éventuel mouvement vers l'avant en cas de défaillance du frein à main."),
   q("securite", "Sur un véhicule à boîte manuelle stationné en descente, il est conseillé d'enclencher :", [
     { text: "La première vitesse", correct: true },
     { text: "La marche arrière", correct: false },
+    { text: "Le point mort", correct: false },
   ], "La première vitesse offre la meilleure résistance mécanique pour empêcher le véhicule de reculer vers l'avant de la pente."),
   q("securite", "Sur un véhicule à boîte automatique, en stationnement, le levier doit être positionné sur :", [
     { text: "La position P (parking)", correct: true },
     { text: "La position N (point mort)", correct: false },
+    { text: "La position D (drive)", correct: false },
   ], "La position P verrouille mécaniquement la transmission, contrairement au point mort qui laisse les roues libres de tourner."),
   q("securite", "Le rôle du frein à main est de :", [
     { text: "Bloquer une ou plusieurs roues sur un même essieu pour empêcher tout déplacement du véhicule", correct: true },
     { text: "Ralentir le véhicule en cas de défaillance du freinage principal en roulant", correct: false },
+    { text: "Remplacer totalement le freinage classique en usage quotidien", correct: false },
   ], "Contrairement à une idée reçue, le frein à main (ou de stationnement) est avant tout conçu pour immobiliser un véhicule à l'arrêt, pas pour freiner en roulant."),
 
-  /* ===== VAGUE 44 — dispositif sonore AVAS des véhicules électriques (données vérifiées) ===== */
+  /* ===== VAGUE 44 -- dispositif sonore AVAS des véhicules électriques (données vérifiées) ===== */
 
   q("environnement", "Le dispositif AVAS, obligatoire sur les véhicules électriques et hybrides neufs, sert à :", [
     { text: "Émettre un son artificiel à basse vitesse pour signaler le véhicule aux piétons et cyclistes", correct: true },
     { text: "Réduire davantage le bruit déjà très faible de ces véhicules", correct: false },
+    { text: "Avertir le conducteur d'un défaut de batterie", correct: false },
   ], "Ce système compense le silence de ces véhicules, particulièrement dangereux pour les piétons malvoyants qui se repèrent au bruit."),
   q("environnement", "Le son émis par l'AVAS se déclenche automatiquement :", [
     { text: "En dessous d'environ 20 km/h et en marche arrière", correct: true },
     { text: "Uniquement au-dessus de 50 km/h", correct: false },
+    { text: "En permanence, quelle que soit la vitesse", correct: false },
   ], "Au-delà de cette vitesse, le bruit de roulement des pneus et l'aérodynamisme suffisent généralement à signaler la présence du véhicule."),
   q("environnement", "L'obligation d'équiper les véhicules électriques et hybrides neufs d'un système AVAS dans l'Union européenne est entrée en vigueur :", [
     { text: "Le 1er juillet 2019", correct: true },
     { text: "Dès les années 1990", correct: false },
+    { text: "Le 1er janvier 2023", correct: false },
   ], "Ce règlement européen a accompagné la démocratisation des véhicules électriques, dont le silence posait un enjeu de sécurité nouveau."),
   q("environnement", "Les associations de défense des personnes malvoyantes ont particulièrement milité pour l'AVAS car :", [
     { text: "Elles s'appuient largement sur le bruit des véhicules pour évaluer leur approche et traverser en sécurité", correct: true },
     { text: "Elles n'ont aucun lien avec cette problématique spécifique", correct: false },
+    { text: "Elles souhaitaient surtout réduire la pollution sonore globale", correct: false },
   ], "Le repère sonore est essentiel pour les personnes déficientes visuelles, qui ne peuvent pas compter sur la perception visuelle d'un véhicule approchant."),
 
-  /* ===== VAGUE 45 — dépistage stupéfiants, test salivaire (données précises 2025-2026) ===== */
+  /* ===== VAGUE 45 -- dépistage stupéfiants, test salivaire (données précises 2025-2026) ===== */
 
   q("conducteur", "Contrairement à l'alcoolémie, la législation française sur les stupéfiants au volant prévoit :", [
     { text: "Aucun seuil minimal : la moindre trace détectée constitue une infraction", correct: true },
     { text: "Un seuil identique à celui de l'alcool, soit 0,5 g/L", correct: false },
+    { text: "Un seuil de tolérance de 0,2 g/L", correct: false },
   ], "L'article L235-1 du code de la route sanctionne l'usage de stupéfiants dès qu'une trace est détectée, sans notion de seuil comme pour l'alcool."),
   q("conducteur", "Lors d'un contrôle routier, le premier outil utilisé pour dépister les stupéfiants est généralement :", [
     { text: "Un test salivaire, rapide et réalisable directement sur place", correct: true },
     { text: "Une prise de sang systématique", correct: false },
+    { text: "Un test urinaire réalisé au commissariat", correct: false },
   ], "Le test salivaire, non invasif et donnant un résultat en quelques minutes, est privilégié lors des contrôles routiers, la prise de sang intervenant en confirmation."),
   q("conducteur", "En cas de test salivaire positif aux stupéfiants, le permis de conduire peut être retenu pour une durée maximale de :", [
     { text: "120 heures, le temps d'obtenir les résultats d'analyse de confirmation", correct: true },
     { text: "24 heures maximum, sans possibilité de prolongation", correct: false },
+    { text: "48 heures maximum", correct: false },
   ], "Cette rétention prolongée permet d'attendre les résultats du laboratoire d'analyses toxicologiques avant une décision définitive."),
   q("conducteur", "Le THC (cannabis) reste généralement détectable dans la salive, après une consommation occasionnelle, pendant environ :", [
     { text: "6 à 24 heures", correct: true },
     { text: "Seulement 30 minutes", correct: false },
+    { text: "1 semaine complète", correct: false },
   ], "Cette durée varie fortement selon la fréquence de consommation, pouvant s'étendre à plusieurs jours chez un consommateur régulier."),
   q("conducteur", "Refuser de se soumettre à un dépistage de stupéfiants lors d'un contrôle routier est :", [
     { text: "Sanctionné aussi sévèrement qu'un test positif confirmé", correct: true },
     { text: "Sans conséquence particulière, le refus étant un droit du conducteur", correct: false },
+    { text: "Sanctionné par une simple amende de 4e classe uniquement", correct: false },
   ], "Le refus de dépistage est assimilé pénalement à une infraction avérée, dissuadant fortement les conducteurs de s'y soustraire."),
 
-  /* ===== VAGUE 46 — manœuvre de Heimlich, étouffement (données vérifiées) ===== */
+  /* ===== VAGUE 46 -- manœuvre de Heimlich, étouffement (données vérifiées) ===== */
 
   q("secours", "Face à une personne qui s'étouffe mais qui parvient encore à tousser fortement, il faut :", [
     { text: "L'encourager à tousser plutôt que d'intervenir immédiatement par des gestes de désobstruction", correct: true },
     { text: "Pratiquer immédiatement la manœuvre de Heimlich", correct: false },
+    { text: "Lui donner immédiatement à boire de l'eau", correct: false },
   ], "Tant que la toux reste efficace, elle demeure le mécanisme naturel le plus efficace pour expulser un corps étranger ; intervenir peut être contre-productif."),
   q("secours", "Face à une personne en obstruction totale des voies aériennes (aucun son, mains à la gorge), le premier geste à réaliser est :", [
     { text: "Des tapes vigoureuses entre les omoplates", correct: true },
     { text: "Directement la manœuvre de Heimlich (compressions abdominales)", correct: false },
+    { text: "Un massage cardiaque immédiat", correct: false },
   ], "Les claques dans le dos constituent la première étape recommandée, avant de passer aux compressions abdominales si elles restent inefficaces."),
   q("secours", "Si les claques dans le dos ne suffisent pas à désobstruer les voies aériennes d'un adulte, il faut ensuite pratiquer :", [
     { text: "Des compressions abdominales (manœuvre de Heimlich)", correct: true },
     { text: "Un massage cardiaque immédiat", correct: false },
+    { text: "De nouvelles claques dans le dos, plus fortes", correct: false },
   ], "Le massage cardiaque n'intervient que si la victime perd connaissance et cesse de respirer ; tant qu'elle reste consciente, les compressions abdominales sont indiquées."),
   q("secours", "Chez une femme enceinte ou une personne en forte surcharge pondérale qui s'étouffe, la manœuvre de Heimlich classique est remplacée par :", [
     { text: "Des compressions thoraciques plutôt qu'abdominales", correct: true },
     { text: "Aucune alternative n'existe, il faut attendre les secours", correct: false },
+    { text: "De simples claques dans le dos uniquement", correct: false },
   ], "Cette adaptation évite d'exercer une pression dangereuse sur l'abdomen dans ces situations particulières."),
   q("secours", "Si une personne étouffée perd connaissance pendant la manœuvre de désobstruction, il faut :", [
     { text: "L'accompagner au sol et débuter un massage cardiaque", correct: true },
     { text: "Continuer les compressions abdominales sans changer de position", correct: false },
+    { text: "La laisser debout en attendant les secours", correct: false },
   ], "La perte de connaissance impose de basculer vers les gestes de réanimation cardio-pulmonaire, la victime étant alors en situation d'urgence vitale."),
 
-  /* ===== VAGUE 47 — feu orange fixe, article R412-31 (données précises) ===== */
+  /* ===== VAGUE 47 -- feu orange fixe, article R412-31 (données précises) ===== */
 
   q("signalisation", "Selon l'article R412-31 du code de la route, devant un feu orange fixe, le conducteur doit :", [
     { text: "S'arrêter, sauf s'il ne peut le faire en toute sécurité", correct: true },
     { text: "Continuer normalement, l'orange n'étant qu'un simple avertissement", correct: false },
+    { text: "Ralentir fortement sans obligation d'arrêt", correct: false },
   ], "Contrairement à une idée répandue, le feu orange fixe est un feu d'arrêt à part entière, avec une exception limitée aux situations où freiner serait dangereux.", { image: WM("A2b") }),
   q("signalisation", "Le franchissement injustifié d'un feu orange fixe est sanctionné par une amende forfaitaire de :", [
     { text: "35 €, sans retrait de points sur le permis", correct: true },
     { text: "135 € et un retrait de 4 points, comme pour un feu rouge", correct: false },
+    { text: "11 €, sans retrait de points", correct: false },
   ], "La sanction du feu orange est nettement plus légère que celle du feu rouge, catégorisée comme contravention de 2e classe."),
   q("signalisation", "Les radars automatiques de feux tricolores se déclenchent :", [
     { text: "Uniquement lors du franchissement d'un feu rouge, jamais pour un feu orange", correct: true },
     { text: "Dès le passage au feu orange", correct: false },
+    { text: "Dès l'entrée dans le carrefour, quel que soit le feu", correct: false },
   ], "Seule la constatation par des agents présents sur place permet de sanctionner un franchissement injustifié du feu orange."),
   q("signalisation", "La durée d'affichage du feu orange fixe avant de passer au rouge est généralement de :", [
     { text: "3 secondes en agglomération, 5 secondes hors agglomération", correct: true },
     { text: "30 secondes, quelle que soit la zone", correct: false },
+    { text: "1 seconde, quelle que soit la zone", correct: false },
   ], "Cette durée, plus longue hors agglomération où les vitesses sont plus élevées, laisse un temps d'anticipation suffisant au conducteur."),
   q("signalisation", "Un feu orange clignotant (isolé, sans cycle tricolore complet) signifie :", [
     { text: "Un danger particulier nécessitant prudence, sans obligation d'arrêt automatique", correct: true },
     { text: "Exactement la même chose qu'un feu orange fixe", correct: false },
+    { text: "Un carrefour définitivement fermé", correct: false },
   ], "Contrairement au feu fixe, le feu orange clignotant n'impose pas d'arrêt mais appelle à une vigilance renforcée, avec application des règles de priorité habituelles."),
 
-  /* ===== VAGUE 48 — voies réservées au covoiturage (données 2025-2026) ===== */
+  /* ===== VAGUE 48 -- voies réservées au covoiturage (données 2025-2026) ===== */
 
   q("divers", "Une voie réservée au covoiturage active est signalée au sol et sur panneau par le symbole :", [
     { text: "Un losange blanc", correct: true },
     { text: "Un triangle rouge", correct: false },
+    { text: "Un cercle bleu", correct: false },
   ], "Ce marquage, inspiré des voies HOV nord-américaines, s'est généralisé sur les axes français équipés de voies réservées."),
   q("divers", "Circuler seul dans son véhicule sur une voie réservée au covoiturage active est sanctionné par une amende de :", [
     { text: "135 €, sans retrait de points dans la plupart des cas", correct: true },
     { text: "1 500 € et un retrait de 6 points", correct: false },
+    { text: "35 €, sans retrait de points", correct: false },
   ], "Cette contravention de 4e classe, comparable à celle d'une voie de bus, n'entraîne généralement pas de retrait de points sur le permis."),
   q("divers", "Sur une voie réservée au covoiturage, le nombre minimal d'occupants généralement exigé (conducteur inclus) est de :", [
     { text: "2 personnes", correct: true },
     { text: "4 personnes", correct: false },
+    { text: "3 personnes", correct: false },
   ], "La configuration la plus répandue en France (dite V2+) exige au moins deux occupants, conducteur compris, sauf mention contraire sur la signalisation locale."),
   q("divers", "Sur certaines voies réservées au covoiturage, les véhicules 100 % électriques peuvent parfois circuler :", [
     { text: "Même seuls, si la signalisation locale le prévoit explicitement", correct: true },
     { text: "Jamais, ces voies étant réservées exclusivement au covoiturage", correct: false },
+    { text: "Uniquement le week-end", correct: false },
   ], "Certains arrêtés locaux étendent l'accès aux véhicules à très faibles émissions, indépendamment du nombre d'occupants, selon les axes concernés."),
   q("divers", "Le contrôle du respect des voies réservées au covoiturage repose de plus en plus sur :", [
     { text: "Des caméras intelligentes capables de détecter le nombre d'occupants d'un véhicule", correct: true },
     { text: "Uniquement des contrôles visuels aléatoires par des agents au bord de la route", correct: false },
+    { text: "Des péages spécifiques dédiés à ces voies", correct: false },
   ], "La vidéo-verbalisation automatisée se généralise sur ces voies, en complément ou en remplacement des contrôles humains traditionnels."),
-
-  /* ===== VAGUE 49 — feu orange clignotant et priorités (données précises) ===== */
+  /* ===== VAGUE 49 -- feu orange clignotant et priorités (données précises) ===== */
 
   q("priorites", "Face à un feu orange clignotant sans aucun panneau associé, la règle qui s'applique est :", [
     { text: "La priorité à droite, comme à tout carrefour non signalé", correct: true },
     { text: "Le passage libre sans aucune règle de priorité", correct: false },
+    { text: "L'arrêt obligatoire, comme à un STOP", correct: false },
   ], "Le feu orange clignotant ne confère aucune priorité automatique : il rappelle simplement d'appliquer les règles habituelles, la priorité à droite par défaut."),
   q("priorites", "Si un panneau STOP est positionné sous un feu orange clignotant, le conducteur doit :", [
     { text: "Marquer l'arrêt, la signalisation verticale prévalant sur le feu clignotant", correct: true },
     { text: "Ignorer le panneau, seul le feu clignotant faisant foi", correct: false },
+    { text: "Ralentir seulement, sans arrêt complet", correct: false },
   ], "En présence d'un panneau associé au feu clignotant, c'est toujours la signalisation verticale (panneau) qui détermine la règle de priorité à suivre."),
   q("priorites", "Le non-respect de la priorité à un carrefour équipé d'un feu orange clignotant est sanctionné par :", [
     { text: "Une amende de 135 € et un retrait de points, comme tout refus de priorité", correct: true },
     { text: "Aucune sanction, ce type de carrefour n'étant pas surveillé", correct: false },
+    { text: "Une simple amende de 35 € sans retrait de points", correct: false },
   ], "Le feu clignotant ne réduit en rien la portée des règles de priorité classiques ; leur non-respect reste sanctionné comme n'importe quel refus de priorité."),
   q("priorites", "Le feu orange clignotant est parfois utilisé la nuit pour :", [
     { text: "Remplacer le cycle tricolore complet lorsque le trafic est très faible", correct: true },
     { text: "Signaler un carrefour définitivement fermé à la circulation", correct: false },
+    { text: "Signaler un radar automatique à proximité", correct: false },
   ], "Cette utilisation nocturne évite des arrêts inutiles aux rares véhicules circulant lorsque le trafic est très réduit, tout en maintenant la prudence requise."),
 
-  /* ===== VAGUE 50 — règles de dépassement, article R414-6 (données précises) ===== */
+  /* ===== VAGUE 50 -- règles de dépassement, article R414-6 (données précises) ===== */
 
   q("divers", "Selon l'article R414-6 du code de la route, le principe général du dépassement impose de doubler :", [
     { text: "Par la gauche, sauf exceptions précises prévues par la loi", correct: true },
     { text: "Indifféremment par la gauche ou par la droite selon la circulation", correct: false },
+    { text: "Toujours par la droite en agglomération", correct: false },
   ], "Le dépassement par la droite reste l'exception, strictement encadrée, et non la règle générale de circulation française."),
   q("divers", "Un dépassement par la droite est exceptionnellement autorisé lorsque :", [
     { text: "Le véhicule à dépasser a signalé son intention de tourner à gauche", correct: true },
     { text: "Le conducteur est simplement pressé", correct: false },
+    { text: "La voie de gauche est temporairement plus lente", correct: false },
   ], "Cette exception légale évite de rester bloqué derrière un véhicule qui va tourner à gauche et libère la voie de droite pour le contourner en sécurité."),
   q("divers", "Depuis 2015, il est toléré de chevaucher (sans la franchir complètement) une ligne blanche continue pour :", [
     { text: "Dépasser un cycliste, en respectant la distance latérale de sécurité", correct: true },
     { text: "Dépasser n'importe quel véhicule motorisé lent", correct: false },
+    { text: "Doubler un piéton marchant sur le bas-côté", correct: false },
   ], "Cette tolérance spécifique aux cyclistes permet de respecter la distance latérale minimale sans commettre d'infraction de franchissement de ligne continue."),
   q("divers", "Un dépassement effectué sans respecter la distance latérale minimale envers un cycliste est classé comme :", [
     { text: "Un dépassement dangereux, sanctionné comme une contravention de 4e classe", correct: true },
     { text: "Une simple recommandation sans valeur contraignante", correct: false },
+    { text: "Une contravention de 1re classe, la plus légère", correct: false },
   ], "Le non-respect de cette distance minimale (1 m en agglomération, 1,5 m hors agglomération) constitue une infraction à part entière, indépendamment d'un éventuel accident."),
   q("divers", "Lorsqu'un conducteur est en train d'être dépassé, le code de la route lui demande de :", [
     { text: "Maintenir son allure et serrer à droite, sans accélérer", correct: true },
     { text: "Accélérer légèrement pour raccourcir la durée du dépassement", correct: false },
+    { text: "Freiner pour laisser passer plus rapidement", correct: false },
   ], "Accélérer pendant qu'on est dépassé prolonge dangereusement la manœuvre et augmente le risque de collision frontale pour le véhicule doublant."),
-
-  /* ===== VAGUE 51 — règles spécifiques poids lourds, article R413-8 (données précises) ===== */
+  /* ===== VAGUE 51 -- règles spécifiques poids lourds, article R413-8 (données précises) ===== */
 
   q("usagers", "Sur autoroute, un poids lourd de plus de 3,5 tonnes est limité, sauf exception, à une vitesse maximale de :", [
     { text: "90 km/h", correct: true },
     { text: "130 km/h, comme les voitures particulières", correct: false },
+    { text: "110 km/h", correct: false },
   ], "Cette limitation, nettement inférieure à celle des véhicules légers, tient compte du poids et des distances de freinage bien plus importantes de ces véhicules."),
   q("usagers", "Sur une autoroute à trois voies ou plus, un poids lourd effectuant un dépassement doit utiliser :", [
     { text: "La voie du milieu, jamais la voie la plus à gauche", correct: true },
     { text: "N'importe quelle voie disponible, y compris la plus à gauche", correct: false },
+    { text: "La voie de droite exclusivement, même pour dépasser", correct: false },
   ], "La voie la plus à gauche reste réservée aux véhicules légers, les poids lourds étant cantonnés aux deux voies de droite."),
   q("usagers", "Les poids lourds de plus de 7,5 tonnes de PTAC sont interdits de circulation sur l'ensemble du réseau routier français :", [
     { text: "Du samedi 22h au dimanche 22h, ainsi que les jours fériés", correct: true },
     { text: "Uniquement la nuit, tous les jours de la semaine", correct: false },
+    { text: "Toute la journée du dimanche uniquement", correct: false },
   ], "Cette interdiction hebdomadaire vise à limiter la présence de poids lourds sur les routes aux moments de plus forte affluence des usagers de loisir."),
   q("usagers", "Un poids lourd articulé ou tractant une remorque, dont le poids dépasse 12 tonnes, voit sa vitesse sur route classique hors agglomération limitée à :", [
     { text: "60 km/h", correct: true },
     { text: "80 km/h, comme les poids lourds plus légers", correct: false },
+    { text: "70 km/h", correct: false },
   ], "Le poids et la longueur supplémentaires de ces ensembles routiers justifient une limitation encore plus restrictive que pour un poids lourd simple."),
   q("usagers", "Les poids lourds soumis à des vitesses spécifiques doivent afficher, à l'arrière du véhicule, un macaron indiquant :", [
     { text: "Les vitesses maximales autorisées selon le type de route (par exemple 90/80/60)", correct: true },
     { text: "Le nom de la société de transport uniquement", correct: false },
+    { text: "Le poids total du véhicule uniquement", correct: false },
   ], "Ce macaron informe les autres usagers des limitations spécifiques applicables à ce véhicule, différentes de celles des voitures particulières."),
   q("usagers", "Un poids lourd est-il autorisé à dépasser un autre véhicule sur autoroute ?", [
     { text: "Oui, sous réserve de bonnes conditions de visibilité et sans gêner excessivement la circulation", correct: true },
     { text: "Non, le dépassement leur est totalement interdit sur autoroute", correct: false },
+    { text: "Oui, mais uniquement de nuit", correct: false },
   ], "Contrairement à une idée reçue répandue, aucune interdiction générale n'empêche un poids lourd de dépasser, à condition de respecter les règles de sécurité applicables."),
 
-  /* ===== VAGUE 52 — permis de conduire international (données précises 2026) ===== */
+  /* ===== VAGUE 52 -- permis de conduire international (données précises 2026) ===== */
 
   q("conducteur", "Le permis de conduire international n'est en principe pas nécessaire pour circuler dans :", [
     { text: "Les pays de l'Espace économique européen, ainsi qu'au Royaume-Uni et en Suisse", correct: true },
     { text: "Aucun pays, il est toujours obligatoire hors de France", correct: false },
+    { text: "Uniquement les pays francophones", correct: false },
   ], "Le permis français suffit directement dans ces pays, sans besoin d'un document complémentaire de traduction officielle."),
   q("conducteur", "Le permis de conduire international est en réalité :", [
     { text: "Une traduction officielle du permis national, sans valeur juridique autonome", correct: true },
     { text: "Un permis totalement distinct, remplaçant le permis national à l'étranger", correct: false },
+    { text: "Un simple visa de circulation temporaire", correct: false },
   ], "Il doit impérativement être présenté accompagné du permis national, dont il facilite seulement la compréhension par les autorités étrangères."),
   q("conducteur", "La durée de validité du permis de conduire international, depuis le décret du 1er janvier 2025, est de :", [
     { text: "3 ans, ou jusqu'à l'expiration du permis national si elle survient avant", correct: true },
     { text: "10 ans, sans lien avec le permis national", correct: false },
+    { text: "1 an, renouvelable indéfiniment", correct: false },
   ], "Cette durée reste limitée à la validité du permis national qu'il traduit, ne pouvant jamais dépasser celle-ci."),
   q("conducteur", "Un conducteur dont le permis français est suspendu peut-il tout de même conduire à l'étranger avec un permis international ?", [
     { text: "Non, la suspension du permis national s'applique également à l'étranger", correct: true },
     { text: "Oui, le permis international reste valable même en cas de suspension du permis français", correct: false },
+    { text: "Oui, mais uniquement dans les pays hors Union européenne", correct: false },
   ], "Le permis international n'étant qu'une traduction du permis national, toute suspension de ce dernier prive automatiquement de son usage à l'étranger également."),
   q("conducteur", "La demande de permis de conduire international en France s'effectue :", [
     { text: "En ligne, via le site de l'ANTS", correct: true },
     { text: "Uniquement en préfecture, sur rendez-vous physique obligatoire", correct: false },
+    { text: "Auprès de son auto-école exclusivement", correct: false },
   ], "La dématérialisation des démarches administratives liées au permis de conduire concerne également la demande de permis international."),
-
-  /* ===== VAGUE 53 — voitures sans permis / quadricycles (données précises 2026) ===== */
+  /* ===== VAGUE 53 -- voitures sans permis / quadricycles (données précises 2026) ===== */
 
   q("conducteur", "Un quadricycle léger (voiture sans permis classique) est accessible dès l'âge de :", [
     { text: "14 ans, sous réserve d'être titulaire du permis AM", correct: true },
     { text: "18 ans, comme un véhicule classique", correct: false },
+    { text: "16 ans, sans condition de permis AM", correct: false },
   ], "Cette accessibilité dès 14 ans, sous condition de formation, constitue l'un des atouts principaux de ce type de véhicule pour une première autonomie."),
   q("conducteur", "La vitesse maximale d'un quadricycle léger (voiture sans permis classique) est limitée à :", [
     { text: "45 km/h", correct: true },
     { text: "90 km/h", correct: false },
+    { text: "70 km/h", correct: false },
   ], "Cette limitation technique, propre à la catégorie L6e, exclut de fait ces véhicules des voies rapides et autoroutes."),
   q("conducteur", "Un quadricycle lourd, plus puissant qu'un quadricycle léger, nécessite d'être titulaire du permis :", [
     { text: "B1, accessible dès 16 ans", correct: true },
     { text: "AM, comme pour le quadricycle léger", correct: false },
+    { text: "B classique uniquement", correct: false },
   ], "Le quadricycle lourd, plus proche d'une petite voiture, impose des exigences de formation plus poussées que le simple permis AM."),
   q("conducteur", "Les voitures sans permis sont interdites de circulation sur :", [
     { text: "Les autoroutes et les voies rapides", correct: true },
     { text: "Aucune voie particulière, elles peuvent circuler partout", correct: false },
+    { text: "Les routes départementales uniquement", correct: false },
   ], "Leur vitesse maximale limitée les rend incompatibles avec la circulation sur des voies conçues pour des vitesses bien plus élevées."),
   q("conducteur", "Le contrôle technique des voitures sans permis est devenu obligatoire, de façon progressive, depuis :", [
     { text: "2024, selon un calendrier basé sur l'année d'immatriculation du véhicule", correct: true },
     { text: "Cette obligation n'existe pas pour les voitures sans permis", correct: false },
+    { text: "1995, comme pour les voitures classiques", correct: false },
   ], "Ces véhicules, longtemps exemptés, sont désormais progressivement intégrés à l'obligation de contrôle technique, comme les autres véhicules motorisés."),
   q("conducteur", "Une personne née avant le 1er janvier 1988 souhaitant conduire un quadricycle léger :", [
     { text: "N'a besoin d'aucune condition d'âge ni de permis AM spécifique", correct: true },
     { text: "Doit obligatoirement repasser le permis AM comme tout le monde", correct: false },
+    { text: "Doit simplement présenter une pièce d'identité en cours de validité", correct: false },
   ], "Une clause de droits acquis dispense les personnes nées avant cette date de l'obligation de formation créée ultérieurement."),
 
-  /* ===== VAGUE 54 — double sens cyclable, article R412-28-1 (données précises) ===== */
+  /* ===== VAGUE 54 -- double sens cyclable, article R412-28-1 (données précises) ===== */
 
   q("usagers", "Dans une zone 30 ou une zone de rencontre, le double sens cyclable dans les rues à sens unique est :", [
     { text: "La règle par défaut depuis 2008, sauf décision contraire du maire", correct: true },
     { text: "Toujours interdit sans arrêté municipal spécifique l'autorisant", correct: false },
+    { text: "Réservé aux seuls résidents de la zone", correct: false },
   ], "Depuis le décret de 2008, c'est l'inverse qui prévaut : le double sens cyclable est automatique dans ces zones apaisées, sauf exception motivée."),
   q("signalisation", "Le panonceau M9v2, placé sous un panneau de sens interdit, signifie :", [
     { text: "« Sauf vélos », autorisant les cyclistes à circuler à contresens", correct: true },
     { text: "Une interdiction totale sans aucune exception", correct: false },
+    { text: "« Sauf riverains », autorisant les seuls résidents", correct: false },
   ], "Ce panonceau est l'élément de signalisation obligatoire signalant explicitement un double sens cyclable en dehors des zones 30."),
   q("usagers", "Un automobiliste qui s'engage par erreur à contresens dans une rue à sens unique réservée aux cyclistes en double sens risque :", [
     { text: "Une amende de 135 € et un retrait de 4 points", correct: true },
     { text: "Aucune sanction, seuls les cyclistes étant concernés par cette règle", correct: false },
+    { text: "Une amende de 35 € sans retrait de points", correct: false },
   ], "Le contresens reste une infraction pour tout véhicule motorisé, seuls les cyclistes bénéficiant de l'autorisation de circuler dans les deux sens."),
   q("usagers", "En l'absence de panneau spécifique, à l'intérieur d'une zone 30 signalée à l'entrée, le double sens cyclable est :", [
     { text: "Applicable de façon implicite dans toutes les rues à sens unique de la zone", correct: true },
     { text: "Toujours interdit sans signalisation rue par rue", correct: false },
+    { text: "Applicable uniquement aux heures de faible circulation", correct: false },
   ], "Le classement en zone 30 suffit à instaurer le double sens cyclable par défaut, sans nécessiter une signalisation répétée à chaque rue."),
   q("usagers", "Face à un cycliste arrivant en double sens cyclable, un automobiliste qui tourne dans cette rue doit :", [
     { text: "Vérifier les deux sens de circulation, et non uniquement celui des véhicules motorisés", correct: true },
     { text: "Ne surveiller que le sens de circulation autorisé aux voitures", correct: false },
+    { text: "Klaxonner avant de s'engager, sans autre vérification", correct: false },
   ], "L'existence d'un double sens cyclable impose une vigilance dans les deux directions, y compris celle habituellement réservée aux seuls cyclistes."),
-
-  /* ===== VAGUE 55 — gyrophares, article R313-27 (données précises) ===== */
+  /* ===== VAGUE 55 -- gyrophares, article R313-27 (données précises) ===== */
 
   q("priorites", "Un gyrophare bleu associé à une sirène à deux temps équipe exclusivement des véhicules :", [
     { text: "Prioritaires, comme la police, la gendarmerie, le SAMU ou les pompiers", correct: true },
     { text: "Agricoles ou de chantier circulant lentement", correct: false },
+    { text: "De transport scolaire", correct: false },
   ], "Cette combinaison précise, encadrée par l'article R313-27 du code de la route, est strictement réservée aux véhicules d'intervention prioritaires."),
   q("priorites", "Un gyrophare bleu associé à une sirène à trois temps signale un véhicule :", [
     { text: "D'intérêt général bénéficiant d'une simple facilité de passage, non prioritaire au sens strict", correct: true },
     { text: "Exactement aussi prioritaire qu'un véhicule à sirène deux temps", correct: false },
+    { text: "Réservé exclusivement aux transports de fonds", correct: false },
   ], "Ces véhicules (ambulances privées, certaines missions spécifiques) doivent seulement se voir faciliter le passage, sans bénéficier des mêmes franchissements dérogatoires."),
   q("priorites", "Un gyrophare orange, sur un tracteur agricole ou un engin de chantier, signale :", [
     { text: "Un véhicule lent ou encombrant, sans aucune priorité de passage", correct: true },
     { text: "Un véhicule prioritaire au même titre qu'un gyrophare bleu", correct: false },
+    { text: "Un véhicule appartenant à une administration publique", correct: false },
   ], "Ce gyrophare a une simple fonction d'avertissement de danger lié à la lenteur ou à l'encombrement du véhicule, sans conférer aucune priorité."),
   q("priorites", "L'utilisation d'un gyrophare bleu par un particulier non habilité constitue :", [
     { text: "Une usurpation de fonction, passible d'une amende pouvant atteindre 15 000 € et d'un an de prison", correct: true },
     { text: "Une simple contravention mineure sans gravité particulière", correct: false },
+    { text: "Une infraction sanctionnée uniquement par la confiscation du gyrophare", correct: false },
   ], "Cette sanction sévère reflète la gravité de se faire passer pour un service prioritaire, ce qui pourrait tromper dangereusement les autres usagers."),
   q("priorites", "Le gyrophare de couleur verte, utilisé dans certains pays voisins, est en France :", [
     { text: "Non reconnu par la réglementation, pour éviter toute confusion sur le domaine routier", correct: true },
     { text: "Réservé aux véhicules de secours en montagne", correct: false },
+    { text: "Réservé aux véhicules électriques prioritaires", correct: false },
   ], "Les autorités françaises ont volontairement limité le nombre de couleurs de gyrophares afin de préserver la clarté du dispositif pour tous les usagers."),
 
-  /* ===== VAGUE 56 — dépannage/remorquage sur autoroute (données précises 2026) ===== */
+  /* ===== VAGUE 56 -- dépannage/remorquage sur autoroute (données précises 2026) ===== */
 
   q("divers", "En cas de panne sur autoroute, seul un dépanneur peut légalement intervenir :", [
     { text: "Une entreprise agréée par la préfecture, désignée par tour de garde pour le secteur concerné", correct: true },
     { text: "N'importe quel dépanneur choisi librement par le conducteur", correct: false },
+    { text: "Le garagiste habituel du conducteur, sur simple appel", correct: false },
   ], "Il est impossible de faire appel à son propre garagiste ou assureur directement sur le réseau autoroutier ; seul le dépanneur agréé du secteur peut intervenir."),
   q("divers", "Après avoir signalé une panne sur autoroute via une borne d'urgence, le dépanneur agréé doit arriver sur place dans un délai de :", [
     { text: "30 minutes", correct: true },
     { text: "5 minutes", correct: false },
+    { text: "2 heures", correct: false },
   ], "Ce délai maximal réglementaire garantit une prise en charge rapide des véhicules immobilisés dans un environnement à risque élevé."),
   q("divers", "Les tarifs du dépannage et du remorquage sur autoroute sont :", [
     { text: "Réglementés et fixés chaque année par arrêté ministériel", correct: true },
     { text: "Librement fixés par chaque entreprise de dépannage", correct: false },
+    { text: "Gratuits, pris en charge par l'État", correct: false },
   ], "Cet encadrement tarifaire protège les usagers, captifs du dépanneur agréé de leur secteur, contre d'éventuels abus de prix."),
   q("divers", "Si la réparation d'un véhicule en panne sur autoroute ne peut être réalisée en moins de 30 minutes, celui-ci doit être :", [
     { text: "Évacué vers l'aire la plus proche, l'atelier du dépanneur, ou tout autre lieu demandé par l'usager", correct: true },
     { text: "Laissé sur la bande d'arrêt d'urgence jusqu'à sa réparation complète", correct: false },
+    { text: "Abandonné sur place jusqu'au lendemain", correct: false },
   ], "Laisser un véhicule immobilisé trop longtemps sur la bande d'arrêt d'urgence représente un danger majeur, justifiant son évacuation rapide."),
   q("divers", "Avant l'arrivée du dépanneur, le conducteur en panne sur autoroute doit notamment :", [
     { text: "Se mettre en sécurité derrière les glissières, muni de son gilet réfléchissant", correct: true },
     { text: "Rester dans son véhicule immobilisé sur la bande d'arrêt d'urgence", correct: false },
+    { text: "Marcher le long de la voie de circulation pour signaler la panne", correct: false },
   ], "Rester dans le véhicule expose fortement aux risques de collision par l'arrière ; se mettre à l'abri derrière les glissières est bien plus sûr."),
 
   /* ===== VAGUE 57 — frein moteur en descente, sécurité montagne (données précises) ===== */
@@ -4904,7 +5378,7 @@ export const QUESTIONS = [
   q("conducteur", "L'isolation auditive causée par des écouteurs prive notamment le conducteur de la perception :", [
     { text: "Des klaxons et sirènes des véhicules prioritaires", correct: true },
     { text: "Du bruit de son propre moteur uniquement", correct: false },
-  ], "Cette perte de perception des signaux sonores d'alerte constitue le principal risque justifiant l'interdiction de ce type de dispositif au volant."),
+  ], "Cette perte de perception des signaux sonores d'alerte constitue le principal risque justifiant l'interdiction de ce type de dispositif au volant."),k
 
   /* ===== VAGUE 118 — conduite en tongs / pieds nus, article R412-6 (données précises) — cap des 1000 ===== */
 
