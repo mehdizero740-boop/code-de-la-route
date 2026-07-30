@@ -346,8 +346,6 @@ const next = () => {
     try { return localStorage.getItem("swipeHintSeen") === "1"; } catch { return true; }
   });
 
-  
-  };
   const lastAnswer = answers[answers.length - 1];
 
   useEffect(() => {
