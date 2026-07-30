@@ -5435,7 +5435,68 @@ export const QUESTIONS = [
     { text: "Continue à t'entraîner régulièrement, la régularité paie plus que les révisions de dernière minute", correct: true },
     { text: "Il vaut mieux tout réviser la veille au soir", correct: false },
   ], "Un entraînement étalé dans le temps, avec des révisions régulières, ancre bien mieux les connaissances qu'un bachotage intensif de dernière minute."),
+    q("signalisation", "Un panneau temporaire de limitation de vitesse installé pour des travaux doit être respecté :", [
+    { text: "Même si aucun ouvrier n'est visible sur le moment", correct: true },
+    { text: "Uniquement si des ouvriers sont physiquement présents", correct: false },
+    { text: "Uniquement pendant les heures de bureau", correct: false },
+  ], "La signalisation temporaire de chantier garde sa pleine valeur réglementaire, indépendamment de la présence visible de personnel sur place."),
+  q("priorites", "Sur une place où plusieurs voies convergent sans panneau ni marquage, la règle qui s'applique reste :", [
+    { text: "La priorité à droite par défaut", correct: true },
+    { text: "Le passage libre pour tous simultanément", correct: false },
+    { text: "La priorité au véhicule le plus rapide", correct: false },
+  ], "En l'absence de toute signalisation, la priorité à droite continue de s'appliquer, même dans une configuration de carrefour complexe."),
+  q("vitesse", "Une réduction progressive de vitesse à l'approche d'un radar pédagogique (non verbalisateur) :", [
+    { text: "Reste une bonne pratique, ce type de radar sensibilisant sans sanctionner", correct: true },
+    { text: "Est inutile puisqu'aucune sanction n'est possible", correct: false },
+    { text: "N'a aucun intérêt pédagogique", correct: false },
+  ], "Même sans verbalisation, ces radars rappellent utilement la vitesse réelle pratiquée et encouragent une conduite plus prudente."),
+  q("conducteur", "Un jeune conducteur qui termine sa période probatoire sans aucune infraction voit son capital de points :", [
+    { text: "Passer automatiquement à 12 points", correct: true },
+    { text: "Rester bloqué à son niveau initial à vie", correct: false },
+    { text: "Redescendre à zéro puis remonter progressivement", correct: false },
+  ], "À l'issue d'une période probatoire sans infraction, le conducteur accède au capital plein de 12 points, comme tout conducteur expérimenté."),
+  q("usagers", "Face à un groupe de coureurs à pied encadré sur la chaussée (course organisée), un conducteur doit :", [
+    { text: "Ralentir et suivre les indications des signaleurs éventuellement présents", correct: true },
+    { text: "Klaxonner pour les inciter à se ranger", correct: false },
+    { text: "Doubler rapidement sans réduire sa vitesse", correct: false },
+  ], "Les événements sportifs organisés sur la voie publique bénéficient souvent d'un encadrement spécifique qu'il convient de respecter."),
+  q("secours", "Face à une brûlure thermique simple (contact avec une surface chaude), le premier réflexe est de :", [
+    { text: "Refroidir immédiatement la zone à l'eau tempérée pendant plusieurs minutes", correct: true },
+    { text: "Appliquer immédiatement une pommade grasse", correct: false },
+    { text: "Percer une éventuelle cloque formée", correct: false },
+  ], "Le refroidissement rapide à l'eau tempérée limite la progression de la brûlure en profondeur, contrairement aux pommades qui peuvent aggraver la lésion."),
+  q("mecanique", "Le remplacement périodique du liquide de refroidissement moteur permet notamment de :", [
+    { text: "Prévenir la corrosion interne du circuit et maintenir une protection efficace contre le gel", correct: true },
+    { text: "N'a aucune utilité si le niveau reste stable", correct: false },
+    { text: "Améliorer uniquement l'esthétique du moteur", correct: false },
+  ], "Le liquide de refroidissement perd ses propriétés protectrices avec le temps, même si son niveau semble rester correct visuellement."),
+  q("environnement", "Le covoiturage sur les trajets domicile-travail réguliers permet, à l'échelle collective, de :", [
+    { text: "Réduire le nombre de véhicules en circulation aux heures de pointe", correct: true },
+    { text: "N'avoir aucun effet mesurable sur le trafic", correct: false },
+    { text: "Augmenter la congestion routière", correct: false },
+  ], "Moins de véhicules circulant pour un même nombre de trajets réduit mécaniquement la congestion et les émissions associées."),
+  q("securite", "Le port d'un casque à vélo mal ajusté (trop lâche) réduit :", [
+    { text: "Son efficacité protectrice en cas de choc, malgré sa présence", correct: true },
+    { text: "N'a aucune incidence tant que le casque est porté", correct: false },
+    { text: "Uniquement le confort, sans effet sur la protection", correct: false },
+  ], "Un casque mal ajusté peut se déplacer ou se détacher lors d'un choc, réduisant fortement sa capacité de protection réelle."),
+  q("divers", "La consultation régulière de son solde de points, via les services officiels en ligne, permet de :", [
+    { text: "Suivre sa situation et anticiper une éventuelle démarche de stage de récupération", correct: true },
+    { text: "N'apporte aucune information utile", correct: false },
+    { text: "Récupérer automatiquement des points par la simple consultation", correct: false },
+  ], "Connaître son solde réel permet d'anticiper une action volontaire (stage) avant d'atteindre un niveau critique."),
+  q("priorites", "Un cycliste franchissant un feu rouge grâce à un panonceau M12 doit malgré tout :", [
+    { text: "Céder le passage aux piétons engagés et aux véhicules bénéficiant du feu vert", correct: true },
+    { text: "Considérer qu'il est automatiquement prioritaire sur tous les usagers", correct: false },
+    { text: "Attendre l'autorisation d'un agent avant de s'engager", correct: false },
+  ], "Le panonceau M12 est un cédez-le-passage, jamais une priorité automatique : la vigilance reste de mise avant de s'engager."),
+  q("vitesse", "Circuler nettement en dessous de la vitesse autorisée sans raison particulière, en gênant la circulation normale, peut être :", [
+    { text: "Sanctionné dans certains cas, une allure anormalement lente pouvant aussi représenter un danger", correct: true },
+    { text: "Toujours totalement sans conséquence, quelle que soit la situation", correct: false },
+    { text: "Obligatoire par mesure de prudence systématique", correct: false },
+  ], "Une vitesse excessivement réduite sans justification peut perturber la fluidité et la sécurité du trafic, tout comme un excès de vitesse."),
 ];
+
 
 export const getQuestionsByTheme = (themeId) => QUESTIONS.filter((q) => q.theme === themeId);
 export const getRandomQuestions = (count = 40) => {
