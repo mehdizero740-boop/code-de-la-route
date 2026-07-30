@@ -2098,7 +2098,8 @@ export const QUESTIONS = [
     { text: "La présence d'air dans le circuit de freinage à faire purger", correct: true },
     { text: "Un simple réglage de confort du véhicule", correct: false },
     { text: "Un problème exclusivement lié aux pneus", correct: false },
-  ], "Une pédale spongieuse est un signal d'alerte fréquent lié à
+    ], "Une pédale spongieuse est un signal d'alerte fréquent lié à un défaut du circuit hydraulique de freinage."),
+
   /* ===== VAGUE 12 ===== */
 
   // Signalisation
