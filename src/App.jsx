@@ -18,6 +18,27 @@ const THEME_PHOTOS = {
   securite: "https://images.unsplash.com/photo-1756664825114-03ea24c8d195?auto=format&fit=crop&w=800&q=70",
   divers: "https://images.unsplash.com/photo-1721775776140-021982db0f88?auto=format&fit=crop&w=800&q=70",
 };
+/* ---------- Score de préparation à l'examen ---------- */
+function computeReadiness(stats) {
+  const themeScores = THEMES.map((t) => {
+    const pool = getQuestionsByTheme(t.id);
+    const { attempted, mastered } = computeMastery(stats, pool);
+    const coverage = Math.min(1, attempted / Math.min(pool.length, 20));
+    const accuracy = attempted > 0 ? mastered / attempted : 0;
+    const score = 0.4 * coverage + 0.6 * accuracy;
+    return { ...t, attempted, mastered, score };
+  });
+  const pct = Math.round(
+    (themeScores.reduce((sum, t) => sum + t.score, 0) / themeScores.length) * 100
+  );
+  const weakest = themeScores.reduce((min, t) => (t.score < min.score ? t : min), themeScores[0]);
+  let message;
+  if (pct < 40) message = "Continue à t'entraîner, tu as encore du chemin.";
+  else if (pct < 70) message = "Tu progresses bien, poursuis sur ta lancée.";
+  else if (pct < 90) message = "Tu es presque prêt·e pour l'examen !";
+  else message = "Tu es prêt·e pour l'examen !";
+  return { pct, message, weakest };
+}
 
 /* ---------- Splash ---------- */
 function Splash() {
@@ -101,7 +122,8 @@ function AuthPanel({ onDone }) {
   );
 }
 
-function ProfileBar({ profile, mastery, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
+function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
+
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
 
@@ -138,15 +160,20 @@ function ProfileBar({ profile, mastery, onLocalProfile, onCloudDone, onOpenProgr
           <span className="mono">{mastery.mastered}/{mastery.attempted} maîtrisées{profile.cloud ? " · compte" : " · local"}</span>
         </span>
       </button>
+            {mastery.attempted > 0 && (
+        <span className="readiness-pill" title={readiness.message}>🎯 {readiness.pct}% prêt·e</span>
+      )}
       <button className="profile-logout" onClick={onLogout} title="Se déconnecter">⤴</button>
     </div>
   );
 }
 
-function Home({ onStartExam, onOpenThemes, onStartTheme, profile, mastery, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
+function Home({ onStartExam, onOpenThemes, onStartTheme, profile, mastery, readiness, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
+
   return (
     <div className="home">
-      <ProfileBar profile={profile} mastery={mastery} onLocalProfile={onLocalProfile} onCloudDone={onCloudDone} onOpenProgress={onOpenProgress} onLogout={onLogout} />
+      <ProfileBar profile={profile} mastery={mastery} readiness={readiness} onLocalProfile={onLocalProfile} onCloudDone={onCloudDone} onOpenProgress={onOpenProgress} onLogout={onLogout} />
+
       <header className="hero">
         <div className="hero-top">
           <div>
@@ -218,7 +245,8 @@ function ThemeList({ onStartTheme, onHome }) {
 }
 
 /* ---------- Progression ---------- */
-function Progress({ profile, stats, onHome, onLogout }) {
+Progression de {profile.name}
+
   const byTheme = THEMES.map((t) => {
     const pool = getQuestionsByTheme(t.id);
     return { ...t, ...computeMastery(stats, pool) };
@@ -524,7 +552,9 @@ export default function App() {
     return () => { active = false; };
   }, [profile]);
 
-  const mastery = useMemo(() => computeMastery(stats, QUESTIONS), [stats]);
+    const mastery = useMemo(() => computeMastery(stats, QUESTIONS), [stats]);
+  const readiness = useMemo(() => computeReadiness(stats), [stats]);
+
 
   const startExam = useCallback(() => {
     setQuestions(pickAdaptive(QUESTIONS, 40, stats));
@@ -572,7 +602,8 @@ export default function App() {
           onStartTheme={startTheme}
           profile={profile}
           mastery={mastery}
-          onLocalProfile={handleLocalProfile}
+          readiness={readiness}
+onLocalProfile={handleLocalProfile}
           onCloudDone={handleCloudDone}
           onOpenProgress={() => setScreen("progress")}
           onLogout={logout}
@@ -582,7 +613,8 @@ export default function App() {
         <ThemeList onStartTheme={startTheme} onHome={() => setScreen("home")} />
       )}
       {screen === "progress" && profile && (
-        <Progress profile={profile} stats={stats} onHome={() => setScreen("home")} onLogout={logout} />
+      <Progress profile={profile} stats={stats} readiness={readiness} onHome={() => setScreen("home")} onLogout={logout} />
+
       )}
       {screen === "quiz" && (
         <Quiz questions={questions} onFinish={finish} onExit={() => setScreen("home")} onAnswer={handleAnswer} />
