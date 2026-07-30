@@ -306,64 +306,6 @@ function CourseDetail({ themeId, onHome, onBackToCourses, onStartTheme }) {
     </div>
   );
 }
-/* ---------- Liste des cours (écran dédié) ---------- */
-function CourseList({ onOpenCourse, onHome }) {
-  return (
-    <div className="theme-list-screen">
-      <div className="quiz-topbar">
-        <button className="btn-ghost" onClick={onHome}>← Accueil</button>
-      </div>
-      <h1 className="progress-title">Cours par thème</h1>
-      <p className="hero-sub" style={{ color: "var(--ink-soft)", marginBottom: 20 }}>
-        Les notions essentielles à connaître avant de t'entraîner. De nouvelles fiches arrivent régulièrement.
-      </p>
-      <div className="theme-grid">
-        {THEMES.map((t) => {
-          const available = !!COURSES[t.id];
-          return (
-            <button key={t.id} className="theme-card" onClick={() => available && onOpenCourse(t.id)} disabled={!available}>
-              <SignBadge tone="blue" icon accent={t.color} size={38}>{t.icon}</SignBadge>
-              <span className="theme-label">{t.label}</span>
-              <span className="theme-count mono">{available ? "Fiche disponible" : "Bientôt disponible"}</span>
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-/* ---------- Détail d'un cours ---------- */
-function CourseDetail({ themeId, onHome, onBackToCourses, onStartTheme }) {
-  const theme = THEMES.find((t) => t.id === themeId);
-  const course = getCourse(themeId);
-  if (!theme || !course) return null;
-  return (
-    <div className="course-screen">
-      <div className="quiz-topbar">
-        <button className="btn-ghost" onClick={onBackToCourses}>← Cours</button>
-      </div>
-      <div className="course-header">
-        <SignBadge tone="blue" icon accent={theme.color} size={44}>{theme.icon}</SignBadge>
-        <h1 className="progress-title" style={{ margin: 0 }}>{theme.label}</h1>
-      </div>
-      <p className="hero-sub" style={{ color: "var(--ink-soft)" }}>{course.intro}</p>
-      <div className="course-sections">
-        {course.sections.map((s, i) => (
-          <div className="course-section" key={i}>
-            <h2 className="course-section-title">{s.heading}</h2>
-            {s.body.map((p, j) => (
-              <p className="course-section-body" key={j}>{p}</p>
-            ))}
-          </div>
-        ))}
-      </div>
-      <button className="btn-primary btn-hero" onClick={() => onStartTheme(themeId)}>
-        S'entraîner sur ce thème
-      </button>
-    </div>
-  );
-}
 
 /* ---------- Progression ---------- */
 
