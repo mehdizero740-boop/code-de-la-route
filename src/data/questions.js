@@ -5380,7 +5380,7 @@ export const QUESTIONS = [
   q("conducteur", "L'isolation auditive causée par des écouteurs prive notamment le conducteur de la perception :", [
     { text: "Des klaxons et sirènes des véhicules prioritaires", correct: true },
     { text: "Du bruit de son propre moteur uniquement", correct: false },
-  ], "Cette perte de perception des signaux sonores d'alerte constitue le principal risque justifiant l'interdiction de ce type de dispositif au volant."),k
+  ], "Cette perte de perception des signaux sonores d'alerte constitue le principal risque justifiant l'interdiction de ce type de dispositif au volant."),
 
   /* ===== VAGUE 118 — conduite en tongs / pieds nus, article R412-6 (données précises) — cap des 1000 ===== */
 
