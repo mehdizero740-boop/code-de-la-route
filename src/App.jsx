@@ -344,7 +344,7 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
             if (selected.includes(i)) cls += " selected";
             if (revealed) { if (a.correct) cls += " correct"; else if (selected.includes(i)) cls += " wrong"; }
             return (
-              <button key={i} className={cls} onClick={() => toggleAnswer(i)} disabled={revealed}>
+              <button key={i} className={cls} onClick={() => toggleAnswer(i)}>
                 <span className="answer-marker">
                   {multi ? (selected.includes(i) ? "☑" : "☐") : (selected.includes(i) ? "●" : "○")}
                 </span>{a.text}
