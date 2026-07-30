@@ -335,10 +335,17 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
     onAnswer(qc.id, isCorrect);
     setRevealed(true);
   };
-
-  const next = () => {
+const next = () => {
+    if (!hintDismissed) { setHintDismissed(true); try { localStorage.setItem("swipeHintSeen", "1"); } catch {} }
     if (index + 1 >= questions.length) onFinish({ score, total: questions.length, answers });
     else { setIndex((i) => i + 1); setSelected([]); setRevealed(false); }
+  };
+
+  const [hintDismissed, setHintDismissed] = useState(() => {
+    try { return localStorage.getItem("swipeHintSeen") === "1"; } catch { return true; }
+  });
+
+  
   };
   const lastAnswer = answers[answers.length - 1];
 
@@ -406,13 +413,12 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
             <p>{qc.explanation}</p>
           </div>
         )}
-                {revealed && (
-          <div className="quiz-actions">
-            <button className="btn-primary" onClick={next}>
-              {index + 1 >= questions.length ? "Voir les résultats" : "Question suivante"}
-            </button>
+              {revealed && !hintDismissed && (
+          <div className="swipe-hint">
+            <span className="swipe-hint-arrow">👈</span> Balayez l'écran vers la gauche pour continuer
           </div>
         )}
+
       </div>
     </div>
   );

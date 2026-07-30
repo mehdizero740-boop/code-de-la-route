@@ -196,6 +196,17 @@ h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em
 .explanation p { margin: 4px 0 0; }
 .explanation.ok { background: var(--green-wash); color: #14573A; }
 .explanation.ko { background: var(--red-wash); color: #7C2A22; }
+.swipe-hint {
+  margin-top: 18px; text-align: center; font-size: 13px; font-weight: 700;
+  color: var(--ink-soft); display: flex; align-items: center; justify-content: center; gap: 8px;
+  animation: swipe-hint-nudge 1.4s ease-in-out infinite;
+}
+.swipe-hint-arrow { font-size: 16px; }
+@keyframes swipe-hint-nudge {
+  0%, 100% { transform: translateX(0); opacity: 0.7; }
+  50% { transform: translateX(-6px); opacity: 1; }
+}
+
 .quiz-actions { margin-top: 22px; display: flex; justify-content: flex-end; }
 .quiz-actions .btn-primary { min-width: 170px; }
 
