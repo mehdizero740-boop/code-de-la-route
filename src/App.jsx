@@ -216,14 +216,20 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
 
       <h2 className="section-title">En situation réelle</h2>
 
+           <h2 className="section-title">En situation réelle</h2>
       <div className="situ-grid">
-        <button className="situ-card situ-priorites" onClick={() => onStartTheme("priorites")}>
-          <span className="situ-card-label">Priorités &amp; intersections</span>
-        </button>
-        <button className="situ-card situ-vitesse" onClick={() => onStartTheme("vitesse")}>
-          <span className="situ-card-label">Vitesse &amp; autoroute</span>
-        </button>
+        {THEMES.map((t) => (
+          <button
+            key={t.id}
+            className="situ-card"
+            style={{ backgroundImage: `url(${THEME_PHOTOS[t.id]})` }}
+            onClick={() => onStartTheme(t.id)}
+          >
+            <span className="situ-card-label">{t.label}</span>
+          </button>
+        ))}
       </div>
+
     </div>
   );
 }
