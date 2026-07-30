@@ -169,7 +169,7 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
   );
 }
 
-function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
+function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
 
   return (
     <div className="home">
@@ -228,8 +228,10 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
             <span className="situ-card-label">{t.label}</span>
           </button>
         ))}
-      </div>
-
+           </div>
+      <footer className="home-footer">
+        <button className="home-footer-link" onClick={onOpenLegal}>Mentions légales</button>
+      </footer>
     </div>
   );
 }
@@ -319,9 +321,60 @@ function CourseDetail({ themeId, onHome, onBackToCourses, onStartTheme }) {
     </div>
   );
 }
+/* ---------- Mentions légales ---------- */
+function LegalScreen({ onHome }) {
+  return (
+    <div className="legal-screen">
+      <div className="quiz-topbar">
+        <button className="btn-ghost" onClick={onHome}>← Accueil</button>
+      </div>
+      <h1 className="progress-title">Mentions légales</h1>
+      <div className="course-sections">
+        <div className="course-section">
+          <h2 className="course-section-title">Éditeur du site</h2>
+          <p className="course-section-body">
+            Ce site est édité à titre personnel par Sami, développeur indépendant, agissant en tant que particulier.
+          </p>
+          <p className="course-section-body">
+            Contact : [email à compléter]
+          </p>
+        </div>
+        <div className="course-section">
+          <h2 className="course-section-title">Hébergement</h2>
+          <p className="course-section-body">
+            Le site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis -- vercel.com
+          </p>
+          <p className="course-section-body">
+            L'authentification et les données de compte (email, statistiques de progression) sont hébergées par Supabase Inc., utilisant une infrastructure cloud sécurisée.
+          </p>
+        </div>
+        <div className="course-section">
+          <h2 className="course-section-title">Données personnelles</h2>
+          <p className="course-section-body">
+            Si vous créez un compte, seules votre adresse email et vos statistiques de progression (questions vues, réussies) sont conservées, dans le seul but de synchroniser votre avancement entre appareils.
+          </p>
+          <p className="course-section-body">
+            Aucune donnée n'est vendue, partagée avec des tiers à des fins commerciales, ni utilisée pour de la publicité. Vous pouvez demander la suppression de votre compte et de vos données à tout moment via l'adresse de contact ci-dessus.
+          </p>
+        </div>
+        <div className="course-section">
+          <h2 className="course-section-title">Cookies et stockage local</h2>
+          <p className="course-section-body">
+            Le site utilise le stockage local de votre navigateur (localStorage) pour mémoriser votre progression si vous n'êtes pas connecté, ainsi que vos préférences d'affichage. Aucun cookie publicitaire ou traceur tiers n'est utilisé.
+          </p>
+        </div>
+        <div className="course-section">
+          <h2 className="course-section-title">Propriété intellectuelle</h2>
+          <p className="course-section-body">
+            Le contenu pédagogique (questions, explications, fiches de cours) est proposé à titre d'entraînement et ne constitue pas un document officiel de l'administration. Les questions s'appuient sur le code de la route en vigueur, sans garantie d'exhaustivité.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /* ---------- Progression ---------- */
-
 
 function Progress({ profile, stats, readiness, onHome, onLogout }) {
 
@@ -689,11 +742,16 @@ export default function App() {
           readiness={readiness}
           onLocalProfile={handleLocalProfile}
           onCloudDone={handleCloudDone}
-          onOpenProgress={() => setScreen("progress")}
+                 onOpenProgress={() => setScreen("progress")}
           onLogout={logout}
+          onOpenLegal={() => setScreen("legal")}
         />
       )}
+      {screen === "legal" && (
+        <LegalScreen onHome={() => setScreen("home")} />
+      )}
       {screen === "themes" && (
+
         <ThemeList onStartTheme={startTheme} onHome={() => setScreen("home")} />
       )}
       {screen === "courses" && (

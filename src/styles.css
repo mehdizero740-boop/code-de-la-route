@@ -417,6 +417,14 @@ h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em
 }
 .course-section-body { font-size: 14px; line-height: 1.6; color: var(--ink); margin: 0 0 10px; }
 .course-section-body:last-child { margin-bottom: 0; }
+
+/* ---------- Pied de page accueil ---------- */
+.home-footer { text-align: center; margin: 28px 0 8px; }
+.home-footer-link {
+  background: none; border: none; font-size: 12.5px; color: var(--ink-soft);
+  text-decoration: underline; cursor: pointer; padding: 6px;
+}
+.legal-screen .course-sections { margin-top: 20px; }
 /* ---------- Photo réelle dans le quiz ---------- */
 .quiz-photo {
   width: 100%; height: 150px; border-radius: var(--radius-sm);
