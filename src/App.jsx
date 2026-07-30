@@ -314,23 +314,34 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
   };
   const lastAnswer = answers[answers.length - 1];
 
-  const touchStartX = React.useRef(null);
-  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
-  const handleTouchEnd = (e) => {
-    if (touchStartX.current === null || !revealed) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
-    if (deltaX < -60) next();
-    touchStartX.current = null;
+const touchStartX = React.useRef(null);
+  const touchTriggered = React.useRef(false);
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchTriggered.current = false;
   };
+  const handleTouchMove = (e) => {
+    if (touchStartX.current === null || !revealed || touchTriggered.current) return;
+    const deltaX = e.touches[0].clientX - touchStartX.current;
+    if (deltaX < -50) {
+      touchTriggered.current = true;
+      next();
+    }
+  };
+  const resetTouch = () => { touchStartX.current = null; touchTriggered.current = false; };
 
 
   return (
-    <div className="quiz">
-      <div className="quiz-topbar">
-        <button className="btn-ghost" onClick={onExit}>← Quitter</button>
-        <RoadProgress current={index + 1} total={questions.length} />
-      </div>
-          <div className="quiz-card" key={index} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+<div
+        className="quiz-card"
+        key={index}
+        style={{ touchAction: "pan-y" }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={resetTouch}
+        onTouchCancel={resetTouch}
+      >
+
               <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span>
         {!qc.image && (
           <div className="quiz-photo" style={{ backgroundImage: `url(${THEME_PHOTOS[qc.theme] || THEME_PHOTOS.divers})` }} />
