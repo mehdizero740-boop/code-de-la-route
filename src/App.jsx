@@ -190,15 +190,12 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
           Vrais panneaux, corrections détaillées, conditions d'examen réelles.
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
         </p>
-        <div className="hero-actions">
+           <div className="hero-actions">
           <button className="btn-primary btn-hero" onClick={onStartExam}>
             Démarrer l'examen blanc -- 40 questions
           </button>
-                   <button className="btn-ghost-light btn-hero" onClick={onOpenThemes}>
+          <button className="btn-ghost-light btn-hero" onClick={onOpenThemes}>
             Découvrir par thème
-          </button>
-          <button className="btn-ghost-light btn-hero" onClick={onOpenCourses}>
-            📚 Cours
           </button>
         </div>
         <div className="hero-trust">
@@ -208,7 +205,17 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
         </div>
       </header>
 
+      <button className="course-banner" onClick={onOpenCourses}>
+        <span className="course-banner-icon">📚</span>
+        <span className="course-banner-text">
+          <span className="course-banner-title">Fiches de cours</span>
+          <span className="course-banner-sub">{Object.keys(COURSES).length} thèmes expliqués en détail avant de t'entraîner</span>
+        </span>
+        <span className="course-banner-arrow">→</span>
+      </button>
+
       <h2 className="section-title">En situation réelle</h2>
+
       <div className="situ-grid">
         <button className="situ-card situ-priorites" onClick={() => onStartTheme("priorites")}>
           <span className="situ-card-label">Priorités &amp; intersections</span>
