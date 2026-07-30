@@ -314,21 +314,24 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
   };
   const lastAnswer = answers[answers.length - 1];
 
-const touchStartX = React.useRef(null);
-  const touchTriggered = React.useRef(false);
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchTriggered.current = false;
-  };
-  const handleTouchMove = (e) => {
-    if (touchStartX.current === null || !revealed || touchTriggered.current) return;
-    const deltaX = e.touches[0].clientX - touchStartX.current;
-    if (deltaX < -50) {
-      touchTriggered.current = true;
-      next();
-    }
-  };
-  const resetTouch = () => { touchStartX.current = null; touchTriggered.current = false; };
+  useEffect(() => {
+    if (!revealed) return;
+    let startX = null;
+    let triggered = false;
+    const onStart = (e) => { startX = e.touches[0].clientX; triggered = false; };
+    const onMove = (e) => {
+      if (startX === null || triggered) return;
+      const deltaX = e.touches[0].clientX - startX;
+      if (deltaX < -50) { triggered = true; next(); }
+    };
+    document.addEventListener("touchstart", onStart, { capture: true, passive: true });
+    document.addEventListener("touchmove", onMove, { capture: true, passive: true });
+    return () => {
+      document.removeEventListener("touchstart", onStart, { capture: true });
+      document.removeEventListener("touchmove", onMove, { capture: true });
+    };
+  }, [revealed, index]);
+
 
 
   return (
@@ -340,12 +343,7 @@ const touchStartX = React.useRef(null);
   <div
       className="quiz-card"
         key={index}
-        style={{ touchAction: "pan-y" }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={resetTouch}
-        onTouchCancel={resetTouch}
-      >
+  >
 
               <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span>
         {!qc.image && (
