@@ -281,7 +281,16 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
   const [answers, setAnswers] = useState([]);
 
   const qc = questions[index];
-  const multi = qc.answers.filter((a) => a.correct).length > 1;
+ const shuffledAnswers = useMemo(() => {
+    const arr = qc.answers.map((a) => ({ ...a }));
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, [qc]);
+  const multi = shuffledAnswers.filter((a) => a.correct).length > 1;
+
 
   const toggleAnswer = (i) => {
     if (revealed) return;
@@ -291,7 +300,7 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
 
   const validate = () => {
     if (selected.length === 0) return;
-    const correctSet = qc.answers.map((a, i) => (a.correct ? i : null)).filter((x) => x !== null);
+    const correctSet = shuffledAnswers.map((a, i) => (a.correct ? i : null)).filter((x) => x !== null);
     const isCorrect = correctSet.length === selected.length && correctSet.every((i) => selected.includes(i));
     if (isCorrect) setScore((s) => s + 1);
     setAnswers((a) => [...a, { question: qc, selected, correct: isCorrect }]);
@@ -321,7 +330,7 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
         {multi && <p className="quiz-hint">Plusieurs réponses possibles</p>}
         <QuestionImage src={qc.image} alt={qc.question} />
         <div className="answers">
-          {qc.answers.map((a, i) => {
+          {shuffledAnswers.map((a, i) => {
             let cls = "answer";
             if (selected.includes(i)) cls += " selected";
             if (revealed) { if (a.correct) cls += " correct"; else if (selected.includes(i)) cls += " wrong"; }
