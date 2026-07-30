@@ -337,7 +337,7 @@ const touchStartX = React.useRef(null);
         <button className="btn-ghost" onClick={onExit}>← Quitter</button>
         <RoadProgress current={index + 1} total={questions.length} />
       </div>
-  </div
+  <div
       className="quiz-card"
         key={index}
         style={{ touchAction: "pan-y" }}
