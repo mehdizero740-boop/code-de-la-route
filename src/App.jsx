@@ -321,7 +321,7 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
         <button className="btn-ghost" onClick={onExit}>← Quitter</button>
         <RoadProgress current={index + 1} total={questions.length} />
       </div>
-      <div className="quiz-card">
+         <div className="quiz-card" key={index}>
               <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span>
         {!qc.image && (
           <div className="quiz-photo" style={{ backgroundImage: `url(${THEME_PHOTOS[qc.theme] || THEME_PHOTOS.divers})` }} />
