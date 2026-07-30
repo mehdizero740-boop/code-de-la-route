@@ -312,8 +312,17 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
     if (index + 1 >= questions.length) onFinish({ score, total: questions.length, answers });
     else { setIndex((i) => i + 1); setSelected([]); setRevealed(false); }
   };
-
   const lastAnswer = answers[answers.length - 1];
+
+  const touchStartX = React.useRef(null);
+  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null || !revealed) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    if (deltaX < -60) next();
+    touchStartX.current = null;
+  };
+
 
   return (
     <div className="quiz">
@@ -321,7 +330,7 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
         <button className="btn-ghost" onClick={onExit}>← Quitter</button>
         <RoadProgress current={index + 1} total={questions.length} />
       </div>
-         <div className="quiz-card" key={index}>
+          <div className="quiz-card" key={index} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
               <span className="quiz-theme-tag">{THEMES.find((t) => t.id === qc.theme)?.label}</span>
         {!qc.image && (
           <div className="quiz-photo" style={{ backgroundImage: `url(${THEME_PHOTOS[qc.theme] || THEME_PHOTOS.divers})` }} />
