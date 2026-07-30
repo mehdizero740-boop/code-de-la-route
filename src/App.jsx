@@ -378,22 +378,13 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
             <p>{qc.explanation}</p>
           </div>
         )}
-        {revealed && (
+                {revealed && (
           <div className="quiz-actions">
             <button className="btn-primary" onClick={next}>
               {index + 1 >= questions.length ? "Voir les résultats" : "Question suivante"}
             </button>
           </div>
         )}
-
-          {!revealed ? (
-            <button className="btn-primary" onClick={validate} disabled={selected.length === 0}>Valider</button>
-          ) : (
-            <button className="btn-primary" onClick={next}>
-              {index + 1 >= questions.length ? "Voir les résultats" : "Question suivante"}
-            </button>
-          )}
-        </div>
       </div>
     </div>
   );
