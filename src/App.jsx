@@ -246,6 +246,8 @@ function ThemeList({ onStartTheme, onHome }) {
 
 /* ---------- Progression ---------- */
 
+function Progress({ profile, stats, readiness, onHome, onLogout }) {
+
   const byTheme = THEMES.map((t) => {
     const pool = getQuestionsByTheme(t.id);
     return { ...t, ...computeMastery(stats, pool) };
