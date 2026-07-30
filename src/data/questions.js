@@ -2847,7 +2847,8 @@ export const QUESTIONS = [
     { text: "Un délit, et non plus une simple contravention", correct: true },
     { text: "Toujours une contravention de 5e classe", correct: false },
     { text: "Une infraction sans changement depuis 2024", correct: false },
-  ], "Cette requalification récente en délit entraîne des sanctions bien plus lourdes : amende jusqu'à 3 750 €
+  ], "Cette requalification récente en délit entraîne des sanctions bien plus lourdes : amende jusqu'à 3 750 €, suspension, voire confiscation du véhicule."),
+  
   /* ===== VAGUE 20 -- catégories de permis (données vérifiées) ===== */
 
   q("conducteur", "Depuis 2024, le permis B (voiture) est accessible dès l'âge de :", [
