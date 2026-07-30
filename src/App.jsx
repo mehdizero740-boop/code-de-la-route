@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { THEMES, QUESTIONS, getQuestionsByTheme } from "./data/questions.js";
+import { COURSES, getCourse } from "./data/courses.js";
 import {
   cloudEnabled, getSessionProfile, subscribeAuth, signUpCloud, signInCloud,
   createLocalProfile, signOutProfile, getStats, recordAnswer, pickAdaptive, computeMastery,
@@ -168,7 +169,7 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
   );
 }
 
-function Home({ onStartExam, onOpenThemes, onStartTheme, profile, mastery, readiness, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
+function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, onLocalProfile, onCloudDone, onOpenProgress, onLogout }) {
 
   return (
     <div className="home">
@@ -193,8 +194,11 @@ function Home({ onStartExam, onOpenThemes, onStartTheme, profile, mastery, readi
           <button className="btn-primary btn-hero" onClick={onStartExam}>
             Démarrer l'examen blanc -- 40 questions
           </button>
-          <button className="btn-ghost-light btn-hero" onClick={onOpenThemes}>
+                   <button className="btn-ghost-light btn-hero" onClick={onOpenThemes}>
             Découvrir par thème
+          </button>
+          <button className="btn-ghost-light btn-hero" onClick={onOpenCourses}>
+            📚 Cours
           </button>
         </div>
         <div className="hero-trust">
@@ -244,7 +248,125 @@ function ThemeList({ onStartTheme, onHome }) {
   );
 }
 
+/* ---------- Liste des cours (écran dédié) ---------- */
+function CourseList({ onOpenCourse, onHome }) {
+  return (
+    <div className="theme-list-screen">
+      <div className="quiz-topbar">
+        <button className="btn-ghost" onClick={onHome}>← Accueil</button>
+      </div>
+      <h1 className="progress-title">Cours par thème</h1>
+      <p className="hero-sub" style={{ color: "var(--ink-soft)", marginBottom: 20 }}>
+        Les notions essentielles à connaître avant de t'entraîner. De nouvelles fiches arrivent régulièrement.
+      </p>
+      <div className="theme-grid">
+        {THEMES.map((t) => {
+          const available = !!COURSES[t.id];
+          return (
+            <button key={t.id} className="theme-card" onClick={() => available && onOpenCourse(t.id)} disabled={!available}>
+              <SignBadge tone="blue" icon accent={t.color} size={38}>{t.icon}</SignBadge>
+              <span className="theme-label">{t.label}</span>
+              <span className="theme-count mono">{available ? "Fiche disponible" : "Bientôt disponible"}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Détail d'un cours ---------- */
+function CourseDetail({ themeId, onHome, onBackToCourses, onStartTheme }) {
+  const theme = THEMES.find((t) => t.id === themeId);
+  const course = getCourse(themeId);
+  if (!theme || !course) return null;
+  return (
+    <div className="course-screen">
+      <div className="quiz-topbar">
+        <button className="btn-ghost" onClick={onBackToCourses}>← Cours</button>
+      </div>
+      <div className="course-header">
+        <SignBadge tone="blue" icon accent={theme.color} size={44}>{theme.icon}</SignBadge>
+        <h1 className="progress-title" style={{ margin: 0 }}>{theme.label}</h1>
+      </div>
+      <p className="hero-sub" style={{ color: "var(--ink-soft)" }}>{course.intro}</p>
+      <div className="course-sections">
+        {course.sections.map((s, i) => (
+          <div className="course-section" key={i}>
+            <h2 className="course-section-title">{s.heading}</h2>
+            {s.body.map((p, j) => (
+              <p className="course-section-body" key={j}>{p}</p>
+            ))}
+          </div>
+        ))}
+      </div>
+      <button className="btn-primary btn-hero" onClick={() => onStartTheme(themeId)}>
+        S'entraîner sur ce thème
+      </button>
+    </div>
+  );
+}
+/* ---------- Liste des cours (écran dédié) ---------- */
+function CourseList({ onOpenCourse, onHome }) {
+  return (
+    <div className="theme-list-screen">
+      <div className="quiz-topbar">
+        <button className="btn-ghost" onClick={onHome}>← Accueil</button>
+      </div>
+      <h1 className="progress-title">Cours par thème</h1>
+      <p className="hero-sub" style={{ color: "var(--ink-soft)", marginBottom: 20 }}>
+        Les notions essentielles à connaître avant de t'entraîner. De nouvelles fiches arrivent régulièrement.
+      </p>
+      <div className="theme-grid">
+        {THEMES.map((t) => {
+          const available = !!COURSES[t.id];
+          return (
+            <button key={t.id} className="theme-card" onClick={() => available && onOpenCourse(t.id)} disabled={!available}>
+              <SignBadge tone="blue" icon accent={t.color} size={38}>{t.icon}</SignBadge>
+              <span className="theme-label">{t.label}</span>
+              <span className="theme-count mono">{available ? "Fiche disponible" : "Bientôt disponible"}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Détail d'un cours ---------- */
+function CourseDetail({ themeId, onHome, onBackToCourses, onStartTheme }) {
+  const theme = THEMES.find((t) => t.id === themeId);
+  const course = getCourse(themeId);
+  if (!theme || !course) return null;
+  return (
+    <div className="course-screen">
+      <div className="quiz-topbar">
+        <button className="btn-ghost" onClick={onBackToCourses}>← Cours</button>
+      </div>
+      <div className="course-header">
+        <SignBadge tone="blue" icon accent={theme.color} size={44}>{theme.icon}</SignBadge>
+        <h1 className="progress-title" style={{ margin: 0 }}>{theme.label}</h1>
+      </div>
+      <p className="hero-sub" style={{ color: "var(--ink-soft)" }}>{course.intro}</p>
+      <div className="course-sections">
+        {course.sections.map((s, i) => (
+          <div className="course-section" key={i}>
+            <h2 className="course-section-title">{s.heading}</h2>
+            {s.body.map((p, j) => (
+              <p className="course-section-body" key={j}>{p}</p>
+            ))}
+          </div>
+        ))}
+      </div>
+      <button className="btn-primary btn-hero" onClick={() => onStartTheme(themeId)}>
+        S'entraîner sur ce thème
+      </button>
+    </div>
+  );
+}
+
 /* ---------- Progression ---------- */
+
 
 function Progress({ profile, stats, readiness, onHome, onLogout }) {
 
@@ -533,7 +655,8 @@ export default function App() {
   const [questions, setQuestions] = useState([]);
   const [result, setResult] = useState(null);
   const [profile, setProfile] = useState(null);
-  const [stats, setStats] = useState({});
+    const [stats, setStats] = useState({});
+  const [courseThemeId, setCourseThemeId] = useState(null);
 
   // Charge la session au démarrage + écoute les changements de connexion.
   useEffect(() => {
@@ -600,15 +723,16 @@ export default function App() {
 
   return (
     <div className="app app-in">
-      {screen === "home" && (
+            {screen === "home" && (
         <Home
           onStartExam={startExam}
           onOpenThemes={() => setScreen("themes")}
+          onOpenCourses={() => setScreen("courses")}
           onStartTheme={startTheme}
           profile={profile}
           mastery={mastery}
           readiness={readiness}
-onLocalProfile={handleLocalProfile}
+          onLocalProfile={handleLocalProfile}
           onCloudDone={handleCloudDone}
           onOpenProgress={() => setScreen("progress")}
           onLogout={logout}
@@ -616,6 +740,20 @@ onLocalProfile={handleLocalProfile}
       )}
       {screen === "themes" && (
         <ThemeList onStartTheme={startTheme} onHome={() => setScreen("home")} />
+      )}
+      {screen === "courses" && (
+        <CourseList
+          onOpenCourse={(id) => { setCourseThemeId(id); setScreen("course"); }}
+          onHome={() => setScreen("home")}
+        />
+      )}
+      {screen === "course" && courseThemeId && (
+        <CourseDetail
+          themeId={courseThemeId}
+          onHome={() => setScreen("home")}
+          onBackToCourses={() => setScreen("courses")}
+          onStartTheme={startTheme}
+        />
       )}
       {screen === "progress" && profile && (
       <Progress profile={profile} stats={stats} readiness={readiness} onHome={() => setScreen("home")} onLogout={logout} />

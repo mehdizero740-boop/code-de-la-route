@@ -390,6 +390,20 @@ h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em
 .situ-vitesse { background-image: url('https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=800&q=70'); } 
 /* ---------- Écran liste des thèmes ---------- */
 .theme-list-screen .theme-grid { margin-top: 4px; }
+
+/* ---------- Écran détail d'un cours ---------- */
+.course-header { display: flex; align-items: center; gap: 12px; margin: 4px 0 10px; }
+.course-sections { display: flex; flex-direction: column; gap: 18px; margin: 20px 0 26px; }
+.course-section {
+  background: var(--card); border-radius: var(--radius-sm); padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.course-section-title {
+  font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 800; color: var(--violet);
+  margin: 0 0 10px;
+}
+.course-section-body { font-size: 14px; line-height: 1.6; color: var(--ink); margin: 0 0 10px; }
+.course-section-body:last-child { margin-bottom: 0; }
 /* ---------- Photo réelle dans le quiz ---------- */
 .quiz-photo {
   width: 100%; height: 150px; border-radius: var(--radius-sm);
