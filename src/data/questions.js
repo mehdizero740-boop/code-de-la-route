@@ -4107,418 +4107,500 @@ export const QUESTIONS = [
     { text: "Marcher le long de la voie de circulation pour signaler la panne", correct: false },
   ], "Rester dans le véhicule expose fortement aux risques de collision par l'arrière ; se mettre à l'abri derrière les glissières est bien plus sûr."),
 
-  /* ===== VAGUE 57 — frein moteur en descente, sécurité montagne (données précises) ===== */
+  /* ===== VAGUE 57 -- frein moteur en descente, sécurité montagne (données précises) ===== */
 
   q("mecanique", "En longue descente de montagne, maintenir la pédale de frein appuyée en continu risque de provoquer :", [
     { text: "Un phénomène de « vitrification » des plaquettes, réduisant fortement leur efficacité", correct: true },
     { text: "Aucun risque particulier tant que le véhicule est récent", correct: false },
+    { text: "Une amélioration progressive du freinage par échauffement", correct: false },
   ], "Ce phénomène de surchauffe rend les plaquettes glissantes, comme du carrelage mouillé, nécessitant parfois leur remplacement complet."),
   q("mecanique", "La technique recommandée pour freiner en longue descente consiste à :", [
     { text: "Freiner par appuis brefs et répétés, en laissant le frein moteur assurer l'essentiel du ralentissement", correct: true },
     { text: "Maintenir une pression constante et légère sur la pédale de frein", correct: false },
+    { text: "Rouler au point mort pour économiser le carburant", correct: false },
   ], "Ce freinage cadencé permet aux freins de refroidir entre chaque sollicitation, évitant ainsi la surchauffe progressive."),
   q("mecanique", "Sur un véhicule à boîte automatique, en descente prolongée de montagne, il est recommandé de :", [
     { text: "Passer en mode manuel et sélectionner un rapport bas pour renforcer le frein moteur", correct: true },
     { text: "Laisser le mode automatique gérer seul les rapports, sans intervention du conducteur", correct: false },
+    { text: "Passer au point mort pour limiter l'usure de la boîte", correct: false },
   ], "Le mode automatique standard privilégie souvent des rapports élevés peu adaptés aux longues descentes, sollicitant excessivement les freins."),
   q("mecanique", "Sur un véhicule électrique, le frein moteur classique est remplacé par :", [
     { text: "Le freinage régénératif, qui transforme l'énergie cinétique en électricité rechargeant la batterie", correct: true },
     { text: "Aucun équivalent n'existe sur les véhicules électriques", correct: false },
+    { text: "Un simple frein à main renforcé", correct: false },
   ], "Cette technologie offre un ralentissement efficace tout en récupérant de l'énergie, remplaçant avantageusement le frein moteur thermique classique."),
   q("mecanique", "Une fois les freins d'un véhicule victime d'une surchauffe importante, leur pleine efficacité ne revient généralement qu'après :", [
     { text: "5 à 10 minutes de refroidissement", correct: true },
     { text: "Quelques secondes seulement", correct: false },
+    { text: "Plusieurs heures dans tous les cas", correct: false },
   ], "Ce délai de récupération souligne l'importance d'anticiper et de prévenir la surchauffe plutôt que d'attendre qu'elle survienne."),
 
-  /* ===== VAGUE 58 — incendie batterie véhicule électrique (données précises) ===== */
+  /* ===== VAGUE 58 -- incendie batterie véhicule électrique (données précises) ===== */
 
   q("secours", "Statistiquement, un véhicule électrique prend feu :", [
     { text: "Moins souvent qu'un véhicule thermique équivalent, malgré une perception inverse très répandue", correct: true },
     { text: "Beaucoup plus fréquemment qu'un véhicule à essence ou diesel", correct: false },
+    { text: "Exactement à la même fréquence, sans différence mesurable", correct: false },
   ], "Plusieurs études européennes convergent : à parc équivalent, les véhicules électriques s'enflamment moins souvent que les véhicules thermiques, malgré une forte médiatisation des cas inverses."),
   q("secours", "En cas de départ de feu suspecté sur un véhicule électrique en roulant (odeur, fumée, voyant batterie), il faut :", [
     { text: "S'arrêter dès que possible en sécurité, couper le contact et évacuer immédiatement à bonne distance", correct: true },
     { text: "Continuer à rouler jusqu'à un garage pour faire vérifier le problème", correct: false },
+    { text: "Ouvrir toutes les fenêtres et poursuivre prudemment", correct: false },
   ], "Un emballement thermique de batterie peut évoluer très rapidement ; l'évacuation immédiate prime sur toute tentative de rejoindre un lieu de réparation."),
   q("secours", "Face à un début d'incendie sur une batterie lithium-ion, il est recommandé de se tenir à une distance d'au moins :", [
     { text: "15 à 30 mètres selon les sources, et de laisser l'intervention aux secours spécialisés", correct: true },
     { text: "2 mètres suffisent largement", correct: false },
+    { text: "Aucune distance particulière n'est nécessaire", correct: false },
   ], "Ces incendies peuvent générer des gaz toxiques et des projections à très haute température, justifiant une distance de sécurité importante."),
   q("secours", "Éteindre un feu de batterie de véhicule électrique avec un simple extincteur portatif est :", [
     { text: "Généralement inefficace, la quantité d'agent extincteur nécessaire étant bien supérieure", correct: true },
     { text: "Suffisant dans la grande majorité des cas", correct: false },
+    { text: "Interdit par la loi pour ce type de feu", correct: false },
   ], "La capacité énergétique élevée d'une batterie nécessite des moyens d'extinction bien plus importants que ceux d'un extincteur classique embarqué."),
   q("secours", "Une caractéristique préoccupante des incendies de batteries lithium-ion est leur capacité à :", [
     { text: "Se raviver plusieurs heures, voire plusieurs jours après une extinction apparente", correct: true },
     { text: "S'éteindre définitivement et immédiatement dès la première intervention", correct: false },
+    { text: "Ne jamais générer de fumée toxique", correct: false },
   ], "Ce risque de ré-inflammation tardive explique pourquoi les véhicules concernés font souvent l'objet d'une surveillance prolongée après un incendie."),
-
-  /* ===== VAGUE 59 — feux piétons, « petit bonhomme » (données précises) ===== */
+  /* ===== VAGUE 59 -- feux piétons, « petit bonhomme » (données précises) ===== */
 
   q("usagers", "En France, depuis une réglementation de 1991, le feu piéton vert :", [
     { text: "Passe directement au rouge, sans phase de clignotement intermédiaire", correct: true },
     { text: "Clignote toujours quelques secondes avant de passer au rouge", correct: false },
+    { text: "Reste vert en permanence, sans jamais passer au rouge", correct: false },
   ], "Contrairement à l'ancien système, le clignotement du feu vert piéton a été supprimé pour éviter toute ambiguïté sur le moment exact où s'arrêter."),
   q("usagers", "Un automobiliste qui tourne à droite ou à gauche alors que son feu est vert doit, face à des piétons traversant dans la rue qu'il emprunte :", [
     { text: "Leur céder le passage, même si son propre feu est au vert", correct: true },
     { text: "Continuer normalement, son feu vert lui donnant la priorité absolue", correct: false },
+    { text: "Klaxonner pour les inciter à accélérer leur traversée", correct: false },
   ], "Le feu vert pour aller tout droit n'accorde jamais de priorité sur les piétons engagés dans une rue latérale empruntée en tournant."),
   q("usagers", "Certains feux piétons sont équipés d'un signal sonore émettant un message vocal. Ce dispositif est destiné en priorité :", [
     { text: "Aux personnes malvoyantes ou aveugles", correct: true },
     { text: "Aux enfants en bas âge uniquement", correct: false },
+    { text: "Aux touristes ne maîtrisant pas le français", correct: false },
   ], "Ce signal sonore permet à une personne ne pouvant pas voir le feu de connaître le moment approprié pour traverser en toute sécurité."),
   q("usagers", "Un piéton verbalisé pour avoir traversé alors que le feu était vert pour les automobilistes commet une infraction sanctionnée par une amende de :", [
     { text: "4 €", correct: true },
     { text: "135 €, comme un automobiliste", correct: false },
+    { text: "35 €", correct: false },
   ], "Cette amende, très symbolique, reste néanmoins applicable : les piétons sont aussi tenus de respecter la signalisation lumineuse qui leur est destinée."),
 
-  /* ===== VAGUE 60 — conduite avec caravane/remorque (données précises) ===== */
+  /* ===== VAGUE 60 -- conduite avec caravane/remorque (données précises) ===== */
 
   q("securite", "Sur autoroute, un véhicule tractant une caravane ou une remorque est généralement limité à :", [
     { text: "90 km/h", correct: true },
     { text: "130 km/h, comme sans remorque", correct: false },
+    { text: "70 km/h", correct: false },
   ], "Cette limitation, plus restrictive que pour un véhicule seul, tient compte de la stabilité réduite et des distances de freinage allongées de l'attelage."),
   q("securite", "Le phénomène de « mise en lacet » d'une caravane désigne :", [
     { text: "Une oscillation latérale incontrôlée de la remorque, pouvant survenir à vitesse excessive", correct: true },
     { text: "Un simple bruit de vent dans l'attelage sans danger", correct: false },
+    { text: "Un défaut d'attelage détectable uniquement à l'arrêt", correct: false },
   ], "Ce phénomène dangereux peut être déclenché par une vitesse trop élevée, un vent latéral fort, ou le souffle d'un poids lourd dépassant."),
   q("securite", "En cas de mise en lacet (louvoiement) d'une caravane en cours de trajet, il faut :", [
     { text: "Ralentir progressivement et freiner par à-coups, sans braquer brusquement", correct: true },
     { text: "Accélérer pour stabiliser l'ensemble par la vitesse", correct: false },
+    { text: "Braquer fortement pour contrer chaque oscillation", correct: false },
   ], "Accélérer amplifierait le phénomène ; seul un ralentissement progressif et maîtrisé permet de reprendre le contrôle de l'attelage."),
   q("securite", "Des rétroviseurs additionnels sont généralement obligatoires lorsque la caravane ou la remorque tractée dépasse une largeur de :", [
     { text: "2,10 mètres", correct: true },
     { text: "50 centimètres", correct: false },
+    { text: "3,50 mètres", correct: false },
   ], "Au-delà de cette largeur, les rétroviseurs standards du véhicule tracteur ne suffisent plus à assurer une visibilité arrière satisfaisante."),
   q("securite", "Une caravane ou remorque dont le poids dépasse 750 kg doit généralement être équipée de :", [
     { text: "Son propre système de freinage", correct: true },
     { text: "Aucun système de freinage n'est requis, quel que soit le poids", correct: false },
+    { text: "D'un simple frein à main manuel", correct: false },
   ], "Ce système de freinage propre à la remorque permet de ralentir ou stopper l'ensemble en cas de rupture d'attelage, un risque de sécurité majeur."),
-
-  /* ===== VAGUE 61 — usage du klaxon, articles R416-1 à R416-3 (données précises) ===== */
+  /* ===== VAGUE 61 -- usage du klaxon, articles R416-1 à R416-3 (données précises) ===== */
 
   q("divers", "En agglomération, l'usage de l'avertisseur sonore (klaxon) n'est autorisé qu'en cas de :", [
     { text: "Danger immédiat", correct: true },
     { text: "Simple impatience face à un véhicule qui tarde à démarrer", correct: false },
+    { text: "Salutation amicale envers une connaissance", correct: false },
   ], "L'article R416-1 du code de la route réserve strictement l'usage du klaxon en ville aux situations de danger immédiat, pour limiter la pollution sonore."),
   q("divers", "Hors agglomération, l'usage du klaxon est autorisé pour :", [
     { text: "Donner les avertissements nécessaires aux autres usagers, comme signaler sa présence dans un virage sans visibilité", correct: true },
     { text: "Toute raison, sans restriction particulière", correct: false },
+    { text: "Célébrer un événement personnel en klaxonnant longuement", correct: false },
   ], "Contrairement à l'agglomération, le cadre est plus large hors agglomération, mais reste limité aux avertissements réellement utiles aux autres usagers."),
   q("divers", "La nuit, l'usage du klaxon est :", [
     { text: "Limité aux cas de nécessité absolue, l'appel de phares étant privilégié", correct: true },
     { text: "Totalement libre, comme en journée hors agglomération", correct: false },
+    { text: "Strictement interdit en toutes circonstances, même en cas de danger", correct: false },
   ], "L'article R416-2 recommande de privilégier les avertissements lumineux la nuit, pour limiter les nuisances sonores envers les riverains."),
   q("divers", "Klaxonner pour saluer une connaissance ou inciter un véhicule à accélérer est :", [
     { text: "Interdit, quelle que soit l'heure ou la zone de circulation", correct: true },
     { text: "Toléré tant que le coup de klaxon reste bref", correct: false },
+    { text: "Autorisé uniquement en zone rurale", correct: false },
   ], "Ces usages, bien que fréquents dans la pratique, ne correspondent à aucune des situations autorisées par le code de la route."),
   q("divers", "Installer sur son véhicule un avertisseur sonore non homologué (sirène, trompe à sons multiples) est :", [
     { text: "Interdit par la réglementation", correct: true },
     { text: "Autorisé tant que le dispositif reste discret", correct: false },
+    { text: "Autorisé uniquement sur autoroute", correct: false },
   ], "Seuls les avertisseurs sonores homologués sont autorisés ; les dispositifs pouvant prêter à confusion avec des véhicules prioritaires sont proscrits."),
   q("divers", "Le non-respect des règles d'usage de l'avertisseur sonore constitue une contravention de :", [
     { text: "2e classe", correct: true },
     { text: "5e classe, la plus sévère", correct: false },
+    { text: "4e classe", correct: false },
   ], "Cette infraction relativement légère reste sanctionnée, même si elle figure parmi les contraventions les moins sévèrement punies du code de la route."),
 
-  /* ===== VAGUE 62 — chargement, galerie de toit, article R312-19 (données précises) ===== */
+  /* ===== VAGUE 62 -- chargement, galerie de toit, article R312-19 (données précises) ===== */
 
   q("securite", "L'article R312-19 du code de la route impose que tout chargement soit disposé de façon à :", [
     { text: "Ne jamais constituer une cause de dommage ou de danger pour autrui", correct: true },
     { text: "Ne pas dépasser 10 kg au total, quel que soit le véhicule", correct: false },
+    { text: "Être visible uniquement de l'arrière du véhicule", correct: false },
   ], "Ce principe général encadre l'ensemble des règles de chargement, quelle que soit sa nature (galerie, coffre, remorque)."),
   q("securite", "Un chargement dépassant à l'arrière du véhicule de plus d'un mètre doit être signalé par :", [
     { text: "Un dispositif homologué réfléchissant, complété de feux la nuit", correct: true },
     { text: "Un simple morceau de tissu de couleur quelconque", correct: false },
+    { text: "Rien de particulier si le chargement est léger", correct: false },
   ], "Cette signalisation renforcée devient obligatoire au-delà d'un mètre de dépassement, pour prévenir tout risque de collision par l'arrière."),
   q("securite", "Le dépassement maximal autorisé à l'arrière d'un véhicule pour un chargement est de :", [
     { text: "3 mètres", correct: true },
     { text: "10 mètres, sans limite stricte", correct: false },
+    { text: "50 centimètres", correct: false },
   ], "Au-delà de cette limite, le chargement devient excessif et non conforme à la réglementation sur les dimensions autorisées."),
   q("securite", "Un chargement transporté sur une galerie de toit peut, en principe :", [
     { text: "Ne jamais dépasser à l'avant du véhicule", correct: true },
     { text: "Dépasser librement à l'avant comme à l'arrière", correct: false },
+    { text: "Dépasser jusqu'à 1 mètre à l'avant sans signalisation", correct: false },
   ], "Contrairement à l'arrière où un dépassement encadré est toléré, aucun dépassement n'est autorisé à l'avant, pour préserver la visibilité et la sécurité."),
   q("securite", "Une surcharge du véhicule au-delà de la limite indiquée sur le certificat d'immatriculation (PTAC) est sanctionnée par une contravention de :", [
     { text: "4e classe, pouvant se cumuler par tranche de poids excédentaire", correct: true },
     { text: "1re classe, la plus légère du code de la route", correct: false },
+    { text: "2e classe uniquement", correct: false },
   ], "Cette sanction peut s'alourdir proportionnellement à l'importance du dépassement de charge constaté lors d'un contrôle avec pesage."),
   q("securite", "La largeur totale d'un chargement, coffre de toit inclus, ne doit pas excéder :", [
     { text: "2,55 mètres", correct: true },
     { text: "5 mètres", correct: false },
+    { text: "1,80 mètre", correct: false },
   ], "Cette limite de largeur, identique à celle du gabarit routier standard, garantit que le véhicule chargé reste compatible avec la circulation normale."),
-
-  /* ===== VAGUE 63 — dashcams/caméras embarquées (données précises 2026) ===== */
+  /* ===== VAGUE 63 -- dashcams/caméras embarquées (données précises 2026) ===== */
 
   q("divers", "L'utilisation d'une caméra embarquée (dashcam) dans son véhicule en France est :", [
     { text: "Légale, aucune loi n'interdisant spécifiquement ce dispositif", correct: true },
     { text: "Interdite, comme dans certains pays voisins tels que l'Autriche", correct: false },
+    { text: "Soumise à une autorisation préfectorale préalable", correct: false },
   ], "Contrairement à certains pays européens très restrictifs sur le sujet, la France autorise l'usage des dashcams sous certaines conditions encadrées."),
   q("divers", "L'usage d'une dashcam en France doit néanmoins respecter :", [
     { text: "Le RGPD et le droit à l'image des personnes filmées", correct: true },
     { text: "Aucune règle particulière, l'enregistrement étant totalement libre", correct: false },
+    { text: "Uniquement les règles du code de la propriété intellectuelle", correct: false },
   ], "Dès qu'une caméra capture des visages ou des plaques d'immatriculation identifiables, elle traite des données personnelles soumises au RGPD."),
   q("divers", "Publier sur les réseaux sociaux une vidéo de dashcam montrant des visages ou plaques d'immatriculation non floutés est :", [
     { text: "Une violation potentielle du droit à l'image, exposant à des poursuites", correct: true },
     { text: "Totalement libre, la voie publique n'étant protégée par aucun droit à l'image", correct: false },
+    { text: "Autorisé si la vidéo dure moins de 30 secondes", correct: false },
   ], "Le floutage des éléments identifiants est indispensable avant toute diffusion publique, pour respecter la vie privée des personnes filmées."),
   q("divers", "Une vidéo issue d'une dashcam peut-elle être utilisée comme preuve devant un tribunal en cas d'accident ?", [
     { text: "Oui, sous réserve de respecter les règles de protection des données", correct: true },
     { text: "Non, ce type d'enregistrement n'est jamais recevable en justice", correct: false },
+    { text: "Oui, mais uniquement si les deux parties donnent leur accord", correct: false },
   ], "Les enregistrements peuvent constituer un élément de preuve utile, à condition d'avoir été obtenus et conservés dans un cadre légal conforme."),
   q("divers", "L'installation d'une dashcam sur le pare-brise ne doit en aucun cas :", [
     { text: "Réduire la visibilité du conducteur ou créer un angle mort dangereux", correct: true },
     { text: "Filmer la route, ce qui reste son unique usage interdit", correct: false },
+    { text: "Fonctionner pendant plus de 2 heures consécutives", correct: false },
   ], "Comme tout accessoire fixé à l'intérieur de l'habitacle, la dashcam doit être positionnée sans compromettre la sécurité de conduite."),
 
-  /* ===== VAGUE 64 — suspension administrative vs judiciaire (données précises) ===== */
+  /* ===== VAGUE 64 -- suspension administrative vs judiciaire (données précises) ===== */
 
   q("conducteur", "La suspension administrative du permis de conduire est décidée par :", [
     { text: "Le préfet, à titre de mesure préventive et immédiate", correct: true },
     { text: "Un juge, à l'issue d'un procès", correct: false },
+    { text: "Le maire de la commune où l'infraction a été commise", correct: false },
   ], "Cette mesure préventive vise à retirer rapidement le permis d'un conducteur jugé dangereux, sans attendre l'issue d'une procédure judiciaire."),
   q("conducteur", "La durée maximale d'une suspension administrative du permis de conduire est, en règle générale, de :", [
     { text: "6 mois, pouvant exceptionnellement atteindre 1 an", correct: true },
     { text: "5 ans", correct: false },
+    { text: "1 mois maximum, sans exception", correct: false },
   ], "Au-delà de cette durée, seule une suspension judiciaire, prononcée par un tribunal, peut prolonger l'interdiction de conduire."),
   q("conducteur", "La suspension judiciaire du permis de conduire, prononcée par un tribunal, peut atteindre une durée maximale de :", [
     { text: "5 ans pour les infractions les plus graves", correct: true },
     { text: "1 mois seulement", correct: false },
+    { text: "6 mois, comme la suspension administrative", correct: false },
   ], "Cette durée bien plus longue que la suspension administrative reflète le caractère de sanction pénale de la décision judiciaire."),
   q("conducteur", "Lorsqu'une suspension judiciaire succède à une suspension administrative pour les mêmes faits, les deux durées :", [
     { text: "Ne se cumulent pas : la période déjà effectuée s'impute sur la sanction judiciaire", correct: true },
     { text: "S'additionnent intégralement, sans aucune déduction", correct: false },
+    { text: "S'annulent mutuellement, ne laissant aucune sanction effective", correct: false },
   ], "Ce mécanisme évite une double peine : le temps de suspension administrative déjà subi est déduit de la suspension judiciaire finalement prononcée."),
   q("conducteur", "Depuis juillet 2025, en cas de rétention du permis pour alcool ou stupéfiants, la suspension administrative par le préfet est :", [
     { text: "Une obligation, et non plus une simple faculté laissée à son appréciation", correct: true },
     { text: "Devenue facultative, contrairement à avant 2025", correct: false },
+    { text: "Supprimée au profit de la seule voie judiciaire", correct: false },
   ], "Cette évolution récente renforce l'automaticité de la réponse administrative face aux infractions les plus graves liées à l'alcool ou aux stupéfiants."),
-
-  /* ===== VAGUE 65 — véhicules agricoles, circulation (données vérifiées) ===== */
+  /* ===== VAGUE 65 -- véhicules agricoles, circulation (données vérifiées) ===== */
 
   q("usagers", "Les tracteurs agricoles sont interdits de circulation sur :", [
     { text: "Les autoroutes et les voies rapides limitées à 110 km/h ou plus", correct: true },
     { text: "L'ensemble du réseau routier, y compris les routes départementales", correct: false },
+    { text: "Les routes de campagne uniquement", correct: false },
   ], "Leur vitesse réduite les rend incompatibles avec les voies conçues pour une circulation rapide, mais ils restent autorisés sur le reste du réseau."),
   q("usagers", "Dans un convoi agricole composé d'un tracteur et d'une remorque, la vitesse maximale autorisée est déterminée par :", [
     { text: "L'élément le plus lent de l'ensemble, tracteur ou remorque", correct: true },
     { text: "Toujours la vitesse maximale du tracteur seul", correct: false },
+    { text: "La moyenne entre les deux vitesses d'homologation", correct: false },
   ], "Un tracteur homologué plus rapide reste bridé par la vitesse d'homologation de l'outil ou de la remorque qu'il tracte, si celle-ci est inférieure."),
   q("usagers", "Lorsque la largeur d'un convoi agricole dépasse 3,50 mètres, la vitesse maximale autorisée est réduite à :", [
     { text: "25 km/h", correct: true },
     { text: "40 km/h, sans changement", correct: false },
+    { text: "10 km/h", correct: false },
   ], "Cette réduction de vitesse pour les convois larges vise à compenser la difficulté accrue de manœuvre et le risque pour les autres usagers."),
   q("usagers", "Un tracteur laissant des salissures (boue, terre) sur la chaussée doit :", [
     { text: "Signaler et nettoyer la zone concernée pour éviter tout risque d'accident", correct: true },
     { text: "N'a aucune obligation particulière liée à ces salissures", correct: false },
+    { text: "Attendre la pluie pour un nettoyage naturel", correct: false },
   ], "Les traces de boue peuvent rendre la chaussée glissante ; leur gestion relève de la responsabilité du conducteur du véhicule agricole."),
   q("usagers", "Le panneau A18, apposé à l'arrière d'un véhicule agricole, signale :", [
     { text: "La présence d'un engin agricole lent sur la chaussée", correct: true },
     { text: "Une interdiction de dépassement", correct: false },
+    { text: "Un chargement dangereux transporté", correct: false },
   ], "Ce panneau triangulaire spécifique alerte les autres usagers de la présence d'un véhicule lent, les incitant à la prudence avant tout dépassement.", { image: WM("A18") }),
 
-  /* ===== VAGUE 66 — conduite hivernale, neige et verglas (données précises) ===== */
+  /* ===== VAGUE 66 -- conduite hivernale, neige et verglas (données précises) ===== */
 
   q("vitesse", "Sur route enneigée, les distances de freinage peuvent être multipliées, par rapport à une route sèche, par environ :", [
     { text: "4, et jusqu'à 10 sur du verglas", correct: true },
     { text: "1,5 seulement, quelle que soit la situation", correct: false },
+    { text: "2 au maximum, quelle que soit la surface", correct: false },
   ], "Cette augmentation considérable justifie une réduction drastique de la vitesse et un allongement important des distances de sécurité en conditions hivernales."),
   q("mecanique", "Sur route glissante, en cas de véhicule équipé d'ABS, il est recommandé de :", [
     { text: "Freiner fermement et maintenir la pression, le système gérant lui-même l'antiblocage", correct: true },
     { text: "Pomper la pédale de frein par à-coups successifs", correct: false },
+    { text: "Relâcher totalement le frein dès la première vibration ressentie", correct: false },
   ], "L'ABS moderne module lui-même la pression sur chaque roue ; pomper la pédale, technique d'avant l'ABS, devient inutile voire contre-productive."),
   q("mecanique", "Dans une descente enneigée ou verglacée, la technique recommandée est de :", [
     { text: "Ralentir avant d'entrer dans les virages plutôt que de freiner à l'intérieur de ceux-ci", correct: true },
     { text: "Freiner fortement en plein virage pour contrôler la vitesse", correct: false },
+    { text: "Accélérer légèrement en entrée de virage pour stabiliser la trajectoire", correct: false },
   ], "Freiner en plein virage sur une surface glissante augmente fortement le risque de perte d'adhérence et de sortie de trajectoire."),
   q("mecanique", "Sur neige ou verglas, en cas de patinage des roues au démarrage, il est conseillé de :", [
     { text: "Démarrer en seconde vitesse plutôt qu'en première, pour limiter le couple transmis aux roues", correct: true },
     { text: "Accélérer davantage pour forcer le passage", correct: false },
+    { text: "Passer immédiatement en marche arrière puis de nouveau en avant", correct: false },
   ], "Un couple moins important au démarrage réduit le risque de patinage sur une surface à faible adhérence."),
   q("vitesse", "En cas de perte d'adhérence (dérapage) sur route glissante, le réflexe recommandé est de :", [
     { text: "Relâcher l'accélérateur, garder le volant droit et regarder dans la direction souhaitée", correct: true },
     { text: "Freiner immédiatement et fortement, quelle que soit la situation", correct: false },
+    { text: "Braquer fortement dans le sens opposé au dérapage", correct: false },
   ], "Un freinage brutal en situation de perte d'adhérence peut aggraver le dérapage plutôt que le corriger."),
 
-  /* ===== VAGUE 67 — régulateur vs limiteur de vitesse (données précises) ===== */
+  /* ===== VAGUE 67 -- régulateur vs limiteur de vitesse (données précises) ===== */
 
   q("mecanique", "Le régulateur de vitesse, une fois activé, permet au conducteur de :", [
     { text: "Ne plus actionner l'accélérateur, le véhicule maintenant automatiquement l'allure choisie", correct: true },
     { text: "Garder l'accélérateur actif tout en étant simplement bridé à une vitesse maximale", correct: false },
+    { text: "Conduire sans jamais devoir freiner, même en cas d'obstacle", correct: false },
   ], "Le régulateur prend en charge le maintien de la vitesse, contrairement au limiteur qui laisse le conducteur gérer l'accélérateur sous un plafond fixé."),
   q("mecanique", "Le limiteur de vitesse, contrairement au régulateur, permet au conducteur de :", [
     { text: "Garder le contrôle total de l'accélérateur jusqu'à la vitesse maximale programmée", correct: true },
     { text: "Ne plus toucher l'accélérateur du tout", correct: false },
+    { text: "Dépasser librement la vitesse programmée sans restriction", correct: false },
   ], "Le limiteur agit comme un simple plafond ; le conducteur conserve la maîtrise habituelle de l'accélération en dessous de ce seuil."),
   q("mecanique", "Le limiteur de vitesse est devenu obligatoire sur tous les nouveaux modèles de voitures commercialisés dans l'Union européenne depuis :", [
     { text: "Le 1er juillet 2022", correct: true },
     { text: "1990, comme la ceinture de sécurité", correct: false },
+    { text: "2010, en même temps que l'ABS", correct: false },
   ], "Cette obligation récente vise à limiter automatiquement les excès de vitesse involontaires, pour renforcer la sécurité routière à l'échelle européenne."),
   q("mecanique", "L'usage du régulateur de vitesse est déconseillé, voire dangereux, sur :", [
     { text: "Une route vallonnée ou en ville, avec de fréquents arrêts et changements d'allure", correct: true },
     { text: "Une autoroute dégagée par beau temps", correct: false },
+    { text: "Une ligne droite hors agglomération sans trafic", correct: false },
   ], "Sur une route sinueuse ou en ville, le régulateur peut maintenir une vitesse inadaptée à un virage ou empêcher une réaction rapide, contrairement à l'autoroute où il est bien plus adapté."),
   q("mecanique", "Sur une route vallonnée, l'usage du régulateur de vitesse peut entraîner :", [
     { text: "Une surconsommation de carburant, le système accélérant automatiquement dans chaque montée", correct: true },
     { text: "Systématiquement une économie de carburant, quel que soit le relief", correct: false },
+    { text: "Une usure accélérée des pneus uniquement, sans effet sur la consommation", correct: false },
   ], "Pour maintenir l'allure fixée, le régulateur accélère fortement en montée, ce qui peut consommer davantage qu'une conduite manuelle anticipative."),
-
-  /* ===== VAGUE 68 — conduite par forte chaleur, canicule (données précises) ===== */
+  /* ===== VAGUE 68 -- conduite par forte chaleur, canicule (données précises) ===== */
 
   q("conducteur", "Par forte chaleur, la Sécurité routière recommande de faire une pause au moins toutes les :", [
     { text: "2 heures, voire davantage selon l'intensité de la chaleur", correct: true },
     { text: "6 heures, la chaleur n'ayant pas d'influence sur ce délai", correct: false },
+    { text: "30 minutes systématiquement, quelle que soit la température", correct: false },
   ], "La chaleur accentue la fatigue et réduit la vigilance, justifiant des pauses au moins aussi fréquentes qu'en conditions normales, voire plus rapprochées."),
   q("conducteur", "Une légère déshydratation, même sans sensation de soif marquée, peut affecter la conduite d'une façon comparable à :", [
     { text: "Une conduite en dépassant le seuil légal d'alcoolémie autorisé", correct: true },
     { text: "N'a aucun impact mesurable sur la vigilance", correct: false },
+    { text: "Une simple baisse de concentration sans conséquence pratique", correct: false },
   ], "Des études ont montré que la déshydratation légère dégrade les capacités de conduite de façon comparable à l'alcool à un niveau proche du seuil légal."),
   q("conducteur", "Dans un véhicule stationné en plein soleil, la température intérieure peut grimper d'environ 10 à 15°C en :", [
     { text: "10 minutes", correct: true },
     { text: "3 heures", correct: false },
+    { text: "1 minute seulement", correct: false },
   ], "Cette montée en température extrêmement rapide explique le danger mortel de laisser un enfant ou un animal seul, même brièvement, dans un véhicule au soleil."),
   q("conducteur", "Laisser une vitre entrouverte pour un enfant seul dans une voiture en plein soleil est :", [
     { text: "Insuffisant pour éviter un risque grave de surchauffe", correct: true },
     { text: "Une précaution suffisante pour prévenir tout danger", correct: false },
+    { text: "Inutile, la vitre n'ayant aucune influence sur la température intérieure", correct: false },
   ], "Une simple vitre entrouverte ne suffit absolument pas à empêcher la montée rapide et dangereuse de la température intérieure du véhicule."),
   q("mecanique", "En cas de surchauffe moteur persistante en montagne par forte chaleur, il est conseillé de :", [
     { text: "S'arrêter à l'ombre, couper temporairement la climatisation et laisser le moteur tourner au ralenti", correct: true },
     { text: "Couper immédiatement le moteur et ouvrir le bouchon de liquide de refroidissement à chaud", correct: false },
+    { text: "Accélérer fortement pour forcer la ventilation du moteur", correct: false },
   ], "Ouvrir le bouchon de liquide de refroidissement à chaud est extrêmement dangereux, pouvant provoquer une brûlure grave par projection de vapeur brûlante."),
 
-  /* ===== VAGUE 69 — location entre particuliers, assurance (données précises) ===== */
+  /* ===== VAGUE 69 -- location entre particuliers, assurance (données précises) ===== */
 
   q("divers", "Lors d'une location de voiture entre particuliers via une plateforme, le propriétaire du véhicule doit :", [
     { text: "Informer son propre assureur de cette mise en location", correct: true },
     { text: "N'a aucune démarche particulière à effectuer auprès de son assureur", correct: false },
+    { text: "Résilier temporairement son contrat d'assurance personnel", correct: false },
   ], "Cette information permet d'articuler correctement l'assurance personnelle du propriétaire avec celle proposée par la plateforme pendant la durée de la location."),
   q("divers", "Si un locataire est responsable d'un accident avec un véhicule loué via une plateforme entre particuliers, le bonus du propriétaire est en principe :", [
     { text: "Préservé, grâce à l'assurance spécifique proposée par la plateforme", correct: true },
     { text: "Automatiquement pénalisé, comme s'il avait lui-même causé l'accident", correct: false },
+    { text: "Amélioré, quelle que soit l'issue du sinistre", correct: false },
   ], "L'assurance dédiée aux plateformes de location entre particuliers protège généralement le coefficient bonus-malus du propriétaire du véhicule."),
   q("divers", "Selon l'article 1242 du code civil, le propriétaire d'un véhicule loué à un particulier reste :", [
     { text: "Civilement responsable des dommages causés par son véhicule, même s'il n'est pas au volant", correct: true },
     { text: "Totalement dégagé de toute responsabilité une fois le véhicule loué", correct: false },
+    { text: "Responsable uniquement en cas de défaut d'entretien prouvé", correct: false },
   ], "Cette responsabilité du fait des choses persiste indépendamment de qui conduit effectivement le véhicule au moment des faits."),
   q("divers", "Une assurance temporaire souscrite pour une location entre particuliers sans intermédiaire ne couvre généralement que :", [
     { text: "La responsabilité civile obligatoire, sans les dommages au véhicule loué lui-même", correct: true },
     { text: "L'intégralité des dommages, y compris ceux subis par le véhicule loué", correct: false },
+    { text: "Uniquement le vol du véhicule, sans autre garantie", correct: false },
   ], "Contrairement aux plateformes qui incluent souvent une assurance tous risques, une location directe entre particuliers laisse fréquemment les dommages matériels à la charge des parties."),
   q("divers", "Les plateformes de location de voitures entre particuliers exigent généralement du locataire une ancienneté de permis d'au moins :", [
     { text: "2 ans", correct: true },
     { text: "6 mois", correct: false },
+    { text: "10 ans", correct: false },
   ], "Cette exigence, fréquente sur ces plateformes, vise à limiter le risque associé aux conducteurs les moins expérimentés."),
-
-  /* ===== VAGUE 70 — places de recharge électrique, article R417-10 (données précises) ===== */
+  /* ===== VAGUE 70 -- places de recharge électrique, article R417-10 (données précises) ===== */
 
   q("divers", "Stationner sur une place équipée d'une borne de recharge sans y brancher son véhicule est sanctionné, selon l'article R417-10, par une amende de :", [
     { text: "35 €", correct: true },
     { text: "750 €", correct: false },
+    { text: "135 €", correct: false },
   ], "Cette infraction est assimilée à un stationnement gênant classique, avec le même montant d'amende forfaitaire de 2e classe."),
   q("divers", "L'interdiction de stationner sur une place de recharge sans recharger s'applique :", [
     { text: "À tout véhicule, y compris un véhicule thermique", correct: true },
     { text: "Uniquement aux véhicules électriques mal branchés", correct: false },
+    { text: "Uniquement aux véhicules hybrides", correct: false },
   ], "L'article R417-10 vise le stationnement devant ces dispositifs sans distinction de motorisation ; un véhicule thermique garé là est tout autant en infraction."),
   q("divers", "Une fois la recharge de son véhicule électrique terminée, laisser celui-ci occuper la place :", [
     { text: "N'est en principe plus autorisé, la place étant destinée à un usage strictement lié à la recharge active", correct: true },
     { text: "Reste toujours autorisé sans limite de temps", correct: false },
+    { text: "Est autorisé uniquement la nuit", correct: false },
   ], "Ces emplacements ont vocation à tourner rapidement entre utilisateurs ; certaines communes imposent même une durée maximale pour éviter les véhicules ventouses."),
   q("divers", "Le stationnement sur une place de recharge pendant que le véhicule est effectivement en charge est, en principe :", [
     { text: "Gratuit, même en zone de stationnement payant, sauf réglementation locale contraire", correct: true },
     { text: "Toujours payant comme n'importe quelle autre place", correct: false },
+    { text: "Payant uniquement en centre-ville", correct: false },
   ], "Une décision de la Commission du contentieux du stationnement payant a confirmé ce principe de gratuité pendant la recharge active, sous réserve des règles locales."),
   q("divers", "Depuis le 1er janvier 2025, les nouveaux parkings de plus de 20 places doivent intégrer des places équipées de bornes à hauteur d'au moins :", [
     { text: "5 % du total des places", correct: true },
     { text: "50 % du total des places", correct: false },
+    { text: "1 place unique, quel que soit le total", correct: false },
   ], "Cette obligation récente accompagne le déploiement progressif des infrastructures de recharge à l'échelle nationale."),
 
-  /* ===== VAGUE 71 — freinage automatique d'urgence AEB, règlement GSR2 (très récent, juillet 2026) ===== */
+  /* ===== VAGUE 71 -- freinage automatique d'urgence AEB, règlement GSR2 (très récent, juillet 2026) ===== */
 
   q("mecanique", "Le système AEB (freinage automatique d'urgence) intervient lorsque :", [
     { text: "Un risque imminent de collision est détecté et que le conducteur ne réagit pas à l'alerte", correct: true },
     { text: "Le conducteur freine normalement à un feu rouge", correct: false },
+    { text: "Le véhicule dépasse simplement la vitesse autorisée", correct: false },
   ], "Ce système d'aide à la conduite déclenche un freinage autonome uniquement en situation de danger non traitée par le conducteur, pas lors d'un freinage classique."),
   q("mecanique", "Le règlement européen 2019/2144 a rendu l'AEB obligatoire sur les véhicules neufs (nouvelle immatriculation) en Europe depuis :", [
     { text: "Le 7 juillet 2024", correct: true },
     { text: "2010, dès l'apparition de cette technologie", correct: false },
+    { text: "2030, une échéance encore à venir", correct: false },
   ], "Cette obligation, entrée en vigueur pour les nouvelles immatriculations, généralise cette technologie de sécurité active sur l'ensemble du parc neuf européen."),
   q("mecanique", "Depuis le 7 juillet 2026, l'obligation d'AEB s'étend également à la détection :", [
     { text: "Des cyclistes et des piétons, en plus des autres véhicules", correct: true },
     { text: "Des seuls animaux domestiques traversant la route", correct: false },
+    { text: "Uniquement des poids lourds à l'arrêt", correct: false },
   ], "Cette extension récente renforce la protection des usagers les plus vulnérables, jusque-là moins bien pris en compte par les premières générations d'AEB."),
   q("mecanique", "L'AEB (Autonomous Emergency Braking) ne doit pas être confondu avec l'AFU (Assistance au Freinage d'Urgence), qui lui :", [
     { text: "Amplifie l'effet du freinage lorsque le conducteur passe précipitamment de l'accélérateur au frein", correct: true },
     { text: "Fait exactement la même chose, ces deux termes étant strictement synonymes", correct: false },
+    { text: "Ne concerne que le freinage à l'arrêt complet du véhicule", correct: false },
   ], "L'AFU renforce un freinage déjà initié par le conducteur, tandis que l'AEB peut déclencher un freinage de façon totalement autonome, même sans action du conducteur."),
   q("mecanique", "Selon la Commission européenne, la généralisation de l'AEB sur les véhicules neufs pourrait permettre de réduire, chaque année en Europe, le nombre de décès routiers d'environ :", [
     { text: "1 000", correct: true },
     { text: "10", correct: false },
+    { text: "100 000", correct: false },
   ], "Cette estimation illustre l'ampleur de l'impact attendu de cette technologie de sécurité active à l'échelle du continent européen."),
-
-  /* ===== VAGUE 72 — voies de détresse, lits d'arrêt d'urgence (données précises) ===== */
+  /* ===== VAGUE 72 -- voies de détresse, lits d'arrêt d'urgence (données précises) ===== */
 
   q("signalisation", "Une voie de détresse, ou lit d'arrêt d'urgence, est destinée à :", [
     { text: "Stopper un véhicule dont les freins deviennent défaillants en pleine descente", correct: true },
     { text: "Servir de zone de stationnement de courte durée pour tout usager", correct: false },
+    { text: "Accueillir les véhicules en cas de bouchon important", correct: false },
   ], "Ces aménagements, situés avant les portions dangereuses de fortes descentes, permettent d'arrêter en urgence un véhicule ayant perdu l'usage de ses freins."),
   q("signalisation", "Le marquage au sol caractéristique d'une voie de détresse est constitué de :", [
     { text: "Un damier rouge et blanc", correct: true },
     { text: "Des hachures jaunes classiques", correct: false },
+    { text: "Une simple ligne pointillée blanche", correct: false },
   ], "Ce marquage spécifique, distinct de la signalisation routière habituelle, permet d'identifier immédiatement l'entrée d'une voie de détresse.", { image: WM("A3a") }),
   q("divers", "Un lit d'arrêt d'urgence stoppe progressivement un véhicule grâce à :", [
     { text: "Une couche de gravier ou de sable dont l'épaisseur augmente progressivement", correct: true },
     { text: "Un mur en béton placé directement à l'entrée", correct: false },
+    { text: "Un système de filets élastiques tendus en travers de la voie", correct: false },
   ], "La résistance croissante du matériau meuble absorbe progressivement l'énergie cinétique du véhicule, évitant un arrêt trop brutal."),
   q("divers", "S'arrêter ou stationner sur une voie de détresse alors qu'on n'a aucun problème de freinage est :", [
     { text: "Formellement interdit, cette voie étant réservée aux situations d'urgence extrême", correct: true },
     { text: "Toléré pour une pause rapide, à condition de repartir vite", correct: false },
+    { text: "Autorisé uniquement pour les motos", correct: false },
   ], "L'usage abusif d'une voie de détresse peut la rendre indisponible ou dangereuse pour un véhicule qui en aurait réellement besoin par la suite."),
   q("divers", "Les voies de détresse sont généralement implantées avant :", [
     { text: "Des points singuliers (virages, tunnels, échangeurs) nécessitant un freinage à l'issue d'une longue descente", correct: true },
     { text: "Chaque entrée d'agglomération, sans lien avec le relief", correct: false },
+    { text: "Chaque passage à niveau, sans exception", correct: false },
   ], "Leur emplacement stratégique cible précisément les zones où un défaut de freinage après une longue descente serait le plus dangereux."),
 
-  /* ===== VAGUE 73 — rond-point vs carrefour à sens giratoire, article R415-10 (nuance précise) ===== */
+  /* ===== VAGUE 73 -- rond-point vs carrefour à sens giratoire, article R415-10 (nuance précise) ===== */
 
   q("priorites", "Au sens strict du code de la route, un véritable « rond-point » (sans aucune signalisation) applique la règle de :", [
     { text: "La priorité à droite : les véhicules déjà sur l'anneau doivent céder le passage à ceux qui entrent", correct: true },
     { text: "La priorité à l'anneau, comme un carrefour à sens giratoire classique", correct: false },
+    { text: "L'absence totale de toute règle de priorité", correct: false },
   ], "C'est l'inverse du fonctionnement habituel : dans un rond-point non signalé, ce sont les véhicules entrants qui sont prioritaires sur ceux déjà engagés."),
   q("priorites", "Un carrefour à sens giratoire, régi par l'article R415-10 du code de la route, se reconnaît à :", [
     { text: "La présence de panneaux « cédez le passage » à chaque entrée de l'anneau", correct: true },
     { text: "L'absence totale de toute signalisation", correct: false },
+    { text: "La présence exclusive de feux tricolores à chaque entrée", correct: false },
   ], "Cette signalisation systématique confirme que les véhicules déjà engagés sur l'anneau sont prioritaires, contrairement au rond-point classique."),
   q("priorites", "En pratique, sur le réseau routier français, la très grande majorité des intersections circulaires sont :", [
     { text: "Des carrefours à sens giratoire signalés, et non de véritables ronds-points", correct: true },
     { text: "De véritables ronds-points sans aucune signalisation", correct: false },
+    { text: "Des intersections sans règle de priorité définie", correct: false },
   ], "Le terme « rond-point » est utilisé dans le langage courant pour désigner ces intersections, même s'il s'agit techniquement de carrefours à sens giratoire."),
   q("priorites", "Le rond-point de la place de l'Étoile à Paris, autour de l'Arc de Triomphe, est un exemple célèbre de :", [
     { text: "Véritable rond-point, où la priorité est donnée aux véhicules entrants", correct: true },
     { text: "Carrefour à sens giratoire classique", correct: false },
+    { text: "Zone sans aucune règle de priorité applicable", correct: false },
   ], "Ce cas emblématique, non signalé par des panneaux cédez-le-passage, reste l'un des rares vrais ronds-points fonctionnant selon la priorité à droite en France."),
   q("priorites", "Confondre les règles de priorité entre un rond-point et un carrefour à sens giratoire peut :", [
     { text: "Engager la responsabilité du conducteur en cas d'accident", correct: true },
     { text: "N'a jamais de conséquence, les deux fonctionnant en réalité de façon identique", correct: false },
+    { text: "Uniquement entraîner un simple avertissement verbal", correct: false },
   ], "Cette confusion, fréquente, peut avoir des conséquences juridiques réelles en cas d'accident si la priorité effective n'a pas été respectée."),
-
-  /* ===== VAGUE 74 — véhicules utilitaires légers, ISA (données précises) ===== */
+  /* ===== VAGUE 74 -- véhicules utilitaires légers, ISA (données précises) ===== */
 
   q("conducteur", "Un véhicule utilitaire léger (VUL), catégorie N1, peut être conduit avec le seul permis B à condition que son PTAC ne dépasse pas :", [
     { text: "3,5 tonnes", correct: true },
     { text: "7,5 tonnes", correct: false },
+    { text: "1,5 tonne", correct: false },
   ], "Au-delà de ce seuil de 3,5 tonnes, le véhicule bascule dans la catégorie des poids lourds, nécessitant un permis C spécifique."),
   q("conducteur", "Les limitations de vitesse applicables à un utilitaire léger de moins de 3,5 tonnes sont :", [
     { text: "Identiques à celles des véhicules de tourisme classiques", correct: true },
     { text: "Systématiquement réduites de 20 km/h par rapport à une voiture", correct: false },
+    { text: "Plafonnées à 90 km/h en toutes circonstances", correct: false },
   ], "Contrairement aux poids lourds soumis à des limitations spécifiques, un utilitaire léger suit exactement les mêmes règles de vitesse qu'une voiture particulière."),
   q("mecanique", "Le système ISA (Intelligent Speed Assistance), obligatoire sur les véhicules neufs depuis juillet 2024, a pour fonction de :", [
     { text: "Avertir le conducteur en cas de dépassement de la vitesse autorisée, sans l'empêcher totalement d'accélérer", correct: true },
     { text: "Bloquer physiquement et définitivement le véhicule au-delà de la vitesse autorisée", correct: false },
+    { text: "Couper automatiquement le moteur en cas d'excès de vitesse", correct: false },
   ], "L'ISA alerte et peut réduire légèrement la puissance moteur, mais reste désactivable par le conducteur, contrairement à un blocage strict."),
   q("conducteur", "Pour tracter une remorque avec un utilitaire léger, formant un ensemble dont le PTAC total dépasse 3,5 tonnes sans excéder 4,25 tonnes, il faut :", [
     { text: "La mention additionnelle B96, obtenue après une formation de 7 heures", correct: true },
     { text: "Aucune formation supplémentaire n'est nécessaire", correct: false },
+    { text: "Un permis poids lourd complet", correct: false },
   ], "Cette formation complémentaire, sans nouvel examen théorique ou pratique complet, permet d'étendre les possibilités du permis B pour ce type d'ensemble."),
 
   /* ===== VAGUE 75 — accident avec ligne électrique (consignes officielles) ===== */
