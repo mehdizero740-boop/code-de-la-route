@@ -245,7 +245,6 @@ function ThemeList({ onStartTheme, onHome }) {
 }
 
 /* ---------- Progression ---------- */
-Progression de {profile.name}
 
   const byTheme = THEMES.map((t) => {
     const pool = getQuestionsByTheme(t.id);
