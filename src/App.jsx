@@ -352,17 +352,23 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
         <h2 className="quiz-question">{qc.question}</h2>
         {multi && <p className="quiz-hint">Plusieurs réponses possibles</p>}
         <QuestionImage src={qc.image} alt={qc.question} />
-        <div className="answers">
+               <div className="answers">
           {shuffledAnswers.map((a, i) => {
             let cls = "answer";
             if (selected.includes(i)) cls += " selected";
             if (revealed) { if (a.correct) cls += " correct"; else if (selected.includes(i)) cls += " wrong"; }
+            const isLastSelected = !revealed && selected.length > 0 && i === selected[selected.length - 1];
             return (
-              <button key={i} className={cls} onClick={() => toggleAnswer(i)}>
-                <span className="answer-marker">
-                  {multi ? (selected.includes(i) ? "☑" : "☐") : (selected.includes(i) ? "●" : "○")}
-                </span>{a.text}
-              </button>
+              <React.Fragment key={i}>
+                <button className={cls} onClick={() => toggleAnswer(i)}>
+                  <span className="answer-marker">
+                    {multi ? (selected.includes(i) ? "☑" : "☐") : (selected.includes(i) ? "●" : "○")}
+                  </span>{a.text}
+                </button>
+                {isLastSelected && (
+                  <button className="btn-primary answer-validate" onClick={validate}>Valider</button>
+                )}
+              </React.Fragment>
             );
           })}
         </div>
@@ -372,7 +378,14 @@ function Quiz({ questions, onFinish, onExit, onAnswer }) {
             <p>{qc.explanation}</p>
           </div>
         )}
-        <div className="quiz-actions">
+        {revealed && (
+          <div className="quiz-actions">
+            <button className="btn-primary" onClick={next}>
+              {index + 1 >= questions.length ? "Voir les résultats" : "Question suivante"}
+            </button>
+          </div>
+        )}
+
           {!revealed ? (
             <button className="btn-primary" onClick={validate} disabled={selected.length === 0}>Valider</button>
           ) : (
