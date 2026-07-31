@@ -214,8 +214,6 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
         <span className="course-banner-arrow">→</span>
       </button>
 
-      <h2 className="section-title">En situation réelle</h2>
-
            <h2 className="section-title">En situation réelle</h2>
       <div className="situ-grid">
         {THEMES.map((t) => (
