@@ -4603,980 +4603,1100 @@ export const QUESTIONS = [
     { text: "Un permis poids lourd complet", correct: false },
   ], "Cette formation complémentaire, sans nouvel examen théorique ou pratique complet, permet d'étendre les possibilités du permis B pour ce type d'ensemble."),
 
-  /* ===== VAGUE 75 — accident avec ligne électrique (consignes officielles) ===== */
+    /* ===== VAGUE 75 -- accident avec ligne électrique (consignes officielles) ===== */
 
   q("secours", "Si votre véhicule entre en contact avec une ligne électrique tombée au sol ou un câble aérien, il faut :", [
     { text: "Rester à l'intérieur du véhicule et alerter les secours, sauf danger immédiat (incendie)", correct: true },
     { text: "Sortir immédiatement du véhicule en touchant la carrosserie et le sol en même temps", correct: false },
+    { text: "Klaxonner en continu pour alerter le voisinage", correct: false },
   ], "Le véhicule agit comme une cage protectrice ; en sortir en touchant simultanément carrosserie et sol créerait un passage du courant à travers le corps, avec un risque mortel."),
   q("secours", "Si vous devez absolument évacuer un véhicule en contact avec une ligne électrique, il faut :", [
     { text: "Sauter en dehors sans toucher simultanément le véhicule et le sol, puis s'éloigner à petits pas", correct: true },
     { text: "Descendre normalement puis s'éloigner en courant", correct: false },
+    { text: "Ouvrir la portière et poser un pied à la fois avant de sortir complètement", correct: false },
   ], "S'éloigner à petits pas limite le risque de tension de pas, un phénomène où une différence de potentiel entre les pieds peut électrocuter une personne près d'un point de contact électrique."),
   q("secours", "Face à une victime en contact avec une ligne électrique, la première action d'un témoin doit être de :", [
     { text: "Ne jamais toucher la victime avant confirmation de la mise hors tension par une personne compétente", correct: true },
     { text: "La dégager immédiatement à mains nues pour la sauver au plus vite", correct: false },
+    { text: "L'asperger d'eau pour limiter les brûlures avant tout autre geste", correct: false },
   ], "Toucher une victime encore en contact avec une source électrique expose le sauveteur au même risque mortel d'électrocution."),
   q("secours", "La distance de sécurité minimale à respecter autour d'un câble électrique haute tension tombé au sol est généralement d'au moins :", [
     { text: "3 mètres, en tenant compte des mouvements possibles du câble", correct: true },
     { text: "30 centimètres", correct: false },
+    { text: "1 mètre suffit dans tous les cas", correct: false },
   ], "Cette distance de sécurité prend en compte le risque d'amorçage électrique, qui peut survenir même sans contact physique direct avec le câble."),
 
-  /* ===== VAGUE 76 — transport d'animaux, articles R412-1/R412-6 (données précises) ===== */
+  /* ===== VAGUE 76 -- transport d'animaux, articles R412-1/R412-6 (données précises) ===== */
 
   q("securite", "Selon l'article R412-6 du code de la route, un animal transporté dans le véhicule ne doit en aucun cas :", [
     { text: "Gêner les mouvements du conducteur ou réduire son champ de vision", correct: true },
     { text: "Peser plus de 10 kilogrammes", correct: false },
+    { text: "Être visible depuis l'extérieur du véhicule", correct: false },
   ], "Cette obligation générale de liberté de mouvement du conducteur s'applique à tout objet ou être vivant présent dans l'habitacle, animaux inclus."),
   q("securite", "Conduire avec un chien installé librement sur les genoux du conducteur est :", [
     { text: "Considéré comme une mise en danger, sanctionnée par une amende et un retrait de points", correct: true },
     { text: "Toléré tant que le chien reste calme", correct: false },
+    { text: "Autorisé uniquement pour les trajets de moins de 5 minutes", correct: false },
   ], "Cette pratique, encore fréquente, entrave directement la conduite et est traitée comme une infraction sérieuse, au même titre qu'un défaut de maîtrise du véhicule."),
   q("securite", "Un chien non attaché peut, lors d'un freinage d'urgence même à faible vitesse, se comporter comme :", [
     { text: "Un projectile exerçant une force démultipliée sur les occupants du véhicule", correct: true },
     { text: "Un simple poids mort sans risque particulier", correct: false },
+    { text: "Un élément stabilisateur pour le véhicule", correct: false },
   ], "L'énergie cinétique d'un animal non attaché se libère brutalement lors d'un choc, pouvant blesser gravement les passagers du véhicule."),
   q("securite", "Pour transporter un animal en toute sécurité, les dispositifs autorisés incluent notamment :", [
     { text: "La caisse de transport fixée, le harnais relié à la ceinture, ou la grille de séparation du coffre", correct: true },
     { text: "Aucun dispositif n'est reconnu, l'animal devant simplement rester calme", correct: false },
+    { text: "Uniquement une laisse tenue par un passager", correct: false },
   ], "Plusieurs solutions homologuées permettent de sécuriser un animal selon sa taille et le type de trajet effectué."),
   q("securite", "En cas d'accident causé par un animal non sécurisé dans le véhicule, l'assurance auto :", [
     { text: "Peut refuser de couvrir certains dommages, la responsabilité du conducteur étant engagée", correct: true },
     { text: "Prend systématiquement en charge l'intégralité des dommages sans exception", correct: false },
+    { text: "Ne peut jamais invoquer ce motif pour limiter sa prise en charge", correct: false },
   ], "Certains contrats prévoient des clauses d'exclusion spécifiques en cas d'accident lié à un animal transporté de façon non conforme à la réglementation."),
-
-  /* ===== VAGUE 77 — carte de stationnement handicap, CMI (données 2026) ===== */
+  /* ===== VAGUE 77 -- carte de stationnement handicap, CMI (données 2026) ===== */
 
   q("divers", "Depuis 2017, l'ancienne carte européenne de stationnement pour personnes handicapées a été remplacée en France par :", [
     { text: "La Carte Mobilité Inclusion (CMI), mention « stationnement »", correct: true },
     { text: "Aucune carte, le dispositif ayant été totalement supprimé", correct: false },
+    { text: "Un simple justificatif médical sans carte physique", correct: false },
   ], "La CMI regroupe désormais en une seule carte les anciennes cartes d'invalidité, de priorité et de stationnement pour personnes handicapées."),
   q("divers", "La carte de stationnement pour personnes handicapées est attachée :", [
     { text: "À la personne titulaire, et non au véhicule utilisé", correct: true },
     { text: "Au véhicule sur lequel elle est apposée, quel que soit le conducteur", correct: false },
+    { text: "Au conducteur habituel du véhicule familial", correct: false },
   ], "Cette carte suit son titulaire, qui peut l'utiliser dans n'importe quel véhicule, à condition d'être présent à bord."),
   q("divers", "Utiliser la carte de stationnement handicap d'un proche en son absence est :", [
     { text: "Une infraction sanctionnée par une contravention de 4e classe", correct: true },
     { text: "Parfaitement toléré si le proche est d'accord", correct: false },
+    { text: "Autorisé uniquement pour un trajet médical urgent", correct: false },
   ], "Le bénéfice de cette carte est strictement personnel ; son usage frauduleux en l'absence du titulaire constitue une infraction sanctionnée."),
   q("divers", "Le titulaire d'une carte de stationnement handicap bénéficie généralement de la gratuité du stationnement de surface :", [
     { text: "Sur toutes les places ouvertes au public, pas seulement celles réservées aux personnes handicapées", correct: true },
     { text: "Uniquement sur les places spécifiquement réservées aux personnes handicapées", correct: false },
+    { text: "Uniquement dans sa commune de résidence", correct: false },
   ], "Ce droit s'étend à l'ensemble des places de stationnement de surface ouvertes au public, offrant une large liberté de stationnement au titulaire."),
   q("divers", "La carte de stationnement pour personnes handicapées doit être affichée dans le véhicule :", [
     { text: "Derrière le pare-brise avant, bien visible côté trottoir", correct: true },
     { text: "Dans la boîte à gants, à présenter uniquement sur demande", correct: false },
+    { text: "Sur la plaque d'immatriculation arrière", correct: false },
   ], "Cette visibilité permanente permet aux agents de contrôle de vérifier la légitimité du stationnement sans avoir à interroger le conducteur."),
 
-  /* ===== VAGUE 78 — extincteur en voiture (données précises 2026) ===== */
+  /* ===== VAGUE 78 -- extincteur en voiture (données précises 2026) ===== */
 
   q("securite", "En France, la présence d'un extincteur dans un véhicule particulier est, à ce jour :", [
     { text: "Non obligatoire, aucune loi ne l'imposant pour les véhicules de particuliers", correct: true },
     { text: "Obligatoire depuis 2020, comme le gilet et le triangle", correct: false },
+    { text: "Obligatoire uniquement pour les véhicules diesel", correct: false },
   ], "Contrairement au gilet de haute visibilité et au triangle, l'extincteur reste facultatif pour les véhicules particuliers en France, malgré des débats récurrents à ce sujet."),
   q("securite", "L'extincteur est en revanche obligatoire en France pour :", [
     { text: "Les véhicules professionnels de transport de personnes ou de marchandises", correct: true },
     { text: "Tous les véhicules sans exception, professionnels ou particuliers", correct: false },
+    { text: "Uniquement les véhicules de plus de 10 ans", correct: false },
   ], "Cette obligation ne concerne que les flottes professionnelles, contrôlée notamment lors du contrôle technique de ces véhicules."),
   q("securite", "Plusieurs pays voisins ou proches de la France, comme la Pologne ou la Grèce, imposent :", [
     { text: "L'extincteur dans tout véhicule circulant sur leur territoire, y compris étranger", correct: true },
     { text: "Aucune règle différente de la France sur ce sujet", correct: false },
+    { text: "L'extincteur uniquement pour les véhicules immatriculés localement", correct: false },
   ], "Ces réglementations nationales plus strictes s'appliquent parfois même aux véhicules immatriculés à l'étranger traversant ou circulant sur leur territoire."),
   q("securite", "L'extincteur à poudre de type ABC, le plus couramment recommandé pour un usage automobile, permet de traiter :", [
     { text: "Les feux de solides, de liquides et de gaz", correct: true },
     { text: "Uniquement les feux électriques", correct: false },
+    { text: "Uniquement les feux de carburant liquide", correct: false },
   ], "Cette polyvalence en fait le type d'extincteur le plus adapté à la diversité des départs de feu pouvant survenir sur un véhicule."),
-
-  /* ===== VAGUE 79 — types de stationnement, créneau/épi/bataille (données précises) ===== */
+  /* ===== VAGUE 79 -- types de stationnement, créneau/épi/bataille (données précises) ===== */
 
   q("divers", "Le stationnement en bataille désigne un véhicule garé :", [
     { text: "Perpendiculairement à la chaussée, à 90 degrés", correct: true },
     { text: "Parallèlement à la chaussée, dans la longueur", correct: false },
+    { text: "En diagonale à 45 degrés uniquement", correct: false },
   ], "Ce type de stationnement, fréquent dans les parkings de supermarchés ou en sous-sol, positionne le véhicule à angle droit par rapport à la voie."),
   q("divers", "Le stationnement en épi se caractérise par un véhicule garé selon un angle oblique de :", [
     { text: "45, 60 ou 75 degrés par rapport à la chaussée", correct: true },
     { text: "Exactement 90 degrés, comme en bataille", correct: false },
+    { text: "Exactement 0 degré, parallèle à la chaussée", correct: false },
   ], "Cette inclinaison intermédiaire facilite généralement la manœuvre par rapport au stationnement en bataille, tout en optimisant l'espace disponible."),
   q("divers", "Le stationnement en créneau consiste à garer le véhicule :", [
     { text: "Parallèlement à la chaussée, généralement entre deux autres véhicules", correct: true },
     { text: "En diagonale par rapport au trottoir", correct: false },
+    { text: "Perpendiculairement au trottoir uniquement", correct: false },
   ], "Ce type de stationnement, souvent perçu comme le plus délicat par les nouveaux conducteurs, s'effectue dans le sens de la longueur le long du trottoir."),
   q("divers", "Lors d'un stationnement en bataille, il est généralement recommandé de :", [
     { text: "Se garer en marche arrière, pour une meilleure visibilité au moment de repartir", correct: true },
     { text: "Toujours se garer en marche avant, quelle que soit la configuration", correct: false },
+    { text: "Se garer en biais pour occuper deux places et gagner du temps", correct: false },
   ], "La marche arrière à l'entrée facilite une sortie plus sûre, en offrant une meilleure visibilité vers l'avant lors du départ."),
   q("divers", "Pendant une manœuvre de stationnement (créneau, épi ou bataille), le conducteur en train de manœuvrer :", [
     { text: "N'est jamais prioritaire et doit céder le passage à tout véhicule ou piéton qui se présente", correct: true },
     { text: "Est prioritaire, les autres usagers devant attendre la fin de sa manœuvre", correct: false },
+    { text: "Est prioritaire uniquement face aux autres véhicules, mais pas aux piétons", correct: false },
   ], "Toute manœuvre de stationnement est considérée comme non prioritaire, imposant au conducteur de s'interrompre si un usager se présente."),
 
-  /* ===== VAGUE 80 — frein à main électrique vs mécanique (données précises) ===== */
+  /* ===== VAGUE 80 -- frein à main électrique vs mécanique (données précises) ===== */
 
   q("mecanique", "Le frein à main électrique, contrairement au frein à main manuel, s'actionne :", [
     { text: "Par une simple pression sur un bouton plutôt que par un levier à tirer", correct: true },
     { text: "Exactement de la même façon, seul le nom change", correct: false },
+    { text: "Par une pédale supplémentaire au plancher", correct: false },
   ], "Cette commande électrique automatise l'action mécanique traditionnellement réalisée manuellement par le conducteur."),
   q("mecanique", "Un arrêté de 1955 impose que tout frein à main électrique soit associé à :", [
     { text: "Un dispositif de secours à action purement mécanique, en cas de défaillance électronique", correct: true },
     { text: "Aucune sécurité complémentaire n'est exigée par la réglementation", correct: false },
+    { text: "Un second frein à main électrique redondant", correct: false },
   ], "Cette exigence garantit qu'un véhicule puisse toujours être immobilisé, même en cas de panne totale du système électronique."),
   q("mecanique", "Sur de nombreux véhicules récents, le frein à main électrique s'active automatiquement :", [
     { text: "Lorsque le moteur est coupé, sans intervention du conducteur", correct: true },
     { text: "Jamais automatiquement, une action du conducteur restant systématiquement nécessaire", correct: false },
+    { text: "Uniquement lorsque le véhicule dépasse une pente de 10 %", correct: false },
   ], "Cette automatisation réduit le risque d'oubli d'activation du frein de stationnement, un facteur fréquent d'accidents en pente."),
   q("mecanique", "Activer le frein à main électrique en roulant, en cas de défaillance des freins principaux, déclenche généralement :", [
     { text: "Un freinage contrôlé et progressif, sans blocage brutal des roues", correct: true },
     { text: "Un blocage immédiat et total des roues arrière", correct: false },
+    { text: "Aucun effet, le système étant désactivé au-delà de 20 km/h", correct: false },
   ], "Les systèmes électroniques modernes sont conçus pour gérer ce cas d'urgence de façon sécurisée, contrairement à un simple frein à main mécanique tiré brutalement."),
-
-  /* ===== VAGUE 81 — vignette Crit'Air (prix, validité, données 2026) ===== */
+  /* ===== VAGUE 81 -- vignette Crit'Air (prix, validité, données 2026) ===== */
 
   q("environnement", "La vignette Crit'Air doit être obtenue exclusivement via :", [
     { text: "Le site officiel certificat-air.gouv.fr", correct: true },
     { text: "N'importe quel site internet proposant ce service", correct: false },
+    { text: "Uniquement en préfecture, sur rendez-vous", correct: false },
   ], "De nombreux sites tiers facturent des frais de dossier abusifs pour un service identique à celui, bien moins cher, du site officiel du ministère."),
   q("environnement", "Le prix officiel de la vignette Crit'Air, frais d'envoi inclus, s'élève à environ :", [
     { text: "3,80 €", correct: true },
     { text: "50 €", correct: false },
+    { text: "20 €", correct: false },
   ], "Ce tarif unique, fixé par l'État, couvre la fabrication et l'envoi postal du certificat, quelle que soit la classe attribuée au véhicule."),
   q("environnement", "Une fois obtenue, la vignette Crit'Air reste valable :", [
     { text: "Pendant toute la durée de vie du véhicule, tant que l'immatriculation ne change pas", correct: true },
     { text: "Un an seulement, avec renouvellement annuel obligatoire", correct: false },
+    { text: "5 ans, comme le contrôle technique initial", correct: false },
   ], "Aucun renouvellement périodique n'est nécessaire, contrairement à d'autres documents administratifs liés au véhicule."),
   q("environnement", "Un conducteur étranger souhaitant circuler dans une ZFE française avec son véhicule immatriculé à l'étranger doit :", [
     { text: "Commander une vignette Crit'Air avant d'entrer dans la zone concernée", correct: true },
     { text: "N'a aucune obligation particulière, les véhicules étrangers étant exemptés", correct: false },
+    { text: "Obtenir une autorisation consulaire spécifique", correct: false },
   ], "La vignette Crit'Air s'applique à tout véhicule circulant en ZFE, indépendamment de son pays d'immatriculation."),
   q("environnement", "Depuis la loi Climat et Résilience, les agglomérations de plus de 150 000 habitants doivent, en principe :", [
     { text: "Mettre en place une zone à faibles émissions mobilité (ZFE-m)", correct: true },
     { text: "Supprimer toute restriction de circulation liée à la pollution", correct: false },
+    { text: "Interdire totalement la circulation automobile en centre-ville", correct: false },
   ], "Cette obligation légale a conduit à la généralisation progressive des ZFE dans un nombre croissant de grandes agglomérations françaises."),
 
-  /* ===== VAGUE 82 — conduite sans permis, article L221-2 (données précises) ===== */
+  /* ===== VAGUE 82 -- conduite sans permis, article L221-2 (données précises) ===== */
 
   q("divers", "Conduire un véhicule sans avoir jamais obtenu le permis correspondant est puni, selon l'article L221-2 du code de la route, au maximum de :", [
     { text: "1 an d'emprisonnement et 15 000 € d'amende", correct: true },
     { text: "1 mois d'emprisonnement et 500 € d'amende", correct: false },
+    { text: "5 ans d'emprisonnement et 50 000 € d'amende", correct: false },
   ], "Cette peine maximale s'applique au conducteur n'ayant jamais été titulaire du permis correspondant à la catégorie du véhicule utilisé."),
   q("divers", "Conduire malgré une suspension, une annulation ou une invalidation du permis est puni au maximum de :", [
     { text: "2 ans d'emprisonnement et 4 500 € d'amende", correct: true },
     { text: "10 ans d'emprisonnement et 100 000 € d'amende", correct: false },
+    { text: "6 mois d'emprisonnement seulement, sans amende", correct: false },
   ], "Cette infraction distincte de la conduite sans permis jamais obtenu vise un conducteur qui possédait un droit de conduire, désormais retiré ou suspendu."),
   q("divers", "Contrairement à l'idée reçue, entre les deux délits de conduite sans droit de conduire, la peine d'emprisonnement la plus longue concerne :", [
     { text: "La conduite malgré suspension (2 ans), bien que l'amende soit plus faible que pour l'absence totale de permis", correct: true },
     { text: "Toujours la conduite sans avoir jamais obtenu le permis, sur les deux critères", correct: false },
+    { text: "Les deux infractions sont punies de façon strictement identique", correct: false },
   ], "Ce paradoxe apparent s'explique par la gravité particulière de braver une décision judiciaire ou administrative déjà notifiée au conducteur."),
   q("divers", "Depuis les mesures de 2018, la conduite sans permis peut entraîner, dès le contrôle, :", [
     { text: "Une mise en fourrière immédiate du véhicule", correct: true },
     { text: "Uniquement une convocation ultérieure, sans mesure immédiate possible", correct: false },
+    { text: "La confiscation immédiate du véhicule sans procédure", correct: false },
   ], "Cette possibilité d'immobilisation immédiate a été intégrée aux mesures prises par le Comité interministériel de la sécurité routière de janvier 2018."),
   q("divers", "En cas d'accident causé par un conducteur sans permis, son assurance :", [
     { text: "Refuse en principe de l'indemniser lui-même, tout en pouvant indemniser les victimes tierces via le FGAO", correct: true },
     { text: "L'indemnise normalement comme n'importe quel autre conducteur assuré", correct: false },
+    { text: "Refuse systématiquement d'indemniser qui que ce soit, victimes comprises", correct: false },
   ], "Le Fonds de Garantie des Assurances Obligatoires (FGAO) peut intervenir pour indemniser les victimes, mais se retourne ensuite généralement contre le conducteur fautif."),
-
-  /* ===== VAGUE 83 — contestation d'une amende (délais, données précises) ===== */
+  /* ===== VAGUE 83 -- contestation d'une amende (délais, données précises) ===== */
 
   q("divers", "Le délai habituel pour contester une amende forfaitaire (requête en exonération) est de :", [
     { text: "45 jours à compter de la date d'envoi de l'avis de contravention", correct: true },
     { text: "1 an à compter de la date de l'infraction", correct: false },
+    { text: "8 jours seulement, sans exception", correct: false },
   ], "Ce délai court dès l'envoi de l'avis, et non à partir de sa réception effective par le contrevenant, un point souvent méconnu."),
   q("divers", "Payer immédiatement une amende alors qu'on souhaitait initialement la contester :", [
     { text: "Vaut reconnaissance de l'infraction et rend toute contestation ultérieure impossible", correct: true },
     { text: "N'a aucune incidence sur la possibilité de contester par la suite", correct: false },
+    { text: "Permet de contester dans un délai supplémentaire de 15 jours", correct: false },
   ], "Le règlement de l'amende équivaut juridiquement à un aveu de l'infraction, fermant définitivement la voie de la contestation."),
   q("divers", "Pour certaines infractions constatées par un dispositif automatisé (radar), contester une amende impose souvent de verser au préalable :", [
     { text: "Une consignation, d'un montant égal à l'amende forfaitaire, distincte du paiement définitif", correct: true },
     { text: "Le double du montant de l'amende initiale", correct: false },
+    { text: "Aucun versement préalable n'est jamais requis", correct: false },
   ], "Cette consignation, restituée en cas de classement de l'infraction, garantit la sérieux de la démarche sans valoir reconnaissance de culpabilité."),
   q("divers", "Un automobiliste peut demander la photographie prise par un radar automatique afin de :", [
     { text: "Vérifier l'identification exacte du véhicule et du conducteur au moment de l'infraction", correct: true },
     { text: "Obtenir automatiquement l'annulation de l'amende", correct: false },
+    { text: "Faire réduire le montant de l'amende de moitié", correct: false },
   ], "La consultation de la photographie permet de vérifier des éléments objectifs (plaque, conducteur visible), sans garantir pour autant l'annulation de l'amende."),
   q("divers", "En cas de rejet de sa contestation, un conducteur peut ultimement porter l'affaire devant :", [
     { text: "Le tribunal de police", correct: true },
     { text: "La Cour de cassation directement, sans étape intermédiaire", correct: false },
+    { text: "Le tribunal administratif exclusivement", correct: false },
   ], "Cette juridiction est spécifiquement compétente pour traiter les contestations d'infractions routières classées comme contraventions."),
 
-  /* ===== VAGUE 84 — délit de blessures routières, loi du 9 juillet 2025 (données précises) ===== */
+  /* ===== VAGUE 84 -- délit de blessures routières, loi du 9 juillet 2025 (données précises) ===== */
 
   q("conducteur", "La loi du 9 juillet 2025, qui crée l'homicide routier, institue également un nouveau délit distinct appelé :", [
     { text: "Les blessures routières", correct: true },
     { text: "L'agression routière", correct: false },
+    { text: "Le préjudice routier aggravé", correct: false },
   ], "Ce second délit vise les accidents ayant causé des blessures graves, sans entraîner la mort de la victime, dans des circonstances aggravantes comparables."),
   q("conducteur", "Le délit de blessures routières se distingue selon la gravité des séquelles, mesurée par :", [
     { text: "L'incapacité totale de travail (ITT) subie par la victime, supérieure ou inférieure à 3 mois", correct: true },
     { text: "Le nombre de jours d'hospitalisation uniquement", correct: false },
+    { text: "Le montant des frais médicaux engagés", correct: false },
   ], "Cette notion pénale d'ITT, distincte de l'arrêt de travail classique, sert de critère principal pour graduer la gravité de l'infraction."),
   q("conducteur", "En présence d'une seule circonstance aggravante, des blessures routières avec ITT supérieure à 3 mois sont punies au maximum de :", [
     { text: "5 ans d'emprisonnement et 75 000 € d'amende", correct: true },
     { text: "6 mois d'emprisonnement et 1 500 € d'amende", correct: false },
+    { text: "10 ans d'emprisonnement, comme l'homicide routier", correct: false },
   ], "Cette peine reste inférieure à celle de l'homicide routier, tout en marquant une aggravation significative par rapport aux anciennes blessures involontaires classiques."),
   q("conducteur", "En cas de cumul d'au moins deux circonstances aggravantes, des blessures routières avec ITT supérieure à 3 mois peuvent être punies jusqu'à :", [
     { text: "7 ans d'emprisonnement et 100 000 € d'amende", correct: true },
     { text: "1 an d'emprisonnement et 3 000 € d'amende", correct: false },
+    { text: "3 ans d'emprisonnement, sans amende", correct: false },
   ], "Cette peine maximale se rapproche progressivement de celle prévue pour l'homicide routier simple, reflétant la gravité extrême de ces circonstances cumulées."),
   q("conducteur", "Pour des blessures routières avec une ITT inférieure ou égale à 3 mois, la peine de base (une circonstance aggravante) est de :", [
     { text: "3 ans d'emprisonnement et 45 000 € d'amende", correct: true },
     { text: "10 ans d'emprisonnement et 150 000 € d'amende", correct: false },
+    { text: "6 mois d'emprisonnement seulement", correct: false },
   ], "Cette peine, plus légère que pour une ITT longue, reste néanmoins nettement supérieure aux anciennes sanctions pour blessures involontaires simples."),
 
-  /* ===== VAGUE 85 — résiliation assurance auto, loi Hamon (données précises) ===== */
+  /* ===== VAGUE 85 -- résiliation assurance auto, loi Hamon (données précises) ===== */
 
   q("divers", "La loi Hamon permet de résilier son assurance auto à tout moment, sans frais ni justification, à condition que le contrat ait dépassé :", [
     { text: "1 an d'ancienneté", correct: true },
     { text: "5 ans d'ancienneté", correct: false },
+    { text: "3 mois d'ancienneté", correct: false },
   ], "Avant cette échéance d'un an, seuls des motifs légitimes précis (vente du véhicule, changement de situation) permettent de résilier par anticipation."),
   q("divers", "Une fois la demande de résiliation reçue par l'assureur dans le cadre de la loi Hamon, celle-ci prend effet :", [
     { text: "1 mois après cette réception", correct: true },
     { text: "Immédiatement le jour même", correct: false },
+    { text: "3 mois après cette réception", correct: false },
   ], "Ce délai d'un mois garantit une continuité de couverture pendant la transition entre l'ancien et le nouveau contrat d'assurance."),
   q("divers", "Dans le cadre d'un changement d'assurance via la loi Hamon, les démarches de résiliation auprès de l'ancien assureur sont effectuées par :", [
     { text: "Le nouvel assureur, qui se charge de notifier l'ancien à la place de l'assuré", correct: true },
     { text: "L'assuré lui-même, qui doit contacter son ancien assureur", correct: false },
+    { text: "Un huissier mandaté conjointement par les deux assureurs", correct: false },
   ], "Cette simplification administrative facilite le changement de compagnie, l'assuré n'ayant plus à gérer lui-même la notification de résiliation."),
   q("divers", "Pendant toute la procédure de résiliation et de changement d'assurance via la loi Hamon, le véhicule reste :", [
     { text: "Assuré en permanence, sans interruption de couverture", correct: true },
     { text: "Temporairement sans couverture pendant environ une semaine", correct: false },
+    { text: "Couvert uniquement par l'ancien assureur jusqu'à la résiliation effective, sans double couverture", correct: false },
   ], "La continuité de la couverture est garantie tout au long du processus, évitant toute période où le véhicule circulerait sans assurance valide."),
-
-  /* ===== VAGUE 86 — radar tourelle (données précises) ===== */
+  /* ===== VAGUE 86 -- radar tourelle (données précises) ===== */
 
   q("divers", "Le radar tourelle, installé sur un mât d'environ 4 mètres de haut, peut surveiller simultanément jusqu'à :", [
     { text: "32 véhicules", correct: true },
     { text: "2 véhicules seulement", correct: false },
+    { text: "500 véhicules", correct: false },
   ], "Cette capacité de surveillance multiple, bien supérieure aux radars classiques, en fait un dispositif particulièrement dissuasif sur les axes à fort trafic."),
   q("divers", "En plus des excès de vitesse, le radar tourelle est théoriquement capable de détecter :", [
     { text: "Le franchissement de feu rouge, le non-respect des distances de sécurité et l'usage indu d'une voie réservée", correct: true },
     { text: "Uniquement les excès de vitesse, comme les radars classiques", correct: false },
+    { text: "Uniquement le défaut de port de la ceinture de sécurité", correct: false },
   ], "Sa polyvalence technique lui permet, en théorie, de contrôler simultanément plusieurs types d'infractions grâce à la combinaison radar Doppler et caméra haute définition."),
   q("divers", "Le radar tourelle mesure la vitesse des véhicules dans :", [
     { text: "Les deux sens de circulation simultanément", correct: true },
     { text: "Un seul sens, comme la plupart des radars classiques", correct: false },
+    { text: "Aucun sens en particulier, il ne mesure que le franchissement de ligne", correct: false },
   ], "Cette capacité bidirectionnelle distingue le radar tourelle de nombreux radars fixes plus anciens, limités à un seul sens de contrôle."),
   q("divers", "Certaines cabines de radar tourelle, sur un même site, sont volontairement laissées vides ou inactives afin de :", [
     { text: "Maintenir un effet dissuasif sur l'ensemble du réseau, malgré un nombre limité de dispositifs réellement actifs", correct: true },
     { text: "Servir uniquement de décoration esthétique au bord des routes", correct: false },
+    { text: "Réduire les coûts de maintenance sans aucune autre justification", correct: false },
   ], "Cette stratégie permet de faire circuler un dispositif entre plusieurs cabines identiques, renforçant l'incertitude et donc la prudence des conducteurs."),
 
-  /* ===== VAGUE 87 — casque moto, norme ECE 22.06 (données précises) ===== */
+  /* ===== VAGUE 87 -- casque moto, norme ECE 22.06 (données précises) ===== */
 
   q("securite", "Depuis le 1er juillet 2022, tout nouveau casque moto commercialisé en Europe doit respecter la norme :", [
     { text: "ECE 22.06", correct: true },
     { text: "ECE 22.02", correct: false },
+    { text: "ISO 9001", correct: false },
   ], "Cette nouvelle norme, plus exigeante, remplace l'ancienne ECE 22.05 utilisée depuis 2002 pour l'homologation des casques."),
   q("securite", "Un casque homologué selon l'ancienne norme ECE 22.05, déjà en possession d'un motard avant 2022, est :", [
     { text: "Toujours parfaitement légal, tant qu'il reste en bon état", correct: true },
     { text: "Devenu illégal et doit être remplacé immédiatement", correct: false },
+    { text: "Légal uniquement pour une durée de 2 ans après le changement de norme", correct: false },
   ], "Seuls les nouveaux modèles mis sur le marché doivent respecter la nouvelle norme ; les casques déjà homologués restent valides."),
   q("securite", "L'absence de casque homologué pour un motocycliste est sanctionnée par une amende forfaitaire de 135 € et un retrait de :", [
     { text: "3 points sur le permis de conduire", correct: true },
     { text: "6 points sur le permis de conduire", correct: false },
+    { text: "Aucun point, seule l'amende s'applique", correct: false },
   ], "Cette sanction s'applique aussi bien au conducteur qu'au passager circulant sans casque homologué correctement attaché."),
   q("securite", "Depuis 2006, en plus d'être homologué, le casque moto doit également être :", [
     { text: "Correctement attaché au niveau de la jugulaire", correct: true },
     { text: "Porté uniquement lors des trajets de plus de 10 km", correct: false },
+    { text: "Changé tous les 2 ans, quel que soit son état", correct: false },
   ], "Un casque non attaché, même homologué, peut se détacher lors d'un choc et ne remplit alors plus sa fonction protectrice."),
   q("securite", "Chaque casque homologué vendu en France doit porter, en plus de l'étiquette de conformité, des autocollants réfléchissants blancs au nombre de :", [
     { text: "4, positionnés à l'avant, à l'arrière et sur chaque côté", correct: true },
     { text: "Aucun autocollant n'est exigé par la réglementation", correct: false },
+    { text: "1 seul, positionné à l'arrière du casque", correct: false },
   ], "Ces autocollants améliorent la visibilité du motard, particulièrement précieuse de nuit ou par mauvaise visibilité."),
-
-  /* ===== VAGUE 88 — brûlures, premiers secours (données précises) ===== */
+  /* ===== VAGUE 88 -- brûlures, premiers secours (données précises) ===== */
 
   q("secours", "Face à une brûlure, le premier réflexe recommandé est de refroidir la zone touchée avec de l'eau tempérée pendant au moins :", [
     { text: "10 à 15 minutes", correct: true },
     { text: "10 secondes seulement", correct: false },
+    { text: "1 heure minimum", correct: false },
   ], "Ce refroidissement prolongé limite l'extension de la brûlure en profondeur et atténue significativement la douleur ressentie."),
   q("secours", "La température de l'eau recommandée pour refroidir une brûlure se situe entre :", [
     { text: "15 et 25°C", correct: true },
     { text: "0 et 5°C, de l'eau glacée", correct: false },
+    { text: "35 et 40°C, de l'eau tiède", correct: false },
   ], "Une eau trop froide ou glacée est déconseillée, car elle peut aggraver la lésion cutanée et provoquer un risque d'hypothermie locale."),
   q("secours", "Une brûlure du premier degré se caractérise par :", [
     { text: "Une peau rouge et douloureuse, sans apparition de cloques", correct: true },
     { text: "Des cloques contenant du liquide clair", correct: false },
+    { text: "Une peau totalement carbonisée et insensible", correct: false },
   ], "Seul l'épiderme superficiel est touché à ce stade, comme lors d'un coup de soleil typique."),
   q("secours", "Face à des cloques apparues sur une brûlure, il faut :", [
     { text: "Ne jamais les percer soi-même", correct: true },
     { text: "Les percer systématiquement pour évacuer le liquide", correct: false },
+    { text: "Les recouvrir immédiatement de coton pour les protéger", correct: false },
   ], "Percer une cloque ouvre une porte d'entrée aux infections et retarde la cicatrisation naturelle de la peau."),
   q("secours", "Face à une brûlure grave ou très étendue, la priorité, en plus du refroidissement, est de :", [
     { text: "Alerter immédiatement les secours", correct: true },
     { text: "Appliquer une pommade grasse avant tout autre geste", correct: false },
+    { text: "Faire boire abondamment la victime avant l'arrivée des secours", correct: false },
   ], "Les brûlures graves nécessitent une prise en charge médicale rapide ; le refroidissement local ne suffit pas à traiter les cas les plus sérieux."),
 
-  /* ===== VAGUE 89 — amende aggravée en zone de travaux, article L121-3 (données précises) ===== */
+  /* ===== VAGUE 89 -- amende aggravée en zone de travaux, article L121-3 (données précises) ===== */
 
   q("vitesse", "Depuis 2018, l'article L121-3 du code de la route prévoit qu'un excès de vitesse commis dans une zone de travaux correctement signalée peut voir son amende :", [
     { text: "Portée au tarif supérieur, par exemple de 68 € à 135 €", correct: true },
     { text: "Automatiquement annulée, les zones de travaux étant exemptées de sanction", correct: false },
+    { text: "Réduite de moitié en raison du contexte particulier", correct: false },
   ], "Cette aggravation vise à renforcer la protection des ouvriers travaillant à proximité immédiate de la circulation."),
   q("vitesse", "L'aggravation de l'amende en zone de travaux s'applique à condition que :", [
     { text: "La signalisation temporaire de limitation de vitesse soit conforme à la réglementation", correct: true },
     { text: "Des ouvriers soient physiquement présents au moment du contrôle", correct: false },
+    { text: "Le chantier dure depuis plus de 6 mois", correct: false },
   ], "La conformité de la signalisation, et non la présence effective d'ouvriers, conditionne l'application de cette aggravation de l'amende."),
   q("vitesse", "Les radars de chantier, aussi appelés radars autonomes, fonctionnent généralement grâce à :", [
     { text: "Une alimentation par batterie et panneaux solaires, sans raccordement électrique fixe", correct: true },
     { text: "Un raccordement permanent au réseau électrique de la zone de chantier", correct: false },
+    { text: "Un générateur diesel dédié installé à proximité", correct: false },
   ], "Cette autonomie énergétique permet de déplacer facilement ces dispositifs d'un chantier à un autre selon les besoins."),
   q("vitesse", "Le franchissement d'une zone de travaux à une vitesse dépassant de 50 km/h ou plus la limite signalée est traité comme :", [
     { text: "Un grand excès de vitesse classique, avec les mêmes sanctions aggravées (délit)", correct: true },
     { text: "Une simple contravention mineure, comme n'importe quel petit excès en zone de travaux", correct: false },
+    { text: "Une infraction spécifique aux travaux, sanctionnée moins sévèrement qu'un grand excès classique", correct: false },
   ], "La qualification de grand excès de vitesse et ses lourdes conséquences s'appliquent indépendamment du fait que l'infraction ait lieu ou non en zone de travaux."),
-
-  /* ===== VAGUE 90 — amende ceinture de sécurité, article R412-1 (données précises 2026) ===== */
+  /* ===== VAGUE 90 -- amende ceinture de sécurité, article R412-1 (données précises 2026) ===== */
 
   q("securite", "Le non-port de la ceinture par le conducteur est sanctionné par une amende forfaitaire de 135 € et un retrait de :", [
     { text: "3 points sur le permis", correct: true },
     { text: "1 point seulement", correct: false },
+    { text: "6 points, comme pour l'alcoolémie délictuelle", correct: false },
   ], "Cette sanction s'applique au conducteur lui-même, contrairement au passager qui, s'il est majeur, n'encourt aucun retrait de points."),
   q("securite", "Un passager majeur non attaché est sanctionné par une amende de 135 €, mais :", [
     { text: "Sans aucun retrait de points, la responsabilité étant strictement pécuniaire", correct: true },
     { text: "Avec le même retrait de 3 points que le conducteur", correct: false },
+    { text: "Avec un retrait de points imputé au conducteur du véhicule", correct: false },
   ], "Cette distinction s'explique par le fait que seul le titulaire du permis peut voir son capital de points affecté par une infraction."),
   q("securite", "Si un passager mineur (moins de 18 ans) circule non attaché, l'amende est à la charge :", [
     { text: "Du conducteur, responsable de la sécurité des mineurs transportés", correct: true },
     { text: "Du mineur lui-même, qui doit régler l'amende personnellement", correct: false },
+    { text: "Des parents du mineur, même s'ils ne sont pas présents dans le véhicule", correct: false },
   ], "Cette responsabilité du conducteur pour les passagers mineurs reflète son devoir de veiller à leur sécurité avant de démarrer le trajet."),
   q("securite", "Depuis 2008, un siège équipé d'une ceinture de sécurité doit être occupé par :", [
     { text: "Une seule personne", correct: true },
     { text: "Jusqu'à deux personnes attachées avec la même ceinture", correct: false },
+    { text: "Un adulte et un enfant de moins de 3 ans simultanément", correct: false },
   ], "Partager une même ceinture entre deux occupants constitue une infraction, la ceinture n'étant conçue et homologuée que pour une seule personne."),
 
-  /* ===== VAGUE 91 — calcul du taux d'alcoolémie, verre standard (données précises) ===== */
+  /* ===== VAGUE 91 -- calcul du taux d'alcoolémie, verre standard (données précises) ===== */
 
   q("conducteur", "Un « verre standard », qu'il s'agisse d'une bière, d'un vin ou d'un spiritueux servi au bon dosage, contient tous une quantité d'alcool pur équivalente d'environ :", [
     { text: "10 grammes", correct: true },
     { text: "50 grammes", correct: false },
+    { text: "1 gramme", correct: false },
   ], "Cette équivalence explique pourquoi un verre de bière et un verre de whisky ont un effet comparable sur l'alcoolémie, malgré des volumes et des degrés très différents."),
   q("conducteur", "En moyenne, le foie élimine l'alcool présent dans le sang à un rythme d'environ :", [
     { text: "0,10 à 0,15 gramme par litre de sang par heure", correct: true },
     { text: "1 gramme par litre de sang par minute", correct: false },
+    { text: "0,5 gramme par litre de sang toutes les 5 minutes", correct: false },
   ], "Cette vitesse d'élimination, physiologiquement fixe, explique pourquoi aucune méthode (café, douche froide) ne peut réellement accélérer le processus."),
   q("conducteur", "Un homme de 75 kg consommant deux verres standards atteint généralement un taux d'alcoolémie proche de :", [
     { text: "0,40 g/L, proche mais encore sous le seuil légal de 0,5 g/L", correct: true },
     { text: "0,05 g/L, très largement sous la limite", correct: false },
+    { text: "1,2 g/L, largement au-dessus du seuil légal", correct: false },
   ], "Ce chiffre illustre à quel point le seuil légal peut être franchi rapidement, dès le deuxième ou troisième verre selon la corpulence."),
   q("conducteur", "À consommation égale d'alcool, les femmes atteignent généralement un taux d'alcoolémie :", [
     { text: "Plus élevé que les hommes, du fait d'un coefficient de diffusion corporelle différent", correct: true },
     { text: "Identique aux hommes, le sexe n'ayant aucune influence", correct: false },
+    { text: "Moins élevé que les hommes, quelle que soit la corpulence", correct: false },
   ], "La proportion différente d'eau corporelle entre hommes et femmes modifie la dilution de l'alcool dans le sang, expliquant cet écart."),
   q("conducteur", "Manger en même temps que l'on consomme de l'alcool :", [
     { text: "Ralentit l'absorption mais ne réduit pas la quantité totale d'alcool finalement présente dans le sang", correct: true },
     { text: "Empêche totalement l'alcool de passer dans le sang", correct: false },
+    { text: "Accélère l'absorption de l'alcool dans le sang", correct: false },
   ], "Manger retarde le pic d'alcoolémie sans pour autant diminuer la quantité globale d'alcool absorbée par l'organisme."),
 
-  /* ===== VAGUE 92 — malaise cardiaque, infarctus (données précises) ===== */
+  /* ===== VAGUE 92 -- malaise cardiaque, infarctus (données précises) ===== */
 
   q("secours", "Face à une douleur thoracique intense irradiant vers le bras et la mâchoire, il faut immédiatement :", [
     { text: "Alerter les secours (15 ou 112), sans attendre que la douleur passe d'elle-même", correct: true },
     { text: "Attendre quelques heures pour voir si les symptômes disparaissent naturellement", correct: false },
+    { text: "Faire pratiquer un exercice physique léger pour évaluer la gravité", correct: false },
   ], "Un infarctus est une urgence vitale où chaque minute compte ; retarder l'alerte réduit fortement les chances de survie."),
   q("secours", "En attendant les secours face à une suspicion d'infarctus, la victime consciente doit être installée :", [
     { text: "En position semi-assise, qui soulage le travail du cœur", correct: true },
     { text: "Allongée à plat, jambes surélevées", correct: false },
+    { text: "Debout, en marchant lentement pour stimuler la circulation", correct: false },
   ], "Cette position facilite le travail cardiaque et respiratoire, contrairement à une position allongée qui peut aggraver la gêne ressentie."),
   q("secours", "Chez les femmes, les personnes âgées ou diabétiques, les symptômes d'un infarctus peuvent se manifester de façon :", [
     { text: "Moins typique (fatigue, nausées, essoufflement), sans douleur thoracique caractéristique", correct: true },
     { text: "Toujours identique et facilement reconnaissable, sans variation possible", correct: false },
+    { text: "Plus violente et plus rapide que chez un homme jeune en bonne santé", correct: false },
   ], "Cette présentation atypique retarde parfois le diagnostic et l'appel aux secours dans ces populations spécifiques, un point important à connaître."),
   q("secours", "Si une personne victime d'un malaise cardiaque perd connaissance et cesse de respirer normalement, il faut :", [
     { text: "Débuter immédiatement un massage cardiaque et utiliser un défibrillateur si disponible", correct: true },
     { text: "La laisser reposer allongée sans intervenir, en attendant les secours", correct: false },
+    { text: "La placer en position latérale de sécurité et attendre", correct: false },
   ], "L'arrêt de la respiration normale signale un arrêt cardiaque nécessitant une réanimation immédiate, sans attendre l'arrivée des secours."),
 
-  /* ===== VAGUE 93 — ouverture de portière, poignée hollandaise, article R417-7 (données précises) ===== */
+    /* ===== VAGUE 93 -- ouverture de portière, poignée hollandaise, article R417-7 (données précises) ===== */
 
   q("usagers", "Selon l'article R417-7 du code de la route, ouvrir la portière d'un véhicule à l'arrêt est interdit lorsque :", [
     { text: "Cette manœuvre constitue un danger pour le conducteur lui-même ou pour d'autres usagers", correct: true },
     { text: "Le véhicule est stationné en dehors des heures de bureau", correct: false },
+    { text: "Le véhicule est garé depuis plus de 10 minutes", correct: false },
   ], "Cette obligation générale de prudence s'applique à toute ouverture de portière, quel que soit le côté du véhicule concerné."),
   q("usagers", "Le non-respect de cette obligation de prudence lors de l'ouverture d'une portière constitue une contravention de :", [
     { text: "1re classe", correct: true },
     { text: "5e classe, la plus sévère du code de la route", correct: false },
+    { text: "3e classe", correct: false },
   ], "Il s'agit de la classe de contravention la plus légère, au même titre que certaines infractions mineures de stationnement."),
   q("usagers", "La technique dite de la « poignée hollandaise », consistant à ouvrir sa portière avec la main opposée, permet de :", [
     { text: "Provoquer naturellement une rotation du buste incitant à vérifier l'angle mort avant d'ouvrir", correct: true },
     { text: "Verrouiller automatiquement la portière pour plus de sécurité", correct: false },
+    { text: "Réduire l'usure de la charnière de la portière", correct: false },
   ], "Ce geste simple, originaire des Pays-Bas, réduit significativement le risque de heurter un cycliste ou un piéton lors de l'ouverture de la portière."),
   q("usagers", "En France, la poignée hollandaise est aujourd'hui :", [
     { text: "Une pratique recommandée par la Sécurité routière, mais non rendue obligatoire par le code de la route", correct: true },
     { text: "Une obligation légale sanctionnée en cas de non-respect", correct: false },
+    { text: "Enseignée et évaluée obligatoirement lors de l'examen pratique du permis", correct: false },
   ], "Contrairement à certaines rumeurs, aucune amende spécifique ne sanctionne le fait de ne pas utiliser cette technique précise ; seule l'obligation générale de prudence (R417-7) reste applicable."),
 
-  /* ===== VAGUE 94 — entorses et fractures, premiers secours (données précises) ===== */
+  /* ===== VAGUE 94 -- entorses et fractures, premiers secours (données précises) ===== */
 
   q("secours", "Face à une suspicion de fracture, le geste essentiel du témoin est de :", [
     { text: "Immobiliser le membre dans la position où il se trouve, sans tenter de le redresser", correct: true },
     { text: "Tenter de remettre l'os dans son axe normal avant l'arrivée des secours", correct: false },
+    { text: "Faire bouger doucement le membre pour évaluer la douleur", correct: false },
   ], "Toute tentative de manipulation d'un membre fracturé par un témoin non qualifié risque d'aggraver la lésion et les dommages aux tissus environnants."),
   q("secours", "Face à une fracture ouverte, où l'os perce la peau, il faut avant tout :", [
     { text: "Protéger la plaie avec un linge propre, sans exercer de pression directe sur l'os", correct: true },
     { text: "Appuyer fermement directement sur l'os visible pour stopper le saignement", correct: false },
+    { text: "Nettoyer immédiatement la plaie à l'eau savonneuse", correct: false },
   ], "Une pression directe sur l'os pourrait aggraver la blessure ; seule une protection de la plaie contre l'infection est recommandée en attendant les secours."),
   q("secours", "Face à une entorse simple (foulure), l'application de glace sur la zone blessée permet de :", [
     { text: "Réduire la douleur et l'inflammation", correct: true },
     { text: "Accélérer la guérison de façon définitive en quelques minutes", correct: false },
+    { text: "Remplacer totalement un avis médical dans tous les cas", correct: false },
   ], "Le froid soulage temporairement la douleur et limite le gonflement, sans pour autant remplacer un avis médical si nécessaire."),
   q("secours", "En cas de suspicion de blessure au cou, au dos ou au bassin après un accident, il ne faut :", [
     { text: "Jamais déplacer la victime, sauf danger immédiat mettant sa vie en péril", correct: true },
     { text: "Toujours l'installer en position assise pour plus de confort", correct: false },
+    { text: "La faire marcher doucement pour tester la mobilité", correct: false },
   ], "Un déplacement inapproprié en cas de traumatisme du rachis peut aggraver gravement une lésion médullaire potentielle."),
 
-  /* ===== VAGUE 95 — sens interdit, article R412-28 (données précises) ===== */
+  /* ===== VAGUE 95 -- sens interdit, article R412-28 (données précises) ===== */
 
   q("signalisation", "Selon l'article R412-28 du code de la route, circuler en sens interdit est puni d'une amende de :", [
     { text: "135 € (contravention de 4e classe), avec un retrait de 4 points", correct: true },
     { text: "35 € seulement, sans retrait de points", correct: false },
+    { text: "68 € et un retrait de 1 point", correct: false },
   ], "Cette infraction est classée parmi les contraventions les plus sévèrement sanctionnées, en raison du risque élevé de collision frontale qu'elle engendre.", { image: WM("B1") }),
   q("divers", "Le non-respect d'un sens interdit peut entraîner, en peine complémentaire, une suspension de permis pouvant aller jusqu'à :", [
     { text: "3 ans", correct: true },
     { text: "1 mois seulement", correct: false },
+    { text: "10 ans", correct: false },
   ], "Cette peine complémentaire, prévue par l'article R412-28, peut être limitée à la conduite hors activité professionnelle selon la situation du contrevenant."),
   q("divers", "Effectuer une marche arrière dans une rue à sens unique, en remontant à contresens, est :", [
     { text: "Sanctionné exactement comme un franchissement classique de sens interdit", correct: true },
     { text: "Sanctionné plus légèrement, car le véhicule ne roule pas réellement à contresens", correct: false },
+    { text: "Toléré tant que la manœuvre dure moins de 10 secondes", correct: false },
   ], "La loi assimile ce comportement à la circulation classique en sens interdit, avec les mêmes sanctions applicables."),
   q("signalisation", "Depuis juin 2015, un nouveau panneau de sens interdit carré sur fond jaune fluo a été créé pour être implanté principalement :", [
     { text: "Sur les bretelles de sortie d'autoroute, pour prévenir les prises à contresens", correct: true },
     { text: "Dans tous les centres-villes de France sans exception", correct: false },
+    { text: "Uniquement aux abords des écoles", correct: false },
   ], "Ce panneau très visible cible spécifiquement les zones les plus à risque de prise à contresens accidentelle, notamment aux abords des autoroutes."),
   q("usagers", "Un cycliste circulant en sens interdit là où aucune dérogation « sauf vélos » n'est signalée risque une amende de :", [
     { text: "35 € (contravention de 2e classe), une sanction moins sévère que pour un automobiliste", correct: true },
     { text: "Exactement la même amende de 135 € qu'un automobiliste", correct: false },
+    { text: "Aucune amende, les cyclistes étant exemptés de cette règle", correct: false },
   ], "Bien que sanctionné moins lourdement financièrement, le cycliste reste en infraction et peut voir sa responsabilité engagée en cas d'accident."),
 
-  /* ===== VAGUE 96 — franchissement de feu rouge, article R412-30 (données précises 2026) ===== */
+  /* ===== VAGUE 96 -- franchissement de feu rouge, article R412-30 (données précises 2026) ===== */
 
   q("signalisation", "Selon l'article R412-30 du code de la route, franchir un feu rouge fixe ou clignotant est puni d'une amende forfaitaire de :", [
     { text: "135 € et d'un retrait de 4 points sur le permis", correct: true },
     { text: "35 € sans aucun retrait de points", correct: false },
+    { text: "68 € et un retrait de 2 points", correct: false },
   ], "Cette contravention de 4e classe figure parmi les infractions les plus lourdement sanctionnées en matière de retrait de points."),
   q("signalisation", "Le franchissement d'un feu rouge peut entraîner, en plus de l'amende et du retrait de points, une suspension de permis pouvant atteindre :", [
     { text: "3 ans, prononcée par le tribunal de police", correct: true },
     { text: "10 ans, automatiquement dès la première infraction", correct: false },
+    { text: "6 mois, sans intervention d'un tribunal", correct: false },
   ], "Cette peine complémentaire reste à l'appréciation du tribunal et ne s'applique pas systématiquement à chaque franchissement constaté."),
   q("signalisation", "Lorsqu'un radar de feu rouge flashe un véhicule, la vitesse éventuellement mesurée au moment du passage :", [
     { text: "N'est pas retenue comme infraction distincte d'excès de vitesse ; seul le franchissement du feu est verbalisé", correct: true },
     { text: "S'ajoute systématiquement à une seconde amende pour excès de vitesse", correct: false },
+    { text: "Remplace l'infraction de franchissement du feu rouge", correct: false },
   ], "Ces radars combinés se concentrent sur l'infraction de franchissement du feu rouge, sans systématiquement verbaliser une éventuelle vitesse excessive au même instant."),
   q("signalisation", "Si un feu tricolore est totalement en panne (éteint) à un carrefour, les règles de priorité qui s'appliquent alors sont :", [
     { text: "La priorité aux piétons puis la priorité à droite, comme en l'absence de toute signalisation lumineuse", correct: true },
     { text: "L'arrêt total obligatoire de tous les véhicules jusqu'au retour du courant", correct: false },
+    { text: "Le passage prioritaire au véhicule arrivé en premier au carrefour", correct: false },
   ], "Un feu éteint équivaut à une absence de signalisation lumineuse, faisant reprendre les règles habituelles de priorité aux usagers."),
-
-  /* ===== VAGUE 97 — non-respect du STOP, article R415-6 (données précises 2026) ===== */
+  /* ===== VAGUE 97 -- non-respect du STOP, article R415-6 (données précises 2026) ===== */
 
   q("signalisation", "Selon l'article R415-6 du code de la route, le non-respect d'un panneau STOP est sanctionné par une amende de 135 € et un retrait de :", [
     { text: "4 points sur le permis", correct: true },
     { text: "1 point seulement", correct: false },
+    { text: "2 points", correct: false },
   ], "Cette infraction est aussi sévèrement sanctionnée qu'un franchissement de feu rouge, en raison du risque élevé de collision qu'elle représente.", { image: WM("AB4") }),
   q("signalisation", "Le comportement consistant à ralentir fortement à un STOP sans jamais s'immobiliser complètement est appelé familièrement :", [
     { text: "Le « stop glissé »", correct: true },
     { text: "Le « stop technique »", correct: false },
+    { text: "Le « stop roulant »", correct: false },
   ], "Ce comportement, très fréquent, reste une infraction caractérisée au même titre qu'une absence totale de ralentissement."),
   q("signalisation", "L'infraction au panneau STOP serait impliquée dans environ :", [
     { text: "14 % des décès sur la route", correct: true },
     { text: "Moins de 1 % des décès sur la route", correct: false },
+    { text: "50 % des décès sur la route", correct: false },
   ], "Ce chiffre illustre l'importance vitale du respect strict de cette signalisation, souvent négligée par excès de confiance ou d'inattention."),
   q("signalisation", "En cas de visibilité totalement nulle à un STOP, un conducteur peut :", [
     { text: "Avancer prudemment après un premier arrêt et marquer un second arrêt avant de s'engager définitivement", correct: true },
     { text: "S'engager directement sans second contrôle après le premier arrêt", correct: false },
+    { text: "Klaxonner puis s'engager immédiatement sans nouvel arrêt", correct: false },
   ], "Cette procédure en deux temps permet de vérifier progressivement la situation lorsque la visibilité depuis le point d'arrêt initial est insuffisante."),
 
-  /* ===== VAGUE 98 — franchissement/chevauchement ligne continue, article R412-19 (données précises) ===== */
+  /* ===== VAGUE 98 -- franchissement/chevauchement ligne continue, article R412-19 (données précises) ===== */
 
   q("signalisation", "Selon l'article R412-19 du code de la route, le franchissement complet d'une ligne continue (toutes les roues passent de l'autre côté) entraîne un retrait de :", [
     { text: "3 points sur le permis, en plus de l'amende de 135 €", correct: true },
     { text: "1 point seulement", correct: false },
+    { text: "6 points, comme un grand excès de vitesse", correct: false },
   ], "Le franchissement complet, plus dangereux qu'un simple chevauchement, est sanctionné plus lourdement en termes de retrait de points."),
   q("signalisation", "Le chevauchement d'une ligne continue, où seule une partie du véhicule empiète sur le marquage sans le franchir totalement, entraîne un retrait de :", [
     { text: "1 point seulement, bien que l'amende reste identique à 135 €", correct: true },
     { text: "3 points, comme pour un franchissement complet", correct: false },
+    { text: "Aucun point, seule une amende étant appliquée", correct: false },
   ], "Cette distinction fine entre chevauchement et franchissement complet, bien que sanctionnée par la même amende, se traduit par un retrait de points différent."),
   q("signalisation", "Le franchissement d'une ligne continue reste toléré dans un cas précis, prévu par la réglementation :", [
     { text: "Pour éviter un obstacle fixe sur la chaussée qui ne peut être écarté immédiatement", correct: true },
     { text: "Chaque fois que le conducteur estime la voie opposée totalement dégagée", correct: false },
+    { text: "Pour dépasser un véhicule roulant sensiblement plus lentement", correct: false },
   ], "Cette exception légale reste strictement limitée à un danger immédiat sur la chaussée, et non à une simple appréciation de circulation dégagée."),
   q("signalisation", "Une ligne continue de couleur jaune, souvent temporaire lors de travaux, a une valeur réglementaire :", [
     { text: "Identique à celle d'une ligne blanche continue classique", correct: true },
     { text: "Purement indicative, sans caractère obligatoire", correct: false },
+    { text: "Réservée aux seuls véhicules de chantier", correct: false },
   ], "La couleur jaune, utilisée pour le marquage temporaire, ne réduit en rien le caractère obligatoire et sanctionnable du respect de cette ligne."),
-
-  /* ===== VAGUE 99 — plaques d'immatriculation, article R317-8 (données précises) ===== */
+  /* ===== VAGUE 99 -- plaques d'immatriculation, article R317-8 (données précises) ===== */
 
   q("divers", "Selon l'article R317-8 du code de la route, rouler avec une plaque d'immatriculation illisible ou non conforme entraîne une amende de 135 € :", [
     { text: "Sans aucun retrait de points sur le permis", correct: true },
     { text: "Avec un retrait de 3 points, comme pour une ligne continue", correct: false },
+    { text: "Avec un retrait de 6 points", correct: false },
   ], "Contrairement à de nombreuses infractions liées à la conduite, ce défaut purement administratif n'affecte pas le capital de points du conducteur."),
   q("divers", "L'éclairage de la plaque arrière doit permettre sa lecture, de nuit, à une distance minimale de :", [
     { text: "20 mètres", correct: true },
     { text: "200 mètres", correct: false },
+    { text: "2 mètres", correct: false },
   ], "Cette distance minimale garantit une identification suffisante du véhicule par les autres usagers et les forces de l'ordre, même dans l'obscurité."),
   q("divers", "L'usage d'une fausse plaque d'immatriculation (usurpation du numéro d'un autre véhicule) est un délit passible d'une peine pouvant atteindre :", [
     { text: "5 ans d'emprisonnement et 3 750 € d'amende", correct: true },
     { text: "1 mois d'emprisonnement et 150 € d'amende", correct: false },
+    { text: "6 mois d'emprisonnement, sans amende", correct: false },
   ], "Cette infraction bien plus grave qu'une simple plaque illisible constitue un délit intentionnel, jugé par un tribunal correctionnel."),
   q("divers", "En cas d'usurpation avérée de plaque d'immatriculation, la peine complémentaire de retrait de points s'élève à :", [
     { text: "6 points", correct: true },
     { text: "Aucun retrait de points n'est prévu, seule une amende étant applicable", correct: false },
+    { text: "1 point seulement", correct: false },
   ], "Ce retrait maximal, associé à une possible suspension de permis de 3 ans, souligne la gravité pénale de l'usurpation par rapport à une simple non-conformité administrative."),
 
-  /* ===== VAGUE 100 — refus de priorité à droite, article R415-5 (données précises) ===== */
+  /* ===== VAGUE 100 -- refus de priorité à droite, article R415-5 (données précises) ===== */
 
   q("priorites", "Selon l'article R415-5 du code de la route, le refus de priorité à droite est sanctionné par une amende de 135 € et un retrait de :", [
     { text: "4 points sur le permis de conduire", correct: true },
     { text: "1 point seulement", correct: false },
+    { text: "6 points", correct: false },
   ], "Cette contravention de 4e classe, très fréquemment commise, reste l'une des infractions de priorité les plus sévèrement sanctionnées en points."),
   q("priorites", "La règle de la priorité à droite existe en France, sous une forme proche de celle d'aujourd'hui, depuis :", [
     { text: "1927", correct: true },
     { text: "1990", correct: false },
+    { text: "1958", correct: false },
   ], "Cette ancienneté explique pourquoi la priorité à droite reste le principe fondamental et historique de toute intersection non signalée en France."),
   q("priorites", "Selon l'article R415-12 du code de la route, refuser la priorité à un véhicule d'intérêt général annonçant son approche par ses avertisseurs spéciaux entraîne :", [
     { text: "Les mêmes sanctions qu'un refus de priorité à droite classique (135 €, 4 points)", correct: true },
     { text: "Une sanction bien plus légère, réduite à une simple amende de 11 €", correct: false },
+    { text: "Une sanction plus lourde qu'un refus de priorité classique, avec retrait de 6 points", correct: false },
   ], "Refuser de céder le passage à un véhicule prioritaire en intervention est traité avec la même sévérité qu'un refus de priorité classique à une intersection."),
   q("priorites", "En cas d'accident consécutif à un refus de priorité à droite non signalée, la responsabilité incombe généralement :", [
     { text: "Au conducteur qui a refusé la priorité, sauf circonstances particulières démontrées", correct: true },
     { text: "Toujours au conducteur venant de droite, quelle que soit la situation", correct: false },
+    { text: "Aux deux conducteurs à parts égales, systématiquement", correct: false },
   ], "Le principe général veut que le conducteur qui aurait dû céder le passage soit reconnu responsable de la collision qui en résulte."),
-
-  /* ===== VAGUE 101 — oubli de clignotant, article R412-10 (données précises) ===== */
+  /* ===== VAGUE 101 -- oubli de clignotant, article R412-10 (données précises) ===== */
 
   q("divers", "Selon l'article R412-10 du code de la route, changer de direction sans utiliser son clignotant est sanctionné par une amende de 35 € et un retrait de :", [
     { text: "3 points sur le permis", correct: true },
     { text: "6 points, comme un franchissement de feu rouge", correct: false },
+    { text: "1 point seulement", correct: false },
   ], "Bien que financièrement moins lourde que d'autres infractions, cette contravention de 2e classe reste assortie d'un retrait de points non négligeable."),
   q("divers", "Selon une étude citée sur ce sujet, environ 50 % des conducteurs français reconnaissent :", [
     { text: "Oublier fréquemment d'actionner leur clignotant lors d'un changement de direction", correct: true },
     { text: "Utiliser systématiquement leur clignotant sans jamais l'oublier", correct: false },
+    { text: "Ne jamais avoir utilisé de clignotant de leur vie", correct: false },
   ], "Ce chiffre illustre à quel point cette infraction, pourtant simple à éviter, reste extrêmement répandue sur le réseau routier français."),
   q("divers", "L'usage du clignotant est légalement requis notamment :", [
     { text: "Pour reprendre sa place dans la circulation après un arrêt ou un stationnement", correct: true },
     { text: "Uniquement pour tourner à une intersection classique", correct: false },
+    { text: "Uniquement sur autoroute, lors d'un changement de voie", correct: false },
   ], "L'article R412-10 couvre un champ large de manœuvres, incluant le redémarrage après un stationnement, pas seulement les changements de direction aux carrefours."),
   q("divers", "Un clignotant défectueux ou non conforme (et non simplement oublié) relève d'une infraction distincte, sanctionnée par une amende de :", [
     { text: "68 €, contravention de 3e classe", correct: true },
     { text: "35 € exactement, comme un oubli simple de clignotant", correct: false },
+    { text: "135 €, comme un franchissement de feu rouge", correct: false },
   ], "Cette infraction technique, liée à l'état du véhicule et non au comportement du conducteur, est traitée par un article distinct (R313-14) avec un montant différent."),
 
-  /* ===== VAGUE 102 — bande d'arrêt d'urgence, articles R412-8/R421-7 (données précises) ===== */
+   /* ===== VAGUE 102 -- bande d'arrêt d'urgence, articles R412-8/R421-7 (données précises) ===== */
 
   q("divers", "Selon l'article R412-8 du code de la route, circuler sur la bande d'arrêt d'urgence (sans y être immobilisé) est puni d'une amende de 135 € et d'un retrait de :", [
     { text: "3 points sur le permis", correct: true },
     { text: "Aucun point, seule une amende étant prévue", correct: false },
+    { text: "6 points, comme pour un grand excès de vitesse", correct: false },
   ], "Cette infraction, contravention de 4e classe, sanctionne le fait de rouler sur cette bande pour, par exemple, doubler un bouchon, un comportement particulièrement dangereux."),
   q("divers", "S'arrêter ou stationner sans nécessité absolue sur la bande d'arrêt d'urgence relève d'un article distinct de la circulation proprement dite, sanctionné par une amende de :", [
     { text: "35 €, sans retrait de points", correct: true },
     { text: "135 € avec un retrait de 3 points, comme la circulation", correct: false },
+    { text: "750 €, comme une conduite sans assurance", correct: false },
   ], "Cette distinction entre rouler sur la BAU (135€, 3 points) et s'y arrêter sans raison valable (35€, sans point) est souvent méconnue des conducteurs."),
   q("divers", "La bande d'arrêt d'urgence, en plus de son usage pour les pannes et accidents, sert également de voie de passage prioritaire :", [
     { text: "Aux véhicules de secours (pompiers, SAMU, police) en intervention", correct: true },
     { text: "À tout véhicule souhaitant doubler en cas de fort trafic", correct: false },
+    { text: "Aux seuls véhicules de transport en commun aux heures de pointe", correct: false },
   ], "Cette fonction de couloir d'urgence pour les secours justifie l'interdiction stricte faite aux autres usagers d'y circuler en dehors d'une nécessité absolue."),
 
-  /* ===== VAGUE 103 — barème complet excès de vitesse par tranche (données précises 2026) ===== */
+  /* ===== VAGUE 103 -- barème complet excès de vitesse par tranche (données précises 2026) ===== */
 
   q("vitesse", "Un excès de vitesse compris entre 20 et 29 km/h entraîne un retrait de :", [
     { text: "2 points sur le permis", correct: true },
     { text: "4 points sur le permis", correct: false },
+    { text: "1 point sur le permis", correct: false },
   ], "Le barème par tranche progresse par palier : 1 point de 5 à 19 km/h, 2 points de 20 à 29 km/h, et ainsi de suite jusqu'au seuil du délit."),
   q("vitesse", "Un excès de vitesse compris entre 30 et 39 km/h entraîne un retrait de 3 points, avec en plus une possibilité de :", [
     { text: "Suspension du permis pouvant atteindre 3 ans", correct: true },
     { text: "Confiscation immédiate et automatique du véhicule", correct: false },
+    { text: "Peine de prison ferme systématique", correct: false },
   ], "La confiscation automatique du véhicule ne devient une réalité qu'à partir du seuil de délit (50 km/h ou plus), pas dès cette tranche intermédiaire."),
   q("vitesse", "Un excès de vitesse compris entre 40 et 49 km/h entraîne un retrait de 4 points, et peut également déclencher :", [
     { text: "Une rétention immédiate du permis sur place par les forces de l'ordre", correct: true },
     { text: "Une peine de prison automatique, quelle que soit la situation", correct: false },
+    { text: "La confiscation immédiate et définitive du véhicule", correct: false },
   ], "À partir de ce seuil de 40 km/h, les forces de l'ordre peuvent retenir immédiatement le permis, avant même toute décision judiciaire ou administrative de suspension."),
   q("vitesse", "Depuis le 29 décembre 2025, un excès de vitesse égal ou supérieur à 50 km/h entraîne un retrait de 6 points et constitue :", [
     { text: "Un délit, jugé par le tribunal correctionnel", correct: true },
     { text: "Une simple contravention de 5e classe, comme auparavant", correct: false },
+    { text: "Une infraction administrative sans passage devant un tribunal", correct: false },
   ], "Ce seuil marque le passage d'une simple contravention à un délit pénal à part entière, avec des conséquences juridiques bien plus lourdes."),
   q("vitesse", "Le retrait de points pour un excès de vitesse dépend notamment de :", [
     { text: "L'ampleur du dépassement en km/h, selon un barème progressif par tranche", correct: true },
     { text: "Uniquement de la marque et du modèle du véhicule conduit", correct: false },
+    { text: "Uniquement de la couleur du véhicule conduit", correct: false },
   ], "Le barème est structuré exclusivement autour de l'écart de vitesse constaté, sans tenir compte de caractéristiques du véhicule."),
-
-  /* ===== VAGUE 104 — dépassement dangereux, manœuvre acrobatique (données précises) ===== */
+  /* ===== VAGUE 104 -- dépassement dangereux, manœuvre acrobatique (données précises) ===== */
 
   q("divers", "Selon l'article R414-4 du code de la route, un dépassement dangereux est sanctionné par une amende de 135 € et un retrait de :", [
     { text: "3 points sur le permis", correct: true },
     { text: "1 point seulement", correct: false },
+    { text: "6 points, comme un grand excès de vitesse", correct: false },
   ], "Cette contravention de 4e classe couvre plusieurs situations : dépassement sans déport suffisant, visibilité insuffisante, ou rabattement trop rapide (« queue de poisson »)."),
   q("divers", "Le fait de se rabattre trop rapidement après un dépassement, provoquant une gêne pour le véhicule dépassé, est communément appelé :", [
     { text: "Une « queue de poisson »", correct: true },
     { text: "Un « stop glissé »", correct: false },
+    { text: "Un « coup de canif »", correct: false },
   ], "Cette expression familière désigne un comportement dangereux, sanctionné au même titre que les autres formes de dépassement dangereux."),
   q("divers", "Un dépassement causant un accident au niveau d'un passage à niveau peut voir sa sanction aggravée jusqu'à :", [
     { text: "Un retrait de 6 points et une suspension de permis de 3 ans", correct: true },
     { text: "Aucune aggravation particulière par rapport à un dépassement dangereux classique", correct: false },
+    { text: "Une simple amende, sans aucun retrait de points supplémentaire", correct: false },
   ], "La combinaison d'un dépassement dangereux avec un accident dans une zone particulièrement à risque entraîne une sanction nettement renforcée."),
   q("divers", "Depuis juin 2024, la « manœuvre acrobatique » (comme rouler sur une seule roue ou en zigzaguant dangereusement) est une infraction spécifique sanctionnée par :", [
     { text: "Une amende de 68 € et un retrait de 2 points", correct: true },
     { text: "Une amende de 1 500 € et un retrait de 6 points", correct: false },
+    { text: "Une amende de 11 € sans retrait de points", correct: false },
   ], "Cette infraction récente, prévue par l'article R412-6-4, cible spécifiquement les comportements acrobatiques et exhibitionnistes au volant, distincts du délit de rodéo urbain."),
 
-  /* ===== VAGUE 105 — distance de sécurité poids lourds, article R412-12-II (données précises) ===== */
+  /* ===== VAGUE 105 -- distance de sécurité poids lourds, article R412-12-II (données précises) ===== */
 
   q("usagers", "Selon l'article R412-12 du code de la route, hors agglomération, deux poids lourds de plus de 3,5 tonnes se suivant à la même vitesse doivent respecter une distance de sécurité d'au moins :", [
     { text: "50 mètres", correct: true },
     { text: "2 mètres", correct: false },
+    { text: "10 mètres", correct: false },
   ], "Cette distance minimale fixe, bien supérieure à la règle des deux secondes appliquée aux véhicules légers, limite le risque de collision en chaîne entre poids lourds."),
   q("usagers", "Cette distance minimale de 50 mètres entre poids lourds s'applique également aux véhicules dont la longueur dépasse :", [
     { text: "7 mètres", correct: true },
     { text: "20 mètres", correct: false },
+    { text: "3,5 mètres", correct: false },
   ], "Le critère de longueur, en plus du critère de poids, permet d'englober également certains ensembles routiers longs mais relativement légers."),
   q("usagers", "L'exception à cette règle des 50 mètres concerne notamment :", [
     { text: "Les convois militaires et les véhicules des formations de sécurité civile", correct: true },
     { text: "Les véhicules de tourisme tractant une caravane", correct: false },
+    { text: "Les autocars de transport scolaire", correct: false },
   ], "Ces exceptions reconnaissent les besoins opérationnels spécifiques de ces convois particuliers, soumis à leurs propres règles de circulation."),
   q("divers", "Selon la Cour de cassation, l'élément déterminant pour caractériser une infraction de non-respect des distances de sécurité (article R412-12) est :", [
     { text: "La distance elle-même entre les véhicules, indépendamment de leur vitesse exacte", correct: true },
     { text: "Uniquement la vitesse des deux véhicules concernés", correct: false },
+    { text: "Le seul jugement subjectif de l'agent verbalisateur", correct: false },
   ], "La jurisprudence a précisé que ce n'est pas la vitesse en elle-même qui constitue l'infraction, mais bien l'insuffisance de la distance effectivement observée entre les véhicules."),
-
-  /* ===== VAGUE 106 — pneus lisses, article R314-1 (données précises) ===== */
+  /* ===== VAGUE 106 -- pneus lisses, article R314-1 (données précises) ===== */
 
   q("mecanique", "Selon l'article R314-1 du code de la route, un pneu est considéré comme lisse lorsque la profondeur de ses sculptures descend en dessous de :", [
     { text: "1,6 mm", correct: true },
     { text: "5 mm", correct: false },
+    { text: "0,1 mm", correct: false },
   ], "Ce seuil légal minimal garantit une évacuation suffisante de l'eau sous le pneu pour préserver l'adhérence, notamment sur chaussée mouillée."),
   q("mecanique", "Rouler avec des pneus lisses est sanctionné par une amende de 135 €, mais cette infraction :", [
     { text: "N'entraîne aucun retrait de points sur le permis de conduire", correct: true },
     { text: "Entraîne un retrait de 3 points, comme un défaut de distance de sécurité", correct: false },
+    { text: "Entraîne un retrait de 6 points, la sanction la plus sévère", correct: false },
   ], "Contrairement à de nombreuses infractions liées au comportement de conduite, ce défaut d'entretien du véhicule ne pénalise pas le capital de points du conducteur."),
   q("mecanique", "Une astuce simple pour vérifier la profondeur des sculptures d'un pneu consiste à insérer :", [
     { text: "Une pièce de 1 euro dans une rainure : si le bord doré reste visible, le pneu est sous la limite légale", correct: true },
     { text: "Une carte bancaire dans le sens de la largeur du pneu", correct: false },
+    { text: "Une clé de contact dans le sens de la longueur du pneu", correct: false },
   ], "Ce test simple et accessible à tous permet une estimation rapide de l'usure sans nécessiter d'outil professionnel spécifique."),
   q("mecanique", "Avec des pneus lisses, le risque d'aquaplaning peut survenir dès une vitesse d'environ :", [
     { text: "60 km/h, contre 80-90 km/h avec des pneus en bon état", correct: true },
     { text: "150 km/h, quel que soit l'état du pneu", correct: false },
+    { text: "20 km/h, même avec des pneus neufs", correct: false },
   ], "Cette différence de seuil illustre concrètement l'impact majeur de l'état des pneus sur la sécurité, particulièrement en cas de pluie."),
 
-  /* ===== VAGUE 107 — défaut d'éclairage, distinction absence totale vs panne (données précises) ===== */
+  /* ===== VAGUE 107 -- défaut d'éclairage, distinction absence totale vs panne (données précises) ===== */
 
   q("mecanique", "Circuler de nuit sans aucun éclairage dans un lieu dépourvu d'éclairage public est sanctionné par une amende de 135 € et un retrait de :", [
     { text: "4 points sur le permis, avec suspension possible jusqu'à 3 ans", correct: true },
     { text: "Aucun point, seule une amende étant prévue", correct: false },
+    { text: "1 point seulement", correct: false },
   ], "Cette absence totale d'éclairage, bien plus grave qu'une simple ampoule grillée, est sanctionnée comme une infraction sérieuse mettant en danger la sécurité de tous."),
   q("mecanique", "Une simple panne d'une ampoule (feu de croisement, position ou stop) alors que le reste de l'éclairage fonctionne est sanctionnée par une amende de 68 €, mais cette infraction :", [
     { text: "N'entraîne aucun retrait de points ni suspension de permis", correct: true },
     { text: "Entraîne les mêmes 4 points que l'absence totale d'éclairage", correct: false },
+    { text: "Entraîne un retrait de 2 points", correct: false },
   ], "Cette distinction reflète la différence de gravité entre un véhicule totalement invisible de nuit et un véhicule partiellement éclairé malgré une panne ponctuelle."),
   q("mecanique", "L'oubli d'allumer ses feux de croisement en conditions requises (nuit, brouillard, forte pluie), alors que le matériel fonctionne parfaitement, est sanctionné par :", [
     { text: "135 € d'amende et un retrait de 4 points", correct: true },
     { text: "68 € d'amende sans retrait de points", correct: false },
+    { text: "35 € d'amende sans retrait de points", correct: false },
   ], "Ce comportement, bien que le matériel d'éclairage soit en parfait état de marche, est traité aussi sévèrement qu'une absence complète d'éclairage."),
   q("mecanique", "Contrairement à une idée reçue, avoir une boîte d'ampoules de rechange dans son véhicule est :", [
     { text: "Une simple recommandation, non une obligation légale inscrite au code de la route", correct: true },
     { text: "Une obligation légale, au même titre que le gilet et le triangle", correct: false },
+    { text: "Une obligation uniquement pour les véhicules de plus de 10 ans", correct: false },
   ], "Contrairement au gilet et au triangle, aucune disposition n'impose formellement la présence d'ampoules de rechange dans le véhicule."),
-
-  /* ===== VAGUE 108 — casque vélo enfants, article R431-1-3 (données précises) ===== */
+  /* ===== VAGUE 108 -- casque vélo enfants, article R431-1-3 (données précises) ===== */
 
   q("usagers", "Depuis le 22 mars 2017, le port du casque à vélo est obligatoire en France pour :", [
     { text: "Tout enfant de moins de 12 ans, conducteur ou passager", correct: true },
     { text: "Tous les cyclistes sans exception, quel que soit leur âge", correct: false },
+    { text: "Uniquement les enfants de moins de 6 ans", correct: false },
   ], "L'article R431-1-3 du code de la route cible spécifiquement les enfants, les adultes restant libres de porter ou non un casque à vélo classique."),
   q("usagers", "En cas de non-port du casque par un enfant de moins de 12 ans à vélo, l'amende de 135 € est adressée :", [
     { text: "À l'adulte qui accompagne ou transporte l'enfant, jamais à l'enfant lui-même", correct: true },
     { text: "Directement à l'enfant concerné", correct: false },
+    { text: "Conjointement à l'enfant et à l'adulte", correct: false },
   ], "La loi considère que la responsabilité de veiller au respect de cette obligation incombe entièrement à l'adulte accompagnant."),
   q("usagers", "L'obligation du port du casque pour les enfants de moins de 12 ans s'applique également :", [
     { text: "Lorsqu'ils sont transportés dans un siège enfant ou une remorque de vélo", correct: true },
     { text: "Uniquement lorsqu'ils pédalent eux-mêmes sur leur propre vélo", correct: false },
+    { text: "Uniquement lors des trajets de plus de 2 km", correct: false },
   ], "Que l'enfant soit conducteur, passager assis ou transporté dans une remorque, la même obligation de port du casque s'applique."),
   q("usagers", "Un casque de vélo pour enfant non attaché correctement, même s'il est porté, est considéré comme :", [
     { text: "Équivalent à une absence de casque, exposant à la même sanction", correct: true },
     { text: "Parfaitement conforme, seule la présence physique du casque comptant", correct: false },
+    { text: "Sanctionné moins sévèrement qu'une absence totale de casque", correct: false },
   ], "Un casque non attaché peut se détacher lors d'une chute et ne remplit alors plus sa fonction protectrice, justifiant qu'il soit assimilé à une absence de casque."),
 
-  /* ===== VAGUE 109 — infractions à vélo, retrait de points (données vérifiées) ===== */
+  /* ===== VAGUE 109 -- infractions à vélo, retrait de points (données vérifiées) ===== */
 
   q("usagers", "Une infraction commise par un cycliste (feu rouge grillé, trottoir, sens interdit) entraîne, contrairement à un automobiliste :", [
     { text: "Une amende, mais jamais de retrait de points sur le permis de conduire", correct: true },
     { text: "Exactement le même retrait de points qu'un automobiliste", correct: false },
+    { text: "Un retrait de points réduit de moitié par rapport à un automobiliste", correct: false },
   ], "Le retrait de points ne s'applique qu'aux infractions commises avec un véhicule nécessitant un permis, ce qui exclut le vélo classique."),
   q("usagers", "Un cycliste tenant son vélo à la main, sans être dessus, sur un trottoir est considéré comme :", [
     { text: "Un piéton, autorisé à utiliser le trottoir sans infraction", correct: true },
     { text: "Toujours un cycliste en infraction sur le trottoir", correct: false },
+    { text: "Un usager sans statut légal défini dans cette situation", correct: false },
   ], "Dès lors qu'il descend de son vélo et le pousse à pied, le cycliste change de statut juridique et devient assimilé à un piéton."),
   q("usagers", "Malgré une infraction commise à vélo, un juge peut néanmoins prononcer une suspension du permis de conduire de l'usager dans le cas :", [
     { text: "D'une infraction très grave, comme une conduite en état d'ivresse manifeste", correct: true },
     { text: "D'aucun cas, le vélo n'ayant jamais d'impact sur le permis de conduire", correct: false },
+    { text: "De tout excès de vitesse à vélo, même minime", correct: false },
   ], "Dans les cas les plus graves, un juge conserve le pouvoir de suspendre le permis de conduire, même si l'infraction n'a pas été commise avec un véhicule à moteur."),
   q("usagers", "En 2024, selon le bilan de l'Observatoire national interministériel de la sécurité routière, dans la majorité des collisions mortelles impliquant un cycliste :", [
     { text: "Ce dernier n'était pas présumé responsable de l'accident", correct: true },
     { text: "Le cycliste était presque toujours identifié comme responsable", correct: false },
+    { text: "La responsabilité n'a jamais pu être établie", correct: false },
   ], "Ce constat statistique nuance l'idée répandue selon laquelle les cyclistes seraient les principaux responsables des accidents qui les impliquent."),
-
-  /* ===== VAGUE 110 — loi LOM, stationnement passages piétons (données très actuelles 2026) ===== */
+  /* ===== VAGUE 110 -- loi LOM, stationnement passages piétons (données très actuelles 2026) ===== */
 
   q("divers", "La loi d'orientation des mobilités (LOM), promulguée en décembre 2019, impose aux communes de supprimer, avant fin 2026, toutes les places de stationnement motorisé situées :", [
     { text: "À moins de 5 mètres en amont de chaque passage piéton", correct: true },
     { text: "Dans un rayon de 500 mètres autour de chaque passage piéton", correct: false },
+    { text: "À moins de 50 mètres de chaque passage piéton", correct: false },
   ], "Cette obligation nationale vise à améliorer la visibilité mutuelle entre conducteurs et piétons juste avant les zones de traversée."),
   q("divers", "Se garer dans cette nouvelle zone de 5 mètres avant un passage piéton, une fois les emplacements officiellement neutralisés, constitue :", [
     { text: "Un stationnement très gênant, sanctionné par une amende de 135 €", correct: true },
     { text: "Un simple stationnement gênant classique à 35 €", correct: false },
+    { text: "Un stationnement dangereux entraînant un retrait de points", correct: false },
   ], "Cette requalification en stationnement très gênant, plus sévèrement sanctionnée, accompagne la mise en œuvre de cette réforme de sécurité routière."),
   q("divers", "Les emplacements neutralisés dans la zone des 5 mètres avant un passage piéton sont généralement réaffectés :", [
     { text: "Aux vélos et aux engins de déplacement personnel", correct: true },
     { text: "Ils restent définitivement vides et inutilisables par quiconque", correct: false },
+    { text: "Aux seuls véhicules de livraison professionnels", correct: false },
   ], "Ces espaces libérés sont souvent réaménagés pour d'autres usages compatibles avec la sécurité, plutôt que laissés totalement inutilisés."),
   q("divers", "Selon le bilan provisoire 2025 de l'ONISR, le nombre de piétons tués sur les routes de France s'élève à environ :", [
     { text: "451", correct: true },
     { text: "45", correct: false },
+    { text: "4 510", correct: false },
   ], "Ce chiffre, publié début 2026, illustre l'importance persistante de la sécurité des piétons parmi les priorités de la politique de sécurité routière."),
 
-  /* ===== VAGUE 111 — mention "01" lunettes correctrices (données précises) ===== */
+  /* ===== VAGUE 111 -- mention "01" lunettes correctrices (données précises) ===== */
 
   q("conducteur", "En France, l'acuité visuelle minimale exigée pour obtenir le permis de conduire est de :", [
     { text: "5/10e sur l'ensemble des deux yeux", correct: true },
     { text: "10/10e sur chaque œil pris individuellement", correct: false },
+    { text: "1/10e, un seuil très bas", correct: false },
   ], "Ce seuil, vérifié lors du passage du permis, détermine si le futur conducteur doit porter un dispositif de correction visuelle pour conduire légalement."),
   q("conducteur", "La mention imposant le port de lunettes ou de lentilles sur le permis de conduire est identifiée par le code :", [
     { text: "01", correct: true },
     { text: "99", correct: false },
+    { text: "A1", correct: false },
   ], "Ce code, apposé au verso du permis format carte, précise l'obligation de correction visuelle du titulaire."),
   q("conducteur", "Conduire sans lunettes malgré la mention « 01 » sur son permis expose à une amende de 135 € et un retrait de :", [
     { text: "3 points sur le permis", correct: true },
     { text: "Aucun point, seule une amende étant prévue", correct: false },
+    { text: "6 points, la sanction maximale", correct: false },
   ], "Cette infraction, bien que peu connue, est traitée avec la même sévérité que de nombreuses infractions liées à la sécurité de conduite."),
   q("conducteur", "Un conducteur ayant subi une opération corrigeant définitivement sa vue (myopie, cataracte) doit :", [
     { text: "Faire modifier la mention sur son permis auprès de la préfecture", correct: true },
     { text: "N'a aucune démarche à effectuer, le permis restant valable tel quel", correct: false },
+    { text: "Repasser entièrement l'examen du permis de conduire", correct: false },
   ], "Tant que la mention n'est pas officiellement supprimée, le conducteur reste légalement tenu de porter ses lunettes ou lentilles, même si elles ne sont plus médicalement nécessaires."),
   q("conducteur", "Depuis l'abrogation de l'arrêté de 1988 par celui de 1997, un porteur de lentilles de contact :", [
     { text: "N'est plus obligé d'avoir également une paire de lunettes de secours dans son véhicule", correct: true },
     { text: "Doit toujours obligatoirement disposer d'une paire de lunettes en plus de ses lentilles", correct: false },
+    { text: "Doit disposer de deux paires de lentilles de rechange dans le véhicule", correct: false },
   ], "Cette ancienne obligation de disposer d'une correction de secours a été supprimée, simplifiant les obligations des porteurs de lentilles."),
 
-  /* ===== VAGUE 112 — surnombre de passagers, article R412-1-1 (données précises) ===== */
+  /* ===== VAGUE 112 -- surnombre de passagers, article R412-1-1 (données précises) ===== */
 
   q("securite", "Depuis un décret de septembre 2018, transporter plus de passagers que le nombre de places assises indiqué sur la carte grise constitue :", [
     { text: "Une infraction spécifique, sanctionnée par une amende de 135 € par passager en surnombre", correct: true },
     { text: "Une pratique tolérée tant que chacun porte sa ceinture", correct: false },
+    { text: "Une simple recommandation sans sanction associée", correct: false },
   ], "Avant ce décret, seul le défaut de port de la ceinture des passagers en surnombre était sanctionné ; le surnombre lui-même est désormais une infraction autonome."),
   q("securite", "Lorsque l'infraction de surnombre de passagers est commise, le conducteur encourt, en plus de l'amende, un retrait de :", [
     { text: "3 points sur son permis de conduire", correct: true },
     { text: "Aucun point, seuls les passagers étant sanctionnés", correct: false },
+    { text: "6 points, la sanction maximale prévue", correct: false },
   ], "Le conducteur, responsable de la sécurité à bord de son véhicule, est spécifiquement pénalisé sur son permis pour cette infraction."),
   q("securite", "Le nombre maximal de places autorisées dans un véhicule est indiqué sur la carte grise au repère :", [
     { text: "S.1", correct: true },
     { text: "P.3", correct: false },
+    { text: "J.1", correct: false },
   ], "Ce repère précis permet de vérifier facilement le nombre de places assises homologuées pour le véhicule concerné."),
   q("securite", "Transporter un enfant en surnombre, en plus de l'infraction pour le nombre de places, peut également entraîner une amende pour :", [
     { text: "Défaut de port de la ceinture ou de dispositif de retenue adapté, cumulée à celle du surnombre", correct: true },
     { text: "Aucune sanction supplémentaire, une seule amende globale étant appliquée", correct: false },
+    { text: "Défaut de présentation de la carte grise uniquement", correct: false },
   ], "Ces infractions peuvent se cumuler, rendant la sanction financière potentiellement très élevée en cas de transport de plusieurs enfants en surnombre."),
 
-  /* ===== VAGUE 113 — piste cyclable, véhicules motorisés (données précises) ===== */
+  /* ===== VAGUE 113 -- piste cyclable, véhicules motorisés (données précises) ===== */
 
   q("usagers", "Circuler avec un véhicule motorisé non autorisé (voiture, moto) sur une piste cyclable est sanctionné par une amende de 135 €, mais cette infraction :", [
     { text: "N'entraîne aucun retrait de points", correct: true },
     { text: "Entraîne un retrait de 3 points, comme pour un stationnement sur cette même piste", correct: false },
+    { text: "Entraîne un retrait de 6 points", correct: false },
   ], "Contrairement au stationnement sur piste cyclable (3 points), la simple circulation avec un véhicule motorisé non autorisé n'entraîne pas de retrait de points."),
   q("usagers", "Selon l'article R417-11, stationner un véhicule motorisé sur une voie verte, une bande ou une piste cyclable est classé comme un stationnement très gênant, sanctionné par 135 € et un retrait de :", [
     { text: "3 points sur le permis de conduire", correct: true },
     { text: "Aucun point, seule une amende étant prévue", correct: false },
+    { text: "1 point seulement", correct: false },
   ], "Cette distinction entre circuler (sans retrait de points) et stationner (avec 3 points) sur une piste cyclable est une nuance souvent méconnue des automobilistes."),
   q("usagers", "Un deux-roues motorisé (scooter) peut exceptionnellement emprunter une piste cyclable lorsque :", [
     { text: "La signalisation est complétée par le panonceau M4d2 l'y autorisant explicitement", correct: true },
     { text: "Il n'y a aucun cycliste visible sur la piste au moment du passage", correct: false },
+    { text: "Il roule à une vitesse inférieure à 20 km/h", correct: false },
   ], "Sans ce panonceau spécifique, aucun véhicule motorisé, y compris les deux-roues légers, n'est autorisé à circuler sur une piste réservée aux cyclistes."),
   q("usagers", "L'article R110-2 du code de la route définit une piste cyclable comme une chaussée :", [
     { text: "Exclusivement réservée aux cycles à deux ou trois roues", correct: true },
     { text: "Ouverte à tous les véhicules de moins de 3,5 tonnes", correct: false },
+    { text: "Partagée à parts égales entre cyclistes et piétons", correct: false },
   ], "Cette définition légale précise exclut par principe tout véhicule à moteur, sauf dérogation explicitement signalée."),
 
-  /* ===== VAGUE 114 — dépassement par la droite, article R414-6 (données précises) ===== */
+  /* ===== VAGUE 114 -- dépassement par la droite, article R414-6 (données précises) ===== */
 
   q("divers", "Selon l'article R414-6 du code de la route, dépasser un véhicule par la droite en dehors des cas autorisés est puni d'une amende de 135 € et d'un retrait de :", [
     { text: "3 points sur le permis", correct: true },
     { text: "6 points, comme un excès de vitesse important", correct: false },
+    { text: "1 point seulement", correct: false },
   ], "Cette contravention de 4e classe peut également être assortie d'une suspension de permis pouvant atteindre 3 ans, selon la gravité des circonstances."),
   q("divers", "Sur une route à plusieurs voies où les véhicules avancent lentement sur toutes les files, dépasser par la droite un véhicule immobile ou très lent sur la file de gauche est :", [
     { text: "Généralement toléré, la situation d'embouteillage constituant une exception reconnue", correct: true },
     { text: "Toujours strictement interdit, sans aucune exception liée au trafic", correct: false },
+    { text: "Autorisé uniquement sur autoroute, jamais en ville", correct: false },
   ], "La configuration d'un trafic dense et ralenti sur plusieurs files justifie une tolérance particulière, différente des conditions de circulation fluide."),
   q("divers", "Dépasser par la droite un tramway circulant au milieu d'une route à double sens est :", [
     { text: "Autorisé, sous réserve qu'aucun passager ne soit en train d'y monter ou d'en descendre", correct: true },
     { text: "Toujours interdit, quelle que soit la situation", correct: false },
+    { text: "Autorisé uniquement si le tramway est complètement à l'arrêt", correct: false },
   ], "Cette exception légale spécifique tient compte de la configuration particulière des voies de tramway insérées au centre de certaines routes."),
 
-  /* ===== VAGUE 115 — stationnement zone bleue, disque européen (données précises 2026) ===== */
+  /* ===== VAGUE 115 -- stationnement zone bleue, disque européen (données précises 2026) ===== */
 
   q("divers", "Depuis le 1er janvier 2012, seul un modèle de disque de stationnement est reconnu valable en zone bleue :", [
     { text: "Le disque européen bleu unique", correct: true },
     { text: "N'importe quel disque, y compris les anciens modèles en carton blanc et bleu", correct: false },
+    { text: "Un simple papier manuscrit indiquant l'heure d'arrivée", correct: false },
   ], "Les anciens modèles français à volets multiples ne sont plus acceptés depuis cette date, un disque non conforme étant assimilé à une absence de disque."),
   q("divers", "L'absence ou le mauvais réglage du disque en zone bleue est sanctionné par une amende de :", [
     { text: "35 €, sans minoration possible en cas de paiement rapide", correct: true },
     { text: "135 €, avec minoration possible à 90 €", correct: false },
+    { text: "11 €, la contravention la plus légère", correct: false },
   ], "Contrairement à de nombreuses autres infractions routières, les amendes de stationnement ne bénéficient d'aucun tarif minoré, quelle que soit la rapidité du paiement."),
   q("divers", "Un disque de stationnement en zone bleue doit être réglé sur l'heure d'arrivée, arrondie :", [
     { text: "À la demi-heure supérieure", correct: true },
     { text: "À l'heure pile inférieure", correct: false },
+    { text: "Au quart d'heure le plus proche", correct: false },
   ], "Cet arrondi systématique vers le haut simplifie le réglage tout en évitant toute contestation sur d'éventuelles minutes manquantes."),
   q("divers", "En l'absence de précision sur le panonceau d'entrée d'une zone bleue, la durée maximale de stationnement autorisée est, par défaut, de :", [
     { text: "1 heure 30", correct: true },
     { text: "8 heures", correct: false },
+    { text: "15 minutes", correct: false },
   ], "Cette durée par défaut s'applique sauf indication contraire explicitement affichée par la commune concernée."),
 
-  /* ===== VAGUE 116 — vitres teintées, article R316-3-1 (données précises 2026) ===== */
+  /* ===== VAGUE 116 -- vitres teintées, article R316-3-1 (données précises 2026) ===== */
 
   q("mecanique", "Depuis le 1er janvier 2017, le pare-brise et les vitres latérales avant doivent laisser passer au moins :", [
     { text: "70 % de la lumière", correct: true },
     { text: "10 % de la lumière seulement", correct: false },
+    { text: "30 % de la lumière", correct: false },
   ], "Ce taux de transmission de lumière visible (TLV) garantit que les forces de l'ordre puissent distinguer clairement le conducteur à travers ses vitres avant."),
   q("mecanique", "Circuler avec des vitres avant trop teintées, sous ce seuil de 70 %, est sanctionné par une amende de 135 € et un retrait de :", [
     { text: "3 points sur le permis", correct: true },
     { text: "Aucun point, seule une amende étant prévue", correct: false },
+    { text: "6 points, la sanction la plus lourde", correct: false },
   ], "Cette contravention de 4e classe peut également entraîner l'immobilisation du véhicule et une contre-visite obligatoire au contrôle technique."),
   q("mecanique", "Concernant les vitres arrière (latérales arrière et lunette), la réglementation sur la transparence :", [
     { text: "N'impose aucun taux minimal, laissant une totale liberté de teinte", correct: true },
     { text: "Impose exactement le même seuil de 70 % que les vitres avant", correct: false },
+    { text: "Impose un seuil réduit de 40 %", correct: false },
   ], "Cette liberté pour l'arrière du véhicule, à condition de disposer de deux rétroviseurs extérieurs, explique pourquoi de nombreux véhicules affichent des vitres arrière très sombres en toute légalité."),
   q("mecanique", "Une dérogation à l'obligation de transparence des vitres avant peut être accordée pour :", [
     { text: "Des raisons médicales précises, comme certaines pathologies cutanées d'hypersensibilité aux UV", correct: true },
     { text: "Un simple confort personnel exprimé par le conducteur", correct: false },
+    { text: "Une préférence esthétique validée par le contrôle technique", correct: false },
   ], "Cette dérogation médicale, mentionnée sur le permis de conduire, reste strictement encadrée et réservée à des pathologies listées par arrêté ministériel."),
 
-  /* ===== VAGUE 117 — écouteurs/oreillettes au volant, article R412-6-1 (données précises) ===== */
+  /* ===== VAGUE 117 -- écouteurs/oreillettes au volant, article R412-6-1 (données précises) ===== */
 
   q("conducteur", "Depuis le 1er juillet 2015, porter des écouteurs, une oreillette ou un casque audio en conduisant est sanctionné par une amende de 135 € et un retrait de :", [
     { text: "3 points sur le permis, comme pour le téléphone tenu en main", correct: true },
     { text: "Aucun point, seule une amende étant prévue", correct: false },
+    { text: "6 points, la sanction la plus lourde", correct: false },
   ], "L'article R412-6-1 traite ces deux infractions (téléphone tenu en main et port à l'oreille) de façon identique en termes de sanction."),
   q("conducteur", "Un conducteur portant des écouteurs éteints, sans aucun son diffusé, est :", [
     { text: "Tout de même en infraction, le simple port suffisant à caractériser l'infraction", correct: true },
     { text: "En règle, seule la diffusion effective d'un son étant sanctionnée", correct: false },
+    { text: "En infraction uniquement si les deux oreilles sont couvertes", correct: false },
   ], "La loi vise le port du dispositif lui-même, indépendamment de son utilisation effective au moment du contrôle."),
   q("conducteur", "Cette interdiction du port d'écouteurs au volant ne s'applique pas :", [
     { text: "Aux appareils électroniques correcteurs de surdité", correct: true },
     { text: "Aux kits mains libres intégrés au casque d'un motard", correct: false },
+    { text: "Aux écouteurs portés dans une seule oreille", correct: false },
   ], "Seuls les appareils auditifs médicaux sont explicitement exemptés ; les dispositifs Bluetooth intégrés aux casques restent, eux, soumis à cette interdiction."),
   q("conducteur", "L'isolation auditive causée par des écouteurs prive notamment le conducteur de la perception :", [
     { text: "Des klaxons et sirènes des véhicules prioritaires", correct: true },
     { text: "Du bruit de son propre moteur uniquement", correct: false },
+    { text: "Des indications du GPS uniquement", correct: false },
   ], "Cette perte de perception des signaux sonores d'alerte constitue le principal risque justifiant l'interdiction de ce type de dispositif au volant."),
-
-  /* ===== VAGUE 118 — conduite en tongs / pieds nus, article R412-6 (données précises) — cap des 1000 ===== */
+  /* ===== VAGUE 118 -- conduite en tongs / pieds nus, article R412-6 (données précises) -- cap des 1000 ===== */
 
   q("conducteur", "Contrairement à une idée très répandue, conduire pieds nus ou en tongs en France est :", [
     { text: "Légal en soi, aucun article du code de la route ne l'interdisant explicitement", correct: true },
     { text: "Formellement interdit par un article dédié du code de la route", correct: false },
+    { text: "Interdit uniquement sur autoroute", correct: false },
   ], "Ce mythe tenace ne correspond à aucune réalité juridique précise ; c'est un article beaucoup plus général qui peut, dans certains cas, s'appliquer."),
   q("conducteur", "Un conducteur en tongs peut toutefois être sanctionné sur le fondement de l'article R412-6, qui impose de :", [
     { text: "Rester en permanence en position d'exécuter toutes les manœuvres sans délai ni gêne", correct: true },
     { text: "Porter des chaussures fermées en toute circonstance", correct: false },
+    { text: "Conduire uniquement avec des chaussures homologuées", correct: false },
   ], "Ce texte général, parfois qualifié de « fourre-tout », permet de sanctionner tout comportement jugé incompatible avec une maîtrise correcte du véhicule."),
   q("conducteur", "L'amende encourue pour une conduite jugée entravée par des tongs ou l'absence de chaussures est de :", [
     { text: "35 €, contravention de 2e classe, sans retrait de points", correct: true },
     { text: "135 € avec un retrait de 3 points", correct: false },
+    { text: "68 € avec un retrait de 1 point", correct: false },
   ], "Avant 2003, cet article servait d'ailleurs aussi à sanctionner l'usage du téléphone au volant, faute d'infraction spécifique à l'époque."),
   q("conducteur", "Le risque concret le plus souvent cité concernant la conduite en tongs est :", [
     { text: "Le coincement de la chaussure sous la pédale de frein ou d'accélérateur", correct: true },
     { text: "Une usure prématurée anormale des pédales du véhicule", correct: false },
+    { text: "Un dérapage du pied sur le volant", correct: false },
   ], "Ce risque de blocage mécanique, en situation d'urgence, peut retarder ou empêcher une réaction rapide et précise du conducteur."),
   q("conducteur", "En cas d'accident où l'assurance détermine qu'une chaussure inadaptée a contribué au sinistre, l'assureur peut :", [
     { text: "Refuser ou réduire la prise en charge des dommages", correct: true },
     { text: "N'a jamais le droit de tenir compte de ce facteur", correct: false },
+    { text: "Uniquement doubler le montant de la prime l'année suivante", correct: false },
   ], "Au-delà de la sanction pénale éventuelle, la responsabilité civile du conducteur peut être aggravée si son équipement a objectivement nui à sa maîtrise du véhicule."),
 
-  /* ===== VAGUE 119 — pour franchir le cap symbolique des 1000 questions ===== */
+  /* ===== VAGUE 119 -- pour franchir le cap symbolique des 1000 questions ===== */
 
   q("divers", "Le code de la route français est aujourd'hui principalement contenu dans :", [
     { text: "La partie réglementaire du code de la route, régulièrement mise à jour par décrets", correct: true },
     { text: "Un texte figé, inchangé depuis sa création au début du XXe siècle", correct: false },
+    { text: "Une simple charte non contraignante publiée par la Sécurité routière", correct: false },
   ], "Le code évolue en permanence pour s'adapter aux nouveaux usages (EDPM, véhicules électriques) et aux enjeux de sécurité routière contemporains."),
   q("divers", "La Sécurité routière française, organisme chargé de la prévention et des politiques publiques en la matière, dépend :", [
     { text: "Du ministère de l'Intérieur", correct: true },
     { text: "D'une association privée sans lien avec l'État", correct: false },
+    { text: "Du ministère de la Santé", correct: false },
   ], "Cette délégation interministérielle pilote notamment les campagnes de prévention et l'évolution de la réglementation routière."),
   q("divers", "L'examen théorique général (ETG), plus connu sous le nom de « code de la route », est composé de :", [
     { text: "40 questions, avec un seuil de réussite fixé à 35 bonnes réponses", correct: true },
     { text: "10 questions, avec un seuil de réussite fixé à 8 bonnes réponses", correct: false },
+    { text: "100 questions, avec un seuil de réussite fixé à 90 bonnes réponses", correct: false },
   ], "Ce format, identique à celui reproduit dans le mode examen blanc de cette application, constitue la référence officielle de l'épreuve théorique."),
   q("divers", "La validité du code de la route (ETG), une fois obtenu, est de :", [
     { text: "5 ans, ou 5 présentations à l'épreuve pratique si cela survient avant", correct: true },
     { text: "1 mois seulement", correct: false },
+    { text: "10 ans, sans limite de présentations", correct: false },
   ], "Ce délai assez large permet aux candidats de préparer sereinement leur épreuve pratique sans crainte de voir leur code expirer trop rapidement."),
   q("divers", "S'entraîner régulièrement sur des questions variées et actualisées, plutôt que de mémoriser un jeu de questions figé, permet de :", [
     { text: "Mieux comprendre le raisonnement derrière chaque règle, plutôt que d'apprendre par cœur", correct: true },
     { text: "N'a aucun intérêt particulier par rapport à l'apprentissage par cœur", correct: false },
+    { text: "Uniquement gagner du temps le jour de l'examen", correct: false },
   ], "La compréhension du pourquoi de chaque règle prépare bien mieux à la conduite réelle qu'une simple mémorisation des réponses attendues à l'examen."),
   q("divers", "En France, le taux de réussite national à l'épreuve théorique générale (code de la route) avoisine généralement :", [
     { text: "60 %, ce qui laisse une marge de progression importante pour bien se préparer", correct: true },
     { text: "99 %, un taux quasiment garanti pour tous les candidats", correct: false },
+    { text: "20 %, un taux extrêmement faible", correct: false },
   ], "Ce taux, loin d'être acquis d'avance, souligne l'intérêt d'un entraînement sérieux et régulier avant de se présenter à l'examen officiel."),
   q("divers", "Bonne chance pour ton examen du code de la route !", [
     { text: "Continue à t'entraîner régulièrement, la régularité paie plus que les révisions de dernière minute", correct: true },
     { text: "Il vaut mieux tout réviser la veille au soir", correct: false },
+    { text: "L'entraînement n'a aucune influence sur la réussite à l'examen", correct: false },
   ], "Un entraînement étalé dans le temps, avec des révisions régulières, ancre bien mieux les connaissances qu'un bachotage intensif de dernière minute."),
-    q("signalisation", "Un panneau temporaire de limitation de vitesse installé pour des travaux doit être respecté :", [
-    { text: "Même si aucun ouvrier n'est visible sur le moment", correct: true },
-    { text: "Uniquement si des ouvriers sont physiquement présents", correct: false },
-    { text: "Uniquement pendant les heures de bureau", correct: false },
-  ], "La signalisation temporaire de chantier garde sa pleine valeur réglementaire, indépendamment de la présence visible de personnel sur place."),
-  q("priorites", "Sur une place où plusieurs voies convergent sans panneau ni marquage, la règle qui s'applique reste :", [
-    { text: "La priorité à droite par défaut", correct: true },
-    { text: "Le passage libre pour tous simultanément", correct: false },
-    { text: "La priorité au véhicule le plus rapide", correct: false },
-  ], "En l'absence de toute signalisation, la priorité à droite continue de s'appliquer, même dans une configuration de carrefour complexe."),
-  q("vitesse", "Une réduction progressive de vitesse à l'approche d'un radar pédagogique (non verbalisateur) :", [
-    { text: "Reste une bonne pratique, ce type de radar sensibilisant sans sanctionner", correct: true },
-    { text: "Est inutile puisqu'aucune sanction n'est possible", correct: false },
-    { text: "N'a aucun intérêt pédagogique", correct: false },
-  ], "Même sans verbalisation, ces radars rappellent utilement la vitesse réelle pratiquée et encouragent une conduite plus prudente."),
-  q("conducteur", "Un jeune conducteur qui termine sa période probatoire sans aucune infraction voit son capital de points :", [
-    { text: "Passer automatiquement à 12 points", correct: true },
-    { text: "Rester bloqué à son niveau initial à vie", correct: false },
-    { text: "Redescendre à zéro puis remonter progressivement", correct: false },
-  ], "À l'issue d'une période probatoire sans infraction, le conducteur accède au capital plein de 12 points, comme tout conducteur expérimenté."),
-  q("usagers", "Face à un groupe de coureurs à pied encadré sur la chaussée (course organisée), un conducteur doit :", [
-    { text: "Ralentir et suivre les indications des signaleurs éventuellement présents", correct: true },
-    { text: "Klaxonner pour les inciter à se ranger", correct: false },
-    { text: "Doubler rapidement sans réduire sa vitesse", correct: false },
-  ], "Les événements sportifs organisés sur la voie publique bénéficient souvent d'un encadrement spécifique qu'il convient de respecter."),
-  q("secours", "Face à une brûlure thermique simple (contact avec une surface chaude), le premier réflexe est de :", [
-    { text: "Refroidir immédiatement la zone à l'eau tempérée pendant plusieurs minutes", correct: true },
-    { text: "Appliquer immédiatement une pommade grasse", correct: false },
-    { text: "Percer une éventuelle cloque formée", correct: false },
-  ], "Le refroidissement rapide à l'eau tempérée limite la progression de la brûlure en profondeur, contrairement aux pommades qui peuvent aggraver la lésion."),
-  q("mecanique", "Le remplacement périodique du liquide de refroidissement moteur permet notamment de :", [
-    { text: "Prévenir la corrosion interne du circuit et maintenir une protection efficace contre le gel", correct: true },
-    { text: "N'a aucune utilité si le niveau reste stable", correct: false },
-    { text: "Améliorer uniquement l'esthétique du moteur", correct: false },
-  ], "Le liquide de refroidissement perd ses propriétés protectrices avec le temps, même si son niveau semble rester correct visuellement."),
-  q("environnement", "Le covoiturage sur les trajets domicile-travail réguliers permet, à l'échelle collective, de :", [
-    { text: "Réduire le nombre de véhicules en circulation aux heures de pointe", correct: true },
-    { text: "N'avoir aucun effet mesurable sur le trafic", correct: false },
-    { text: "Augmenter la congestion routière", correct: false },
-  ], "Moins de véhicules circulant pour un même nombre de trajets réduit mécaniquement la congestion et les émissions associées."),
-  q("securite", "Le port d'un casque à vélo mal ajusté (trop lâche) réduit :", [
-    { text: "Son efficacité protectrice en cas de choc, malgré sa présence", correct: true },
-    { text: "N'a aucune incidence tant que le casque est porté", correct: false },
-    { text: "Uniquement le confort, sans effet sur la protection", correct: false },
-  ], "Un casque mal ajusté peut se déplacer ou se détacher lors d'un choc, réduisant fortement sa capacité de protection réelle."),
-  q("divers", "La consultation régulière de son solde de points, via les services officiels en ligne, permet de :", [
-    { text: "Suivre sa situation et anticiper une éventuelle démarche de stage de récupération", correct: true },
-    { text: "N'apporte aucune information utile", correct: false },
-    { text: "Récupérer automatiquement des points par la simple consultation", correct: false },
-  ], "Connaître son solde réel permet d'anticiper une action volontaire (stage) avant d'atteindre un niveau critique."),
-  q("priorites", "Un cycliste franchissant un feu rouge grâce à un panonceau M12 doit malgré tout :", [
-    { text: "Céder le passage aux piétons engagés et aux véhicules bénéficiant du feu vert", correct: true },
-    { text: "Considérer qu'il est automatiquement prioritaire sur tous les usagers", correct: false },
-    { text: "Attendre l'autorisation d'un agent avant de s'engager", correct: false },
-  ], "Le panonceau M12 est un cédez-le-passage, jamais une priorité automatique : la vigilance reste de mise avant de s'engager."),
-  q("vitesse", "Circuler nettement en dessous de la vitesse autorisée sans raison particulière, en gênant la circulation normale, peut être :", [
-    { text: "Sanctionné dans certains cas, une allure anormalement lente pouvant aussi représenter un danger", correct: true },
-    { text: "Toujours totalement sans conséquence, quelle que soit la situation", correct: false },
-    { text: "Obligatoire par mesure de prudence systématique", correct: false },
-  ], "Une vitesse excessivement réduite sans justification peut perturber la fluidité et la sécurité du trafic, tout comme un excès de vitesse."),
 ];
 
 
