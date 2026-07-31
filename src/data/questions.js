@@ -5697,7 +5697,68 @@ export const QUESTIONS = [
     { text: "Il vaut mieux tout réviser la veille au soir", correct: false },
     { text: "L'entraînement n'a aucune influence sur la réussite à l'examen", correct: false },
   ], "Un entraînement étalé dans le temps, avec des révisions régulières, ancre bien mieux les connaissances qu'un bachotage intensif de dernière minute."),
+  q("signalisation", "Un panneau de danger de forme triangulaire annonce, en principe, un risque situé à une distance d'environ :", [
+    { text: "150 mètres en agglomération, davantage hors agglomération", correct: true },
+    { text: "10 mètres seulement, quelle que soit la route", correct: false },
+    { text: "5 kilomètres, quelle que soit la route", correct: false },
+  ], "Cette distance d'anticipation, plus courte en ville qu'en rase campagne, laisse le temps au conducteur d'adapter son comportement avant d'atteindre la zone à risque."),
+  q("priorites", "Dans un carrefour où deux véhicules arrivent strictement en même temps sans aucune signalisation, la priorité à droite :", [
+    { text: "S'applique normalement, le véhicule venant de droite étant prioritaire", correct: true },
+    { text: "Ne s'applique jamais dans cette configuration précise", correct: false },
+    { text: "Est remplacée par la priorité au véhicule le plus large", correct: false },
+  ], "La règle de la priorité à droite reste la référence par défaut, y compris dans les situations d'arrivée quasi simultanée à une intersection."),
+  q("vitesse", "Sur une route mouillée, la vitesse maximale autorisée hors agglomération à 90 km/h est généralement réduite à :", [
+    { text: "80 km/h", correct: true },
+    { text: "60 km/h", correct: false },
+    { text: "90 km/h, sans changement", correct: false },
+  ], "Cette réduction systématique par temps de pluie tient compte de l'allongement des distances de freinage sur chaussée mouillée."),
+  q("conducteur", "Le renouvellement du permis de conduire pour les catégories lourdes (poids lourds, transport en commun) impose un contrôle médical périodique dès :", [
+    { text: "L'obtention du permis, puis à intervalles réguliers tout au long de la carrière", correct: true },
+    { text: "Uniquement après 65 ans", correct: false },
+    { text: "Jamais, ces catégories étant exemptées de tout contrôle médical", correct: false },
+  ], "Ce suivi médical régulier garantit que les conducteurs professionnels restent aptes à la conduite de véhicules à fort enjeu de sécurité."),
+  q("usagers", "Un piéton muni d'une canne blanche doit être considéré par les conducteurs comme :", [
+    { text: "Une personne malvoyante ou aveugle, nécessitant une vigilance et une prudence accrues", correct: true },
+    { text: "Un simple randonneur équipé d'un bâton de marche", correct: false },
+    { text: "Un signal sans signification particulière pour la circulation", correct: false },
+  ], "La canne blanche est un signal reconnu internationalement, invitant les conducteurs à ralentir et à céder le passage avec une attention particulière."),
+  q("secours", "Face à une personne en état de choc après un accident (pâleur, sueurs froides, confusion), il faut notamment :", [
+    { text: "La rassurer, la couvrir et éviter de la laisser seule en attendant les secours", correct: true },
+    { text: "La faire marcher immédiatement pour relancer la circulation sanguine", correct: false },
+    { text: "Lui donner à boire abondamment pour la réhydrater", correct: false },
+  ], "Le maintien au chaud et la présence rassurante d'un témoin contribuent à limiter l'aggravation de l'état de choc, en attendant une prise en charge médicale."),
+  q("mecanique", "Un voyant orange allumé au tableau de bord signale généralement :", [
+    { text: "Une anomalie à surveiller, sans nécessiter un arrêt immédiat du véhicule", correct: true },
+    { text: "Un danger immédiat imposant un arrêt sur-le-champ", correct: false },
+    { text: "Un simple rappel d'entretien sans réelle importance", correct: false },
+  ], "Contrairement à un voyant rouge qui impose un arrêt immédiat, un voyant orange invite à la prudence et à une vérification rapide, sans urgence absolue."),
+  q("environnement", "Adopter une conduite souple, en anticipant les ralentissements plutôt qu'en freinant tardivement, permet notamment de :", [
+    { text: "Réduire l'usure des plaquettes de frein et la consommation de carburant", correct: true },
+    { text: "N'a aucun effet mesurable sur l'entretien du véhicule", correct: false },
+    { text: "Augmenter la consommation de carburant de façon systématique", correct: false },
+  ], "Une conduite anticipative limite les sollicitations brutales du moteur et des freins, avec des bénéfices concrets sur l'entretien et le budget carburant."),
+  q("securite", "Le port d'un gilet réfléchissant est particulièrement recommandé pour un piéton circulant de nuit en dehors des agglomérations, car il :", [
+    { text: "Améliore fortement sa visibilité pour les conducteurs, même à bonne distance", correct: true },
+    { text: "N'apporte aucune amélioration réelle de visibilité la nuit", correct: false },
+    { text: "Est utile uniquement en cas de brouillard, jamais de nuit", correct: false },
+  ], "Un piéton vêtu de couleurs sombres devient très difficile à distinguer de nuit ; un gilet réfléchissant multiplie sa visibilité à distance pour les conducteurs."),
+  q("divers", "En cas de vente d'un véhicule d'occasion, le vendeur doit notamment remettre à l'acheteur :", [
+    { text: "Le certificat de cession et le certificat de situation administrative (non-gage)", correct: true },
+    { text: "Uniquement les clés du véhicule, sans aucun document", correct: false },
+    { text: "Une attestation d'assurance valable un an au nom de l'acheteur", correct: false },
+  ], "Ces documents administratifs sont indispensables pour permettre à l'acheteur d'immatriculer légalement le véhicule à son nom."),
+  q("priorites", "Face à un panneau « cédez le passage » associé à un panonceau indiquant une distance, cette dernière précise :", [
+    { text: "L'emplacement de l'intersection concernée par rapport au panneau", correct: true },
+    { text: "La vitesse maximale autorisée sur cette portion de route", correct: false },
+    { text: "Le nombre de véhicules pouvant s'engager simultanément", correct: false },
+  ], "Ce panonceau complémentaire aide le conducteur à anticiper précisément où s'applique l'obligation de céder le passage annoncée par le panneau principal."),
+  q("vitesse", "Sur autoroute, en cas de brouillard réduisant la visibilité à moins de 50 mètres, la vitesse maximale autorisée passe à :", [
+    { text: "50 km/h, comme sur toutes les autres routes dans cette même situation", correct: true },
+    { text: "110 km/h, seule une légère réduction étant appliquée", correct: false },
+    { text: "130 km/h, la limite habituelle restant inchangée", correct: false },
+  ], "Cette limitation uniforme à 50 km/h s'applique quel que soit le type de route dès que la visibilité descend sous ce seuil critique."),
 ];
+
 
 
 export const getQuestionsByTheme = (themeId) => QUESTIONS.filter((q) => q.theme === themeId);
