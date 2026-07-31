@@ -673,6 +673,19 @@ export default function App() {
       const [stats, setStats] = useState({});
   const [courseThemeId, setCourseThemeId] = useState(null);
   const [streak, setStreak] = useState(0);
+  const [theme, setTheme] = useState(() => {
+    try { return localStorage.getItem("cdlr_theme") || "light"; } catch { return "light"; }
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    try { localStorage.setItem("cdlr_theme", theme); } catch {}
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((t) => (t === "dark" ? "light" : "dark"));
+  }, []);
+
 
   // Charge la session au démarrage + écoute les changements de connexion.
   useEffect(() => {
@@ -742,9 +755,13 @@ export default function App() {
 
   return (
     <div className="app app-in">
-            {screen === "home" && (
+      <button className="theme-toggle" onClick={toggleTheme} title="Changer de thème" aria-label="Changer de thème">
+        {theme === "dark" ? "☀️" : "🌙"}
+      </button>
+      {screen === "home" && (
         <Home
           onStartExam={startExam}
+
           onOpenThemes={() => setScreen("themes")}
           onOpenCourses={() => setScreen("courses")}
           onStartTheme={startTheme}
