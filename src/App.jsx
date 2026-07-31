@@ -4,7 +4,9 @@ import { COURSES, getCourse } from "./data/courses.js";
 import {
   cloudEnabled, getSessionProfile, subscribeAuth, signUpCloud, signInCloud,
   createLocalProfile, signOutProfile, getStats, recordAnswer, pickAdaptive, computeMastery,
+  touchStreak, getStreak,
 } from "./storage.js";
+
 
 /* ---------- Photos réelles par thème (illustration "en situation") ---------- */
 const THEME_PHOTOS = {
@@ -169,7 +171,8 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
   );
 }
 
-function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
+function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, streak, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
+
 
   return (
     <div className="home">
@@ -187,9 +190,16 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
           </div>
         </div>
         <p className="hero-sub">
+               {streak > 0 && (
+          <div className="streak-badge">
+            🔥 {streak} jour{streak > 1 ? "s" : ""} d'affilée !
+          </div>
+        )}
+        <p className="hero-sub">
           Vrais panneaux, corrections détaillées, conditions d'examen réelles.
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
         </p>
+
            <div className="hero-actions">
           <button className="btn-primary btn-hero" onClick={onStartExam}>
             Démarrer l'examen blanc -- 40 questions
@@ -661,8 +671,9 @@ export default function App() {
   const [questions, setQuestions] = useState([]);
   const [result, setResult] = useState(null);
   const [profile, setProfile] = useState(null);
-    const [stats, setStats] = useState({});
+      const [stats, setStats] = useState({});
   const [courseThemeId, setCourseThemeId] = useState(null);
+  const [streak, setStreak] = useState(0);
 
   // Charge la session au démarrage + écoute les changements de connexion.
   useEffect(() => {
@@ -676,13 +687,14 @@ export default function App() {
     return () => { active = false; unsubscribe(); clearTimeout(t); };
   }, []);
 
-  // Recharge les stats à chaque changement de profil (connexion / déconnexion).
+   // Recharge les stats à chaque changement de profil (connexion / déconnexion).
   useEffect(() => {
     let active = true;
     (async () => {
       const s = await getStats(profile);
       if (active) setStats(s);
     })();
+    setStreak(getStreak(profile));
     return () => { active = false; };
   }, [profile]);
 
@@ -706,7 +718,9 @@ export default function App() {
       recordAnswer(profile, questionId, correct, current).then(setStats);
       return current;
     });
+    setStreak(touchStreak(profile));
   }, [profile]);
+
 
   const finish = useCallback((r) => { setResult(r); setScreen("results"); }, []);
 
@@ -740,12 +754,14 @@ export default function App() {
           readiness={readiness}
           onLocalProfile={handleLocalProfile}
           onCloudDone={handleCloudDone}
-                 onOpenProgress={() => setScreen("progress")}
+                     onOpenProgress={() => setScreen("progress")}
+          streak={streak}
           onLogout={logout}
           onOpenLegal={() => setScreen("legal")}
         />
       )}
       {screen === "legal" && (
+
         <LegalScreen onHome={() => setScreen("home")} />
       )}
       {screen === "themes" && (

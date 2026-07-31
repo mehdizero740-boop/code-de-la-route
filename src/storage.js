@@ -170,3 +170,51 @@ export function computeMastery(stats, pool) {
     total: pool.length,
   };
 }
+
+/* ============ Série de jours consécutifs (streak) ============ */
+const STREAK_KEY_PREFIX = "cdlr_streak_";
+
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+function streakKey(profile) {
+  return STREAK_KEY_PREFIX + (profile?.id || "guest");
+}
+
+// Enregistre une activité aujourd'hui et met à jour la série de jours consécutifs.
+export function touchStreak(profile) {
+  const key = streakKey(profile);
+  const today = todayStr();
+  let data;
+  try {
+    data = JSON.parse(localStorage.getItem(key)) || { count: 0, lastDate: null };
+  } catch {
+    data = { count: 0, lastDate: null };
+  }
+  if (data.lastDate === today) return data.count;
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yStr = `${yesterday.getFullYear()}-${String(yesterday.getMonth() + 1).padStart(2, "0")}-${String(yesterday.getDate()).padStart(2, "0")}`;
+  const newCount = data.lastDate === yStr ? data.count + 1 : 1;
+  const next = { count: newCount, lastDate: today };
+  localStorage.setItem(key, JSON.stringify(next));
+  return newCount;
+}
+
+// Lit la série actuelle sans la modifier (pour l'affichage).
+export function getStreak(profile) {
+  try {
+    const data = JSON.parse(localStorage.getItem(streakKey(profile))) || { count: 0, lastDate: null };
+    const today = todayStr();
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yStr = `${yesterday.getFullYear()}-${String(yesterday.getMonth() + 1).padStart(2, "0")}-${String(yesterday.getDate()).padStart(2, "0")}`;
+    // Si la dernière activité remonte à avant-hier ou plus, la série est rompue à l'affichage.
+    if (data.lastDate !== today && data.lastDate !== yStr) return 0;
+    return data.count;
+  } catch {
+    return 0;
+  }
+}
