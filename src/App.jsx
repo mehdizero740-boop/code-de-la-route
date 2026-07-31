@@ -2,7 +2,6 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { THEMES, QUESTIONS, getQuestionsByTheme } from "./data/questions.js";
 import { COURSES, getCourse } from "./data/courses.js";
 import {
-import {
   cloudEnabled, getSessionProfile, subscribeAuth, signUpCloud, signInCloud,
   createLocalProfile, signOutProfile, getStats, recordAnswer, pickAdaptive, computeMastery,
   touchStreak, getStreak, recordReadinessSnapshot, getReadinessHistory,
