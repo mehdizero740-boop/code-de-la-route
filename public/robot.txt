@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://code-de-la-route-ten.vercel.app/sitemap.xml
