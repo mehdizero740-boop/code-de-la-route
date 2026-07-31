@@ -179,7 +179,7 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
       <ProfileBar profile={profile} mastery={mastery} readiness={readiness} onLocalProfile={onLocalProfile} onCloudDone={onCloudDone} onOpenProgress={onOpenProgress} onLogout={onLogout} />
 
       <header className="hero">
-        <div className="hero-top">
+             <div className="hero-top">
           <div>
             <span className="hero-eyebrow">Examen du permis B</span>
             <h1>Code de<br />la Route</h1>
@@ -189,8 +189,7 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
             <span className="hero-stat-label">Questions</span>
           </div>
         </div>
-        <p className="hero-sub">
-               {streak > 0 && (
+        {streak > 0 && (
           <div className="streak-badge">
             🔥 {streak} jour{streak > 1 ? "s" : ""} d'affilée !
           </div>
@@ -199,8 +198,7 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
           Vrais panneaux, corrections détaillées, conditions d'examen réelles.
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
         </p>
-
-           <div className="hero-actions">
+        <div className="hero-actions">
           <button className="btn-primary btn-hero" onClick={onStartExam}>
             Démarrer l'examen blanc -- 40 questions
           </button>
@@ -214,6 +212,7 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
           <span className="hero-trust-item">⚖️ Questions mises à jour selon le code en vigueur</span>
         </div>
       </header>
+
 
       <button className="course-banner" onClick={onOpenCourses}>
         <span className="course-banner-icon">📚</span>
