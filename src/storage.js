@@ -214,10 +214,21 @@ export function getStreak(profile) {
     // Si la dernière activité remonte à avant-hier ou plus, la série est rompue à l'affichage.
     if (data.lastDate !== today && data.lastDate !== yStr) return 0;
     return data.count;
-   } catch {
+  } catch {
     return 0;
   }
 }
+
+// Indique si une activité a déjà été enregistrée aujourd'hui (pour savoir s'il faut rappeler à l'utilisateur de jouer).
+export function hasPracticedToday(profile) {
+  try {
+    const data = JSON.parse(localStorage.getItem(streakKey(profile))) || { count: 0, lastDate: null };
+    return data.lastDate === todayStr();
+  } catch {
+    return false;
+  }
+}
+
 
 /* ============ Historique du score de préparation (pour le graphique) ============ */
 const HISTORY_KEY_PREFIX = "cdlr_readiness_history_";

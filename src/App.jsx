@@ -4,7 +4,8 @@ import { COURSES, getCourse } from "./data/courses.js";
 import {
   cloudEnabled, getSessionProfile, subscribeAuth, signUpCloud, signInCloud,
   createLocalProfile, signOutProfile, getStats, recordAnswer, pickAdaptive, computeMastery,
-  touchStreak, getStreak, recordReadinessSnapshot, getReadinessHistory,
+  touchStreak, getStreak, hasPracticedToday, recordReadinessSnapshot, getReadinessHistory,
+
 } from "./storage.js";
 
 
@@ -171,8 +172,7 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
   );
 }
 
-function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, streak, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
-
+function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, streak, practicedToday, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
 
   return (
     <div className="home">
@@ -189,11 +189,17 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
             <span className="hero-stat-label">Questions</span>
           </div>
         </div>
-        {streak > 0 && (
+             {streak > 0 && practicedToday && (
           <div className="streak-badge">
             🔥 {streak} jour{streak > 1 ? "s" : ""} d'affilée !
           </div>
         )}
+        {streak > 0 && !practicedToday && (
+          <div className="streak-badge streak-reminder">
+            ⏰ Ta série de {streak} jour{streak > 1 ? "s" : ""} est en jeu -- entraîne-toi aujourd'hui pour la garder !
+          </div>
+        )}
+
         <p className="hero-sub">
           Vrais panneaux, corrections détaillées, conditions d'examen réelles.
           Entraîne-toi thème par thème ou passe directement un blanc chronométré.
@@ -716,6 +722,8 @@ export default function App() {
       const [stats, setStats] = useState({});
   const [courseThemeId, setCourseThemeId] = useState(null);
   const [streak, setStreak] = useState(0);
+  const [practicedToday, setPracticedToday] = useState(true);
+
   const [theme, setTheme] = useState(() => {
     try { return localStorage.getItem("cdlr_theme") || "light"; } catch { return "light"; }
   });
@@ -749,7 +757,9 @@ export default function App() {
       const s = await getStats(profile);
       if (active) setStats(s);
     })();
-    setStreak(getStreak(profile));
+        setStreak(getStreak(profile));
+    setPracticedToday(hasPracticedToday(profile));
+
     return () => { active = false; };
   }, [profile]);
 
@@ -779,6 +789,8 @@ export default function App() {
       return current;
     });
     setStreak(touchStreak(profile));
+    setPracticedToday(true);
+
   }, [profile]);
 
 
@@ -819,7 +831,9 @@ export default function App() {
           onLocalProfile={handleLocalProfile}
           onCloudDone={handleCloudDone}
                      onOpenProgress={() => setScreen("progress")}
-          streak={streak}
+                    streak={streak}
+          practicedToday={practicedToday}
+
           onLogout={logout}
           onOpenLegal={() => setScreen("legal")}
         />
