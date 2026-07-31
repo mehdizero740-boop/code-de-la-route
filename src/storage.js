@@ -214,7 +214,40 @@ export function getStreak(profile) {
     // Si la dernière activité remonte à avant-hier ou plus, la série est rompue à l'affichage.
     if (data.lastDate !== today && data.lastDate !== yStr) return 0;
     return data.count;
-  } catch {
+   } catch {
     return 0;
   }
 }
+
+/* ============ Historique du score de préparation (pour le graphique) ============ */
+const HISTORY_KEY_PREFIX = "cdlr_readiness_history_";
+const HISTORY_MAX_POINTS = 30;
+
+function historyKey(profile) {
+  return HISTORY_KEY_PREFIX + (profile?.id || "guest");
+}
+
+// Enregistre un point (date du jour, score) ; un seul point par jour est conservé (le plus récent).
+export function recordReadinessSnapshot(profile, pct) {
+  const key = historyKey(profile);
+  const today = todayStr();
+  let history;
+  try {
+    history = JSON.parse(localStorage.getItem(key)) || [];
+  } catch {
+    history = [];
+  }
+  const withoutToday = history.filter((h) => h.date !== today);
+  const next = [...withoutToday, { date: today, pct }].slice(-HISTORY_MAX_POINTS);
+  localStorage.setItem(key, JSON.stringify(next));
+}
+
+// Lit l'historique du score de préparation, du plus ancien au plus récent.
+export function getReadinessHistory(profile) {
+  try {
+    return JSON.parse(localStorage.getItem(historyKey(profile))) || [];
+  } catch {
+    return [];
+  }
+}
+
