@@ -2,9 +2,10 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { THEMES, QUESTIONS, getQuestionsByTheme } from "./data/questions.js";
 import { COURSES, getCourse } from "./data/courses.js";
 import {
+import {
   cloudEnabled, getSessionProfile, subscribeAuth, signUpCloud, signInCloud,
   createLocalProfile, signOutProfile, getStats, recordAnswer, pickAdaptive, computeMastery,
-  touchStreak, getStreak,
+  touchStreak, getStreak, recordReadinessSnapshot, getReadinessHistory,
 } from "./storage.js";
 
 
@@ -380,8 +381,35 @@ function LegalScreen({ onHome }) {
     </div>
   );
 }
+/* ---------- Graphique d'évolution du score ---------- */
+function ProgressChart({ history }) {
+  if (!history || history.length < 2) return null;
+  const width = 300, height = 90, pad = 8;
+  const points = history
+    .map((h, i) => {
+      const x = pad + (i / (history.length - 1)) * (width - pad * 2);
+      const y = height - pad - (h.pct / 100) * (height - pad * 2);
+      return `${x},${y}`;
+    })
+    .join(" ");
+  const first = history[0];
+  const last = history[history.length - 1];
+  return (
+    <div className="progress-chart-card">
+      <h2 className="course-section-title" style={{ marginBottom: 4 }}>Évolution du score de préparation</h2>
+      <svg viewBox={`0 0 ${width} ${height}`} className="progress-chart-svg" preserveAspectRatio="none">
+        <polyline points={points} fill="none" stroke="var(--violet-bright)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <div className="progress-chart-labels">
+        <span>{first.date.slice(5)}</span>
+        <span>{last.date.slice(5)}</span>
+      </div>
+    </div>
+  );
+}
 
 /* ---------- Progression ---------- */
+
 
 function Progress({ profile, stats, readiness, onHome, onLogout }) {
 
@@ -397,8 +425,24 @@ function Progress({ profile, stats, readiness, onHome, onLogout }) {
         <button className="btn-ghost" onClick={onHome}>← Accueil</button>
       </div>
       <h1 className="progress-title">Progression de {profile.name}</h1>
-      {profile.cloud && <p className="auth-hint" style={{ margin: "-10px 0 18px" }}>Synchronisée sur tous tes appareils via {profile.email}.</p>}
+{profile.cloud && <p className="auth-hint" style={{ margin: "-10px 0 18px" }}>Synchronisée sur tous tes appareils via {profile.email}.</p>}
+      <div className="readiness-card">
+        <div className="score-ring readiness-ring" style={{ "--pct": readiness.pct }}>
+          <div className="score-ring-inner">
+            <span className="results-score-num">{readiness.pct}%</span>
+          </div>
+        </div>
+        <div className="readiness-card-text">
+          <strong>{readiness.message}</strong>
+          {readiness.weakest && readiness.weakest.score < 0.8 && (
+            <p>Le thème à travailler en priorité : <strong>{readiness.weakest.label}</strong>.</p>
+          )}
+        </div>
+      </div>
+      <ProgressChart history={getReadinessHistory(profile)} />
       <div className="progress-overview">
+
+
         <div className="score-ring small" style={{ "--pct": overall.total ? Math.round((overall.mastered / overall.total) * 100) : 0 }}>
           <div className="score-ring-inner">
             <span className="results-score-num">{overall.mastered}</span>
@@ -710,8 +754,13 @@ export default function App() {
     return () => { active = false; };
   }, [profile]);
 
-    const mastery = useMemo(() => computeMastery(stats, QUESTIONS), [stats]);
+  const mastery = useMemo(() => computeMastery(stats, QUESTIONS), [stats]);
   const readiness = useMemo(() => computeReadiness(stats), [stats]);
+
+  useEffect(() => {
+    if (mastery.attempted > 0) recordReadinessSnapshot(profile, readiness.pct);
+  }, [profile, mastery.attempted, readiness.pct]);
+
 
 
   const startExam = useCallback(() => {
