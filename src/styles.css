@@ -429,6 +429,9 @@ h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em
   font-family: inherit; font-size: 14.5px; transition: background .15s ease;
 }
 .btn-ghost-light:hover { background: rgba(255,255,255,0.18); }
+.btn-review { background: rgba(225,75,63,0.16); border-color: rgba(225,75,63,0.4); }
+.btn-review:hover { background: rgba(225,75,63,0.26); }
+
 
 /* ---------- Cartes "en situation réelle" (vraies photos) ---------- */
 .situ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }

@@ -172,7 +172,7 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
   );
 }
 
-function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile, mastery, readiness, streak, practicedToday, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
+function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, onStartReview, reviewCount, profile, mastery, readiness, streak, practicedToday, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
 
   return (
     <div className="home">
@@ -208,10 +208,16 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, profile,
           <button className="btn-primary btn-hero" onClick={onStartExam}>
             Démarrer l'examen blanc -- 40 questions
           </button>
-          <button className="btn-ghost-light btn-hero" onClick={onOpenThemes}>
+                    <button className="btn-ghost-light btn-hero" onClick={onOpenThemes}>
             Découvrir par thème
           </button>
+          {reviewCount > 0 && (
+            <button className="btn-ghost-light btn-hero btn-review" onClick={onStartReview}>
+              ❌ Réviser mes erreurs ({reviewCount})
+            </button>
+          )}
         </div>
+
         <div className="hero-trust">
           <span className="hero-trust-item">🔁 Entraînement illimité</span>
           <span className="hero-trust-item">🚫 0 pub</span>
@@ -787,7 +793,10 @@ export default function App() {
     if (mastery.attempted > 0) recordReadinessSnapshot(profile, readiness.pct);
   }, [profile, mastery.attempted, readiness.pct]);
 
-
+  const reviewPool = useMemo(
+    () => QUESTIONS.filter((q) => (stats[q.id]?.wrong || 0) > 0 && (stats[q.id]?.streak || 0) < 3),
+    [stats]
+  );
 
   const startExam = useCallback(() => {
     setQuestions(pickAdaptive(QUESTIONS, 40, stats));
@@ -799,6 +808,13 @@ export default function App() {
     setQuestions(pickAdaptive(pool, Math.min(20, pool.length), stats));
     setScreen("quiz");
   }, [stats]);
+
+  const startReview = useCallback(() => {
+    if (reviewPool.length === 0) return;
+    setQuestions(pickAdaptive(reviewPool, Math.min(20, reviewPool.length), stats));
+    setScreen("quiz");
+  }, [reviewPool, stats]);
+
 
   const handleAnswer = useCallback((questionId, correct) => {
     setStats((current) => {
@@ -836,18 +852,22 @@ export default function App() {
         {theme === "dark" ? "☀️" : "🌙"}
       </button>
       {screen === "home" && (
-        <Home
+              <Home
           onStartExam={startExam}
-
           onOpenThemes={() => setScreen("themes")}
           onOpenCourses={() => setScreen("courses")}
           onStartTheme={startTheme}
+          onStartReview={startReview}
+          reviewCount={reviewPool.length}
           profile={profile}
           mastery={mastery}
           readiness={readiness}
+          streak={streak}
+          practicedToday={practicedToday}
           onLocalProfile={handleLocalProfile}
           onCloudDone={handleCloudDone}
-                     onOpenProgress={() => setScreen("progress")}
+          onOpenProgress={() => setScreen("progress")}
+
                     streak={streak}
           practicedToday={practicedToday}
 
