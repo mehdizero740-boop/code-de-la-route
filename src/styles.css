@@ -40,8 +40,12 @@ html[data-theme="dark"] {
   --shadow-violet: 0 10px 24px rgba(155,110,232,0.35);
 }
 
-
 * { box-sizing: border-box; }
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--violet-bright); outline-offset: 2px;
+}
+
 
 body {
   margin: 0;

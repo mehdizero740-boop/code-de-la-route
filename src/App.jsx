@@ -131,10 +131,11 @@ function AuthPanel({ onDone }) {
         <button type="button" className={"auth-tab" + (mode === "signin" ? " active" : "")} onClick={() => setMode("signin")}>Se connecter</button>
       </div>
       {mode === "signup" && (
-        <input className="profile-input" placeholder="Ton prénom" value={name} onChange={(e) => setName(e.target.value)} maxLength={30} />
+               <input className="profile-input" placeholder="Ton prénom" aria-label="Ton prénom" value={name} onChange={(e) => setName(e.target.value)} maxLength={30} />
       )}
-      <input className="profile-input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <input className="profile-input" type="password" placeholder="Mot de passe (6 caractères min.)" value={password} onChange={(e) => setPassword(e.target.value)} minLength={6} required />
+      <input className="profile-input" type="email" placeholder="Email" aria-label="Adresse email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+      <input className="profile-input" type="password" placeholder="Mot de passe (6 caractères min.)" aria-label="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} minLength={6} required />
+
       {error && <p className="auth-error">{error}</p>}
       <button type="submit" className="btn-primary profile-submit" disabled={loading} style={{ width: "100%" }}>
         {loading ? "…" : mode === "signup" ? "Créer mon compte" : "Se connecter"}
@@ -164,7 +165,8 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
             className="profile-form"
             onSubmit={(e) => { e.preventDefault(); if (name.trim()) { onLocalProfile(name); setOpen(false); } }}
           >
-            <input className="profile-input" placeholder="Ton prénom" value={name} onChange={(e) => setName(e.target.value)} autoFocus maxLength={30} />
+                        <input className="profile-input" placeholder="Ton prénom" aria-label="Ton prénom" value={name} onChange={(e) => setName(e.target.value)} autoFocus maxLength={30} />
+
             <button type="submit" className="btn-primary profile-submit" disabled={!name.trim()}>OK</button>
             <button type="button" className="btn-ghost profile-cancel" onClick={() => setOpen(false)}>Annuler</button>
           </form>
@@ -185,7 +187,8 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
             {mastery.attempted > 0 && (
         <span className="readiness-pill" title={readiness.message}>🎯 {readiness.pct}% prêt·e</span>
       )}
-      <button className="profile-logout" onClick={onLogout} title="Se déconnecter">⤴</button>
+           <button className="profile-logout" onClick={onLogout} title="Se déconnecter" aria-label="Se déconnecter">⤴</button>
+
     </div>
   );
 }
