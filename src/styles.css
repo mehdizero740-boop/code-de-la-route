@@ -58,8 +58,7 @@ body {
 h1, h2, h3 { font-family: 'Sora', 'Manrope', sans-serif; letter-spacing: -0.01em; }
 
 .mono { font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
-
-.app { max-width: 640px; margin: 0 auto; padding: 20px 16px 64px; min-height: 100vh; position: relative; }
+.app { max-width: 640px; margin: 0 auto; padding: 64px 16px 64px; min-height: 100vh; position: relative; }
 
 .theme-toggle {
   position: fixed; top: 16px; right: 16px; z-index: 50;
