@@ -220,6 +220,7 @@ export function getStreak(profile) {
 }
 
 // Indique si une activité a déjà été enregistrée aujourd'hui (pour savoir s'il faut rappeler à l'utilisateur de jouer).
+
 export function hasPracticedToday(profile) {
   try {
     const data = JSON.parse(localStorage.getItem(streakKey(profile))) || { count: 0, lastDate: null };
@@ -229,6 +230,22 @@ export function hasPracticedToday(profile) {
   }
 }
 
+/* ============ Réussite d'un examen blanc (pour le badge) ============ */
+function examPassKey(profile) {
+  return "cdlr_exam_passed_" + (profile?.id || "guest");
+}
+
+export function recordExamPass(profile) {
+  localStorage.setItem(examPassKey(profile), "1");
+}
+
+export function hasPassedExam(profile) {
+  try {
+    return localStorage.getItem(examPassKey(profile)) === "1";
+  } catch {
+    return false;
+  }
+}
 
 /* ============ Historique du score de préparation (pour le graphique) ============ */
 const HISTORY_KEY_PREFIX = "cdlr_readiness_history_";

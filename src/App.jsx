@@ -5,6 +5,8 @@ import {
   cloudEnabled, getSessionProfile, subscribeAuth, signUpCloud, signInCloud,
   createLocalProfile, signOutProfile, getStats, recordAnswer, pickAdaptive, computeMastery,
   touchStreak, getStreak, hasPracticedToday, recordReadinessSnapshot, getReadinessHistory,
+  recordExamPass, hasPassedExam,
+
 
 } from "./storage.js";
 
@@ -41,11 +43,27 @@ function computeReadiness(stats) {
   else if (pct < 70) message = "Tu progresses bien, poursuis sur ta lancée.";
   else if (pct < 90) message = "Tu es presque prêt·e pour l'examen !";
   else message = "Tu es prêt·e pour l'examen !";
-  return { pct, message, weakest };
+    return { pct, message, weakest };
+}
+
+/* ---------- Badges / succès ---------- */
+function computeBadges({ mastery, streak, readiness, examPassed }) {
+  return [
+    { id: "first-step", icon: "🎯", label: "Premier pas", unlocked: mastery.attempted >= 1 },
+    { id: "streak-3", icon: "🔥", label: "3 jours d'affilée", unlocked: streak >= 3 },
+    { id: "streak-7", icon: "🔥", label: "7 jours d'affilée", unlocked: streak >= 7 },
+    { id: "streak-30", icon: "🔥", label: "30 jours d'affilée", unlocked: streak >= 30 },
+    { id: "mastered-50", icon: "🏅", label: "50 questions maîtrisées", unlocked: mastery.mastered >= 50 },
+    { id: "mastered-200", icon: "🏅", label: "200 questions maîtrisées", unlocked: mastery.mastered >= 200 },
+    { id: "mastered-500", icon: "🥇", label: "500 questions maîtrisées", unlocked: mastery.mastered >= 500 },
+    { id: "exam-passed", icon: "✅", label: "Examen blanc réussi", unlocked: examPassed },
+    { id: "ready-90", icon: "💯", label: "Prêt·e à 90 %", unlocked: readiness.pct >= 90 },
+  ];
 }
 
 /* ---------- Splash ---------- */
 function Splash() {
+
   return (
     <div className="splash">
       <div className="splash-badge"><span>🚗</span></div>
@@ -421,8 +439,7 @@ function ProgressChart({ history }) {
 
 /* ---------- Progression ---------- */
 
-
-function Progress({ profile, stats, readiness, onHome, onLogout }) {
+function Progress({ profile, stats, readiness, badges, onHome, onLogout }) {
 
   const byTheme = THEMES.map((t) => {
     const pool = getQuestionsByTheme(t.id);
@@ -451,6 +468,16 @@ function Progress({ profile, stats, readiness, onHome, onLogout }) {
         </div>
       </div>
       <ProgressChart history={getReadinessHistory(profile)} />
+      <h2 className="section-title">Succès</h2>
+      <div className="badges-grid">
+        {badges.map((b) => (
+          <div key={b.id} className={"badge-chip " + (b.unlocked ? "unlocked" : "locked")}>
+            <span className="badge-chip-icon">{b.icon}</span>
+            <span className="badge-chip-label">{b.label}</span>
+          </div>
+        ))}
+      </div>
+
       <div className="progress-overview">
 
 
@@ -745,7 +772,8 @@ export default function App() {
       const [stats, setStats] = useState({});
   const [courseThemeId, setCourseThemeId] = useState(null);
   const [streak, setStreak] = useState(0);
-  const [practicedToday, setPracticedToday] = useState(true);
+   const [practicedToday, setPracticedToday] = useState(true);
+  const [examPassed, setExamPassed] = useState(false);
 
   const [theme, setTheme] = useState(() => {
     try { return localStorage.getItem("cdlr_theme") || "light"; } catch { return "light"; }
@@ -781,13 +809,20 @@ export default function App() {
       if (active) setStats(s);
     })();
         setStreak(getStreak(profile));
-    setPracticedToday(hasPracticedToday(profile));
+        setPracticedToday(hasPracticedToday(profile));
+    setExamPassed(hasPassedExam(profile));
+
 
     return () => { active = false; };
   }, [profile]);
 
   const mastery = useMemo(() => computeMastery(stats, QUESTIONS), [stats]);
   const readiness = useMemo(() => computeReadiness(stats), [stats]);
+  const badges = useMemo(
+    () => computeBadges({ mastery, streak, readiness, examPassed }),
+    [mastery, streak, readiness, examPassed]
+  );
+
 
   useEffect(() => {
     if (mastery.attempted > 0) recordReadinessSnapshot(profile, readiness.pct);
@@ -826,8 +861,15 @@ export default function App() {
 
   }, [profile]);
 
+  const finish = useCallback((r) => {
+    setResult(r);
+    setScreen("results");
+    if (r.total === 40 && r.score >= 35) {
+      recordExamPass(profile);
+      setExamPassed(true);
+    }
+  }, [profile]);
 
-  const finish = useCallback((r) => { setResult(r); setScreen("results"); }, []);
 
   const handleLocalProfile = useCallback((name) => {
     setProfile(createLocalProfile(name));
@@ -898,7 +940,8 @@ export default function App() {
         />
       )}
       {screen === "progress" && profile && (
-      <Progress profile={profile} stats={stats} readiness={readiness} onHome={() => setScreen("home")} onLogout={logout} />
+            <Progress profile={profile} stats={stats} readiness={readiness} badges={badges} onHome={() => setScreen("home")} onLogout={logout} />
+
 
       )}
       {screen === "quiz" && (
