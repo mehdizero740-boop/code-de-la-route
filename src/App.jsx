@@ -660,9 +660,24 @@ function Results({ result, profile, onRestart, onHome, onOpenProgress }) {
         : `Pas encore. Il faut 35/40 pour valider -- encore ${35 - score} bonnes réponses à trouver.`)
     : (passed ? "Belle série, continue comme ça !" : "Continue de t'entraîner, tu progresses.");
 
-  const focusMsg = weakest && weakest.pct < 1
+   const focusMsg = weakest && weakest.pct < 1
     ? `Ton point faible sur cette série : ${weakest.label.toLowerCase()} (${weakest.correct}/${weakest.total}).`
     : null;
+
+  const handleShare = () => {
+    const url = "https://code-de-la-route-ten.vercel.app/";
+    const text = passed
+      ? `J'ai eu ${score}/${total} au code de la route sur cette appli gratuite et sans pub ! Essaie toi aussi 👉`
+      : `Je m'entraîne au code de la route avec cette appli gratuite et sans pub (${score}/${total} pour l'instant) -- essaie toi aussi 👉`;
+    if (navigator.share) {
+      navigator.share({ title: "Code de la Route", text, url }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(`${text} ${url}`)
+        .then(() => alert("Lien copié ! Colle-le où tu veux le partager."))
+        .catch(() => {});
+    }
+  };
+
 
   return (
     <div className="results">
@@ -704,11 +719,13 @@ function Results({ result, profile, onRestart, onHome, onOpenProgress }) {
         ))}
         {answers.every((a) => a.correct) && <p className="review-perfect">Aucune erreur, sans faute ! 👏</p>}
       </div>
-      <div className="quiz-actions results-actions">
+            <div className="quiz-actions results-actions">
+        <button className="btn-ghost" onClick={handleShare}>📤 Partager</button>
         <button className="btn-ghost" onClick={onHome}>Accueil</button>
         {profile && <button className="btn-ghost" onClick={onOpenProgress}>Ma progression</button>}
         <button className="btn-primary" onClick={onRestart}>Recommencer</button>
       </div>
+
     </div>
   );
 }
