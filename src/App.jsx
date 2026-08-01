@@ -277,7 +277,60 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, onStartR
 }
 
 /* ---------- Liste des thèmes (écran dédié) ---------- */
+/* ---------- Recherche de questions ---------- */
+function normalizeSearch(s) {
+  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+function SearchScreen({ onHome }) {
+  const [query, setQuery] = useState("");
+
+  const results = useMemo(() => {
+    const q = normalizeSearch(query.trim());
+    if (q.length < 2) return [];
+    return QUESTIONS.filter((item) => normalizeSearch(item.question).includes(q)).slice(0, 50);
+  }, [query]);
+
+  return (
+    <div className="search-screen">
+      <div className="quiz-topbar">
+        <button className="btn-ghost" onClick={onHome}>← Accueil</button>
+      </div>
+      <h1 className="progress-title">Rechercher une question</h1>
+      <input
+        className="search-input"
+        type="search"
+        placeholder="Ex : priorité, feu rouge, ceinture..."
+        aria-label="Rechercher une question"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        autoFocus
+      />
+      {query.trim().length > 0 && query.trim().length < 2 && (
+        <p className="hero-sub" style={{ color: "var(--ink-soft)" }}>Continue à taper (au moins 2 lettres).</p>
+      )}
+      {query.trim().length >= 2 && (
+        <p className="search-count">{results.length} résultat{results.length > 1 ? "s" : ""}</p>
+      )}
+      <div className="search-results">
+        {results.map((item) => {
+          const theme = THEMES.find((t) => t.id === item.theme);
+          const correct = item.answers.find((a) => a.correct);
+          return (
+            <div className="search-result-card" key={item.id}>
+              {theme && <span className="theme-label" style={{ color: theme.color }}>{theme.label}</span>}
+              <p className="search-result-q">{item.question}</p>
+              {correct && <p className="search-result-a">✅ {correct.text}</p>}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function ThemeList({ onStartTheme, onHome }) {
+
   return (
     <div className="theme-list-screen">
       <div className="quiz-topbar">
@@ -893,10 +946,17 @@ export default function App() {
 
   return (
     <div className="app app-in">
+      <button className="theme-toggle search-toggle" onClick={() => setScreen("search")} title="Rechercher une question" aria-label="Rechercher une question">
+        🔍
+      </button>
       <button className="theme-toggle" onClick={toggleTheme} title="Changer de thème" aria-label="Changer de thème">
         {theme === "dark" ? "☀️" : "🌙"}
       </button>
+      {screen === "search" && (
+        <SearchScreen onHome={() => setScreen("home")} />
+      )}
       {screen === "home" && (
+
               <Home
           onStartExam={startExam}
           onOpenThemes={() => setScreen("themes")}
