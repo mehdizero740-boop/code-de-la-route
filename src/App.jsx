@@ -194,7 +194,8 @@ function ProfileBar({ profile, mastery, readiness, onLocalProfile, onCloudDone, 
   );
 }
 
-function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, onStartReview, reviewCount, profile, mastery, readiness, streak, practicedToday, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
+function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, onStartDifficulty, onStartReview, reviewCount, profile, mastery, readiness, streak, practicedToday, onLocalProfile, onCloudDone, onOpenProgress, onLogout, onOpenLegal }) {
+
 
   return (
     <div className="home">
@@ -256,6 +257,24 @@ function Home({ onStartExam, onOpenThemes, onOpenCourses, onStartTheme, onStartR
         </span>
         <span className="course-banner-arrow">→</span>
       </button>
+      <h2 className="section-title">S'entraîner par niveau</h2>
+      <div className="theme-grid">
+        <button className="theme-card" onClick={() => onStartDifficulty("facile")}>
+          <SignBadge tone="green" icon size={38}>🟢</SignBadge>
+          <span className="theme-label">Facile</span>
+          <span className="theme-count mono">{QUESTIONS.filter((q) => q.difficulty === "facile").length} questions</span>
+        </button>
+        <button className="theme-card" onClick={() => onStartDifficulty("moyen")}>
+          <SignBadge tone="yellow" icon size={38}>🟠</SignBadge>
+          <span className="theme-label">Intermédiaire</span>
+          <span className="theme-count mono">{QUESTIONS.filter((q) => q.difficulty === "moyen").length} questions</span>
+        </button>
+        <button className="theme-card" onClick={() => onStartDifficulty("difficile")}>
+          <SignBadge tone="red" icon size={38}>🔴</SignBadge>
+          <span className="theme-label">Difficile</span>
+          <span className="theme-count mono">{QUESTIONS.filter((q) => q.difficulty === "difficile").length} questions</span>
+        </button>
+      </div>
 
            <h2 className="section-title">En situation réelle</h2>
       <div className="situ-grid">
@@ -900,6 +919,12 @@ export default function App() {
     setQuestions(pickAdaptive(pool, Math.min(20, pool.length), stats));
     setScreen("quiz");
   }, [stats]);
+  const startDifficulty = useCallback((level) => {
+    const pool = QUESTIONS.filter((q) => q.difficulty === level);
+    setQuestions(pickAdaptive(pool, Math.min(20, pool.length), stats));
+    setScreen("quiz");
+  }, [stats]);
+
 
   const startReview = useCallback(() => {
     if (reviewPool.length === 0) return;
@@ -987,7 +1012,10 @@ export default function App() {
       )}
       {screen === "themes" && (
 
-        <ThemeList onStartTheme={startTheme} onHome={() => setScreen("home")} />
+        <ThemeList onStartTheme={startTheme} 
+                  onStartDifficulty={startDifficulty}
+
+        onHome={() => setScreen("home")} />
       )}
       {screen === "courses" && (
         <CourseList
