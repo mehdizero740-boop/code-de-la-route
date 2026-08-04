@@ -919,8 +919,15 @@ export default function App() {
     setQuestions(pickAdaptive(pool, Math.min(20, pool.length), stats));
     setScreen("quiz");
   }, [stats]);
-  const startDifficulty = useCallback((level) => {
+   const startDifficulty = useCallback((level) => {
+    try {
     const pool = QUESTIONS.filter((q) => q.difficulty === level);
+    if (pool.length === 0) { alert("Aucune question trouvée pour : " + level); return; }
+    setQuestions(pickAdaptive(pool, Math.min(20, pool.length), stats));
+    setScreen("quiz");
+    } catch (err) {
+      alert("ERREUR : " + err.message);
+    }
     setQuestions(pickAdaptive(pool, Math.min(20, pool.length), stats));
     setScreen("quiz");
   }, [stats]);
