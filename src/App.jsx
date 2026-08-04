@@ -13,16 +13,16 @@ import {
 
 /* ---------- Photos réelles par thème (illustration "en situation") ---------- */
 const THEME_PHOTOS = {
-  signalisation: "https://images.unsplash.com/photo-1717339701000-990a1682f200?auto=format&fit=crop&w=800&q=70",
-  priorites: "https://images.unsplash.com/photo-1759426016365-378fa10b219f?auto=format&fit=crop&w=800&q=70",
-  vitesse: "https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=800&q=70",
-  conducteur: "https://images.unsplash.com/photo-1756664825114-03ea24c8d195?auto=format&fit=crop&w=800&q=70",
-  usagers: "https://images.unsplash.com/photo-1754608263952-54fdff74637b?auto=format&fit=crop&w=800&q=70",
-  secours: "https://images.unsplash.com/photo-1691435702806-17d0aa7b02e9?auto=format&fit=crop&w=800&q=70",
-  mecanique: "https://images.unsplash.com/photo-1585225207578-919849288a18?auto=format&fit=crop&w=800&q=70",
-  environnement: "https://images.unsplash.com/photo-1765272088009-100c96a4cd4e?auto=format&fit=crop&w=800&q=70",
-  securite: "https://images.unsplash.com/photo-1783191658248-f4f96547cc25?auto=format&fit=crop&w=800&q=70",
-  divers: "https://images.unsplash.com/photo-1721775776140-021982db0f88?auto=format&fit=crop&w=800&q=70",
+  signalisation: "https://images.unsplash.com/photo-1717339701000-990a1682f200?auto=format&fit=crop&w=420&q=65",
+  priorites: "https://images.unsplash.com/photo-1759426016365-378fa10b219f?auto=format&fit=crop&w=420&q=65",
+  vitesse: "https://images.unsplash.com/photo-1657047799158-dc11bdab5f8d?auto=format&fit=crop&w=420&q=65",
+  conducteur: "https://images.unsplash.com/photo-1756664825114-03ea24c8d195?auto=format&fit=crop&w=420&q=65",
+  usagers: "https://images.unsplash.com/photo-1754608263952-54fdff74637b?auto=format&fit=crop&w=420&q=65",
+  secours: "https://images.unsplash.com/photo-1691435702806-17d0aa7b02e9?auto=format&fit=crop&w=420&q=65",
+  mecanique: "https://images.unsplash.com/photo-1585225207578-919849288a18?auto=format&fit=crop&w=420&q=65",
+  environnement: "https://images.unsplash.com/photo-1765272088009-100c96a4cd4e?auto=format&fit=crop&w=420&q=65",
+  securite: "https://images.unsplash.com/photo-1783191658248-f4f96547cc25?auto=format&fit=crop&w=420&q=65",
+  divers: "https://images.unsplash.com/photo-1721775776140-021982db0f88?auto=format&fit=crop&w=420&q=65",
 };
 
 /* ---------- Score de préparation à l'examen ---------- */
