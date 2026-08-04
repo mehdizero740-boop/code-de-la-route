@@ -1004,7 +1004,8 @@ export default function App() {
           practicedToday={practicedToday}
           onLocalProfile={handleLocalProfile}
           onCloudDone={handleCloudDone}
-          onOpenProgress={() => setScreen("progress")}
+               onOpenProgress={() => setScreen("progress")}
+          onStartDifficulty={startDifficulty}
 
                     streak={streak}
           practicedToday={practicedToday}
